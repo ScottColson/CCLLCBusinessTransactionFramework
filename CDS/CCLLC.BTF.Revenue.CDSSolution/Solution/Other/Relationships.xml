@@ -12,6 +12,7 @@
   <EntityRelationship Name="owner_ccllc_fee" />
   <EntityRelationship Name="team_ccllc_appliedfee" />
   <EntityRelationship Name="team_ccllc_fee" />
+  <EntityRelationship Name="TransactionCurrency_ccllc_appliedfee" />
   <EntityRelationship Name="user_ccllc_appliedfee" />
   <EntityRelationship Name="user_ccllc_fee" />
 </EntityRelationships>

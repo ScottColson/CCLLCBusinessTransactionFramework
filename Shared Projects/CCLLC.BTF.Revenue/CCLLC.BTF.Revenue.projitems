@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c9fae0ca-731b-4006-ae5e-d8b5c6e16325</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CCLLC.BTF.Revenue</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppliedFeeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueDataConnector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Enums\" />
+  </ItemGroup>
+</Project>

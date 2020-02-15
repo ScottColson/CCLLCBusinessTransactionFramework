@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>df1d0d6f-6119-4a6d-8506-1bb1d4d3e60f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CCLLC.BTF.Revenue.CDS</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)spkl.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)spkl\earlybound.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_appliedfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_fee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_appliedfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_fee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfeeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfee_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_feeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_fee_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevenueDataConnector.cs" />
+  </ItemGroup>
+</Project>
