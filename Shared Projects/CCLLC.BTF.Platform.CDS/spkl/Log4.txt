@@ -1,0 +1,15 @@
+12:09:29 PM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+12:12:17 PM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+10:10:12 AM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+10:10:12 AM	c 2017 Microsoft Corporation. All rights reserved
+10:10:12 AM	
+10:10:12 AM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+10:10:43 AM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Platform.D365\EarlyBoundTypes.cs.
+7:54:29 AM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+7:54:29 AM	c 2017 Microsoft Corporation. All rights reserved
+7:54:29 AM	
+7:54:29 AM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+7:54:55 AM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Platform.D365\EarlyBoundTypes.cs.
+8:17:16 AM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+8:22:05 AM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]
+8:58:19 AM	CrmSvcUtil : CRM Service Utility [Version 9.0.0.9154]

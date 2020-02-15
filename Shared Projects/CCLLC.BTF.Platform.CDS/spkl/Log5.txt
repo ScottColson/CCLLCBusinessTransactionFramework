@@ -1,0 +1,4 @@
+8:22:05 AM	c 2017 Microsoft Corporation. All rights reserved
+8:22:05 AM	
+8:22:05 AM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+8:22:15 AM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Proxy.D365\PlatformEarlyBoundTypes.cs.

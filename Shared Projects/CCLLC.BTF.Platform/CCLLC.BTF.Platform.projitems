@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>29c88c19-2980-46d8-9172-aea759e9d1c1</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CCLLC.BTF.Platform</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Agent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AgentFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Channel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Customer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeferredActivator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\eAgentTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\eChannelCustomerScopeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\eChannelTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\eCustomerTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAgent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAgentFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IChannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IChannelFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICustomer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICustomerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICustomerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICustomerRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataOfRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDeferredActivator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDeferredImplementation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDevice.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvaluatorTypeRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILocationFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogicEvaluationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogicEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogicEvaluatorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogicEvaluatorType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogicEvaluatorTypeFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAgentRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IChannelRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IParameterSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPartner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPartnerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPartnerWorker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformDataConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformManagerSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRecordClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISerializedParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISystemUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWorkSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorTypeBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorTypeFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlatformManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializedParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SystemUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WorkSession.cs" />
+  </ItemGroup>
+</Project>

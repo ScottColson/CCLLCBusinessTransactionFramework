@@ -1,0 +1,16 @@
+12:09:29 PM	c 2017 Microsoft Corporation. All rights reserved
+12:09:29 PM	
+12:09:29 PM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+12:09:54 PM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Platform.D365\EarlyBoundTypes.cs.
+12:12:17 PM	c 2017 Microsoft Corporation. All rights reserved
+12:12:17 PM	
+12:12:17 PM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+12:12:27 PM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Platform.D365\EarlyBoundTypes.cs.
+8:17:16 AM	c 2017 Microsoft Corporation. All rights reserved
+8:17:16 AM	
+8:17:16 AM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+8:17:28 AM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Proxy.D365\EarlyBoundTypes.cs.
+8:58:19 AM	c 2017 Microsoft Corporation. All rights reserved
+8:58:19 AM	
+8:58:19 AM	Loading config from 'C:\Source\VSTS\PowerCredential\S3.Libraries\packages\Microsoft.CrmSdk.CoreTools.9.0.0.7\content\bin\coretools\spkl.crmsvcutil.config'
+8:58:29 AM	Code written to C:\Source\VSTS\PowerCredential\S3.Libraries\S3.Platform.D365\EarlyBoundTypes.cs.
