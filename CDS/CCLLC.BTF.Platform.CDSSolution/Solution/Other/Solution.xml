@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.1.0.12629" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>CCLLCBTFPlatform</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="CCLLC.BTF.Platform" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>0.0.0.1</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>colsoncodellc</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Colson Code, LLC" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Colson Code, LLC" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl>https://github.com/ScottColson/CCLLC.Xrm.Development/wiki</SupportingWebsiteUrl>
+      <CustomizationPrefix>ccllc</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>14267</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="1" />
+      <RootComponent type="1" schemaName="ccllc_agent" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_agentauthorizedcustomer" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_agentprohibitedcustomer" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_agentrole" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_channel" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_device" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_evaluatortype" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_location" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_partner" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_partnerworker" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_role" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transaction" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_worksession" behavior="0" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="customeraddress" behavior="1" />
+      <RootComponent type="9" schemaName="ccllc_channeltypeoptions" behavior="0" />
+      <RootComponent type="9" schemaName="ccllc_customerinteractionscopeoptions" behavior="0" />
+      <RootComponent type="60" id="{3432e14b-3c41-4679-a519-b47cef906951}" behavior="0" />
+      <RootComponent type="60" id="{3abd63a6-7f4c-446c-a1ea-beb824e0e592}" behavior="0" />
+      <RootComponent type="60" id="{4e080e7c-a256-44b3-89a0-f8732650d0fb}" behavior="0" />
+      <RootComponent type="60" id="{5eb5e2de-d16f-45de-be8f-15a72e0029e3}" behavior="0" />
+      <RootComponent type="60" id="{7e94dcda-340d-4370-aaa5-de2cb8b571aa}" behavior="0" />
+      <RootComponent type="60" id="{81b696dd-2f37-423d-acd9-c50264b4aa72}" behavior="0" />
+      <RootComponent type="60" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" behavior="0" />
+      <RootComponent type="60" id="{f22f4792-9d14-4ccc-924e-443418ef48bb}" behavior="0" />
+      <RootComponent type="60" id="{faa79e10-0ba3-439c-a4ac-f722334d5823}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.1001)" />
+        <Dependent key="1" type="60" displayName="Information" parentDisplayName="Agent" id="{5eb5e2de-d16f-45de-be8f-15a72e0029e3}" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

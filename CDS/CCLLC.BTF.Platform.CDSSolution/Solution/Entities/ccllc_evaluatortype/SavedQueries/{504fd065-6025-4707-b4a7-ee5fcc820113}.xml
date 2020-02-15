@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{504fd065-6025-4707-b4a7-ee5fcc820113}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" preview="1" icon="1" select="1" jump="ccllc_name">
+        <row id="ccllc_evaluatortypeid" name="result">
+          <cell name="ccllc_name" width="300" />
+          <cell name="ccllc_assemblyname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_classname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="modifiedon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch mapping="logical" version="1.0">
+        <entity name="ccllc_evaluatortype">
+          <attribute name="ccllc_name" />
+          <order descending="false" attribute="ccllc_name" />
+          <filter type="and">
+            <condition value="0" attribute="statecode" operator="eq" />
+          </filter>
+          <attribute name="modifiedon" />
+          <attribute name="ccllc_classname" />
+          <attribute name="ccllc_assemblyname" />
+          <attribute name="ccllc_evaluatortypeid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Evaluator Types" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

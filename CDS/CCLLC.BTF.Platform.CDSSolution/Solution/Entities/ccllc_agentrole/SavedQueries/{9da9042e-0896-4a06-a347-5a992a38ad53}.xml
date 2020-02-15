@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9da9042e-0896-4a06-a347-5a992a38ad53}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" preview="1" icon="1" select="1" jump="ccllc_name">
+        <row id="ccllc_agentroleid" name="result">
+          <cell name="ccllc_agentid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_roleid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="modifiedon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch mapping="logical" version="1.0">
+        <entity name="ccllc_agentrole">
+          <order descending="false" attribute="ccllc_agentid" />
+          <order descending="false" attribute="ccllc_roleid" />
+          <filter type="and">
+            <condition value="0" attribute="statecode" operator="eq" />
+          </filter>
+          <attribute name="ccllc_roleid" />
+          <attribute name="modifiedon" />
+          <attribute name="ccllc_agentid" />
+          <attribute name="ccllc_agentroleid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Agent Roles" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.1.0.12629" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>CCLLCBTFRevenue</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="CCLLC.BTF.Revenue" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Defines entities and processes used for capturing and reporting revenue within the Business Transaction Framework. This solution is dependent on the CCLLC.BTF.Platform solution." languagecode="1033" />
+    </Descriptions>
+    <Version>0.0.0.1</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>colsoncodellc</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Colson Code, LLC" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Colson Code, LLC" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl>https://github.com/ScottColson/CCLLC.Xrm.Development/wiki</SupportingWebsiteUrl>
+      <CustomizationPrefix>ccllc</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>14267</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="ccllc_appliedfee" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_fee" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="3" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

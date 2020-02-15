@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{5eb5e2de-d16f-45de-be8f-15a72e0029e3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{ae29db75-befb-4c64-87b8-55783539fac3}" name="{ae29db75-befb-4c64-87b8-55783539fac3}" IsUserDefined="1" verticallayout="true" showlabel="true" locklevel="0" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="{a7b9d04c-6fda-4c84-b590-c53348672454}" IsUserDefined="0" showlabel="false" showbar="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bbb2cc95-76fd-4104-935b-8d8f46af6465}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b7432289-7537-3552-7a0c-60d05146c891}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_agenttype" datafieldname="ccllc_agenttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a16e6ccd-64e1-7412-9dd8-c675c41ee1d4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_userid" datafieldname="ccllc_userid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="66%">
+              <sections>
+                <section id="{ce03c8e9-c567-260b-ca0d-30456a1833db}" name="ref_pan_{ae29db75-befb-4c64-87b8-55783539fac3}_section_4" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" autoexpand="false" rowheight="25" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a73cc4bb-66e9-8979-7ab1-2a28ab368c82}" showlabel="false" rowspan="6" auto="false" colspan="1">
+                        <labels>
+                          <label description="Agent Roles (Agent)" languagecode="1033" />
+                        </labels>
+                        <control id="Roles" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{55c89925-22c0-be48-04c2-8c63a0ec74e2}">
+                          <parameters>
+                            <ViewId>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_agent_agentrole</RelationshipName>
+                            <TargetEntityType>ccllc_agentrole</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <ReferencePanelSubgridIconUrl>msdyn_/Images/AppModule_Default_Icon.png</ReferencePanelSubgridIconUrl>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{d9638170-9e95-92bc-7565-55b0ec7c4a5c}" showlabel="false" rowspan="6" auto="false" colspan="1">
+                        <labels>
+                          <label description="Prohibited Customers" languagecode="1033" />
+                        </labels>
+                        <control id="ProhibitedCustomers" classid="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}">
+                          <parameters>
+                            <ViewId>{53857CA8-C2CB-4601-89ED-A543342216BA}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_agent_prohibitedcustomer</RelationshipName>
+                            <TargetEntityType>ccllc_agentprohibitedcustomer</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{53857CA8-C2CB-4601-89ED-A543342216BA}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <ReferencePanelSubgridIconUrl>msdyn_/Images/Area_Default_Icon.png</ReferencePanelSubgridIconUrl>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem Id="nav_ccllc_agent_authorizedcustomer" Area="Info" Sequence="10001" RelationshipName="ccllc_agent_authorizedcustomer">
+            <Titles>
+              <Title Text="Authorized Customers" LCID="1033" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Id="nav_ccllc_agent_prohibitedcustomer" Area="Info" Sequence="10002" RelationshipName="ccllc_agent_prohibitedcustomer" Show="true">
+            <Titles>
+              <Title Text="Agent Prohibited Customers" LCID="1033" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{55c89925-22c0-be48-04c2-8c63a0ec74e2}">
+          <customControl id="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}" formFactor="0">
+            <parameters>
+              <ViewId>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewId>
+              <IsUserView>false</IsUserView>
+              <RelationshipName>ccllc_agent_agentrole</RelationshipName>
+              <TargetEntityType>ccllc_agentrole</TargetEntityType>
+              <AutoExpand>Fixed</AutoExpand>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableViewPicker>false</EnableViewPicker>
+              <ViewIds>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewIds>
+              <EnableJumpBar>false</EnableJumpBar>
+              <ChartGridMode>All</ChartGridMode>
+              <VisualizationId />
+              <IsUserChart>false</IsUserChart>
+              <EnableChartPicker>true</EnableChartPicker>
+              <RecordsPerPage>4</RecordsPerPage>
+              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+              <ReferencePanelSubgridIconUrl>msdyn_/Images/AppModule_Default_Icon.png</ReferencePanelSubgridIconUrl>
+            </parameters>
+          </customControl>
+          <customControl id="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}" formFactor="1">
+            <parameters>
+              <ViewId>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewId>
+              <IsUserView>false</IsUserView>
+              <RelationshipName>ccllc_agent_agentrole</RelationshipName>
+              <TargetEntityType>ccllc_agentrole</TargetEntityType>
+              <AutoExpand>Fixed</AutoExpand>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableViewPicker>false</EnableViewPicker>
+              <ViewIds>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewIds>
+              <EnableJumpBar>false</EnableJumpBar>
+              <ChartGridMode>All</ChartGridMode>
+              <VisualizationId />
+              <IsUserChart>false</IsUserChart>
+              <EnableChartPicker>true</EnableChartPicker>
+              <RecordsPerPage>4</RecordsPerPage>
+              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+              <ReferencePanelSubgridIconUrl>msdyn_/Images/AppModule_Default_Icon.png</ReferencePanelSubgridIconUrl>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{9DA9042E-0896-4A06-A347-5A992A38AD53}</ViewId>
+                <columnsDefaultView>
+                  <cell entityName="ccllc_agentrole" viewId="{9DA9042E-0896-4A06-A347-5A992A38AD53}" attributeName="ccllc_roleid">
+                    <DefaultViewId>{83BB72CA-6449-4B52-BFA4-1DD31E34C998}</DefaultViewId>
+                    <DependentAttributeType>systemuser</DependentAttributeType>
+                    <AllowFilterOff>false</AllowFilterOff>
+                    <DisableQuickFind>false</DisableQuickFind>
+                  </cell>
+                </columnsDefaultView>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>ccllc_agent_agentrole</RelationshipName>
+                <TargetEntityType>ccllc_agentrole</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{9DA9042E-0896-4A06-A347-5A992A38AD53}</FilteredViewIds>
+              </data-set>
+              <EnableGroupBy type="Enum" static="true">yes</EnableGroupBy>
+              <EnableEditing type="Enum" static="true">yes</EnableEditing>
+              <ReflowBehavior type="Enum" static="true">GridOnly</ReflowBehavior>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <HideNestedGridColumnHeader type="Enum" static="true">no</HideNestedGridColumnHeader>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

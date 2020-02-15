@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{3f5e65cd-de82-4ac6-83fa-a9ff1926250d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="ccllc_name" select="1" icon="1" preview="1">
+        <row name="result" id="ccllc_agentid">
+          <cell name="ccllc_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ccllc_agent">
+          <attribute name="ccllc_agentid" />
+          <attribute name="ccllc_name" />
+          <attribute name="createdon" />
+          <order attribute="ccllc_name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Agent Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

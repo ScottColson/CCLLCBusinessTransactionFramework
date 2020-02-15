@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships>
+  <EntityRelationship Name="business_unit_ccllc_appliedfee" />
+  <EntityRelationship Name="business_unit_ccllc_fee" />
+  <EntityRelationship Name="ccllc_fee_appliedfee" />
+  <EntityRelationship Name="ccllc_transaction_appliedfee" />
+  <EntityRelationship Name="lk_ccllc_appliedfee_createdby" />
+  <EntityRelationship Name="lk_ccllc_appliedfee_modifiedby" />
+  <EntityRelationship Name="lk_ccllc_fee_createdby" />
+  <EntityRelationship Name="lk_ccllc_fee_modifiedby" />
+  <EntityRelationship Name="owner_ccllc_appliedfee" />
+  <EntityRelationship Name="owner_ccllc_fee" />
+  <EntityRelationship Name="team_ccllc_appliedfee" />
+  <EntityRelationship Name="team_ccllc_fee" />
+  <EntityRelationship Name="user_ccllc_appliedfee" />
+  <EntityRelationship Name="user_ccllc_fee" />
+</EntityRelationships>
