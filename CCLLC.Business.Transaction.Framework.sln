@@ -9,10 +9,53 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Platform", "Share
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Platform.CDS", "Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.shproj", "{A9A5D524-42A9-44B7-80ED-AF5EC522CBEE}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Documents", "Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.shproj", "{C49BCDEA-04F3-4DD5-A175-E3123DCAC337}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Documents.CDS", "Shared Projects\CCLLC.BTF.Documents.CDS\CCLLC.BTF.Documents.CDS.shproj", "{9CA7A500-F717-4F34-9F05-DC0C0E59F1F8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Revenue", "Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.shproj", "{C9FAE0CA-731B-4006-AE5E-D8B5C6E16325}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Revenue.CDS", "Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.shproj", "{DF1D0D6F-6119-4A6D-8506-1BB1D4D3E60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.BTF.Revenue.CDS", "Library Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.csproj", "{08AFC78A-4E80-4211-B9EC-01505A38E05B}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Process", "Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.shproj", "{3660CDCF-ABCB-4F39-867D-D63499BF6C6F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Process.CDS", "Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.shproj", "{E6FF234B-606C-4B40-8EA7-F2619AA96C53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.BTF.Process.CDS", "CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.csproj", "{E901289B-4A80-465F-84DE-9BD1FA6B587E}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems*{08afc78a-4e80-4211-b9ec-01505a38e05b}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{08afc78a-4e80-4211-b9ec-01505a38e05b}*SharedItemsImports = 4
 		Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{29c88c19-2980-46d8-9172-aea759e9d1c1}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{3660cdcf-abcb-4f39-867d-d63499bf6c6f}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Documents.CDS\CCLLC.BTF.Documents.CDS.projitems*{9ca7a500-f717-4f34-9f05-dc0c0e59f1f8}*SharedItemsImports = 13
 		Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems*{a9a5d524-42a9-44b7-80ed-af5ec522cbee}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{c49bcdea-04f3-4dd5-a175-e3123dcac337}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{c9fae0ca-731b-4006-ae5e-d8b5c6e16325}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems*{df1d0d6f-6119-4a6d-8506-1bb1d4d3e60f}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{e6ff234b-606c-4b40-8ea7-f2619aa96c53}*SharedItemsImports = 13
+		Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{e901289b-4a80-465f-84de-9bd1fa6b587e}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{e901289b-4a80-465f-84de-9bd1fa6b587e}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{e901289b-4a80-465f-84de-9bd1fa6b587e}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{e901289b-4a80-465f-84de-9bd1fa6b587e}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{e901289b-4a80-465f-84de-9bd1fa6b587e}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08AFC78A-4E80-4211-B9EC-01505A38E05B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08AFC78A-4E80-4211-B9EC-01505A38E05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08AFC78A-4E80-4211-B9EC-01505A38E05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08AFC78A-4E80-4211-B9EC-01505A38E05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E901289B-4A80-465F-84DE-9BD1FA6B587E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E901289B-4A80-465F-84DE-9BD1FA6B587E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E901289B-4A80-465F-84DE-9BD1FA6B587E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E901289B-4A80-465F-84DE-9BD1FA6B587E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -20,6 +63,12 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{29C88C19-2980-46D8-9172-AEA759E9D1C1} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
 		{A9A5D524-42A9-44B7-80ED-AF5EC522CBEE} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{C49BCDEA-04F3-4DD5-A175-E3123DCAC337} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{9CA7A500-F717-4F34-9F05-DC0C0E59F1F8} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{C9FAE0CA-731B-4006-AE5E-D8B5C6E16325} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{DF1D0D6F-6119-4A6D-8506-1BB1D4D3E60F} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{3660CDCF-ABCB-4F39-867D-D63499BF6C6F} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
+		{E6FF234B-606C-4B40-8EA7-F2619AA96C53} = {BA0B3086-BF56-4D32-971B-63226716E8AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7403D67E-7079-4705-9BC5-11C933EFDED3}
