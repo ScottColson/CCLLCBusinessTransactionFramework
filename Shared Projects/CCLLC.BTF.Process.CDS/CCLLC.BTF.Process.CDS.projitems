@@ -9,35 +9,41 @@
     <Import_RootNamespace>CCLLC.BTF.Process.CDS</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_alternatebranch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processstep.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processstepauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processsteprequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processsteptype.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_stephistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiongroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactioninitialfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionprocess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionrequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionrequirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontype.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedrole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypecontext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DefaultRequirementEvaluator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_alternatebranch.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processauthorizedchannel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processstep.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processstepauthorizedchannel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processsteprequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processsteptype.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_requirementwaiverrole.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_stephistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_alternatebranch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processstep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processstepauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processsteprequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processsteptype.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_requirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_stephistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transaction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiongroup.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactioninitialfee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionprocess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionrequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionrequirementwaiverrole.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontype.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypeauthorizedchannel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypeauthorizedrole.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypecontext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiongroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactioninitialfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionprocess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionrequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionrequirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontype.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypecontext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
@@ -84,7 +90,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)TransactionContextRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionDataRecord.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionManagerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)spkl\earlybound.bat" />

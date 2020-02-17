@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CCLLC.BTF.Process
 {
@@ -6,6 +7,28 @@ namespace CCLLC.BTF.Process
 
     public interface ITransactionDataConnector
     {
+        IList<IAuthroizedChannelRecord> GetAllTransactionAuthorizedChannels(IDataService dataService);
+
+        IList<IAuthroizedChannelRecord> GetAllStepAuthorizedChannels(IDataService dataService);
+
+        IList<IAuthroizedRoleRecord> GetAllAuthorizedRoles(IDataService dataService);
+
+        IList<IInitialFeeRecord> GetAllInitialFees(IDataService dataService);
+
+        IList<ITransactionContextType> GetAllTransactionContextTypes(IDataService dataService);
+
+        IList<ITransactionGroup> GetAllTransactionGroups(IDataService dataService);
+
+        IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService);
+
+        IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService);
+
+        IList<ITransactionTypeRecord> GetAllTransactionTypeRecords(IDataService dataService);
+
+        IList<IProcessStepRecord> GetAllProcessSteps(IDataService dataService);
+
+        IList<ITransactionProcessRecord> GetAllTransactionProcesses(IDataService dataService);
+
         ITransactionRecord GetTransactionRecord(IDataService dataService, IRecordPointer<Guid> recordId);
 
         ITransactionRecord NewTransactionRecord(IDataService dataService, IRecordPointer<Guid> initiatingAgentId, IRecordPointer<Guid> initiatingLocaitonId, IRecordPointer<Guid> customerId, IRecordPointer<Guid> contextRecordId, IRecordPointer<Guid> transactionTypeId, IRecordPointer<Guid> initiatingProcessId, IRecordPointer<Guid> currentProcessId, IRecordPointer<Guid> currentStepId, string name);
@@ -18,5 +41,11 @@ namespace CCLLC.BTF.Process
         ITransactionContextRecord GetTransactionContextRecord(IDataService dataService, IRecordPointer<Guid> contextRecordId);
 
         ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId);
+
+        IList<IProcessStepTypeRecord> GetAllStepTypes(IDataService dataService);
+
+        IList<IStepRequirement> GetAllStepRequirements(IDataService dataService);
+
+        IList<IAlternateBranchRecord> GetAlternateBranches(IDataService dataService);
     }
 }

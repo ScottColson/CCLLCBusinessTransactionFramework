@@ -11,7 +11,7 @@ namespace CCLLC.BTF.Process
         private List<ITransactionRequirement> _requirements;
         private List<IRecordPointer<Guid>> _authorizedRoles;
         private List<ITransactionProcess> _availableProcesses;
-        private List<IContextType> _eligibleContexts;
+        private List<ITransactionContextType> _eligibleContexts;
         private List<IRecordPointer<Guid>> _authorizedChannels;
         private List<IRecordPointer<Guid>> _initialFeeSchedule;
        
@@ -21,7 +21,7 @@ namespace CCLLC.BTF.Process
 
         public ITransactionGroup Group { get;  }
 
-        public Guid StartUpProcessId { get;  }
+        public IRecordPointer<Guid> StartUpProcessId { get;  }
 
         public ISerializedParameters TransactionDataRecordType { get; }               
 
@@ -31,7 +31,7 @@ namespace CCLLC.BTF.Process
 
         public IReadOnlyList<ITransactionProcess> AvailableProcesses => _availableProcesses;
 
-        public IReadOnlyList<IContextType> EligibleContexts => _eligibleContexts;       
+        public IReadOnlyList<ITransactionContextType> EligibleContexts => _eligibleContexts;       
 
         public IReadOnlyList<IRecordPointer<Guid>> InitialFeeSchedule => _initialFeeSchedule;
 
@@ -39,7 +39,7 @@ namespace CCLLC.BTF.Process
 
         public IReadOnlyList<string> AffectedRecordTypes => throw new NotImplementedException();
 
-        protected internal TransactionType(IRecordPointer<Guid> transactionTypeId, string name, int displayRank, ITransactionGroup group, Guid startupProcessId, ISerializedParameters dataRecordType, IEnumerable<IRecordPointer<Guid>> authorizedChannels, IEnumerable<IRecordPointer<Guid>> authorizedRoles, IEnumerable<ITransactionProcess> processes, IEnumerable<ITransactionRequirement> requirements, IEnumerable<IRecordPointer<Guid>> initialFees, IEnumerable<IContextType> contexts )
+        protected internal TransactionType(IRecordPointer<Guid> transactionTypeId, string name, int displayRank, ITransactionGroup group, IRecordPointer<Guid> startupProcessId, ISerializedParameters dataRecordType, IEnumerable<IRecordPointer<Guid>> authorizedChannels, IEnumerable<IRecordPointer<Guid>> authorizedRoles, IEnumerable<ITransactionProcess> processes, IEnumerable<ITransactionRequirement> requirements, IEnumerable<IRecordPointer<Guid>> initialFees, IEnumerable<ITransactionContextType> contexts )
         : base(transactionTypeId)
         {            
             this.Name = name;

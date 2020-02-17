@@ -12,5 +12,6 @@ namespace CCLLC.BTF.Process
     {
         bool BlockProcessProgress { get; }
         IRecordPointer<Guid> RequirementId { get; }
+        IRecordPointer<Guid> ProcessStepId { get; }
     }
 }

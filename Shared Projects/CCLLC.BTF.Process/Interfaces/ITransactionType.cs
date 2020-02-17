@@ -14,11 +14,11 @@ namespace CCLLC.BTF.Process
         string Name { get; }
         int DisplayRank { get; }
         ITransactionGroup Group { get; }
-        Guid StartUpProcessId { get; }
+        IRecordPointer<Guid> StartUpProcessId { get; }
         ISerializedParameters TransactionDataRecordType { get; }
         IReadOnlyList<string> AffectedRecordTypes { get; }
         IReadOnlyList<ITransactionProcess> AvailableProcesses { get; }
-        IReadOnlyList<IContextType> EligibleContexts { get; }
+        IReadOnlyList<ITransactionContextType> EligibleContexts { get; }
         IReadOnlyList<IRecordPointer<Guid>> AuthorizedRoles { get; }
         IReadOnlyList<IRecordPointer<Guid>> AuthorizedChannels { get; }
         IReadOnlyList<IRecordPointer<Guid>> InitialFeeSchedule { get; }

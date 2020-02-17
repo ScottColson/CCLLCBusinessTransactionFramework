@@ -2,14 +2,11 @@
 using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
-{ 
-    public partial class ccllc_transactioninitialfee
+{
+    public partial class ccllc_transactioninitialfee : IInitialFeeRecord
     {
-        internal IRecordPointer<Guid> GetFee()
-        {
-            if (this.ccllc_FeeId == null) throw new ArgumentNullException("ccllc_FeeId is null.");
+        public IRecordPointer<Guid> FeeId => this.ccllc_FeeId?.ToRecordPointer();
 
-            return this.ccllc_FeeId.ToRecordPointer();
-        }
+        public IRecordPointer<Guid> TransactionTypeId => this.ccllc_TransactionTypeId?.ToRecordPointer();       
     }
 }

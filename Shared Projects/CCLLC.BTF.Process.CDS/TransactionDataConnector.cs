@@ -1,13 +1,32 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using Xrm.Oss.FluentQuery;
 
 namespace CCLLC.BTF.Process.CDS
 {
+    using System.Collections.Generic;
     using CCLLC.Core;
 
     public class TransactionDataConnector : ITransactionDataConnector
     {
+        public IList<ITransactionGroup> GetAllTransactionGroups(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactiongroup>()
+                   .IncludeColumns("ccllc_transactiongroupid", "ccllc_name", "ccllc_displayrank")
+                   .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                   .RetrieveAll().ToList<ITransactionGroup>();
+        }
+
+        public IList<ITransactionTypeRecord> GetAllTransactionTypeRecords(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactiontype>()
+                   .IncludeColumns("ccllc_transactiontypeid", "ccllc_name", "ccllc_displayrank", "ccllc_datarecordconfiguration")
+                   .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                   .RetrieveAll().ToList<ITransactionTypeRecord>();
+        }
+
         public ITransactionDataRecord GetFirstMatchingTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField)
         {
             try
@@ -102,6 +121,28 @@ namespace CCLLC.BTF.Process.CDS
 
         }
 
+        public IList<IAuthroizedChannelRecord> GetAllTransactionAuthorizedChannels(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactiontypeauthorizedchannel>()
+                     .IncludeColumns("ccllc_channelid", "ccllc_transactiontypeid")
+                     .Where(e => e
+                         .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                         .Attribute(a => a.Named("ccllc_channelid").Is(ConditionOperator.NotNull))
+                         .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
+                     .RetrieveAll().ToList<IAuthroizedChannelRecord>();
+        }
+
+        public IList<IAuthroizedRoleRecord> GetAllAuthorizedRoles(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactiontypeauthorizedrole>()
+                    .IncludeColumns("ccllc_roleid", "ccllc_transactiontypeid")
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                        .Attribute(a => a.Named("ccllc_roleid").Is(ConditionOperator.NotNull))
+                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
+                    .RetrieveAll().ToList<IAuthroizedRoleRecord>();
+        }
+
         public ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId)
         {
             try
@@ -172,6 +213,101 @@ namespace CCLLC.BTF.Process.CDS
             {
                 throw ex;
             }
+        }
+
+        public IList<IInitialFeeRecord> GetAllInitialFees(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactioninitialfee>()
+                    .IncludeColumns("ccllc_feeid", "ccllc_transactiontypeid")
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                        .Attribute(a => a.Named("ccllc_feeid").Is(ConditionOperator.NotNull))
+                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
+                    .RetrieveAll().ToList<IInitialFeeRecord>();
+        }
+
+        public IList<ITransactionContextType> GetAllTransactionContextTypes(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactiontypecontext>()
+                    .IncludeAllColumns()
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
+                    .RetrieveAll().ToList<ITransactionContextType>();
+        }
+
+        public IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactionrequirement>()
+                    .IncludeAllColumns()
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                        .Attribute(a => a.Named("ccllc_evaluatortypeid").Is(ConditionOperator.NotNull))
+                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
+                    .RetrieveAll().ToList<ITransactionRequirementRecord>();
+        }
+
+        public IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactionrequirementwaiverrole>()
+                    .IncludeAllColumns()
+                    .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                    .RetrieveAll().ToList<IRequirementWaiverRole>();
+        }
+
+        public IList<ITransactionProcessRecord> GetAllTransactionProcesses(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_transactionprocess>()
+                .IncludeAllColumns()
+                .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                .RetrieveAll().ToList<ITransactionProcessRecord>();
+        }
+
+        public IList<IProcessStepRecord> GetAllProcessSteps(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_processstep>()
+                   .IncludeAllColumns()
+                   .Where(e => e
+                       .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).Value(0))
+                        .Attribute(a => a.Named("ccllc_processsteptypeid").Is(ConditionOperator.NotNull)))
+                   .RetrieveAll().ToList<IProcessStepRecord>();
+        }
+
+        public IList<IAuthroizedChannelRecord> GetAllStepAuthorizedChannels(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_processstepauthorizedchannel>()
+                   .IncludeAllColumns()
+                   .Where(e => e
+                       .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                   .RetrieveAll().ToList<IAuthroizedChannelRecord>();
+        }
+
+        public IList<IProcessStepTypeRecord> GetAllStepTypes(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_processsteptype>()
+                    .IncludeAllColumns()
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).Value<int>(0)))
+                    .RetrieveAll().ToList<IProcessStepTypeRecord>();
+
+        }
+
+        public IList<IStepRequirement> GetAllStepRequirements(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_processsteprequirement>()
+                    .IncludeAllColumns()
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                    .RetrieveAll().ToList<IStepRequirement>();
+        }
+
+        public IList<IAlternateBranchRecord> GetAlternateBranches(IDataService dataService)
+        {
+            return dataService.ToOrgService().Query<ccllc_alternatebranch>()
+                    .IncludeAllColumns()
+                    .Where(e => e
+                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                    .RetrieveAll().ToList<IAlternateBranchRecord>();
         }
     }
 }

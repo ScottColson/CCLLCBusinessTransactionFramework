@@ -6,5 +6,7 @@ namespace CCLLC.BTF.Process.CDS
         public string Name => this.ccllc_name;
 
         public int DisplayRank => this.ccllc_DisplayRank.HasValue ? this.ccllc_DisplayRank.Value : 0;
+
+        public string RecordType => this.LogicalName;
     }
 }

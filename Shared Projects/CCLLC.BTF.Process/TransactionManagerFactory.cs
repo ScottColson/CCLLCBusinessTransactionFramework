@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
 using CCLLC.Core;
 using CCLLC.BTF.Platform;
 using CCLLC.BTF.Revenue;
 using CCLLC.BTF.Documents;
-using Xrm.Oss.FluentQuery;
 
-namespace CCLLC.BTF.Process.CDS
+
+namespace CCLLC.BTF.Process
 {
     public class TransactionManagerFactory : ITransactionManagerFactory
     {
-        private const string CACHE_KEY = "CCLLC.BTF.Process.CDS.TransactionManagerFactory";
+        private const string CACHE_KEY = "CCLLC.BTF.Process.TransactionManagerFactory";
 
         protected ITransactionDataConnector DataConnector { get; }
         protected IAgentFactory AgentFactory { get; }
@@ -87,16 +85,9 @@ namespace CCLLC.BTF.Process.CDS
             {
 
                 IList<ITransactionType> registeredTransactions = new List<ITransactionType>();
-
-                var orgService = executionContext.DataService.ToOrgService();
-
-                // get all active transaction types that are registered.
-                var transactionTypes = orgService.Query<ccllc_transactiontype>()
-                   .IncludeAllColumns()
-                   .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                   .RetrieveAll();
-
-                executionContext.Trace("Retrieved {0} Transaction Type records.", transactionTypes.Count);
+                                
+                var transactionTypeRecords = DataConnector.GetAllTransactionTypeRecords(executionContext.DataService);   
+                executionContext.Trace("Retrieved {0} Transaction Type records.", transactionTypeRecords.Count);
 
                 // get all active records that are needed to fully define a transaction type. This includes complex objects for ITransactionProcess 
                 // and ITransactionRequirements as well as simplier objects for transaction groups, authorized channels, authorized roles, 
@@ -104,63 +95,32 @@ namespace CCLLC.BTF.Process.CDS
                 var processes = getProcesses(executionContext, cacheTimeOut);
 
                 var requirements = getRequirements(executionContext, cacheTimeOut);
-               
-                var transactionGroups = orgService.Query<ccllc_transactiongroup>()
-                    .IncludeColumns("ccllc_transactiongroupid", "ccllc_name", "ccllc_displayrank")
-                    .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll();
 
+                var transactionGroups = DataConnector.GetAllTransactionGroups(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Group records.", transactionGroups.Count);
 
-                var authorizedChannels = orgService.Query<ccllc_transactiontypeauthorizedchannel>()
-                     .IncludeColumns("ccllc_channelid", "ccllc_transactiontypeid")
-                     .Where(e => e
-                         .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
-                         .Attribute(a => a.Named("ccllc_channelid").Is(ConditionOperator.NotNull))
-                         .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
-                     .RetrieveAll();
-
+                var authorizedChannels = DataConnector.GetAllTransactionAuthorizedChannels(executionContext.DataService);   
                 executionContext.Trace("Retrieved {0} Transaction Authorized Channel records.", authorizedChannels.Count);
 
-                var authorizedRoles = orgService.Query<ccllc_transactiontypeauthorizedrole>()
-                    .IncludeColumns("ccllc_roleid", "ccllc_transactiontypeid")
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
-                        .Attribute(a => a.Named("ccllc_roleid").Is(ConditionOperator.NotNull))
-                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
-                    .RetrieveAll();
-
+                var authorizedRoles = DataConnector.GetAllAuthorizedRoles(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Authorized Role records.", authorizedRoles.Count);
 
-                var initialFees = orgService.Query<ccllc_transactioninitialfee>()
-                    .IncludeColumns("ccllc_feeid", "ccllc_transactiontypeid")
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
-                        .Attribute(a => a.Named("ccllc_feeid").Is(ConditionOperator.NotNull))
-                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
-                    .RetrieveAll();
-
+                var initialFees = DataConnector.GetAllInitialFees(executionContext.DataService);          
                 executionContext.Trace("Retrieved {0} Transaction Initial Fee records.", initialFees.Count);
 
-                var contexts = orgService.Query<ccllc_transactiontypecontext>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
-                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
-                    .RetrieveAll();
-
+                var contexts = DataConnector.GetAllTransactionContextTypes(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Type Context records.", contexts.Count);
 
                 // Create a new TransactionType object for each transaction type retrieved.
-                foreach (var t in transactionTypes)
+                foreach (var t in transactionTypeRecords)
                 {
-                    executionContext.Trace("Processing transaction type '{0}'", t.ccllc_name);
+                    executionContext.Trace("Processing transaction type '{0}'", t.Name);
 
                     ISerializedParameters dataRecordConfig = null;
                     try
                     {
                         executionContext.Trace("Parsing Data Record Configuration.");
-                        dataRecordConfig = this.ParameterSerializer.CreateParamters(t.ccllc_DataRecordConfiguration);
+                        dataRecordConfig = this.ParameterSerializer.CreateParamters(t.DataRecordConfiguration);
                         if (!dataRecordConfig.ContainsKey("RecordType")) throw new Exception("Missing RecordType.");
                         if (!dataRecordConfig.ContainsKey("CustomerField")) throw new Exception("Missing Customer Field");
                         if (!dataRecordConfig.ContainsKey("TransactionField")) throw new Exception("Missing Transaction Field");
@@ -172,18 +132,18 @@ namespace CCLLC.BTF.Process.CDS
                     }
 
                     registeredTransactions.Add(new TransactionType(
-                        t.ToRecordPointer(),
-                        t.ccllc_name,
-                        t.ccllc_DisplayRank.HasValue ? t.ccllc_DisplayRank.Value : 0,
-                        transactionGroups.Where(r => t.ccllc_TransactionGroupId != null && r.Id == t.ccllc_TransactionGroupId.Id).FirstOrDefault(),
-                        t.ccllc_StartupProcessId != null ? t.ccllc_StartupProcessId.Id : throw new Exception("Transaction type is missnig a startup process id."),
+                        t as RecordPointer<Guid>,
+                        t.Name,
+                        t.DisplayRank,
+                        transactionGroups.Where(r => t.TransactionGroupId != null && r.Id == t.TransactionGroupId.Id).FirstOrDefault(),
+                        t.StartupProcessId ?? throw new Exception("Transaction type is missnig a startup process id."),
                         dataRecordConfig,
-                        authorizedChannels.Where(r => r.ccllc_TransactionTypeId.Id == t.Id).Select(r => r.GetChannel()),
-                        authorizedRoles.Where(r => r.ccllc_TransactionTypeId.Id == t.Id).Select(r => r.GetRole()),
+                        authorizedChannels.Where(r => r.ParentId.Id == t.Id).Select(r => r.ChannelId),
+                        authorizedRoles.Where(r => r.ParentId.Id == t.Id).Select(r => r.RoleId),
                         processes.Where(r => r.TransactionTypeId.Id == t.Id),
                         requirements.Where(r => r.TransactionTypeId.Id == t.Id),
-                        initialFees.Where(r => r.ccllc_TransactionTypeId.Id == t.Id).Select(r => r.GetFee()),
-                        contexts.Where(r => r.ccllc_TransactionTypeId.Id == t.Id)));
+                        initialFees.Where(r => r.TransactionTypeId.Id == t.Id).Select(r => r.FeeId),
+                        contexts.Where(r => r.TransactionTypeId.Id == t.Id)));
                 }
 
                 executionContext.Trace("Creating Transaction Manager loaded with {0} Transaction Types.", registeredTransactions.Count);
@@ -216,50 +176,26 @@ namespace CCLLC.BTF.Process.CDS
             try
             {
                 IList<ITransactionRequirement> registeredRequirements = new List<ITransactionRequirement>();
+               
+                var requirements = DataConnector.GetAllTransactionRequirements(executionContext.DataService);
 
-                var orgService = executionContext.DataService.ToOrgService();
+                var waiverRoles = DataConnector.GetAllRequirementWaiverRoles(executionContext.DataService);
 
-                var requirements = orgService.Query<ccllc_transactionrequirement>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
-                        .Attribute(a => a.Named("ccllc_evaluatortypeid").Is(ConditionOperator.NotNull))
-                        .Attribute(a => a.Named("ccllc_transactiontypeid").Is(ConditionOperator.NotNull)))
-                    .RetrieveAll();
-
-                var waiverRoles = orgService.Query<ccllc_transactionrequirementwaiverrole>()
-                    .IncludeAllColumns()
-                    .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll().Select(r => r.GetRole());
-
-                foreach (var r in requirements)
+                foreach (var requirement in requirements)
                 {
-                    ILogicEvaluatorType evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, r.ccllc_EvaluatorTypeId.ToRecordPointer(), cacheTimeout);
-                    IEnumerable<OptionSetValue> options = (IEnumerable<OptionSetValue>)r.ccllc_TransactionRequirementTypeCode;
-
-                    eTransactionRequirementTypeFlags? flags = null;
-                    if (options != null)
-                    {
-                        foreach (var o in options)
-                        {
-                            var val = Enum.IsDefined(typeof(eTransactionRequirementTypeFlags), o.Value) ? (eTransactionRequirementTypeFlags)o.Value : throw new Exception("Invalid transaction requirement type.");
-                            if (flags == null)
-                            {
-                                flags = val;
-                            }
-                            else
-                            {
-                                flags = flags & val;
-                            }
-                        }
-                    }
+                    ILogicEvaluatorType evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, requirement.EvaluatorTypeId, cacheTimeout);
                     
-                    if(flags == null)
-                    {
-                        flags = eTransactionRequirementTypeFlags.Validation;
-                    }
-
-                    registeredRequirements.Add(RequirementFactory.CreateRequirement(executionContext, r.ToRecordPointer(), r.ccllc_name, flags, r.ccllc_TransactionTypeId.ToRecordPointer(), evaluatorType, r.ccllc_RequirementParameters, waiverRoles, cacheTimeout));
+                    registeredRequirements.Add(
+                        RequirementFactory.CreateRequirement(
+                            executionContext, 
+                            requirement as IRecordPointer<Guid>, 
+                            requirement.Name, 
+                            requirement.TypeFlag ?? eTransactionRequirementTypeFlags.Validation, 
+                            requirement.TransactionTypeId, 
+                            evaluatorType,
+                            requirement.RequirementParameters, 
+                            waiverRoles.Where(r => r.TransactionRequirementId != null && r.TransactionRequirementId.Id == requirement.Id).Select(r => r.RoleId), 
+                            cacheTimeout));
                 }
 
                 return registeredRequirements;
@@ -282,29 +218,26 @@ namespace CCLLC.BTF.Process.CDS
             try
             {
                 IList<ITransactionProcess> registeredProceses = new List<ITransactionProcess>();
-
-                var orgService = executionContext.DataService.ToOrgService();
-
-                var processes = orgService.Query<ccllc_transactionprocess>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll();
-
+               
+                var processes = DataConnector.GetAllTransactionProcesses(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Process records.", processes.Count);
 
                 var processSteps = getProcessSteps(executionContext, cacheTimeout);
 
-                foreach (var p in processes)
+                foreach (var process in processes)
                 {
-                    executionContext.Trace("Building Transaction Process {0}", p.ccllc_name);
-                    if (p.ccllc_InitialProcessStepId is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid);
-                    if (p.ccllc_TransactionTypeId is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid);
+                    executionContext.Trace("Building Transaction Process {0}", process.Name);
+                    
+                    var steps = processSteps.Where(s => s.TransactionProcessPointer.Id == process.Id);
 
-                    var steps = processSteps.Where(s => s.TransactionProcessPointer.Id == p.Id);
-
-                    registeredProceses.Add(this.TransactionProcessFactory.CreateTransactionProcess(executionContext, p.ToRecordPointer(), p.ccllc_name, p.ccllc_TransactionTypeId.ToRecordPointer(), p.ccllc_InitialProcessStepId.ToRecordPointer(), steps, cacheTimeout));
-
+                    registeredProceses.Add(
+                        this.TransactionProcessFactory.CreateTransactionProcess(
+                            executionContext, process as IRecordPointer<Guid>,
+                            process.Name,
+                            process.TransactionTypeId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid), 
+                            process.InitialProcessStepId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid),
+                            steps, 
+                            cacheTimeout));
                 }
 
                 return registeredProceses;
@@ -328,77 +261,56 @@ namespace CCLLC.BTF.Process.CDS
             {
                 IList<IProcessStep> registeredSteps = new List<IProcessStep>();
 
-                var orgService = executionContext.DataService.ToOrgService();
+                var steps = DataConnector.GetAllProcessSteps(executionContext.DataService);
 
-                var steps = orgService.Query<ccllc_processstep>()
-                   .IncludeAllColumns()
-                   .Where(e => e
-                       .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).Value(0))
-                        .Attribute(a => a.Named("ccllc_processsteptypeid").Is(ConditionOperator.NotNull)))
-                   .RetrieveAll();
+                var stepChannels = DataConnector.GetAllStepAuthorizedChannels(executionContext.DataService);
 
-                var stepTypes = orgService.Query<ccllc_processsteptype>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).Value<int>(0)))                       
-                    .RetrieveAll();
+                var stepTypes = DataConnector.GetAllStepTypes(executionContext.DataService);
 
-                var stepChannels = orgService.Query<ccllc_processstepauthorizedchannel>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll();
 
-                var stepRequirements = orgService.Query<ccllc_processsteprequirement>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll();
+                var stepRequirements = DataConnector.GetAllStepRequirements(executionContext.DataService);
 
-                var alternateBranches = orgService.Query<ccllc_alternatebranch>()
-                    .IncludeAllColumns()
-                    .Where(e => e
-                        .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
-                    .RetrieveAll();
+                var alternateBranches = DataConnector.GetAlternateBranches(executionContext.DataService);
 
                 var channels = PlatformManager.GetChannels(executionContext, cacheTimeout);
 
-                foreach (var s in steps)
+                foreach (var step in steps)
                 {
-                    var stype = stepTypes.Where(r => r.Id == s.ccllc_ProcessStepTypeId.Id).FirstOrDefault();
+                    var stype = stepTypes.Where(r => r.Id == step.ProcessStepTypeId.Id).FirstOrDefault();
 
                     if (stype == null) { throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepTypeNotFound); }
 
                     var processStepType = this.ProcessStepTypeFactory.CreateStepType(
                         executionContext, 
                         stype as IRecordPointer<Guid>, 
-                        stype.ccllc_name, stype.ccllc_SupportsConditionalBranching.HasValue ? stype.ccllc_SupportsConditionalBranching.Value : false , 
-                        stype.ccllc_AssemblyName, 
-                        stype.ccllc_ClassName, 
+                        stype.Name, 
+                        stype.SupportsConditionalBranching ?? false , 
+                        stype.AssemblyName, 
+                        stype.ClassName, 
                         cacheTimeout);
 
                     var assignedChannels = new List<IChannel>();
-                    foreach (var c in stepChannels.Where(r => r.ccllc_ProcessStepId != null && r.ccllc_ChannelId != null && r.ccllc_ProcessStepId.Id == s.Id))
+                    foreach (var c in stepChannels.Where(r => r.ParentId != null && r.ChannelId != null && r.ParentId.Id == step.Id))
                     {
-                        var channel = channels.Where(r => r.Id == c.ccllc_ChannelId.Id).FirstOrDefault();
+                        var channel = channels.Where(r => r.Id == c.ChannelId.Id).FirstOrDefault();
                         assignedChannels.Add(channel);
                     }
 
-                    var assignedRequirements = stepRequirements.Where(r => r.ccllc_ProcessStepId != null && r.ccllc_ProcessStepId.Id == s.Id);
+                    var assignedRequirements = stepRequirements.Where(r => r.ProcessStepId != null && r.ProcessStepId.Id == step.Id);
 
 
                     var assignedBranches = new List<IAlternateBranch>();
-                    foreach(var b in alternateBranches.Where(r => r.ccllc_ParentStepId != null && r.ccllc_ParentStepId.Id == s.Id))
+                    foreach(var b in alternateBranches.Where(r => r.ParentStepId != null && r.ParentStepId.Id == step.Id))
                     {
                         var branch = AlternateBranchFactory.CreateAlternateBranch(
                             executionContext, 
                             b as IRecordPointer<Guid>, 
-                            b.ccllc_name, 
-                            b.ccllc_EvaluationOrder.HasValue ? b.ccllc_EvaluationOrder.Value : 0,
-                            b.ccllc_ParentStepId?.ToRecordPointer(), 
-                            b.ccllc_SubsequentStepId?.ToRecordPointer(),
-                            b.ccllc_EvaluatorTypeId?.ToRecordPointer(),
-                            b.ccllc_EvaluationParameters,
+                            b.Name, 
+                            b.EvaluationOrder,
+                            b.ParentStepId, 
+                            b.SubsequentStepId,
+                            b.EvaluatorTypeId,
+                            b.EvaluationParameters,
                             cacheTimeout);
                         assignedBranches.Add(branch);
                     }
@@ -406,12 +318,12 @@ namespace CCLLC.BTF.Process.CDS
 
                     var processStep = ProcessStepFactory.CreateProcessStep(
                         executionContext, 
-                        s.ToRecordPointer(), 
-                        s.ccllc_name, 
-                        s.ccllc_TransactionProcessId != null ? s.ccllc_TransactionProcessId.ToRecordPointer() : null,
+                        step as IRecordPointer<Guid>, 
+                        step.Name, 
+                        step.TransactionProcessId,
                         processStepType, 
-                        s.ccllc_StepParameters,  
-                        s.ccllc_SubsequentStepId != null? s.ccllc_SubsequentStepId.ToRecordPointer() : null,
+                        step.StepParameters,  
+                        step.SubsequentStepId,
                         assignedBranches,
                         assignedChannels, 
                         assignedRequirements, 

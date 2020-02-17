@@ -15,8 +15,8 @@ namespace CCLLC.BTF.Process
         int RecordStatus { get; }
         ICustomer Customer { get; }
 
-        bool IsContextType(IContextType contextType);
-        bool IsContextType(IEnumerable<IContextType> contextTypes);
+        bool IsContextType(ITransactionContextType contextType);
+        bool IsContextType(IEnumerable<ITransactionContextType> contextTypes);
         
     }
 }

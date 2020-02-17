@@ -1,15 +1,13 @@
 ﻿using System;
-using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    public partial class ccllc_transactiontypeauthorizedrole
-    {
-        internal IRecordPointer<Guid> GetRole()
-        {
-            if (this.ccllc_RoleId == null) throw new ArgumentNullException("ccllc_RoleId is null.");
+    using CCLLC.Core;
 
-            return this.ccllc_RoleId.ToRecordPointer();
-        }
+    public partial class ccllc_transactiontypeauthorizedrole : IAuthroizedRoleRecord
+    {
+        public IRecordPointer<Guid> RoleId => this.ccllc_RoleId?.ToRecordPointer();
+
+        public IRecordPointer<Guid> ParentId => this.ccllc_TransactionTypeId?.ToRecordPointer();
     }
 }

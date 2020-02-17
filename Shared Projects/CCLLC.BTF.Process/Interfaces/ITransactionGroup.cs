@@ -2,13 +2,14 @@
 
 namespace CCLLC.BTF.Process
 {
+    using CCLLC.Core;
+
     /// <summary>
     /// Identifies a group used to organize <see cref="ITransactionType"/> records for
     /// display in the user interface.
     /// </summary>
-    public interface ITransactionGroup
+    public interface ITransactionGroup : IRecordPointer<Guid>
     {
-        Guid Id { get; }
         string Name { get; }
         int DisplayRank { get; }
     }

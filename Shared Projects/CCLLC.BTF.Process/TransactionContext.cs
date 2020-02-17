@@ -30,12 +30,12 @@ namespace CCLLC.BTF.Process
             this.Customer = customer;
         }
 
-        public bool IsContextType(IContextType contextType)
+        public bool IsContextType(ITransactionContextType contextType)
         {
             return (contextType != null && string.Compare(contextType.RecordType, this.RecordType, true) == 0);            
         }
 
-        public bool IsContextType(IEnumerable<IContextType> contextTypes)
+        public bool IsContextType(IEnumerable<ITransactionContextType> contextTypes)
         {
             foreach(var t in contextTypes)
             {

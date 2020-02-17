@@ -3,13 +3,10 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    public partial class ccllc_transactionrequirementwaiverrole
+    public partial class ccllc_transactionrequirementwaiverrole : IRequirementWaiverRole
     {
-        internal IRecordPointer<Guid> GetRole()
-        {
-            if (this.ccllc_RoleId == null) throw new ArgumentNullException("ccllc_RoleId is null.");
+        public IRecordPointer<Guid> TransactionRequirementId => this.ccllc_TransactionRequirementId?.ToRecordPointer();
 
-            return this.ccllc_RoleId.ToRecordPointer();
-        }
+        public IRecordPointer<Guid> RoleId => this.ccllc_RoleId?.ToRecordPointer();
     }
 }

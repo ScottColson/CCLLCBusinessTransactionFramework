@@ -123,7 +123,7 @@ namespace CCLLC.BTF.Process
 
                 if (transactionContext.Customer == null) throw new ArgumentException("Transaction context is missing required Customer.");
 
-                var initialProcess = transactionType.AvailableProcesses.Where(r => r.Id == transactionType.StartUpProcessId).FirstOrDefault();
+                var initialProcess = transactionType.AvailableProcesses.Where(r => r.Id == transactionType.StartUpProcessId.Id).FirstOrDefault();
                 if (initialProcess == null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessNotFound);
 
                 var initialStep = initialProcess.GetInitialStep();

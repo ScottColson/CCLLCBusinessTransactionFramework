@@ -4,13 +4,10 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    public partial class ccllc_processstepauthorizedchannel
+    public partial class ccllc_processstepauthorizedchannel : IAuthroizedChannelRecord
     {
-        internal IRecordPointer<Guid> GetChannel()
-        {
-            if (this.ccllc_ChannelId == null) throw new ArgumentNullException("ccllc_ChannelId is null.");
+        public IRecordPointer<Guid> ParentId => this.ccllc_ProcessStepId?.ToRecordPointer();
 
-            return ccllc_ChannelId.ToRecordPointer();
-        }
+        public IRecordPointer<Guid> ChannelId => this.ccllc_ChannelId?.ToRecordPointer();
     }
 }
