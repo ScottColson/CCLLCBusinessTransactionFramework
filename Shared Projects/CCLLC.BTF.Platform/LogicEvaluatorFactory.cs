@@ -16,7 +16,7 @@ namespace CCLLC.BTF.Platform
             this.ParameterSerializer = parameterSerializer;        
         }
 
-        public ILogicEvaluator BuildEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, ILogicEvaluatorType evaluatorType, string parameters, TimeSpan? cacheTimeOut = null)
+        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, ILogicEvaluatorType evaluatorType, string parameters, TimeSpan? cacheTimeOut = null)
         {
             string recordKey = CACHE_KEY + evaluatorId.Id.ToString();
             bool useCache = executionContext.Cache != null && cacheTimeOut != null;
@@ -43,7 +43,7 @@ namespace CCLLC.BTF.Platform
         }
 
 
-        public ILogicEvaluator BuildEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, IRecordPointer<Guid> evaluatorTypeId, string evaluatorTypeName, string implementationAssemblyName, string implementationClassName, string parameters, TimeSpan? cacheTimeout = null)
+        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, IRecordPointer<Guid> evaluatorTypeId, string evaluatorTypeName, string implementationAssemblyName, string implementationClassName, string parameters, TimeSpan? cacheTimeout = null)
         {
             string recordKey = CACHE_KEY + evaluatorId.Id.ToString();
             bool useCache = executionContext.Cache != null && cacheTimeout != null;
@@ -61,7 +61,7 @@ namespace CCLLC.BTF.Platform
             {
                 var evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, evaluatorTypeId, evaluatorTypeName, implementationAssemblyName, implementationClassName, cacheTimeout);
 
-                return this.BuildEvaluator(executionContext, evaluatorId, evaluatorType, parameters, cacheTimeout);
+                return this.CreateEvaluator(executionContext, evaluatorId, evaluatorType, parameters, cacheTimeout);
 
             }
             catch(Exception)

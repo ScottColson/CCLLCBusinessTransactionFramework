@@ -7,7 +7,7 @@ namespace CCLLC.BTF.Documents.CDS
 
     public class DocumentManager : IDocumentManager
     {
-        public IList<IGeneratedDocument> LoadGeneratedDocuments(IProcessExecutionContext executionContext, Guid transactionId, TimeSpan? CacheTimeout = null)
+        public IList<IGeneratedDocument> LoadGeneratedDocuments(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, TimeSpan? CacheTimeout = null)
         {
             throw new NotImplementedException();
         }
