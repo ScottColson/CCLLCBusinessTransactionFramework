@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e6ff234b-606c-4b40-8ea7-f2619aa96c53</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CCLLC.BTF.Process.CDS</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processstepauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_processsteprequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_stephistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiongroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactioninitialfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionrequirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypecontext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultRequirementEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_alternatebranch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processstep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processstepauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processsteprequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_processsteptype.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_requirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_stephistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiongroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactioninitialfee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionprocess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionrequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactionrequirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontype.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypeauthorizedchannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypeauthorizedrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\s3_transactiontypecontext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_alternatebranchState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_alternatebranch_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processauthorizedchannelState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processauthorizedchannel_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processstepauthorizedchannelState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processstepauthorizedchannel_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processsteprequirementState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processsteprequirement_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processstepState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processsteptypeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processsteptype_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_processstep_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_requirementwaiverroleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_requirementwaiverrole_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_stephistoryState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_stephistory_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiongroupState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiongroup_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactioninitialfeeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactioninitialfee_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionprocessState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionprocess_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionrequirementState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionrequirementwaiverroleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionrequirementwaiverrole_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionrequirement_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactionState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypeauthorizedchannelState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypeauthorizedchannel_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypeauthorizedroleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypeauthorizedrole_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypecontextState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypecontext_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontypeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transactiontype_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_transaction_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StepHistoryDataConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StepType\ContextRecordAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StepType\DataRecordAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionContextRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDataConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDataRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionManagerFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)spkl\earlybound.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)spkl.json" />
+  </ItemGroup>
+</Project>
