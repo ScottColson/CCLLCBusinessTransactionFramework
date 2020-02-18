@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f63b98c9-2c48-4e61-8ef3-bf85a21ab354}</savedqueryid>
+    <layoutxml>
+      <grid name="" jump="ccllc_name" select="1" icon="1" preview="1">
+        <row name="ccllc_transactiongroup" id="ccllc_transactiongroupid">
+          <cell name="ccllc_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ccllc_transactiongroup">
+          <attribute name="ccllc_transactiongroupid" />
+          <attribute name="ccllc_name" />
+          <attribute name="createdon" />
+          <order attribute="ccllc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Transaction Group Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

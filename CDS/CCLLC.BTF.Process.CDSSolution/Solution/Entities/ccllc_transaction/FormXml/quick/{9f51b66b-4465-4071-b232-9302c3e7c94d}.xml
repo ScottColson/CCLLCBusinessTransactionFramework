@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{9f51b66b-4465-4071-b232-9302c3e7c94d}</formid>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab id="{fb13335d-9c3b-4bc3-b822-4cc9ac2824ce}" name="tab_1" showlabel="false">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{4a53bd43-54bc-458d-9948-a469aafc3881}" name="tab_1_column_1_section_1" showlabel="false" IsUserDefined="0" showbar="false" columns="1">
+                  <labels>
+                    <label description="section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ecb3a688-6e06-8728-d1a0-94176046eb23}" showlabel="false" colspan="1" auto="false" rowspan="7">
+                        <labels>
+                          <label description="Step History (Transaction)" languagecode="1033" />
+                        </labels>
+                        <control id="ProcessHistory" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{28B3CCA2-DED6-E811-A970-000D3A3AC0C2}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transaction_stephistory</RelationshipName>
+                            <TargetEntityType>ccllc_stephistory</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{42E29071-0B20-43D3-9479-076A93B49191},{28B3CCA2-DED6-E811-A970-000D3A3AC0C2}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="4">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Process History" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

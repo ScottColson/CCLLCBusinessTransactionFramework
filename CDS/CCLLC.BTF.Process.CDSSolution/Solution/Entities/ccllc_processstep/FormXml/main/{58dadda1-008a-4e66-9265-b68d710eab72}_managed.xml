@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{58dadda1-008a-4e66-9265-b68d710eab72}</formid>
+    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{22df890d-d3b0-49c4-b694-e79d8cb78af5}" name="{22df890d-d3b0-49c4-b694-e79d8cb78af5}" IsUserDefined="1" verticallayout="true" showlabel="true" locklevel="0" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="{0a08cbc1-a887-4996-8794-062877acb475}" IsUserDefined="0" showbar="false" showlabel="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7d822e89-b761-4af1-90df-b9cf87b4a3ad}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4c67b9b4-8405-09a6-781c-c2940d00e535}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_processsteptypeid" datafieldname="ccllc_processsteptypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a3c0571e-1c0c-088a-b10a-ee66a3e61b41}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_stepparameters" datafieldname="ccllc_stepparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b4a44a6-7ed0-7e68-47ce-4da81565a443}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_subsequentstepid" datafieldname="ccllc_subsequentstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{06e5cc7a-2549-713c-4a8a-1cbb12628dea}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{848184F5-BA3C-4FC2-93D5-4CF0C98446D9}</DefaultViewId>
+                            <FilterRelationshipName>ccllc_transactionprocess_assignedsteps</FilterRelationshipName>
+                            <DependentAttributeName>ccllc_processstep.ccllc_transactionprocessid</DependentAttributeName>
+                            <DependentAttributeType>ccllc_transactionprocess</DependentAttributeType>
+                            <AllowFilterOff>true</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a34a4487-12bb-ec06-0a9c-64c985623140}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_transactionprocessid" datafieldname="ccllc_transactionprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5431a6e3-4e75-4171-838e-e885dc8be094}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="66%">
+              <sections>
+                <section id="{b0828766-8b4a-d390-e852-b8eb58b2e477}" name="{22df890d-d3b0-49c4-b694-e79d8cb78af5}_section_2" height="auto" IsUserDefined="0" columns="1" showbar="false" showlabel="true" locklevel="0" layout="varwidth" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Alternate Branches" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bb56e087-50e9-8b96-5bcd-6cd411a5ab59}" showlabel="false" colspan="1" auto="true" rowspan="4">
+                        <labels>
+                          <label description="Alternate Branches (Parent Step)" languagecode="1033" />
+                        </labels>
+                        <control id="AlternateBranches" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{5A4F389E-F0DD-E811-A972-000D3A3AC0C2}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_parentprocessstep_alternatebranch</RelationshipName>
+                            <TargetEntityType>ccllc_alternatebranch</TargetEntityType>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{8FE5B22F-AA80-4359-8471-B6E21FAF5CE2},{5A4F389E-F0DD-E811-A972-000D3A3AC0C2}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row height="auto" />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

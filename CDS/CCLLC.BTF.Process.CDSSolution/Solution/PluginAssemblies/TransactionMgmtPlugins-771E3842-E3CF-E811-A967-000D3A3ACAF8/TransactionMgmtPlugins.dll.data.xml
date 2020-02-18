@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginAssemblyId="771e3842-e3cf-e811-a967-000d3a3acaf8" CustomizationLevel="1">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/TransactionMgmtPlugins-771E3842-E3CF-E811-A967-000D3A3ACAF8/TransactionMgmtPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.CanNavigateBackwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="81aec642-e3cf-e811-a96c-000d3a3ac726" Name="TransactionMgmt.Plugins.CanNavigateBackwardActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.CanNavigateBackwardActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.CanNavigateForwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="84aec642-e3cf-e811-a96c-000d3a3ac726" Name="TransactionMgmt.Plugins.CanNavigateForwardActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.CanNavigateForwardActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.GetAvailableTransactionTypeActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="7a577444-e3cf-e811-a96f-000d3a3ac0c2" Name="TransactionMgmt.Plugins.GetAvailableTransactionTypeActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.GetAvailableTransactionTypeActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.InitiateTransactionActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="7b577444-e3cf-e811-a96f-000d3a3ac0c2" Name="TransactionMgmt.Plugins.InitiateTransactionActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.InitiateTransactionActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.NavigateBackwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="82aec642-e3cf-e811-a96c-000d3a3ac726" Name="TransactionMgmt.Plugins.NavigateBackwardActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.NavigateBackwardActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="TransactionMgmt.Plugins.NavigateForwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="83aec642-e3cf-e811-a96c-000d3a3ac726" Name="TransactionMgmt.Plugins.NavigateForwardActionHandler">
+      <FriendlyName>TransactionMgmt.Plugins.NavigateForwardActionHandler</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

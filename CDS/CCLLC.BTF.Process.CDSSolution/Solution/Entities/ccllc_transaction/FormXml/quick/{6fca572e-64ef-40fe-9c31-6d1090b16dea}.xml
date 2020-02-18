@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{6fca572e-64ef-40fe-9c31-6d1090b16dea}</formid>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab id="{195b61cf-ef7b-476a-91fd-0b7511cf2391}" name="tab_1" showlabel="false">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{d7b24a65-6c7d-45ef-891e-2cf6c66c9a1f}" name="tab_1_column_1_section_1" showlabel="false" IsUserDefined="0" showbar="false" columns="1">
+                  <labels>
+                    <label description="section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0a3ba8b4-d9e8-1aba-92a8-527c63e4cb2c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Reference Number" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_referencenumber" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_referencenumber" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6190d84b-1e53-2375-dace-aa0b0749564a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Customer" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_customerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1c19e65e-b885-5910-3ebe-b7e931c439d6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Transaction Type" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_transactiontypeid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0906ae7a-beee-030c-b5e1-376a93946e42}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Current Process" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_currentprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_currentprocessid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{651c834a-3573-46c5-4dd4-a10eaa186136}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="CurrentStep" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_currentstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_currentstepid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5b883177-4a89-68c6-9694-0e812a77e473}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Initiating Agent" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_initiatingagentid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatingagentid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{979a8124-18e4-5131-d184-e62d0e94d83d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Initiating Location" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_initiatinglocationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatinglocationid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cccd801e-dadd-11e0-7061-281c0911515c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Context Record Type" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_contextrecordtype" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_contextrecordtype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{775759bb-a89d-1d8e-8c97-b27bad633d9b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Context Record GUID" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_contextrecordguid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_contextrecordguid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{66eca31d-48de-a9c8-5b01-7b6c4d2e541e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Created On" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="createdon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="createdon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e769993-aa74-e750-1a51-dd494cd31876}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Modified On" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="modifiedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Transaction Details" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

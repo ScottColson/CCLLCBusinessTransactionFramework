@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{ab9439f5-f42c-43e3-b7cd-eff42c02b8ac}</formid>
+    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}" verticallayout="true" IsUserDefined="1" showlabel="true" locklevel="0" expanded="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="{95076968-7e4c-449e-8306-87ce4be044f1}" IsUserDefined="0" showlabel="false" showbar="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2f8f5223-6994-4e52-a4ac-a26061419901}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a23c4be-8188-127d-e7c8-6734c0ee2e8b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Transaction Group" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_transactiongroupid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_transactiongroupid" uniqueid="{487e4770-ea0e-5840-205a-ad28ed33d9ec}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{13BC6557-8649-466D-81D3-7FA22A18C5EE}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c1451e27-c46a-57c2-8d57-4255bae9bb70}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Startup Process" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_startupprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_startupprocessid" uniqueid="{d01625ad-3b2c-91a8-cbc6-91792bdd5ea8}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{D5850E9D-D08B-4C5C-B890-F2971BD9035D}</DefaultViewId>
+                            <FilterRelationshipName>ccllc_transactiontype_availableprocesses</FilterRelationshipName>
+                            <DependentAttributeName>ccllc_transactionprocess.ccllc_transactiontypeid</DependentAttributeName>
+                            <DependentAttributeType>ccllc_transactiontype</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{09d20022-24c1-16e7-dc69-d67473b3c578}" showlabel="true" locklevel="0" rowspan="6">
+                        <labels>
+                          <label description="Data Record Configuration" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_datarecordconfiguration" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_datarecordconfiguration" uniqueid="{44ebcc62-a205-561a-b600-714a42a0365a}" />
+                      </cell>
+                    </row>
+                    <row></row>
+                    <row></row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{d25183b9-27d9-ad56-5d84-94d459e461d3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Display Rank" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_displayrank" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ccllc_displayrank" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d471c120-37d4-4967-be9b-97cb1736bd27}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section id="{ce9e8c25-42bc-2e63-69ee-8527c046a20d}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_4" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Eligible Context" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6e99dd1d-9bb8-9c01-d466-7ce5e47aa7b0}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Record Contexts" languagecode="1033" />
+                        </labels>
+                        <control id="RecordContexts" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{69193b04-4446-0756-8c7b-9191c744d5b8}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_context</RelationshipName>
+                            <TargetEntityType>ccllc_transactiontypecontext</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{A70B0EC5-F706-416D-AD5C-AAA84A3CB9AB},{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section id="{1bb7d9da-d839-37c6-2b9c-86a84302e082}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_3" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b304e43a-545e-9c4e-9c81-93bc9489d016}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Authorized Roles" languagecode="1033" />
+                        </labels>
+                        <control id="Roles" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{c9d14465-53a8-8b44-d8c8-93b31cbe4008}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{1E1DB9B7-94C6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_authorizedroles</RelationshipName>
+                            <TargetEntityType>ccllc_transactiontypeauthorizedrole</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{53F2A795-87F4-4543-A8B8-45F808C9012E},{1E1DB9B7-94C6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section id="{075604de-ac29-6087-08b9-c094ba624371}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_5" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{495ca113-7605-8041-b3a4-2768e27db186}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Authorized Channels" languagecode="1033" />
+                        </labels>
+                        <control id="Channels" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{8a418b26-49e4-3c13-248c-27bba592ed17}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{92EB1D78-90C6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_authorizedchannel</RelationshipName>
+                            <TargetEntityType>ccllc_transactiontypeauthorizedchannel</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{8AD3322C-443B-45CA-A5E9-3E602A73CB4F},{92EB1D78-90C6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="{1188a856-3575-726a-1378-98b1e80a29b3}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_2" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Fee Schedule" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bd7c7361-c973-b16a-5215-6d9269e1289d}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Fee Schedule" languagecode="1033" />
+                        </labels>
+                        <control id="FeeSchedule" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{9a7c0da7-2ac6-5c4a-7e0d-e8ddc613540d}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_initialfee</RelationshipName>
+                            <TargetEntityType>ccllc_transactioninitialfee</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{8B2F6CE1-5504-4CC7-8203-D90DE6BC21B6},{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section id="{d1ab3dad-9d4e-d002-2b2c-39688aaa5a75}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_6" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{838cd833-0176-1780-8266-24b914186c70}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Transaction Processes" languagecode="1033" />
+                        </labels>
+                        <control id="Processes" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{ada249b2-c036-a1d4-5e59-c70c7299e4b6}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{1380A906-2341-429C-A118-94112066A9EF}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_availableprocesses</RelationshipName>
+                            <TargetEntityType>ccllc_transactionprocess</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{1380A906-2341-429C-A118-94112066A9EF}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="{019d07a6-daae-ab0a-37ae-c88375dbc992}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_7" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{81b637b4-8023-1745-d248-c2320674d6bb}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Requirements " languagecode="1033" />
+                        </labels>
+                        <control id="Requirements" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{2341bc43-8359-0bda-9994-ca08b03d535d}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_requirements</RelationshipName>
+                            <TargetEntityType>ccllc_transactionrequirement</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

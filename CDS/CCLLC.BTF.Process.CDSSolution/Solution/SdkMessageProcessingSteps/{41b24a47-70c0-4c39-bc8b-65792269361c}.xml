@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="ccllc_BTF_NavigateForward Action Handler" SdkMessageProcessingStepId="{41b24a47-70c0-4c39-bc8b-65792269361c}">
+  <PluginTypeName>TransactionMgmt.Plugins.NavigateForwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
+  <PluginTypeId>83aec642-e3cf-e811-a96c-000d3a3ac726</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Handle Action call to ccllc_BTF_NavigateForward</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1001</Rank>
+  <SdkMessageId>{176509c3-82c7-e811-a964-000d3a3ac6bb}</SdkMessageId>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

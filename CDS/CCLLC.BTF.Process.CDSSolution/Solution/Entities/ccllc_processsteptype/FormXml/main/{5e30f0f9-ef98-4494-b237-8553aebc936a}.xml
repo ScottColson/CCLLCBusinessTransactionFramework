@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{5e30f0f9-ef98-4494-b237-8553aebc936a}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{0710b2ed-f405-4f4c-8ad4-d18b95c944e3}" verticallayout="true" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{4e5849d9-744d-4f1f-bbe2-807f1c2b183d}" IsUserDefined="0" showlabel="false" showbar="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a7604f9f-3d43-482e-ac91-b24d97b9c5d7}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1ce60451-0cee-3890-a59c-652022980ec2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Assembly Name" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_assemblyname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_assemblyname" uniqueid="{9cb300b5-2322-59db-8b67-4c1221cca508}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c30200ed-991a-037a-b2ed-5da8d24977a7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Class Name" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_classname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_classname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6b192b92-5875-8bad-91e5-a0187994ee36}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Supports Conditional Branching" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_supportsconditionalbranching" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="ccllc_supportsconditionalbranching" uniqueid="{8a4224a4-17ae-439c-5254-809973d48c83}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9eec9abf-68d9-4010-9908-3d83abcfab68}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{24b04ad5-5ede-647a-47c0-3428bbcd7a68}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

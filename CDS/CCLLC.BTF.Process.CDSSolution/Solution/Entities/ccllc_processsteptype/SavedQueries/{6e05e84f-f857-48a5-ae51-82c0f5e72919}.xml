@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{6e05e84f-f857-48a5-ae51-82c0f5e72919}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" preview="1" icon="1" select="1" jump="ccllc_name">
+        <row id="ccllc_processsteptypeid" name="result">
+          <cell name="ccllc_name" width="300" />
+          <cell name="ccllc_assemblyname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_classname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch mapping="logical" version="1.0">
+        <entity name="ccllc_processsteptype">
+          <attribute name="ccllc_name" />
+          <order descending="false" attribute="ccllc_name" />
+          <filter type="and">
+            <condition value="0" attribute="statecode" operator="eq" />
+          </filter>
+          <attribute name="ccllc_classname" />
+          <attribute name="ccllc_assemblyname" />
+          <attribute name="ccllc_processsteptypeid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Process Step Types" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

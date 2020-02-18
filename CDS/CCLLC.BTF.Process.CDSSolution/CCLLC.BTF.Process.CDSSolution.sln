@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebResources", "WebResources\WebResources.csproj", "{F22A919B-5D46-4732-8382-310D5E636B39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevOps", "DevOps", "{15623A93-C795-4433-94F5-53F68C8DE03F}"
+	ProjectSection(SolutionItems) = preProject
+		..\DevOps\Export.ps1 = ..\DevOps\Export.ps1
+		..\DevOps\Import.ps1 = ..\DevOps\Import.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.BTF.Process.Plugins", "Plugins\CCLLC.BTF.Process.Plugins.csproj", "{67501249-3C0F-4971-B468-2A56632EBBB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reference Projects", "Reference Projects", "{1ED1DA66-011A-4124-BC79-BCEE50666ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.CDS.Sdk", "..\..\..\CCLLCCodeLibraries\CCLLC.CDS\LibraryProjects\CCLLC.CDS.Sdk\CCLLC.CDS.Sdk.csproj", "{CF336BB7-87C9-4561-9549-293426BAAA3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCLLC.Core.ProcessModel", "..\..\..\CCLLCCodeLibraries\CCLLC.Core\LibraryProjects\CCLLC.Core.ProcessModel\CCLLC.Core.ProcessModel.csproj", "{64980A0B-A879-4350-AFED-2176DCF81A38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCLLC.Core.IocContainer", "..\..\..\CCLLCCodeLibraries\CCLLC.Core\LibraryProjects\CCLLC.Core.IocContainer\CCLLC.Core.IocContainer.csproj", "{8AE70CE7-65E1-4117-BADE-A02E6023C1A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared Projects", "Shared Projects", "{8F3F0727-916E-43C7-B2A7-262C790F8F3F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Platform", "..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.shproj", "{29C88C19-2980-46D8-9172-AEA759E9D1C1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Platform.CDS", "..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.shproj", "{A9A5D524-42A9-44B7-80ED-AF5EC522CBEE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Process", "..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.shproj", "{3660CDCF-ABCB-4F39-867D-D63499BF6C6F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Revenue", "..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.shproj", "{C9FAE0CA-731B-4006-AE5E-D8B5C6E16325}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Documents", "..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.shproj", "{C49BCDEA-04F3-4DD5-A175-E3123DCAC337}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Process.CDS", "..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.shproj", "{E6FF234B-606C-4B40-8EA7-F2619AA96C53}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{29c88c19-2980-46d8-9172-aea759e9d1c1}*SharedItemsImports = 13
+		..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{3660cdcf-abcb-4f39-867d-d63499bf6c6f}*SharedItemsImports = 13
+		..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems*{a9a5d524-42a9-44b7-80ed-af5ec522cbee}*SharedItemsImports = 13
+		..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{c49bcdea-04f3-4dd5-a175-e3123dcac337}*SharedItemsImports = 13
+		..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{c9fae0ca-731b-4006-ae5e-d8b5c6e16325}*SharedItemsImports = 13
+		..\..\..\CCLLCCodeLibraries\CCLLC.CDS\SharedProjects\CCLLC.CDS.Sdk\CCLLC.CDS.Sdk.projitems*{cf336bb7-87c9-4561-9549-293426baaa3e}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{e6ff234b-606c-4b40-8ea7-f2619aa96c53}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F22A919B-5D46-4732-8382-310D5E636B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22A919B-5D46-4732-8382-310D5E636B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22A919B-5D46-4732-8382-310D5E636B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22A919B-5D46-4732-8382-310D5E636B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67501249-3C0F-4971-B468-2A56632EBBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67501249-3C0F-4971-B468-2A56632EBBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67501249-3C0F-4971-B468-2A56632EBBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67501249-3C0F-4971-B468-2A56632EBBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF336BB7-87C9-4561-9549-293426BAAA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF336BB7-87C9-4561-9549-293426BAAA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF336BB7-87C9-4561-9549-293426BAAA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF336BB7-87C9-4561-9549-293426BAAA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64980A0B-A879-4350-AFED-2176DCF81A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64980A0B-A879-4350-AFED-2176DCF81A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64980A0B-A879-4350-AFED-2176DCF81A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64980A0B-A879-4350-AFED-2176DCF81A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE70CE7-65E1-4117-BADE-A02E6023C1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE70CE7-65E1-4117-BADE-A02E6023C1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE70CE7-65E1-4117-BADE-A02E6023C1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE70CE7-65E1-4117-BADE-A02E6023C1A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF336BB7-87C9-4561-9549-293426BAAA3E} = {1ED1DA66-011A-4124-BC79-BCEE50666ECE}
+		{64980A0B-A879-4350-AFED-2176DCF81A38} = {1ED1DA66-011A-4124-BC79-BCEE50666ECE}
+		{8AE70CE7-65E1-4117-BADE-A02E6023C1A1} = {1ED1DA66-011A-4124-BC79-BCEE50666ECE}
+		{29C88C19-2980-46D8-9172-AEA759E9D1C1} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{A9A5D524-42A9-44B7-80ED-AF5EC522CBEE} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{3660CDCF-ABCB-4F39-867D-D63499BF6C6F} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{C9FAE0CA-731B-4006-AE5E-D8B5C6E16325} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{C49BCDEA-04F3-4DD5-A175-E3123DCAC337} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{E6FF234B-606C-4B40-8EA7-F2619AA96C53} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82E3915D-1346-4181-8DBD-4DADD58BA818}
+	EndGlobalSection
+EndGlobal

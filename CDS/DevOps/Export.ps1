@@ -7,7 +7,7 @@
 
     # The settings for the actions performed during the export
     [Parameter(Mandatory)]
-    [ValidateSet("BTF.Platform","BTF.Revenue")] # update this list based on files in the ExportSettings folder
+    [ValidateSet("BTF.Process","BTF.Platform","BTF.Revenue")] # update this list based on files in the ExportSettings folder
     [string]
     $ExportSettings,
 

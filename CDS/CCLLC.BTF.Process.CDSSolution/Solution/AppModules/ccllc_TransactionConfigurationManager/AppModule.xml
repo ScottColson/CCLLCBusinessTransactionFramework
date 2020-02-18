@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>ccllc_TransactionConfigurationManager</UniqueName>
+  <IntroducedVersion>0.0.0.2</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <AppModuleComponents>
+    <AppModuleComponent type="62" schemaName="ccllc_TransactionConfigurationManager" />
+    <AppModuleComponent type="1" schemaName="ccllc_alternatebranch" />
+    <AppModuleComponent type="1" schemaName="ccllc_evaluatortype" />
+    <AppModuleComponent type="1" schemaName="ccllc_processauthorizedchannel" />
+    <AppModuleComponent type="1" schemaName="processsession" />
+    <AppModuleComponent type="1" schemaName="ccllc_processstep" />
+    <AppModuleComponent type="1" schemaName="ccllc_processstepauthorizedchannel" />
+    <AppModuleComponent type="1" schemaName="ccllc_processsteprequirement" />
+    <AppModuleComponent type="1" schemaName="ccllc_processsteptype" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactiontypeauthorizedchannel" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactioninitialfee" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactiongroup" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactionprocess" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactionrequirement" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactiontypeauthorizedrole" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactiontype" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactiontypecontext" />
+    <AppModuleComponent type="1" schemaName="translationprocess" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Transaction Configuration Manager" languagecode="1033" />
+  </LocalizedNames>
+</AppModule>

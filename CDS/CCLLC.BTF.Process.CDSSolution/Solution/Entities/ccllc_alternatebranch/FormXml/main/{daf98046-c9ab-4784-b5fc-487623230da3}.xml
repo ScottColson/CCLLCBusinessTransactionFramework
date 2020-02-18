@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{daf98046-c9ab-4784-b5fc-487623230da3}</formid>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{67f9ceb0-d599-4cbd-994f-eb80374eafbf}" IsUserDefined="1" verticallayout="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{8a439344-020c-49a7-a4dc-dedfa758951d}" IsUserDefined="0" showbar="false" showlabel="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fa9e48e7-10ab-4a28-8241-141e65675fc8}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5d4a8b16-6003-cdee-590d-adaaadb20837}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parent Step" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_parentstepid" datafieldname="ccllc_parentstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5a55d5ab-6b53-e962-51a6-4438c58979a1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Evaluator Type" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_evaluatortypeid" datafieldname="ccllc_evaluatortypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d28ae9dd-c993-11bc-eea9-699374be6449}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Evaluation Order" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_evaluationorder" datafieldname="ccllc_evaluationorder" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2e081e33-6ba8-77e0-08c7-985be74a7b73}" showlabel="true" rowspan="4" locklevel="0">
+                        <labels>
+                          <label description="Evaluation Parameters" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_evaluationparameters" datafieldname="ccllc_evaluationparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" uniqueid="{d6127dc6-9c9d-b2e6-c6c6-ba309acdd3e0}" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{b06938c3-e9d3-d08c-4611-b4a6a663a3b0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Subsequent Step" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_subsequentstepid" datafieldname="ccllc_subsequentstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e2a284b6-5940-48fe-8e37-0b649d0c8508}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{d5686d4d-4e9b-b555-9377-1c8e786c49e4}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

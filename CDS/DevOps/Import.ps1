@@ -7,7 +7,7 @@
 
     # The settings for the actions performed during the import
     [Parameter(Mandatory)]
-    [ValidateSet("BTF.Platform","BTF.Revenue")] # update this list based on files in the ImportSettings folder
+    [ValidateSet("BTF.Process","BTF.Platform","BTF.Revenue")] # update this list based on files in the ImportSettings folder
     [string]
     $ImportSettings,
 

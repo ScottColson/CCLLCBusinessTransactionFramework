@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap>
+  <SiteMapUniqueName>ccllc_TransactionConfigurationManager</SiteMapUniqueName>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area IntroducedVersion="7.0.0.0" Icon="/WebResources/msdyn_/Images/Area_Default_Icon.png" Id="ccllc_transactionconfig" ResourceId="SitemapDesigner.NewArea" DescriptionResourceId="SitemapDesigner.NewArea" ShowGroups="false">
+      <Titles>
+        <Title LCID="1033" Title="Transaction Configuration" />
+      </Titles>
+      <Group IntroducedVersion="7.0.0.0" Id="New_Group" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Transaction Configuration" />
+        </Titles>
+        <SubArea Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" Id="ccllc_transactiontype" Entity="ccllc_transactiontype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Types" />
+          </Titles>
+        </SubArea>
+        <SubArea IntroducedVersion="7.0.0.0" Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" Id="ccllc_transactiongroup" Entity="ccllc_transactiongroup" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Groups" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="NewGroup_69d0d3ff" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Requirement Configuration" />
+        </Titles>
+        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_9eb5068e" Entity="ccllc_transactionrequirement" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Requirements" />
+          </Titles>
+        </SubArea>
+        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_3b7efdad" Entity="ccllc_evaluatortype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Evaluators" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="NewGroup_5360be5" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Step Types" />
+        </Titles>
+        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_b62e1d0b" Entity="ccllc_processsteptype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Transaction Configuration Manager" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

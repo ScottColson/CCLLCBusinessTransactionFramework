@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{92eb1d78-90c6-e811-a965-000d3a3acaf8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" icon="1" preview="1" select="1" jump="ccllc_name">
+        <row id="ccllc_transactiontypeauthorizedchannelid" name="result">
+          <cell name="ccllc_channelid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch mapping="logical" output-format="xml-platform" version="1.0">
+        <entity name="ccllc_transactiontypeauthorizedchannel">
+          <order descending="false" attribute="ccllc_channelid" />
+          <attribute name="ccllc_channelid" />
+          <attribute name="ccllc_transactiontypeauthorizedchannelid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Transaction Type Subgrid" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

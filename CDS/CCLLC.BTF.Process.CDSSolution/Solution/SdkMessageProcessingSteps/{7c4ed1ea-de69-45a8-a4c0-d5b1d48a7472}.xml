@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="ccllc_BTF_CanNavigateBackward Action Handler" SdkMessageProcessingStepId="{7c4ed1ea-de69-45a8-a4c0-d5b1d48a7472}">
+  <PluginTypeName>TransactionMgmt.Plugins.CanNavigateBackwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
+  <PluginTypeId>81aec642-e3cf-e811-a96c-000d3a3ac726</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Handle Action call to ccllc_BTF_CanNavigateBackward</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1001</Rank>
+  <SdkMessageId>{695b4d33-f9c7-e811-a964-000d3a3ac6bb}</SdkMessageId>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

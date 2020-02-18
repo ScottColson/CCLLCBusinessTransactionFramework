@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries>
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{8fe5b22f-aa80-4359-8471-b6e21faf5ce2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" preview="1" icon="1" select="1" jump="ccllc_name">
+        <row id="ccllc_alternatebranchid" name="result">
+          <cell name="ccllc_name" width="300" />
+          <cell name="ccllc_parentstepid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_evaluationorder" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_evaluatortypeid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_subsequentstepid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch mapping="logical" version="1.0">
+        <entity name="ccllc_alternatebranch">
+          <attribute name="ccllc_name" />
+          <order descending="false" attribute="ccllc_name" />
+          <filter type="and">
+            <condition value="0" attribute="statecode" operator="eq" />
+          </filter>
+          <attribute name="ccllc_subsequentstepid" />
+          <attribute name="ccllc_parentstepid" />
+          <attribute name="ccllc_evaluatortypeid" />
+          <attribute name="ccllc_evaluationorder" />
+          <attribute name="ccllc_alternatebranchid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Alternate Branches" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" Name="BTF_CanNavigateForward">
+  <XamlFileName>/Workflows/BTF_CanNavigateForward-F5896C5B-8E68-4A6B-87B3-EAD5FD5BF5F1.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>3</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <CreateStage>40</CreateStage>
+  <RunAs>1</RunAs>
+  <SdkMessageId>{3ae7254b-82c7-e811-a964-000d3a3ac6bb}</SdkMessageId>
+  <UniqueName>BTF_CanNavigateForward</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>0.0.0.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <FormId>{00000000-0000-0000-0000-000000000000}</FormId>
+  <PrimaryEntity>ccllc_transaction</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="BTF_CanNavigateForward" />
+  </LocalizedNames>
+</Workflow>

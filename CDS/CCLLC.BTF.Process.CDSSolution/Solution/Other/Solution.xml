@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.1.0.643" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>CCLLCBTFProcess</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="CCLLC.BTF.Process" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>0.0.0.1</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>colsoncodellc</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Colson Code, LLC" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Colson Code, LLC" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl>https://github.com/ScottColson/CCLLC.Xrm.Development/wiki</SupportingWebsiteUrl>
+      <CustomizationPrefix>ccllc</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>14267</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="ccllc_alternatebranch" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_processauthorizedchannel" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_processstep" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_processstepauthorizedchannel" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_processsteprequirement" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_processsteptype" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_requirementwaiverrole" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_stephistory" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transaction" behavior="2" />
+      <RootComponent type="1" schemaName="ccllc_transactiongroup" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactioninitialfee" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactionissue" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactionprocess" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactionrequirement" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactionrequirementwaiverrole" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactiontype" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactiontypeauthorizedchannel" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactiontypeauthorizedrole" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transactiontypecontext" behavior="0" />
+      <RootComponent type="29" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" behavior="0" />
+      <RootComponent type="29" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" behavior="0" />
+      <RootComponent type="29" id="{bdb6c028-b17d-479f-a567-0796066d817a}" behavior="0" />
+      <RootComponent type="29" id="{c1ba6b2d-5764-4aff-b423-84dbaf207146}" behavior="0" />
+      <RootComponent type="29" id="{ccfe8860-e93c-4045-8a87-7a9fdb7e063b}" behavior="0" />
+      <RootComponent type="29" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" behavior="0" />
+      <RootComponent type="60" id="{2b197925-7e6f-4a8a-9585-7c3801700472}" behavior="0" />
+      <RootComponent type="60" id="{30f1cb48-176f-4e2a-98f5-5fb81105a28c}" behavior="0" />
+      <RootComponent type="60" id="{4635fce2-359c-4232-814d-1a42356bc099}" behavior="0" />
+      <RootComponent type="60" id="{472e16e8-49c6-410a-85e2-98e3373d3b97}" behavior="0" />
+      <RootComponent type="60" id="{58dadda1-008a-4e66-9265-b68d710eab72}" behavior="0" />
+      <RootComponent type="60" id="{5e30f0f9-ef98-4494-b237-8553aebc936a}" behavior="0" />
+      <RootComponent type="60" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" behavior="0" />
+      <RootComponent type="60" id="{7373d90e-3a93-44cd-a61c-4e2aebbe6178}" behavior="0" />
+      <RootComponent type="60" id="{848ba7be-b294-4370-9469-a142a2cecf9b}" behavior="0" />
+      <RootComponent type="60" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" behavior="0" />
+      <RootComponent type="60" id="{9f51b66b-4465-4071-b232-9302c3e7c94d}" behavior="0" />
+      <RootComponent type="60" id="{ab9439f5-f42c-43e3-b7cd-eff42c02b8ac}" behavior="0" />
+      <RootComponent type="60" id="{bec47944-cdbd-4fc0-88c7-1f414970bc73}" behavior="0" />
+      <RootComponent type="60" id="{daf98046-c9ab-4784-b5fc-487623230da3}" behavior="0" />
+      <RootComponent type="61" schemaName="ccllc_/js/transactions/common.js" behavior="0" />
+      <RootComponent type="62" schemaName="ccllc_TransactionConfigurationManager" behavior="0" />
+      <RootComponent type="80" schemaName="ccllc_TransactionConfigurationManager" behavior="0" />
+      <RootComponent type="91" id="{771e3842-e3cf-e811-a967-000d3a3acaf8}" schemaName="TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" behavior="0" />
+      <RootComponent type="92" id="{0ac8fbd1-854d-45e7-ac87-365fc5ad9c2c}" behavior="0" />
+      <RootComponent type="92" id="{144db698-ea1d-443e-95ba-a290ab9837a1}" behavior="0" />
+      <RootComponent type="92" id="{25e49380-e3e7-4532-a5e1-453a2d419cc8}" behavior="0" />
+      <RootComponent type="92" id="{2c0a76d1-0017-4ce1-ab99-7333eddddd4b}" behavior="0" />
+      <RootComponent type="92" id="{41b24a47-70c0-4c39-bc8b-65792269361c}" behavior="0" />
+      <RootComponent type="92" id="{7c4ed1ea-de69-45a8-a4c0-d5b1d48a7472}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="1" schemaName="ccllc_agent" displayName="Agent" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="1" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="3" type="62" schemaName="ccllc_TransactionConfigurationManager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="4" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_transactionrequirement" parentDisplayName="Transaction Requirement" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="5" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_alternatebranch" parentDisplayName="Alternate Branch" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="6" type="60" displayName="Information" parentDisplayName="Evaluator Type" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="7" type="80" schemaName="ccllc_TransactionConfigurationManager" displayName="Transaction Configuration Manager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="8" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="8" type="1" schemaName="ccllc_transaction" displayName="Transaction" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="9" type="1" schemaName="ccllc_fee" displayName="Fee" solution="PCRevenueMgmt (0.0.0.1)" />
+        <Dependent key="10" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_transactioninitialfee" parentDisplayName="Transaction Fee" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="11" type="1" schemaName="ccllc_location" displayName="Location" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="12" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="13" type="1" schemaName="ccllc_channel" displayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="14" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_transactiontypeauthorizedchannel" parentDisplayName="Transaction Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="13" type="1" schemaName="ccllc_channel" displayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="15" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_processauthorizedchannel" parentDisplayName="Process Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="13" type="1" schemaName="ccllc_channel" displayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="16" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_processstepauthorizedchannel" parentDisplayName="Process Step Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="17" type="1" schemaName="ccllc_role" displayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="18" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_transactionrequirementwaiverrole" parentDisplayName="Transaction Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="17" type="1" schemaName="ccllc_role" displayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="19" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_requirementwaiverrole" parentDisplayName="Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="17" type="1" schemaName="ccllc_role" displayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="20" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_transactiontypeauthorizedrole" parentDisplayName="Transaction Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="21" type="1" schemaName="ccllc_appliedfee" displayName="Applied Fee" solution="PCRevenueMgmt (0.0.0.1)" />
+        <Dependent key="22" type="60" displayName="Transaction Fee List" parentDisplayName="Transaction" id="{4635fce2-359c-4232-814d-1a42356bc099}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="23" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="12" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="24" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="5" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_alternatebranch" parentDisplayName="Alternate Branch" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="24" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="4" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_transactionrequirement" parentDisplayName="Transaction Requirement" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="25" type="2" schemaName="ccllc_agentid" displayName="Agent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="1" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="26" type="2" schemaName="ccllc_classname" displayName="Class Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="6" type="60" displayName="Information" parentDisplayName="Evaluator Type" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="27" type="2" schemaName="modifiedon" displayName="Modified On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="28" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="29" type="2" schemaName="ccllc_customerid" displayName="Customer" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="28" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="30" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="14" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_transactiontypeauthorizedchannel" parentDisplayName="Transaction Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="30" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="15" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_processauthorizedchannel" parentDisplayName="Process Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="30" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="16" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_processstepauthorizedchannel" parentDisplayName="Process Step Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="18" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_transactionrequirementwaiverrole" parentDisplayName="Transaction Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="19" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_requirementwaiverrole" parentDisplayName="Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="20" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_transactiontypeauthorizedrole" parentDisplayName="Transaction Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="32" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="18" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_transactionrequirementwaiverrole" parentDisplayName="Transaction Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="32" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="20" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_transactiontypeauthorizedrole" parentDisplayName="Transaction Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="32" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="19" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_requirementwaiverrole" parentDisplayName="Requirement Waiver Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="33" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="4" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_transactionrequirement" parentDisplayName="Transaction Requirement" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="33" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="6" type="60" displayName="Information" parentDisplayName="Evaluator Type" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="33" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="5" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_alternatebranch" parentDisplayName="Alternate Branch" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="34" type="2" schemaName="ccllc_assemblyname" displayName="Assembly Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="6" type="60" displayName="Information" parentDisplayName="Evaluator Type" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="36" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transactionissue" parentDisplayName="Transaction Issue" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="37" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="38" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="39" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="40" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="41" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="42" type="2" schemaName="createdon" displayName="Created On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="28" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="43" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="1" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="44" type="2" schemaName="ccllc_feeid" displayName="Fee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="PCRevenueMgmt (0.0.0.1)" />
+        <Dependent key="10" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_transactioninitialfee" parentDisplayName="Transaction Fee" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="41" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="37" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="40" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="36" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transactionissue" parentDisplayName="Transaction Issue" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="39" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="38" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="46" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="PCRevenueMgmt (0.0.0.1)" />
+        <Dependent key="10" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_transactioninitialfee" parentDisplayName="Transaction Fee" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="47" type="2" schemaName="ccllc_locationid" displayName="Location" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="12" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_stephistory" parentDisplayName="Step History" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="48" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="15" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_processauthorizedchannel" parentDisplayName="Process Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="48" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="14" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_transactiontypeauthorizedchannel" parentDisplayName="Transaction Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="48" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="PCBaseComponents (0.0.0.12)" />
+        <Dependent key="16" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_processstepauthorizedchannel" parentDisplayName="Process Step Authorized Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="49" type="2" schemaName="ownerid" displayName="Owner" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="Active" />
+        <Dependent key="6" type="60" displayName="Information" parentDisplayName="Evaluator Type" id="{9a7c62d6-bb4d-41a9-a008-695cc01cee80}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="50" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="PCRevenueMgmt (0.0.0.1)" />
+        <Dependent key="22" type="60" displayName="Transaction Fee List" parentDisplayName="Transaction" id="{4635fce2-359c-4232-814d-1a42356bc099}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="51" type="26" schemaName="Active Applied Fees" displayName="Active Applied Fees" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="PCRevenueMgmt (0.0.0.1)" id="{060f7752-b917-4802-a1b1-d9d3d548e84c}" />
+        <Dependent key="22" type="60" displayName="Transaction Fee List" parentDisplayName="Transaction" id="{4635fce2-359c-4232-814d-1a42356bc099}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="52" type="26" schemaName="Evaluator Type Lookup View" displayName="Evaluator Type Lookup View" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="PCBaseComponents (0.0.0.12)" id="{adf1f4a7-44eb-4774-9e91-ce3a715f99ad}" />
+        <Dependent key="53" type="60" displayName="Information" parentDisplayName="Transaction Requirement" id="{848ba7be-b294-4370-9469-a142a2cecf9b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="54" type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent key="7" type="80" schemaName="ccllc_TransactionConfigurationManager" displayName="Transaction Configuration Manager" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>
