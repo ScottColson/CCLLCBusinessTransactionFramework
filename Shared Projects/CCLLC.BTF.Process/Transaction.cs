@@ -84,7 +84,7 @@ namespace CCLLC.BTF.Process
             {
                 if (_initiatingLocation == null)
                 {
-                    _initiatingLocation = LocationFactory.BuildLocation(ExecutionContext, InitiatingLocationId);
+                    _initiatingLocation = LocationFactory.CreateLocation(ExecutionContext, InitiatingLocationId);
                 }
 
                 return _initiatingLocation;

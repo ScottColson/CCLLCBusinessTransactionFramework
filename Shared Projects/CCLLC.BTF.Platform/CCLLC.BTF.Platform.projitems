@@ -55,6 +55,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISystemUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWorkSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LocationFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluationResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorFactory.cs" />

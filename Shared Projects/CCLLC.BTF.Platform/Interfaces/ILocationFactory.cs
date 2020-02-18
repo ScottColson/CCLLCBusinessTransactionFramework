@@ -5,6 +5,6 @@ namespace CCLLC.BTF.Platform
 {
     public interface ILocationFactory
     {
-        ILocation BuildLocation(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, TimeSpan? cacheTimeout = null);
+        ILocation CreateLocation(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, TimeSpan? cacheTimeout = null);
     }
 }

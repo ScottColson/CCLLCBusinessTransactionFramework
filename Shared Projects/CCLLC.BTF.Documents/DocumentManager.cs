@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CCLLC.BTF.Documents.CDS
+namespace CCLLC.BTF.Documents
 {
     using CCLLC.Core;
 
