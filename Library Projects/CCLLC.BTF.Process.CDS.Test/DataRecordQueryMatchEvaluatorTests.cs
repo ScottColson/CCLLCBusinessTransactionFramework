@@ -74,8 +74,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
                      
                     #endregion                   
 
@@ -249,8 +249,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
 
                     #endregion
 

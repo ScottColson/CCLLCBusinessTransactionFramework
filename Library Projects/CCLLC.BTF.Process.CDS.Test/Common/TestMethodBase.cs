@@ -2,6 +2,7 @@
 using CCLLC.Core;
 using CCLLC.CDS.Test;
 using CCLLC.BTF.Platform;
+using CCLLC.BTF.Platform.CDS;
 using CCLLC.BTF.Revenue;
 using CCLLC.BTF.Documents;
 using CCLLC.CDS.Test.Fakes;
@@ -42,6 +43,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
 
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
+            c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
         }
 
         protected override abstract void Test(IOrganizationService service);

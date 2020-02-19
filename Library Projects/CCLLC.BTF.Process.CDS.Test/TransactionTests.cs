@@ -72,8 +72,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
                      
                     #endregion                   
 
@@ -300,11 +300,11 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.RecordActionStepType, b => b
-                            .WithImplementatingAssembly("S3.D365.Transactions")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
                             .WithImplementatingClass("CCLLC.BTF.Process.CDS.StepType.DataRecordAction"))                        
 
                     #endregion                   
@@ -571,12 +571,12 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.ConditionalStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.Branch")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.Branch")
                             .SupportsConditionalBranching())
 
                     #endregion
@@ -898,12 +898,12 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.ConditionalStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.Branch")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.Branch")
                             .SupportsConditionalBranching())
 
                     #endregion

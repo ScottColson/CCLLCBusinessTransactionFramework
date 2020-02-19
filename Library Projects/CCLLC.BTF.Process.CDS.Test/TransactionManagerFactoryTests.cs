@@ -136,16 +136,16 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Step Type Setup
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.DataForm"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.RecordActionStepType, b => b
-                            .WithImplementatingAssembly("S3.D365.Transactions")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
                             .WithImplementatingClass("CCLLC.BTF.Process.CDS.StepType.DataRecordAction"))
 
                         .WithBuilder<ProcessStepTypeBuilder>(Ids.ConditionalStepType, b => b
-                            .WithImplementatingAssembly("S3.Domain.Transactions")
-                            .WithImplementatingClass("S3.Transactions.StepType.Branch"))
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.Branch"))
 
                     #endregion
 
@@ -315,7 +315,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                 Assert.AreEqual(2, transactionType.InitialFeeSchedule.Count);                          
 
                 var process = transactionType.AvailableProcesses[0];
-                Assert.AreEqual(transactionType.StartUpProcessId, process.Id);
+                Assert.AreEqual(transactionType.StartUpProcessId.Id, process.Id);
                 Assert.AreEqual(Ids.Process1.EntityId, process.Id);
                 Assert.AreEqual(3, process.ProcessSteps.Count);          
             }
