@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xrm.Sdk.Query;
-using Xrm.Oss.FluentQuery;
 using CCLLC.Core;
 
 namespace CCLLC.BTF.Revenue.CDS

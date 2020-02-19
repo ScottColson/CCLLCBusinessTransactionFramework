@@ -62,16 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\CCLLCCodeLibraries\CCLLC.CDS\LibraryProjects\CCLLC.CDS.Sdk\CCLLC.CDS.Sdk.csproj">
-      <Project>{cf336bb7-87c9-4561-9549-293426baaa3e}</Project>
-      <Name>CCLLC.CDS.Sdk</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems" Label="Shared" />
   <Import Project="..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems" Label="Shared" />

@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using Xrm.Oss.FluentQuery;
 
 namespace CCLLC.BTF.Process.CDS
 {

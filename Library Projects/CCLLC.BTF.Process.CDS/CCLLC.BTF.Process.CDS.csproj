@@ -34,6 +34,12 @@
     <Reference Include="CCLLC.Core.ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.0.0-beta\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
     </Reference>
+    <Reference Include="CCLLCCoreEncryption, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CCLLC.Core.Encryption.1.0.0-beta\lib\net462\CCLLCCoreEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="CCLLCCoreNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CCLLC.Core.Net.1.0.0-alpha\lib\net462\CCLLCCoreNet.dll</HintPath>
+    </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>
     </Reference>
@@ -62,16 +68,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CCLLCCodeLibraries\CCLLC.CDS\LibraryProjects\CCLLC.CDS.Sdk\CCLLC.CDS.Sdk.csproj">
-      <Project>{cf336bb7-87c9-4561-9549-293426baaa3e}</Project>
-      <Name>CCLLC.CDS.Sdk</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.csproj">
       <Project>{cb57dcdc-7a70-42ee-b4db-61dd07fa313d}</Project>
       <Name>CCLLC.BTF.Platform.CDS</Name>
