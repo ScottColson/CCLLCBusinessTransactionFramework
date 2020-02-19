@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08AFC78A-4E80-4211-B9EC-01505A38E05B}</ProjectGuid>
+    <ProjectGuid>{32CC3410-92E7-4585-A3E9-F1B87674A897}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CCLLC.BTF.Revenue.CDS</RootNamespace>
-    <AssemblyName>CCLLC.BTF.Revenue.CDS</AssemblyName>
+    <RootNamespace>CCLLC.BTF.Process.CDS</RootNamespace>
+    <AssemblyName>CCLLC.BTF.Process.CDS</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,7 +36,6 @@
     </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.23\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
@@ -66,51 +65,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\coretools\CrmSvcUtil.exe.config" />
-    <None Include="bin\coretools\LicenseTerms.docx" />
-    <None Include="bin\coretools\SolutionPackager.exe.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\coretools\CrmSvcUtil.exe" />
-    <Content Include="bin\coretools\CrmSvcUtil.xml" />
-    <Content Include="bin\coretools\Microsoft.ApplicationInsights.dll" />
-    <Content Include="bin\coretools\Microsoft.Crm.Sdk.Proxy.dll" />
-    <Content Include="bin\coretools\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
-    <Content Include="bin\coretools\Microsoft.PowerApps.AppInsights.BatchedTelemetry.dll" />
-    <Content Include="bin\coretools\Microsoft.PowerApps.AppInsights.BatchedTelemetryChannel.dll" />
-    <Content Include="bin\coretools\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.Deployment.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Connector.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
-    <Content Include="bin\coretools\Newtonsoft.Json.dll" />
-    <Content Include="bin\coretools\Other Redistributable.txt" />
-    <Content Include="bin\coretools\pacTelemetryUpload.exe" />
-    <Content Include="bin\coretools\SolutionPackager.exe" />
-    <Content Include="bin\coretools\SolutionPackagerLib.dll" />
-    <Content Include="bin\coretools\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\coretools\System.ValueTuple.dll" />
-    <Content Include="bin\Debug\CCLLC.BTF.Revenue.CDS.dll" />
-    <Content Include="bin\Debug\CCLLC.BTF.Revenue.CDS.pdb" />
-    <Content Include="bin\Debug\CCLLC.Core.ProcessModel.dll" />
-    <Content Include="bin\Debug\CCLLCIocContainer.dll" />
-    <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.dll" />
-    <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\CCLLCCodeLibraries\CCLLC.CDS\LibraryProjects\CCLLC.CDS.Sdk\CCLLC.CDS.Sdk.csproj">
       <Project>{cf336bb7-87c9-4561-9549-293426baaa3e}</Project>
       <Name>CCLLC.CDS.Sdk</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.csproj">
+      <Project>{cb57dcdc-7a70-42ee-b4db-61dd07fa313d}</Project>
+      <Name>CCLLC.BTF.Platform.CDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.csproj">
+      <Project>{08afc78a-4e80-4211-b9ec-01505a38e05b}</Project>
+      <Name>CCLLC.BTF.Revenue.CDS</Name>
+    </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
-  <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems" Label="Shared" />
+  <Import Project="..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems" Label="Shared" />
+  <Import Project="..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems" Label="Shared" />
+  <Import Project="..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
