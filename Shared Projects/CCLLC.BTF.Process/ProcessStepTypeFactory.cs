@@ -35,7 +35,7 @@ namespace CCLLC.BTF.Process
 
             try
             {
-                var stepType = Activator.InstantiateClass<IProcessStepType>(processStepTypeId.Id, name, implementationAssemblyName, implementationClassName);
+                var stepType = Activator.InstantiateClass<IProcessStepType>(processStepTypeId.RecordType, processStepTypeId.Id, name, implementationAssemblyName, implementationClassName);
                 stepType.IsConditional = isConditional;
 
                 if (cacheKey != null)

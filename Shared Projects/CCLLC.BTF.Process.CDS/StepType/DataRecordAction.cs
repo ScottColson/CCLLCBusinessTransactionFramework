@@ -11,8 +11,8 @@ namespace CCLLC.BTF.Process.CDS.StepType
     /// </summary>
     public class DataRecordAction : ProcessStepTypeBase
     {
-        public DataRecordAction(IRecordPointer<Guid> id, string name, string implementationAssembly, string implementationClass) 
-            : base(id.RecordType,id.Id, name, implementationAssembly, implementationClass)
+        public DataRecordAction(string recordType, Guid id, string name, string implementationAssembly, string implementationClass) 
+            : base(recordType, id, name, implementationAssembly, implementationClass)
         {
         }
 

@@ -112,7 +112,7 @@ namespace CCLLC.BTF.Process
                 executionContext.Trace("Retrieved {0} Transaction Type Context records.", contexts.Count);
 
                 // Create a new TransactionType object for each transaction type retrieved.
-                foreach (var t in transactionTypeRecords)
+                foreach (ITransactionTypeRecord t in transactionTypeRecords)
                 {
                     executionContext.Trace("Processing transaction type '{0}'", t.Name);
 
@@ -132,7 +132,7 @@ namespace CCLLC.BTF.Process
                     }
 
                     registeredTransactions.Add(new TransactionType(
-                        t as RecordPointer<Guid>,
+                        t as IRecordPointer<Guid>,
                         t.Name,
                         t.DisplayRank,
                         transactionGroups.Where(r => t.TransactionGroupId != null && r.Id == t.TransactionGroupId.Id).FirstOrDefault(),

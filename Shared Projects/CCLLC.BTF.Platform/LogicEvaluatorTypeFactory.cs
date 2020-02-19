@@ -70,7 +70,7 @@ namespace CCLLC.BTF.Platform
 
             try
             {
-                var evaluatorType = Activator.InstantiateClass<ILogicEvaluatorType>(evaluatorTypeId.Id, name, implementationAssemblyName, implementationClassName);
+                var evaluatorType = Activator.InstantiateClass<ILogicEvaluatorType>(evaluatorTypeId.RecordType, evaluatorTypeId.Id, name, implementationAssemblyName, implementationClassName);
 
                 if (cacheKey != null)
                 {

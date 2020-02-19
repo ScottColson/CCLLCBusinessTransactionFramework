@@ -22,7 +22,7 @@ namespace CCLLC.BTF.Process.CDS
         public IList<ITransactionTypeRecord> GetAllTransactionTypeRecords(IDataService dataService)
         {
             return dataService.ToOrgService().Query<ccllc_transactiontype>()
-                   .IncludeColumns("ccllc_transactiontypeid", "ccllc_name", "ccllc_displayrank", "ccllc_datarecordconfiguration")
+                   .IncludeColumns("ccllc_transactiontypeid", "ccllc_name", "ccllc_displayrank", "ccllc_datarecordconfiguration","ccllc_transactiongroupid","ccllc_startupprocessid")
                    .Where(e => e.Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
                    .RetrieveAll().ToList<ITransactionTypeRecord>();
         }

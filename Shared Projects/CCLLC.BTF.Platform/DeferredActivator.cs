@@ -4,7 +4,7 @@ namespace CCLLC.BTF.Platform
 {
     public class DeferredActivator : IDeferredActivator
     {      
-        public T InstantiateClass<T>(Guid id, string name, string implementationAssemblyName, string implementationClassName) where T : IDeferredImplementation
+        public T InstantiateClass<T>(string recordType, Guid id, string name, string implementationAssemblyName, string implementationClassName) where T : IDeferredImplementation
         {
             try
             {
@@ -25,7 +25,7 @@ namespace CCLLC.BTF.Platform
                 if(assembly is null) { throw new Exception("Unable to load assembly."); }
 
                 // Instantiate the required implementation class from the assembly and pass in expected arguments.
-                object[] args = new object[] { id, name, implementationAssemblyName, implementationClassName };
+                object[] args = new object[] {recordType, id, name, implementationAssemblyName, implementationClassName };
 
                 implementation = (T)assembly.CreateInstance(implementationClassName, true, System.Reflection.BindingFlags.CreateInstance, null, args, null, null);
                 if (implementation == null)

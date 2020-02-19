@@ -30,7 +30,7 @@ namespace CCLLC.BTF.Process.CDS
             return dataService.ToOrgService().Query<ccllc_stephistory>()
                 .IncludeAllColumns()
                 .Where(e => e
-                    .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId))
+                    .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId.Id))
                     .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
                 .RetrieveAll().ToList<IStepHistory>();
         }

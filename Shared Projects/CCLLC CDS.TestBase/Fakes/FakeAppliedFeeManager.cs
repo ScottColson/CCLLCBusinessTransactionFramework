@@ -33,7 +33,7 @@ namespace CCLLC.CDS.Test.Fakes
             var fees = service.Query<TestProxy.ccllc_appliedfee>()
                 .IncludeAllColumns()
                 .Where(e => e
-                    .Attribute(a => a.Named("ccllc_transactionid").Is(Microsoft.Xrm.Sdk.Query.ConditionOperator.Equal).To(transactionId)))
+                    .Attribute(a => a.Named("ccllc_transactionid").Is(Microsoft.Xrm.Sdk.Query.ConditionOperator.Equal).To(transactionId.Id)))
                 .RetrieveAll();
 
             foreach(var f in fees)
