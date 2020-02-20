@@ -35,6 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_worksession.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\SystemUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FluentQuery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\AccountState.cs" />

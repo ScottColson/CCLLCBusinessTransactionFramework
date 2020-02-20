@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_appliedfee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_fee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FluentQuery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfeeState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfee_statuscode.cs" />

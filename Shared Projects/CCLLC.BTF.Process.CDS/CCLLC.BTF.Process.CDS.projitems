@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FluentQuery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_alternatebranchState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\s3_alternatebranch_statuscode.cs" />
