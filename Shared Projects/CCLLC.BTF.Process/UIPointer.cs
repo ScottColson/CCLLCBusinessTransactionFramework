@@ -11,5 +11,17 @@ namespace CCLLC.BTF.Process
         public Guid UIRecordId { get; set; }
 
         public string UIDefinition { get; set; }
+
+        public string Serialize()
+        {
+            string structure = "{{\"UIType\":\"{0}\",\"RecordType\":\"{1}\",\"RecordId\":\"{2}\",\"Definition\":\"{3}\"}}";
+
+            return string.Format(
+                structure,
+                UIType.ToString(),
+                UIRecordType,
+                UIRecordId.ToString(),
+                UIDefinition);
+        }
     }
 }

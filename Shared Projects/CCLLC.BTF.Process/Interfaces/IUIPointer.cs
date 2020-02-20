@@ -8,5 +8,7 @@ namespace CCLLC.BTF.Process
         string UIRecordType { get; }
         Guid UIRecordId { get; }
         string UIDefinition { get; }
+
+        string Serialize();
     }
 }
