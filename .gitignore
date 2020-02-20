@@ -351,3 +351,4 @@ MigrationBackup/
 /CDS/temp
 **/spkl/Log*.txt
 OrganizationServiceContext1.cs
+/CDS/CCLLC.BTF.Process.CDSSolution/Plugins/App_Packages
