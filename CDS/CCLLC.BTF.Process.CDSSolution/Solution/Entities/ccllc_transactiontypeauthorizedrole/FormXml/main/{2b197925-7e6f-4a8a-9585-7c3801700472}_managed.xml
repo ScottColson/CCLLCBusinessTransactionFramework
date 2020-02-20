@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{3bea9231-0b26-6e8c-4e64-2a95d1c726da}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Role" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_roleid" datafieldname="ccllc_roleid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{9755d21f-e3d1-4266-925f-dad7c80b1a52}" showlabel="true" locklevel="0" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" uniqueid="{843291e9-cbb0-38a1-c3ae-b4a29094e2e6}" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{16e597c0-2407-408f-9234-3f843b3fd8ab}" showlabel="true" locklevel="1" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{82d877c5-9058-5d0d-59bc-1c5e0c9018a5}">
                           <parameters>

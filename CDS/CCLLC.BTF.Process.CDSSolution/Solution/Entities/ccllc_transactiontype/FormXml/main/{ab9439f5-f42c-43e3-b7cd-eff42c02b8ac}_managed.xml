@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{2f8f5223-6994-4e52-a4ac-a26061419901}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{9a23c4be-8188-127d-e7c8-6734c0ee2e8b}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Transaction Group" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_transactiongroupid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_transactiongroupid" uniqueid="{487e4770-ea0e-5840-205a-ad28ed33d9ec}">
                           <parameters>
@@ -47,7 +47,7 @@
                     <row>
                       <cell id="{c1451e27-c46a-57c2-8d57-4255bae9bb70}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Startup Process" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_startupprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_startupprocessid" uniqueid="{d01625ad-3b2c-91a8-cbc6-91792bdd5ea8}">
                           <parameters>
@@ -67,7 +67,7 @@
                     <row>
                       <cell id="{09d20022-24c1-16e7-dc69-d67473b3c578}" showlabel="true" locklevel="0" rowspan="6">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Data Record Configuration" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_datarecordconfiguration" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_datarecordconfiguration" uniqueid="{44ebcc62-a205-561a-b600-714a42a0365a}" />
                       </cell>
@@ -80,7 +80,7 @@
                     <row>
                       <cell id="{d25183b9-27d9-ad56-5d84-94d459e461d3}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Display Rank" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_displayrank" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ccllc_displayrank" />
                       </cell>
@@ -88,7 +88,7 @@
                     <row>
                       <cell id="{d471c120-37d4-4967-be9b-97cb1736bd27}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{e57a65fe-45d6-444c-b61b-5b93d4276a62}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{6e57e62d-52a0-b847-e501-52617e07ccb9}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Transaction Type" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_transactiontypeid" datafieldname="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{170b58b4-a93c-16c5-ed22-d88a69759e6c}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Initial Process Step" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_initialprocessstepid" datafieldname="ccllc_initialprocessstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{ba3cbd78-e277-cc5b-6e11-0015b0176061}">
                           <parameters>
@@ -58,7 +58,7 @@
                     <row>
                       <cell id="{6e4ed582-852a-45a8-a964-ae2824b21b63}" showlabel="true" locklevel="1" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{92b266de-7384-6952-b12d-1c89b17dd13e}">
                           <parameters>

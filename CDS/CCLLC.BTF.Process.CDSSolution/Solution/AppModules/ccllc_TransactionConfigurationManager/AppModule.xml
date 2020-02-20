@@ -3,8 +3,10 @@
   <UniqueName>ccllc_TransactionConfigurationManager</UniqueName>
   <IntroducedVersion>0.0.0.2</IntroducedVersion>
   <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
   <FormFactor>1</FormFactor>
   <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
   <AppModuleComponents>
     <AppModuleComponent type="62" schemaName="ccllc_TransactionConfigurationManager" />
     <AppModuleComponent type="1" schemaName="ccllc_alternatebranch" />

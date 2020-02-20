@@ -30,6 +30,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <Format>text</Format>
           <MaxLength>100</MaxLength>
           <Length>200</Length>
@@ -66,6 +70,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <Format>text</Format>
           <MaxLength>255</MaxLength>
           <Length>510</Length>
@@ -102,6 +110,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
@@ -137,6 +149,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
@@ -172,6 +188,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
@@ -207,6 +227,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
@@ -242,6 +266,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
@@ -270,6 +298,10 @@
           <IsSortableEnabled>0</IsSortableEnabled>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat>T-{SEQNUM:8}</AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <Format>text</Format>
           <MaxLength>20</MaxLength>
           <Length>200</Length>
@@ -306,6 +338,10 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>

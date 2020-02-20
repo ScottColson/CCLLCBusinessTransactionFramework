@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SdkMessageProcessingStep Name="ccllc_BTF_CanNavigateForward Action Handler" SdkMessageProcessingStepId="{25e49380-e3e7-4532-a5e1-453a2d419cc8}">
-  <PluginTypeName>TransactionMgmt.Plugins.CanNavigateForwardActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
-  <PluginTypeId>84aec642-e3cf-e811-a96c-000d3a3ac726</PluginTypeId>
+  <PluginTypeName>CCLLC.BTF.Process.CDS.Plugins.ProcessNavigationActionHandlers, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
+  <PluginTypeId>cb31aa56-2d54-ea11-a812-000d3a300a85</PluginTypeId>
   <AsyncAutoDelete>0</AsyncAutoDelete>
   <Description>Handle Action call to ccllc_BTF_CanNavigateForward</Description>
   <FilteringAttributes></FilteringAttributes>

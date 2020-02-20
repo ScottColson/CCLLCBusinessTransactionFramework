@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SdkMessageProcessingStep Name="ccllc_BTF_InitiateTransaction Action Handler" SdkMessageProcessingStepId="{144db698-ea1d-443e-95ba-a290ab9837a1}">
-  <PluginTypeName>TransactionMgmt.Plugins.InitiateTransactionActionHandler, TransactionMgmtPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
-  <PluginTypeId>7b577444-e3cf-e811-a96f-000d3a3ac0c2</PluginTypeId>
+  <PluginTypeName>CCLLC.BTF.Process.CDS.Plugins.TransactionCreationActionHandler, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
+  <PluginTypeId>6327acaf-2d54-ea11-a812-000d3a300a85</PluginTypeId>
   <AsyncAutoDelete>0</AsyncAutoDelete>
   <Description>Handle Action call to ccllc_BTF_InitiateTransaction</Description>
   <FilteringAttributes></FilteringAttributes>
