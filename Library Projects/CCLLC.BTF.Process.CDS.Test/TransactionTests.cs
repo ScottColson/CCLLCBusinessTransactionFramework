@@ -584,7 +584,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Evaluator Type Setup
 
                         .WithBuilder<EvaluatorTypeBuilder>(Ids.DataRecordActionEvaluator, b => b
-                            .WithImplementatingAssembly("S3.D365.Transactions")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
                             .WithImplementatingClass("CCLLC.BTF.Process.CDS.EvaluatorType.DataRecordActionEvaluator"))
 
                     #endregion
@@ -911,7 +911,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #region Evaluator Type Setup
 
                         .WithBuilder<EvaluatorTypeBuilder>(Ids.DataRecordActionEvaluator, b => b
-                            .WithImplementatingAssembly("S3.D365.Transactions")
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
                             .WithImplementatingClass("CCLLC.BTF.Process.CDS.EvaluatorType.DataRecordActionEvaluator"))
 
                     #endregion
@@ -954,7 +954,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                     #region Alternate Branches for Step 1_2
 
-                        //Evaluate last -> Evaluates True -> Go to step 4
+                        //Evaluate last -> Evaluates flase
                         .WithBuilder<AlternateBranchBuilder>(Ids.Branch1_2_1, b => b
                             .ForStep(Ids.Step1_2)
                             .WithEvlauationOrder(3)
@@ -962,7 +962,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                             .WithParameters("{\"EvaluateAs\":\"false\"}")
                             .GoesToStep(Ids.Step1_4))
 
-                        //Evaluate second -> Evaluates True -> Go to step 5
+                        //Evaluate second -> Evaluates false
                         .WithBuilder<AlternateBranchBuilder>(Ids.Branch1_2_2, b => b
                             .ForStep(Ids.Step1_2)
                             .WithEvlauationOrder(2)
