@@ -29,5 +29,7 @@ namespace CCLLC.BTF.Process
         /// <param name="session"></param>
         /// <returns></returns>
         IStepExecutionResult Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, IRequirementEvaluator requirementEvaluator);
+
+        void Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction);
     }
 }

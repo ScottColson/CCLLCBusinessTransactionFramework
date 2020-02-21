@@ -313,18 +313,32 @@ namespace CCLLC.BTF.Process
                 
                
                 // Archive the step history between previous history and the history associated with the step we are leaving.
-                var archiveStep = prevStepHistory;
-                while (archiveStep != null)
+                var archiveStepHistory = prevStepHistory;
+                while (archiveStepHistory != null)
                 {
-                    this.StepHistoryManager.ArchiveStepHistory(this.ExecutionContext, _stepHistory, archiveStep);
+                    //Rollback step execution if that is supported.
+                    bool rolledBack = false;
+                    if(archiveStepHistory.CompletedOn.HasValue)
+                    {                        
+                        var step = this.CurrentProcess.ProcessSteps.Where(s => s.Id == archiveStepHistory.PreviousStepId.Id).FirstOrDefault();
+                        if (step.Type.IsReversable)
+                        {
+                            step.Rollback(this.ExecutionContext, session, this);
+                            rolledBack = true;
+                        }
+                    }
 
-                    if (archiveStep.Id != currentStepHistory.Id && archiveStep.PreviousStepId != null)
+                    //archive this history record.
+                    this.StepHistoryManager.ArchiveStepHistory(this.ExecutionContext, _stepHistory, archiveStepHistory, rolledBack);
+
+                    //get next record to archive for loop
+                    if (archiveStepHistory.Id != currentStepHistory.Id && archiveStepHistory.PreviousStepId != null)
                     {
-                        archiveStep = _stepHistory.Where(e => e.Id == archiveStep.PreviousStepId.Id).FirstOrDefault();
+                        archiveStepHistory = _stepHistory.Where(e => e.Id == archiveStepHistory.PreviousStepId.Id).FirstOrDefault();
                     }
                     else
                     {
-                        archiveStep = null;
+                        archiveStepHistory = null;
                     }
                 }
 

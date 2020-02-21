@@ -56,7 +56,8 @@ namespace CCLLC.BTF.Process
 
         public void ArchiveStepHistory(IProcessExecutionContext executionContext, IList<IStepHistory> historyList, IRecordPointer<Guid> historyId, bool stepRolledBack = false)
         {
-            throw new NotImplementedException();
+            DataConnector.UpdateStepHistoryStatus(executionContext.DataService, historyId, stepRolledBack ? eProcessStepHistoryStatusEnum.RolledBack : eProcessStepHistoryStatusEnum.Archived);
+
         }
 
         public IList<IStepHistory> LoadStepHistory(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, TimeSpan? cacheTimeout = null)

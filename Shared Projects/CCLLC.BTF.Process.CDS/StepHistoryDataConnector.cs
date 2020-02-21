@@ -49,5 +49,34 @@ namespace CCLLC.BTF.Process.CDS
 
             return dataService.ToOrgService().Retrieve(ccllc_stephistory.EntityLogicalName, stepHistoryId.Id, new ColumnSet(true)).ToEntity<ccllc_stephistory>();
         }
+
+        public IStepHistory UpdateStepHistoryStatus(IDataService dataService, IRecordPointer<Guid> stepHistoryId, eProcessStepHistoryStatusEnum status)
+        {
+            ccllc_stephistory_statuscode? statuscode = null;
+
+            switch (status)
+            {
+                case eProcessStepHistoryStatusEnum.RolledBack:
+                    statuscode = ccllc_stephistory_statuscode.RolledBack;
+                    break;
+                case eProcessStepHistoryStatusEnum.Current:
+                    statuscode = ccllc_stephistory_statuscode.Current;
+                    break;
+                default:
+                    statuscode = ccllc_stephistory_statuscode.Archived;
+                    break;
+            }
+
+            var stepHistory = new ccllc_stephistory
+            {
+                Id = stepHistoryId.Id,
+                statuscode = statuscode
+            };
+
+            dataService.ToOrgService().Update(stepHistory);
+
+            return dataService.ToOrgService().Retrieve(ccllc_stephistory.EntityLogicalName, stepHistoryId.Id, new ColumnSet(true)).ToEntity<ccllc_stephistory>();
+
+        }
     }
 }
