@@ -3,19 +3,18 @@ complex business processes on top of the Microsoft PowerApps and the CDS platfor
 
 ### History 
 
-In 2016 I was fortunate to get hired as the CRM Architect for a complex 
-Dynamics 365 CRM implementation that would be used by a Department of Motor Vehicles
-to issue and manage drivers licenses and vehicle registrations. 
+In 2016 I was hired as the CRM Architect for a complex Dynamics 365 CRM implementation that would 
+be used by a Department of Motor Vehicles to issue and manage drivers licenses and vehicle registrations. 
 
 In 2018 I decided to leave the project and [Subrat Gaur](https://www.linkedin.com/in/subratgaur/) was hired
 as my replacement. During our turnover sessions Subrat shared many ideas from his experience on similar projects. 
 Subrat deserves much credit for the contents of this open source initiative which is based on an evolution of both
 of our approaches to enacting complex business processes. 
 
-For my 2016 DMV project we settled on an architecture that used used "transactional entities" to 
+For my 2016 DMV project we settled on an architecture that used "transactional entities" to 
 capture input data for processes that ultimately ended in the creation of variuos types of credentials
 such as a drivers license. These transactional entities were linked to financal transacitons where we
-caputured the fees that were collected and utlimately collected payment. 
+caputured the fees that were collected and utlimately collected payment prior to completing the transaction.
 
 We also used a validation framework that validated a set of requirements at key points in the process 
 and at the end of the process prior to collecting payment. I have long been a fan of using this type of
@@ -27,27 +26,41 @@ when needed.
 We used standard CRM workflows and action processes enhanced by coded workflow activities and plugins 
 to enact or processes.
 
-The architecture was solid and served us well but it had some major flaws:
+The architecture was solid and served us well but it had some flaws:
 
 1. Each new "transaction" had to be linked into both the financial framework and the validation framework.
 2. The only natural way to kick off a process was by updating the transaction record which created some odd user experience situations.
 3. There was very little reuse of process steps because they work created specific to a particular "transaciton entity".
 4. Providing a consolidate list of Work In Progress (WIP) was complex because the list had to span multiple entity types. 
 5. Part of the financial implementation was based on a custom CRM activity type which led to issues in UX and security role management.
+6. The use of CRM workflows made it possible to decouple process from code but it also resulted in an explosion of workflows that made it difficult to see understand the overall all process.
 
 ### New Approach
 
 This evolved architecture makes a single Transaction entity the center of the system. Each created Transaction has the following key features:
 
 1. Linked to a specific customer which can be either an Account or a Contact.
-2. Linked to a [Transaction Type](Transaction Type.md) definition that defines requirements and processes for completing the transaction.
-3. Linked to a starting Context Record (the record where the transacion was initiated.) 
-4. Linked to a Data Capture Record used for capturing user input and providing the user experience.
+2. Linked to a [Transaction Type](TransactionType.md) that defines requirements and the overall processes for completing the transaction.
+3. Linked to a starting [Context Record](ContextRecord.md) (the record where the transacion was initiated.) 
+4. Linked to a [Data Capture Record](DataCaptureRecord.md) used for capturing user input and providing the user experience.
 5. Linked to a set of process history steps that captures when a particular process step was completed and information about the Agent and related Work Session at that time.
 6. Linked to a set of Evidence collected during the execution of the transaction process. Evidence can be either collected authoratative documents or API interactions with external systems.
 7. Linked to a set of Deficiencies that document the falure to meet requirements defined for the transaction type.
 7. Linked to a set of Fees that will be charged to complete the transaction.
 8. Linked to any Data Of Record that was created as part of the transaction process.
+
+Deferred Implementation provides a way to merge coded implementations with meta data stored in the BTF to 
+complete an operation. This model allows developers to code extensions to the BTF that can be consumed by 
+process creators. It analogous to creating Connectors for the PowerAutomate platform, however, deferred 
+implementation components in the BTF operate synchronously within the sandboxed plugin process space.
+
+Logic Evaluators are a specific type of Deferred Implementation that is used to interact with the CDS system 
+or APIs to external systems to make simple true/false decisions that are used to validate requirements or 
+select conditional branches within a process. 
+
+Step Types are an additional type of Deferred Implementation that provide any required underlying code 
+to complete a the intended implementation of the step. 
+
 
 ### Layerd Architecture
 

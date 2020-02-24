@@ -37,8 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.BTF.Process.CDS.Test"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AB02B1D3-5514-4DCF-8039-7022657FB092}"
 	ProjectSection(SolutionItems) = preProject
+		docs\ContextRecord.md = docs\ContextRecord.md
+		docs\DataCaptureRecord.md = docs\DataCaptureRecord.md
 		docs\README.md = docs\README.md
-		docs\Transaction Type.md = docs\Transaction Type.md
+		docs\TransactionType.md = docs\TransactionType.md
 	EndProjectSection
 EndProject
 Global
