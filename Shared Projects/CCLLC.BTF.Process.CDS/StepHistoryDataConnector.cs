@@ -34,7 +34,7 @@ namespace CCLLC.BTF.Process.CDS
                 .RetrieveAll().ToList<IStepHistory>();
         }
 
-        public IStepHistory UpdateStepHistoryRecord(IDataService dataService, IRecordPointer<Guid> stepHistoryId, IRecordPointer<Guid> nextStepId, IRecordPointer<Guid> agentId, IRecordPointer<Guid> locationId, DateTime completionDate)
+        public IStepHistory UpdateStepHistoryRecord(IDataService dataService, IRecordPointer<Guid> stepHistoryId, IRecordPointer<Guid> nextStepId, IRecordPointer<Guid> agentId, IRecordPointer<Guid> locationId, DateTime? completionDate)
         {
             var stepHistory = new ccllc_stephistory
             {

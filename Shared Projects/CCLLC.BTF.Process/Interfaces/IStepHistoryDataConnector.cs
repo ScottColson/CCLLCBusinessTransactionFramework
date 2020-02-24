@@ -8,7 +8,7 @@ namespace CCLLC.BTF.Process
     public interface IStepHistoryDataConnector
     {
         IStepHistory CreateStepHistoryRecord(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> processStepId, IRecordPointer<Guid> previousStepHistoryId);
-        IStepHistory UpdateStepHistoryRecord(IDataService dataService, IRecordPointer<Guid> stepHistoryId, IRecordPointer<Guid> nextStepId, IRecordPointer<Guid> agentId, IRecordPointer<Guid> locationId, DateTime completionDate);
+        IStepHistory UpdateStepHistoryRecord(IDataService dataService, IRecordPointer<Guid> stepHistoryId, IRecordPointer<Guid> nextStepId, IRecordPointer<Guid> agentId, IRecordPointer<Guid> locationId, DateTime? completionDate);
 
         IStepHistory UpdateStepHistoryStatus(IDataService dataService, IRecordPointer<Guid> stepHistoryId, eProcessStepHistoryStatusEnum status);
 

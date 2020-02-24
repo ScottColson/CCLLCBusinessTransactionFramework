@@ -56,41 +56,10 @@ namespace CCLLC.BTF.Process
 
         public void ArchiveStepHistory(IProcessExecutionContext executionContext, IList<IStepHistory> historyList, IRecordPointer<Guid> historyId, bool stepRolledBack = false)
         {
-            DataConnector.UpdateStepHistoryStatus(executionContext.DataService, historyId, stepRolledBack ? eProcessStepHistoryStatusEnum.RolledBack : eProcessStepHistoryStatusEnum.Archived);
-
+          
         }
 
-        public IList<IStepHistory> LoadStepHistory(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, TimeSpan? cacheTimeout = null)
-        {
-            if (executionContext is null) throw new ArgumentNullException("executionContext");
-
-            string cacheKey = null;
-
-            if (executionContext.Cache != null && cacheTimeout != null)
-            {
-                cacheKey = CACHE_KEY + transactionId.Id.ToString();
-            }
-
-            if (cacheKey != null)
-            {
-                if (executionContext.Cache.Exists(CACHE_KEY))
-                {
-                    return executionContext.Cache.Get<IList<IStepHistory>>(cacheKey);
-                }
-            }
-
-            var records = DataConnector.QueryTransactionStepHistory(executionContext.DataService, transactionId);
-
-            if(cacheKey != null)
-            {
-                executionContext.Cache.Add<IList<IStepHistory>>(CACHE_KEY, records, cacheTimeout.Value);
-            }
-
-            return records;
-
-        }
-
-      
+    
 
         public IStepHistory NewStepHistory(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> processStepId, IRecordPointer<Guid> previousStepHistoryId)
         {
@@ -100,6 +69,14 @@ namespace CCLLC.BTF.Process
 
             return DataConnector.CreateStepHistoryRecord(executionContext.DataService, transactionId, processStepId, previousStepHistoryId);
         }
-       
+
+        public ITransactionHistory CreateTransactionHistory(IProcessExecutionContext executionContext, ITransaction transaction)
+        {
+            if (executionContext is null) throw new ArgumentNullException("executionContext");
+            
+            var records = DataConnector.QueryTransactionStepHistory(executionContext.DataService, transaction);
+
+            return new TransactionHistory(this.DataConnector, transaction, records);
+        }
     }
 }

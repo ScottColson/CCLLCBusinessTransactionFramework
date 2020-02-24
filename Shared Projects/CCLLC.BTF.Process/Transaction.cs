@@ -14,7 +14,7 @@ namespace CCLLC.BTF.Process
         private List<IDataOfRecord> _affectedRecords;
         private List<IAppliedFee> _appliedFees;
         private List<ICollectedEvidence> _collectedEvidence;
-        private List<IStepHistory> _stepHistory;
+        private ITransactionHistory _transactionHistory;
         private List<IRequirementDeficiency> _deficiencies;
         private List<IGeneratedDocument> _generatedDocuments;
 
@@ -185,16 +185,16 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        public IReadOnlyList<IStepHistory> StepHistory
+        public ITransactionHistory TransactionHistory
         {
             get
             {
-                if (_stepHistory == null)
+                if (_transactionHistory == null)
                 {
-                    _stepHistory = StepHistoryManager.LoadStepHistory(this.ExecutionContext, this).ToList();
+                    _transactionHistory = StepHistoryManager.CreateTransactionHistory(this.ExecutionContext, this);
                 }
 
-                return _stepHistory;
+                return _transactionHistory;
             }
         }
 
@@ -222,9 +222,7 @@ namespace CCLLC.BTF.Process
 
                 return _generatedDocuments;
             }
-        }
-
-        
+        }     
 
         public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, IAppliedFeeManager appliedFeeManager, ITransactionContextFactory transactionContextFactory,
             ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
@@ -264,7 +262,7 @@ namespace CCLLC.BTF.Process
 
         public bool CanJumpTo(IWorkSession session, IStepHistory step) => false;
 
-        public bool CanNavigateBackward(IWorkSession session) => GetPreviousUIStep(this.CurrentStep) != null;
+        public bool CanNavigateBackward(IWorkSession session) => this.TransactionHistory.GetReversingSteps()?.LastOrDefault() != null;
 
         public bool CanNavigateForward(IWorkSession session) => this.CurrentStep != null && !this.CurrentStep.IsLastStep();
 
@@ -294,62 +292,28 @@ namespace CCLLC.BTF.Process
         {
             try
             {
-                if (!this.CanNavigateBackward(session)) throw TransactionException.BuildException(TransactionException.ErrorCode.ActionNotAvailable);
+                var reversingSteps = this.TransactionHistory.GetReversingSteps();
 
-                // Get history for the current step and the UI step we are navigating back to.               
-                IStepHistory currentStepHistory = GetProcessStepHistory(this.CurrentStep);
-                IStepHistory prevStepHistory = GetPreviousUIHistory(this.CurrentStep);
+                var lastReversingStep = reversingSteps?.LastOrDefault();
 
-                // Start a new history branch by creating a new history connection between the
-                // original predecessor step history and the new history. 
-                IProcessStep nextProcessStep = GetProcessStepFromHistory(prevStepHistory);
-                IProcessStep branchingProcessStep = null;
-                if (prevStepHistory.PreviousStepId != null)
+                if (lastReversingStep is null || !lastReversingStep.Type.IsUIStep) throw TransactionException.BuildException(TransactionException.ErrorCode.ActionNotAvailable);
+
+
+                //archive existing history for all steps that are being reversed.
+                foreach (var step in reversingSteps)
                 {
-                    branchingProcessStep = GetProcessStepFromHistory(prevStepHistory.PreviousStepId);
-                }                
-                this.StepHistoryManager.GenerateStepHistory(this.ExecutionContext, _stepHistory, this, session, branchingProcessStep, nextProcessStep);
-
-                
-               
-                // Archive the step history between previous history and the history associated with the step we are leaving.
-                var archiveStepHistory = prevStepHistory;
-                while (archiveStepHistory != null)
-                {
-                    //Rollback step execution if that is supported.
-                    bool rolledBack = false;
-                    if(archiveStepHistory.CompletedOn.HasValue)
-                    {                        
-                        var step = this.CurrentProcess.ProcessSteps.Where(s => s.Id == archiveStepHistory.PreviousStepId.Id).FirstOrDefault();
-                        if (step.Type.IsReversable)
-                        {
-                            step.Rollback(this.ExecutionContext, session, this);
-                            rolledBack = true;
-                        }
-                    }
-
-                    //archive this history record.
-                    this.StepHistoryManager.ArchiveStepHistory(this.ExecutionContext, _stepHistory, archiveStepHistory, rolledBack);
-
-                    //get next record to archive for loop
-                    if (archiveStepHistory.Id != currentStepHistory.Id && archiveStepHistory.PreviousStepId != null)
-                    {
-                        archiveStepHistory = _stepHistory.Where(e => e.Id == archiveStepHistory.PreviousStepId.Id).FirstOrDefault();
-                    }
-                    else
-                    {
-                        archiveStepHistory = null;
-                    }
+                    this.TransactionHistory.ArchiveHistoryForStep(this.ExecutionContext, session, step);
                 }
 
-                
+                this.TransactionHistory.AddToHistory(this.ExecutionContext, session, lastReversingStep, false);
+
                 // Update the transaction with the new current step
-                this.CurrentStepId = nextProcessStep;
+                this.CurrentStepId = lastReversingStep;
                 this.TransactionManager.SaveTransactionCurrentStep(this.ExecutionContext, this, this.CurrentStepId);
 
                 return this.CurrentStep;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessNavigationError, ex);
             }
@@ -372,7 +336,7 @@ namespace CCLLC.BTF.Process
                 while (true)
                 {
                     // Get the step history record for the starting step. This record should always exist.  
-                    IStepHistory stepHistory = GetProcessStepHistory(startingStep);
+                    IStepHistory stepHistory = this.TransactionHistory.GetHistoryForStep(startingStep);
                     if (stepHistory is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryNotFound);
                                         
                     bool hasExecuted = stepHistory.CompletedOn.HasValue;
@@ -391,9 +355,7 @@ namespace CCLLC.BTF.Process
                         nextStep = executionResult.NextStep;
                         isBlocked = executionResult.StepIsBlocked; //valdiation requirements may block further advancemennt.
 
-                        // Update the step history for this process step transition. This creates a new step history for the "next step" and 
-                        // links up the history from the current step.
-                        this.StepHistoryManager.GenerateStepHistory(this.ExecutionContext, _stepHistory, this, session, startingStep, nextStep);
+                       this.TransactionHistory.AddToHistory(this.ExecutionContext, session, nextStep, true);
                     }
                     else
                     {
@@ -401,8 +363,11 @@ namespace CCLLC.BTF.Process
 
                         if (stepHistory.NextStepId is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryInvalid);
 
+                        var nextStepId = this.TransactionHistory.GetHistoryById(stepHistory.NextStepId).ProcessStepId;
+
                         // When the step has executed then we just get the next step based on history.
-                        nextStep = GetProcessStepFromHistory(stepHistory.NextStepId);
+                        nextStep = this.CurrentProcess.ProcessSteps.Where(r => Id == nextStepId.Id).FirstOrDefault();
+
                     }
 
                     // Stop moving forward when a UI step is found or when the step represents the last step in the process or
@@ -437,92 +402,94 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        /// <summary>
-        /// Returns the <see cref="IProcessStep"/> associated with the <see cref="IProcessStepHistory"/> identified
-        /// by the supplied process history record id.
-        /// </summary>
-        /// <param name="processHistoryId"></param>
-        /// <returns></returns>
-        private IProcessStep GetProcessStepFromHistory(IRecordPointer<Guid> processHistoryId)
-        {
-            var historyStep = GetStepHistoryById(processHistoryId);
+        ///// <summary>
+        ///// Returns the <see cref="IProcessStep"/> associated with the <see cref="IProcessStepHistory"/> identified
+        ///// by the supplied process history record id.
+        ///// </summary>
+        ///// <param name="processHistoryId"></param>
+        ///// <returns></returns>
+        //private IProcessStep GetProcessStepFromHistory(IRecordPointer<Guid> processHistoryId)
+        //{
+        //    var historyStep = GetStepHistoryById(processHistoryId);
 
-            if (historyStep is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryNotFound);
+        //    if (historyStep is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryNotFound);
 
-            var processStep = GetProcessStepById(historyStep.ProcessStepId);
+        //    var processStep = GetProcessStepById(historyStep.ProcessStepId);
 
-            if (processStep is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepNotFound);
+        //    if (processStep is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepNotFound);
 
-            return processStep;
-        }
+        //    return processStep;
+        //}
 
-        /// <summary>
-        /// Searches <see cref="StepHistory"/> to find the UI step that was completed prior to the identified 
-        /// <see cref="IProcessStep"/>. Returns null if no previous UI step is found.
-        /// </summary>
-        /// <param name="processStep"></param>
-        /// <returns></returns>
-        private IProcessStep GetPreviousUIStep(IProcessStep processStep)
-        {
-            var previousUIHistory = GetPreviousUIHistory(processStep);
-            if(previousUIHistory is null)  return null;
+        ///// <summary>
+        ///// Searches <see cref="StepHistory"/> to find the UI step that was completed prior to the identified 
+        ///// <see cref="IProcessStep"/>. Returns null if no previous UI step is found.
+        ///// </summary>
+        ///// <param name="processStep"></param>
+        ///// <returns></returns>
+        //private IProcessStep GetPreviousUIStep(IProcessStep processStep)
+        //{
+        //    var previousUIHistory = GetPreviousUIHistory(processStep);
+        //    if(previousUIHistory is null)  return null;
 
-            IProcessStep previousProcessStep = GetProcessStepById(previousUIHistory.ProcessStepId);
-            return previousProcessStep;
-        }
-
-
-        private IStepHistory GetPreviousUIHistory(IProcessStep processStep)
-        {
-            //get the transaction step that is linked to to the specified process step if it exists.
-            var matchingStepHistory = GetProcessStepHistory(processStep);
-
-            if (matchingStepHistory == null) return null;
-
-            var previousHistoryId = matchingStepHistory.PreviousStepId;
-            while (previousHistoryId != null)
-            {
-                IStepHistory historyStep = GetStepHistoryById(previousHistoryId);
-                IProcessStep previousProcessStep = GetProcessStepById(historyStep.ProcessStepId);
-
-                if (previousProcessStep.Type.IsUIStep) return historyStep;
-            }
-
-            return null;
-        }
+        //    IProcessStep previousProcessStep = GetProcessStepById(previousUIHistory.ProcessStepId);
+        //    return previousProcessStep;
+        //}
 
 
-        /// <summary>
-        /// Searches <see cref="StepHistory"/> and returns the most recent current <see cref="IStepHistory"/> record associated 
-        /// with the specified <see cref="IProcessStep"/>. Returns null if no current step history record is found.
-        /// </summary>
-        /// <param name="processStep"></param>
-        /// <returns></returns>
-        private IStepHistory GetProcessStepHistory(IProcessStep processStep)
-        {
-            if (processStep is null) return null;
+        //private IStepHistory GetPreviousUIHistory(IProcessStep processStep)
+        //{
+        //    //get the transaction step that is linked to to the specified process step if it exists.
+        //    var matchingStepHistory = GetProcessStepHistory(processStep);
 
-            //get the transaction step that is linked to to the specified process step if it exists.
-            return this.StepHistory
-                .Where(t => t.ProcessStepId.Id == processStep.Id
-                    && t.StepStatus == eProcessStepHistoryStatusEnum.Current)
-                .OrderBy(r => r.CompletedOn)
-                .FirstOrDefault();
-        }
+        //    if (matchingStepHistory == null) return null;
 
-        /// <summary>
-        /// Returns the <see cref="IStepHistory"/> specfieid with the supplied id value.
-        /// </summary>
-        /// <param name="stepHistoryId"></param>
-        /// <returns></returns>
-        private IStepHistory GetStepHistoryById(IRecordPointer<Guid> stepHistoryId)
-        {
-            var stepHistory = this.StepHistory.Where(s => s.Id == stepHistoryId.Id).FirstOrDefault();
+        //    var previousHistoryId = matchingStepHistory.PreviousStepId;
+        //    while (previousHistoryId != null)
+        //    {
+        //        IStepHistory stepHistory = GetStepHistoryById(previousHistoryId);
+        //        IProcessStep previousProcessStep = GetProcessStepById(stepHistory.ProcessStepId);
 
-            if (stepHistory is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryNotFound);
+        //        if (previousProcessStep.Type.IsUIStep) return stepHistory;
 
-            return stepHistory;
-        }
+        //        previousHistoryId = stepHistory.PreviousStepId;
+        //    }
+
+        //    return null;
+        //}
+
+
+        ///// <summary>
+        ///// Searches <see cref="StepHistory"/> and returns the most recent current <see cref="IStepHistory"/> record associated 
+        ///// with the specified <see cref="IProcessStep"/>. Returns null if no current step history record is found.
+        ///// </summary>
+        ///// <param name="processStep"></param>
+        ///// <returns></returns>
+        //private IStepHistory GetProcessStepHistory(IProcessStep processStep)
+        //{
+        //    if (processStep is null) return null;
+
+        //    //get the transaction step that is linked to to the specified process step if it exists.
+        //    return this.StepHistory
+        //        .Where(t => t.ProcessStepId.Id == processStep.Id
+        //            && t.StepStatus == eProcessStepHistoryStatusEnum.Current)
+        //        .OrderBy(r => r.CompletedOn)
+        //        .FirstOrDefault();
+        //}
+
+        ///// <summary>
+        ///// Returns the <see cref="IStepHistory"/> specfieid with the supplied id value.
+        ///// </summary>
+        ///// <param name="stepHistoryId"></param>
+        ///// <returns></returns>
+        //private IStepHistory GetStepHistoryById(IRecordPointer<Guid> stepHistoryId)
+        //{
+        //    var stepHistory = this.StepHistory.Where(s => s.Id == stepHistoryId.Id).FirstOrDefault();
+
+        //    if (stepHistory is null) throw TransactionException.BuildException(TransactionException.ErrorCode.StepHistoryNotFound);
+
+        //    return stepHistory;
+        //}
 
         /// <summary>
         /// Returns the <see cref="IProcessStep"/> associated with the specified id value.

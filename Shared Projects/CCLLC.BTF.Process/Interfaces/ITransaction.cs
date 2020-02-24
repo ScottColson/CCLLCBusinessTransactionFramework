@@ -20,7 +20,7 @@ namespace CCLLC.BTF.Process
         IReadOnlyList<IGeneratedDocument> GeneratedDocuments { get; }
         IReadOnlyList<ICollectedEvidence> CollectedEvidence { get; }
         IReadOnlyList<IDataOfRecord> AffectedRecords { get; }
-        IReadOnlyList<IStepHistory> StepHistory { get; }
+        ITransactionHistory TransactionHistory { get; }
 
         bool CanNavigateForward(IWorkSession session);
         bool CanNavigateBackward(IWorkSession session);

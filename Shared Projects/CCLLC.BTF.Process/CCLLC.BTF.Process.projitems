@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStepTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirementRecord.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)StepType\ProcessStepTypeBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Transaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionManagerFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcess.cs" />

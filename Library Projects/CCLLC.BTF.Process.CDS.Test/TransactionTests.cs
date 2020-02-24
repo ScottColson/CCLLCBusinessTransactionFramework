@@ -886,8 +886,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id CreatedHistory1_2 = new Id<TestProxy.ccllc_stephistory>("B49321A9-2976-41B7-AB62-35B31C463514");
                 public static readonly Id CreatedHistory1_3 = new Id<TestProxy.ccllc_stephistory>("936CB15F-C9AE-422F-95B9-4DC19BF33CB5");
-
-            }
+                }
 
             protected override void InitializeTestData(IOrganizationService service)
             {
@@ -1149,6 +1148,355 @@ namespace CCLLC.BTF.Process.CDS.Test
         }
 
 
-        #endregion NavigateForward_Should_SelectDefaultBranchWhenNoAlternateBranchesEvaluatesTrue
+        #endregion 
+
+        #region NavigateBackward_Should_ArchiveHistory
+
+        [TestMethod]
+        public void Test_NavigateBackward_Should_ArchiveHistory()
+        {
+            new NavigateBackward_Should_ArchiveHistory().Test();
+        }
+
+
+        private class NavigateBackward_Should_ArchiveHistory : Common.TestMethodBase
+        {
+            private struct Ids
+            {
+                public static readonly Id Contact = new Id<TestProxy.Contact>("9781F405-3BA2-4733-A6BE-D4B9D55175D6");
+
+                public static readonly Id Agent = new Id<TestProxy.ccllc_agent>("CA24CA35-79D8-4712-9C4B-F7C689FC01B9");
+
+                public static readonly Id Location = new Id<TestProxy.ccllc_location>("594F3624-7E9A-438A-91A0-07E40C3F916F");
+
+                public static readonly Id Channel1 = new Id<TestProxy.ccllc_channel>("EC60DE36-4ACE-46A3-A41B-A85C3B595832");
+
+                public static readonly Id Role1 = new Id<TestProxy.ccllc_role>("71D9C924-51E2-4284-B438-A170198BE414");
+
+                public static readonly Id DataRecordActionEvaluator = new Id<TestProxy.ccllc_evaluatortype>("8A562158-620C-4C13-B75B-AD879DC4B4AA");
+
+                public static readonly Id DataFormStepType = new Id<TestProxy.ccllc_processsteptype>("DE8E53F9-3E30-40A8-B619-8F01CA13FF74");
+                public static readonly Id ConditionalStepType = new Id<TestProxy.ccllc_processsteptype>("C9CDDA83-6EC3-497B-8AFA-78981293B0F3");
+
+                public static readonly Id Group1 = new Id<TestProxy.ccllc_transactiongroup>("4F155C0A-6FED-4BD9-B6D8-251EA77E431D");
+
+
+                #region Transaction Type 1
+
+                public static readonly Id TransactionType1 = new Id<TestProxy.ccllc_transactiontype>("1651B659-347D-4A63-B387-6709818550B7");
+
+                public static readonly Id TransactionAuthorizedChannel1_1 = new Id<TestProxy.ccllc_transactiontypeauthorizedchannel>("59F97D7C-01AC-4A36-9481-31C895351728");
+
+                public static readonly Id TransactionAuthorizedRole1_1 = new Id<TestProxy.ccllc_transactiontypeauthorizedrole>("0487637A-7A92-4368-BCC4-9FB21EE31739");
+
+                public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("C8B213BF-1A83-44A6-82EB-ACCF43F759A4");
+
+                public static readonly Id Process1 = new Id<TestProxy.ccllc_transactionprocess>("2D579AEB-F8C0-4DCB-922E-9F6C0BF8EC2B");
+
+                public static readonly Id Step1_1 = new Id<TestProxy.ccllc_processstep>("4B057488-4ADF-4CA2-9727-0B35F0B3B3A6");
+                public static readonly Id Step1_2 = new Id<TestProxy.ccllc_processstep>("BFA55B6F-1F2C-4075-813F-F7CA682E27F5");
+                public static readonly Id Step1_3 = new Id<TestProxy.ccllc_processstep>("53231424-D8CA-471A-A7FE-36FA489ABFC8");
+                public static readonly Id Step1_4 = new Id<TestProxy.ccllc_processstep>("FCF5E8E2-44BE-467A-A341-D57379A35DA9");
+                public static readonly Id Step1_5 = new Id<TestProxy.ccllc_processstep>("B50BE88A-81C0-4917-BF7A-17DB5ABF851A");
+                public static readonly Id Step1_6 = new Id<TestProxy.ccllc_processstep>("BC667EEA-6810-4C72-89C2-587327B0EC38");
+
+                public static readonly Id Branch1_2_1 = new Id<TestProxy.ccllc_alternatebranch>("0875EFE6-FF3B-4B92-94F1-617388B58916");
+                public static readonly Id Branch1_2_2 = new Id<TestProxy.ccllc_alternatebranch>("1473FDE3-F7BB-4582-BDEC-D3832F98B3FE");
+                public static readonly Id Branch1_2_3 = new Id<TestProxy.ccllc_alternatebranch>("1E48120C-2CB6-4CA4-B2C7-03BDEF8B5D0B");
+
+                #endregion
+
+                public static readonly Id Transaction = new Id<TestProxy.ccllc_transaction>("71F2A99F-D112-421E-811B-3CCC64B9C3CD");
+                public static readonly Id DataRecord = new Id<TestProxy.new_transactiondatarecord>("378D5EEE-9E98-4EC9-B633-3DB99AE981E5");
+                public static readonly Id History1_1 = new Id<TestProxy.ccllc_stephistory>("B2BC552B-DF1A-4784-A50B-A78FB3E1E82B");
+
+                public static readonly Id CreatedHistory1_2 = new Id<TestProxy.ccllc_stephistory>("B49321A9-2976-41B7-AB62-35B31C463514");
+                public static readonly Id CreatedHistory1_3 = new Id<TestProxy.ccllc_stephistory>("936CB15F-C9AE-422F-95B9-4DC19BF33CB5");
+                public static readonly Id CreatedHistory1_4 = new Id<TestProxy.ccllc_stephistory>("4CCEA0D4-E662-42B4-B207-EDE543C759FC");
+
+            }
+
+            protected override void InitializeTestData(IOrganizationService service)
+            {
+                try
+                {
+                    new CrmEnvironmentBuilder()
+
+                    #region Step Type Setup
+
+                        .WithBuilder<ProcessStepTypeBuilder>(Ids.DataFormStepType, b => b
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.DataForm"))
+
+                        .WithBuilder<ProcessStepTypeBuilder>(Ids.ConditionalStepType, b => b
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.StepType.Branch")
+                            .SupportsConditionalBranching())
+
+                    #endregion
+
+                    #region Evaluator Type Setup
+
+                        .WithBuilder<EvaluatorTypeBuilder>(Ids.DataRecordActionEvaluator, b => b
+                            .WithImplementatingAssembly("CCLLC.BTF.Process.CDS")
+                            .WithImplementatingClass("CCLLC.BTF.Process.CDS.EvaluatorType.DataRecordActionEvaluator"))
+
+                    #endregion
+
+                    #region Transaction Type 1 Setup
+
+                        .WithBuilder<TransactionTypeBuilder>(Ids.TransactionType1, b => b
+                            .InGroup(Ids.Group1)
+                            .WithDisplayRank(2)
+                            .WithDataRecordType("new_transactiondatarecord")
+                            .WithStartupProcess(Ids.Process1))
+
+                        .WithBuilder<TransactionChannelBulder>(Ids.TransactionAuthorizedChannel1_1, b => b
+                            .ForTransctionType(Ids.TransactionType1)
+                            .WithChannel(Ids.Channel1))
+
+                        .WithBuilder<TransactionRoleBuilder>(Ids.TransactionAuthorizedRole1_1, b => b
+                            .ForTransactionType(Ids.TransactionType1)
+                            .WithRole(Ids.Role1))
+
+                    #endregion
+
+                    #region Process 1 Setup w/ Alternate Branches
+
+                        .WithBuilder<TransactionProcessBuilder>(Ids.Process1, b => b
+                            .ForTransactionType(Ids.TransactionType1)
+                            .WithInitialStep(Ids.Step1_1))
+
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_1, b => b
+                            .OfType(Ids.DataFormStepType)
+                            .WithParameters("{\"FormId\":\"Step1\"}")
+                            .ForProcess(Ids.Process1)
+                            .WithSubsequentStep(Ids.Step1_2))
+
+                        //Conditional branch step with default to step 3 if no alternate branches selected
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_2, b => b
+                            .OfType(Ids.ConditionalStepType)
+                            .ForProcess(Ids.Process1)
+                            .WithSubsequentStep(Ids.Step1_3))
+
+                    #region Alternate Branches for Step 1_2
+
+                        //Evaluate last -> Evaluates True -> Go to step 4
+                        .WithBuilder<AlternateBranchBuilder>(Ids.Branch1_2_1, b => b
+                            .ForStep(Ids.Step1_2)
+                            .WithEvlauationOrder(3)
+                            .WithEvaluatorType(Ids.DataRecordActionEvaluator)
+                            .WithParameters("{\"EvaluateAs\":\"true\"}")
+                            .GoesToStep(Ids.Step1_4))
+
+                        //Evaluate second -> Evaluates True -> Go to step 5
+                        .WithBuilder<AlternateBranchBuilder>(Ids.Branch1_2_2, b => b
+                            .ForStep(Ids.Step1_2)
+                            .WithEvlauationOrder(2)
+                            .WithEvaluatorType(Ids.DataRecordActionEvaluator)
+                            .WithParameters("{\"EvaluateAs\":\"true\"}")
+                            .GoesToStep(Ids.Step1_5))
+
+                        //Evaluate first -> Evaluates false
+                        .WithBuilder<AlternateBranchBuilder>(Ids.Branch1_2_3, b => b
+                            .ForStep(Ids.Step1_2)
+                            .WithEvlauationOrder(1)
+                            .WithEvaluatorType(Ids.DataRecordActionEvaluator)
+                            .WithParameters("{\"EvaluateAs\":\"false\"}")
+                            .GoesToStep(Ids.Step1_6))
+
+                    #endregion
+
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_3, b => b
+                            .OfType(Ids.DataFormStepType)
+                            .WithParameters("{\"FormId\":\"Step3\"}")
+                            .ForProcess(Ids.Process1)
+                            .WithSubsequentStep(Ids.Step1_4))
+
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_4, b => b
+                            .OfType(Ids.DataFormStepType)
+                            .WithParameters("{\"FormId\":\"Step4\"}")
+                            .ForProcess(Ids.Process1)
+                            .WithSubsequentStep(Ids.Step1_5))
+
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_5, b => b
+                            .OfType(Ids.DataFormStepType)
+                            .WithParameters("{\"FormId\":\"Step5\"}")
+                            .ForProcess(Ids.Process1)
+                            .WithSubsequentStep(Ids.Step1_6))
+
+                        .WithBuilder<ProcessStepBuilder>(Ids.Step1_6, b => b
+                            .OfType(Ids.DataFormStepType)
+                            .WithParameters("{\"FormId\":\"Step6\"}")
+                            .ForProcess(Ids.Process1))
+
+                    #endregion
+
+                    #region Existing Transaction with Existing Data Record and History
+
+                        .WithBuilder<TransactionBuilder>(Ids.Transaction, b => b
+                            .OfTransactionType(Ids.TransactionType1)
+                            .ForCustomer(Ids.Contact)
+                            .UsingContextRecord(Ids.Contact)
+                            .UsingProcess(Ids.Process1)
+                            .AtStep(Ids.Step1_1)
+                            .WithAgent(Ids.Agent)
+                            .WithLocation(Ids.Location))
+
+                        .WithBuilder<TransactionDataRecordBuilder>(Ids.DataRecord, b => b
+                            .ForTransaction(Ids.Transaction)
+                            .ForCustomer(Ids.Contact))
+
+                        .WithBuilder<StepHistoryBuilder>(Ids.History1_1, b => b
+                            .ForTransaction(Ids.Transaction)
+                            .ForStep(Ids.Step1_1))
+
+                    #endregion
+
+                        .WithEntities<Ids>()
+                        .ExceptEntities(
+                            Ids.CreatedHistory1_2,
+                            Ids.CreatedHistory1_3,
+                            Ids.CreatedHistory1_4)
+                        .Create(service);
+                }
+                catch (Exception ex)
+                {
+                    this.Logger.WriteLine(ex.Message);
+                }
+            }
+
+            protected override void Test(IOrganizationService service)
+            {
+                service = new OrganizationServiceBuilder(service)
+                   .WithIdsDefaultedForCreate(
+                       Ids.CreatedHistory1_2,
+                       Ids.CreatedHistory1_3,
+                       Ids.CreatedHistory1_4)
+                    .WithFakeExecute((s, r) => {
+                        if (r.RequestName == "new_Action")
+                        {
+                            Assert.AreEqual(Ids.DataRecord.EntityId, (r["Target"] as EntityReference).Id);
+                            Assert.AreEqual(Ids.Transaction.EntityId, (r["Transaction"] as EntityReference).Id);
+                            OrganizationResponse resp = new OrganizationResponse();
+                            resp.Results["IsTrue"] = true;
+                            return resp;
+                        }
+                        return s.Execute(r);
+                    })
+                   .Build();
+
+                var executionContext = GetExecutionContext(service);
+
+                var location = new FakeLocation(Ids.Location);
+                var agent = new FakeAgent(Ids.Agent);
+
+                //Fake Session matches all channels and roles
+                var workSession = new FakeWorkSession()
+                    .WithAgent(agent)
+                    .WithLocation(location)
+                    .AllowAllChannels()
+                    .AllowAllRoles();
+
+                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
+                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext);
+                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+
+                //Verify starting on Step 1 and can navigate forward but not backward
+                var step = transaction.CurrentStep;
+                Assert.AreEqual(Ids.Step1_1, step.Id);
+                Assert.IsTrue(transaction.CanNavigateForward(workSession));
+                Assert.IsFalse(transaction.CanNavigateBackward(workSession));
+
+                //
+                //Act: Navigate forward and then backward (should land on step 1_1)
+                //
+                step = transaction.NavigateForward(workSession);
+                step = transaction.NavigateBackward(workSession);
+
+                //Verify navigation succeeded
+                Assert.AreEqual(Ids.Step1_1, step.Id);                                         //returned correct step
+                Assert.AreEqual(Ids.Step1_1, transaction.CurrentStep.Id);                      //transaction object updated to correct step
+
+                //Verify transaction record updated
+                var transactionRecord = service.Retrieve(
+                    Ids.Transaction.LogicalName,
+                    Ids.Transaction.EntityId,
+                    new Microsoft.Xrm.Sdk.Query.ColumnSet(true))
+                    .ToEntity<ccllc_transaction>();
+
+                Assert.AreEqual(Ids.Step1_1, transactionRecord.ccllc_CurrentStepId);
+
+                //Verify archived history for first execution of step 1_1
+                var updatedHistory = service.Retrieve(
+                    Ids.History1_1.LogicalName,
+                    Ids.History1_1.EntityId,
+                    new Microsoft.Xrm.Sdk.Query.ColumnSet(true))
+                    .ToEntity<TestProxy.ccllc_stephistory>();
+
+                Assert.AreEqual(Ids.Transaction, updatedHistory.ccllc_TransactionId);                      //not changed
+                Assert.AreEqual(Ids.Step1_1, updatedHistory.ccllc_ProcessStepId);                          //not changed
+                Assert.IsNotNull(updatedHistory.ccllc_CompletedOn);                                        //logs time of completion
+                Assert.AreEqual(Ids.Location, updatedHistory.ccllc_CompletedAtLocationId);                 //logs location where step was completed
+                Assert.AreEqual(Ids.Agent, updatedHistory.ccllc_CompletedByAgentId);                       //logs agent that completed step
+                Assert.AreEqual(Ids.CreatedHistory1_2, updatedHistory.ccllc_NextRecordId);                 //Linked to next history record
+                Assert.AreEqual((int)ccllc_stephistory_statuscode.Archived, (int)updatedHistory.statuscode);//Current status
+
+                //Verify archived history record for first execution of Step 1_2 
+                var createdHistory = service.Retrieve(
+                    Ids.CreatedHistory1_2.LogicalName,
+                    Ids.CreatedHistory1_2.EntityId,
+                    new Microsoft.Xrm.Sdk.Query.ColumnSet(true))
+                    .ToEntity<TestProxy.ccllc_stephistory>();
+
+                Assert.AreEqual(Ids.Transaction, createdHistory.ccllc_TransactionId);                      //linked to correct transaction
+                Assert.AreEqual(Ids.Step1_2, createdHistory.ccllc_ProcessStepId);                          //linked to correct step
+                Assert.IsNotNull(createdHistory.ccllc_CompletedOn);                                        //logs time of completion
+                Assert.AreEqual(Ids.Location, createdHistory.ccllc_CompletedAtLocationId);                 //not complete
+                Assert.AreEqual(Ids.Agent, createdHistory.ccllc_CompletedByAgentId);                       //not complete
+                Assert.AreEqual(Ids.History1_1, createdHistory.ccllc_PreviousRecordId);                    //Linked to previous history record
+                Assert.AreEqual(Ids.CreatedHistory1_3, createdHistory.ccllc_NextRecordId);                 //Linked to next history record
+                Assert.AreEqual((int)ccllc_stephistory_statuscode.Archived, (int)createdHistory.statuscode);//Current status
+
+                //Verify archived history record for Step 1_5. Never executed.
+                createdHistory = service.Retrieve(
+                    Ids.CreatedHistory1_3.LogicalName,
+                    Ids.CreatedHistory1_3.EntityId,
+                    new Microsoft.Xrm.Sdk.Query.ColumnSet(true))
+                    .ToEntity<TestProxy.ccllc_stephistory>();
+
+                Assert.AreEqual(Ids.Transaction.EntityId, createdHistory.ccllc_TransactionId.Id);          //linked to correct transaction
+                Assert.AreEqual(Ids.Step1_5, createdHistory.ccllc_ProcessStepId.Id);                       //linked to correct step
+                Assert.IsNull(createdHistory.ccllc_CompletedOn);                                           //not complete
+                Assert.IsNull(createdHistory.ccllc_CompletedAtLocationId);                                 //not complete
+                Assert.IsNull(createdHistory.ccllc_CompletedByAgentId);                                    //not complete
+                Assert.AreEqual(Ids.CreatedHistory1_4, createdHistory.ccllc_NextRecordId);                                          //not complete
+                Assert.AreEqual(Ids.CreatedHistory1_2, createdHistory.ccllc_PreviousRecordId);             //Linked to previous hisotry step
+                Assert.AreEqual((int)ccllc_stephistory_statuscode.Archived, (int)createdHistory.statuscode);//Archived
+
+                //Verify current history record for second landing on step 1_1
+                createdHistory = service.Retrieve(
+                    Ids.CreatedHistory1_4.LogicalName,
+                    Ids.CreatedHistory1_4.EntityId,
+                    new Microsoft.Xrm.Sdk.Query.ColumnSet(true))
+                    .ToEntity<TestProxy.ccllc_stephistory>();
+
+                Assert.AreEqual(Ids.Transaction.EntityId, createdHistory.ccllc_TransactionId.Id);          //linked to correct transaction
+                Assert.AreEqual(Ids.Step1_1, createdHistory.ccllc_ProcessStepId.Id);                       //linked to correct step
+                Assert.IsNull(createdHistory.ccllc_CompletedOn);                                           //not complete
+                Assert.IsNull(createdHistory.ccllc_CompletedAtLocationId);                                 //not complete
+                Assert.IsNull(createdHistory.ccllc_CompletedByAgentId);                                    //not complete
+                Assert.IsNull(createdHistory.ccllc_NextRecordId);                                          //not complete
+                Assert.IsNull(createdHistory.ccllc_PreviousRecordId);                                      //Linked to previous hisotry step
+                Assert.AreEqual((int)ccllc_stephistory_statuscode.Current, (int)createdHistory.statuscode);//Archived
+
+
+            }
+
+
+        }
+
+        #endregion NavigateBackward_Should_ArchiveHistory
+
     }
 }

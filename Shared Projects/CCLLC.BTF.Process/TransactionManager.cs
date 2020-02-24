@@ -143,17 +143,19 @@ namespace CCLLC.BTF.Process
                 
                 executionContext.TrackEvent("Created New Transaction");
 
-                // create step history for the initial process step.
-                StepHistoryManager.NewStepHistory(executionContext, transactionRecord, initialStep, null);
+                var transaction = buildTransaction(executionContext, transactionRecord);
+
+                transaction.TransactionHistory.AddToHistory(executionContext, workSession, transaction.CurrentStep, false);
 
                 //create applied fee entries for any items on the initial fee schedule
                 foreach (var fee in transactionType.InitialFeeSchedule)
                 {
                     var tempList = new List<IAppliedFee>();
-                    AppliedFeeManager.AddAppliedFee(executionContext, tempList, transactionRecord, fee);
+                    AppliedFeeManager.AddAppliedFee(executionContext, tempList, transaction, fee);
                 }
-                
-                return buildTransaction(executionContext, transactionRecord);
+
+                return transaction;
+               
             }
             catch (Exception ex)
             {
@@ -173,8 +175,7 @@ namespace CCLLC.BTF.Process
             ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.AppliedFeeManager, this.TransactionContextFactory, this.CustomerFactory,
                 this.DeficiencyManager, this.DocumentManager, this.EvidenceManager, this.LocationFactory, this.RequirementEvaluator, this.StepHistoryManager,
                 this as ITransactionManager, transactionType, record);
-
-
+           
             return transaction;
         }
 
