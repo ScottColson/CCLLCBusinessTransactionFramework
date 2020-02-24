@@ -36,7 +36,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IProcessStepFactory>().Using<ProcessStepFactory>();
             c.Implement<IProcessStepTypeFactory>().Using<ProcessStepTypeFactory>();
             c.Implement<IRequirementEvaluator>().Using<DefaultRequirementEvaluator>();
-            c.Implement<IStepHistoryManager>().Using<StepHistoryManager>();
+            c.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>();
             c.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>();
             c.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>();
             c.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>();

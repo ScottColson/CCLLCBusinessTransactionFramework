@@ -31,7 +31,7 @@ namespace CCLLC.BTF.Process
         protected IEvidenceManager EvidenceManager { get; }
         protected ILocationFactory LocationFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
-        protected IStepHistoryManager StepHistoryManager { get; }
+        protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
         protected ITransactionManager TransactionManager { get; }
       
         protected IRecordPointer<Guid> ContextRecordId { get; }
@@ -191,7 +191,7 @@ namespace CCLLC.BTF.Process
             {
                 if (_transactionHistory == null)
                 {
-                    _transactionHistory = StepHistoryManager.CreateTransactionHistory(this.ExecutionContext, this);
+                    _transactionHistory = TransactionHistoryFactory.CreateTransactionHistory(this.ExecutionContext, this);
                 }
 
                 return _transactionHistory;
@@ -226,7 +226,7 @@ namespace CCLLC.BTF.Process
 
         public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, IAppliedFeeManager appliedFeeManager, ITransactionContextFactory transactionContextFactory,
             ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
-            ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, IStepHistoryManager stepHistoryManager, ITransactionManager transactionManager,  
+            ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionManager transactionManager,  
             ITransactionType transactionType, ITransactionRecord record) 
             : base(record.RecordType,record.Id)
         {            
@@ -241,7 +241,7 @@ namespace CCLLC.BTF.Process
             this.EvidenceManager = evidenceManager ?? throw new ArgumentNullException("evidenceManager");
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
-            this.StepHistoryManager = stepHistoryManager ?? throw new ArgumentNullException("stepHistoryFactory");
+            this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
             this.TransactionManager = transactionManager ?? throw new ArgumentNullException("transactionManager");
             
             this.TransactionType = transactionType ?? throw new ArgumentNullException("transactionType");

@@ -28,11 +28,11 @@ namespace CCLLC.BTF.Process
         protected IEvidenceManager EvidenceManager { get; }
         protected ILocationFactory LocationFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
-        protected IStepHistoryManager StepHistoryManager { get; }
+        protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
 
         protected internal TransactionManager(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAppliedFeeManager appliedFeeManager, 
             ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager,
-            IEvidenceManager evidenceManager, ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, IStepHistoryManager stepHistoryManager,
+            IEvidenceManager evidenceManager, ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory,
             IList<ITransactionType> registeredTransactions)
         {
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
@@ -45,7 +45,7 @@ namespace CCLLC.BTF.Process
             this.EvidenceManager = evidenceManager ?? throw new ArgumentNullException("evidenceManager");
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
-            this.StepHistoryManager = stepHistoryManager ?? throw new ArgumentNullException("stepHistoryFactory");
+            this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
 
             if (registeredTransactions == null)
             {
@@ -173,7 +173,7 @@ namespace CCLLC.BTF.Process
             
             // Create a new Transaction object and pass in all the factories and record managers needed to load related data as needed.
             ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.AppliedFeeManager, this.TransactionContextFactory, this.CustomerFactory,
-                this.DeficiencyManager, this.DocumentManager, this.EvidenceManager, this.LocationFactory, this.RequirementEvaluator, this.StepHistoryManager,
+                this.DeficiencyManager, this.DocumentManager, this.EvidenceManager, this.LocationFactory, this.RequirementEvaluator, this.TransactionHistoryFactory,
                 this as ITransactionManager, transactionType, record);
            
             return transaction;

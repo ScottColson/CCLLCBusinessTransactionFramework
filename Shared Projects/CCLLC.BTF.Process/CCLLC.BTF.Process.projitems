@@ -54,7 +54,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IStepHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IStepHistoryDataConnector.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IStepHistoryManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionHistoryFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IStepRequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDataRecord.cs" />
@@ -76,7 +76,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ProcessStepTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepExecutionResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepHistory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StepHistoryManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionHistoryFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\Branch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\DataForm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\ProcessStepTypeBase.cs" />

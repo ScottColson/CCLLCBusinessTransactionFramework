@@ -2,7 +2,7 @@
 
 namespace CCLLC.BTF.Process
 {
-    public interface IStepHistoryManager
+    public interface ITransactionHistoryFactory
     {
         ITransactionHistory CreateTransactionHistory(IProcessExecutionContext executionContext, ITransaction transaction);
 

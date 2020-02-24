@@ -29,7 +29,7 @@ namespace CCLLC.BTF.Process
         protected IProcessStepTypeFactory ProcessStepTypeFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
         protected ITransactionRequirementFactory RequirementFactory { get; }
-        protected IStepHistoryManager StepHistoryManager { get; }
+        protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
         protected ITransactionProcessFactory TransactionProcessFactory { get; }
         protected IParameterSerializer ParameterSerializer { get; }
 
@@ -38,7 +38,7 @@ namespace CCLLC.BTF.Process
             IAppliedFeeManager appliedFeeManager, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformManager platformManager, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
-            IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, IStepHistoryManager stepHistoryManager, 
+            IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
             ITransactionProcessFactory transactionProcessFactory)
         {
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
@@ -57,7 +57,7 @@ namespace CCLLC.BTF.Process
             this.ProcessStepTypeFactory = processStepTypeFactory ?? throw new ArgumentNullException("processStepTypeFactory.");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
             this.RequirementFactory = requirementFactory ?? throw new ArgumentNullException("requirementFactory.");
-            this.StepHistoryManager = stepHistoryManager ?? throw new ArgumentNullException("stepHistoryManager");
+            this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
             this.TransactionProcessFactory = transactionProcessFactory ?? throw new ArgumentNullException("transactionProcessFactory.");
             this.ParameterSerializer = parameterSerializer ?? throw new ArgumentNullException("parameterSerializer");
         }
@@ -150,7 +150,7 @@ namespace CCLLC.BTF.Process
 
                 // Create a new transaction manager and pass in required factory and record managers. 
                 var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.AppliedFeeManager, this.TransactionContextFactory, this.CustomerFactory, this.DeficiencyManager,
-                    this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.StepHistoryManager, registeredTransactions);
+                    this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, registeredTransactions);
 
                 if (useCache)
                 {
