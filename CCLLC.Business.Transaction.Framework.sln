@@ -35,6 +35,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.CDS.Testing", "Librar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCLLC.BTF.Process.CDS.Test", "Library Projects\CCLLC.BTF.Process.CDS.Test\CCLLC.BTF.Process.CDS.Test.csproj", "{04D65AB5-3AED-4E12-A6F5-9864389ED9BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AB02B1D3-5514-4DCF-8039-7022657FB092}"
+	ProjectSection(SolutionItems) = preProject
+		docs\README.md = docs\README.md
+		docs\Transaction Type.md = docs\Transaction Type.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared Projects\CCLLC CDS.TestBase\CCLLC.CDS.TestBase.projitems*{04d65ab5-3aed-4e12-a6f5-9864389ed9ba}*SharedItemsImports = 4
