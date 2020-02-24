@@ -40,7 +40,7 @@ The architecture was solid and served us well but it had some major flaws:
 This evolved architecture makes a single Transaction entity the center of the system. Each created Transaction has the following key features:
 
 1. Linked to a specific customer which can be either an Account or a Contact.
-2. Linked to a [Transaction Type](docs/Transaction Type.md) definition that defines requirements and processes for completing the transaction.
+2. Linked to a [Transaction Type](Transaction Type.md) definition that defines requirements and processes for completing the transaction.
 3. Linked to a starting Context Record (the record where the transacion was initiated.) 
 4. Linked to a Data Capture Record used for capturing user input and providing the user experience.
 5. Linked to a set of process history steps that captures when a particular process step was completed and information about the Agent and related Work Session at that time.
