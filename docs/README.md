@@ -1,0 +1,1 @@
+Insert new docs folder.
