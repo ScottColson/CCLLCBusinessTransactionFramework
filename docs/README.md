@@ -10,13 +10,13 @@ be used by the Department of Motor Vehicles within the Idaho Transportation Depa
 manage drivers licenses and vehicle registrations. 
 
 For my DMV project we settled on an architecture that used "transactional entities" to 
-capture input data for processes that ultimately ended in the creation of variuos types of credentials
-such as a drivers license. These transactional entities were linked to financal transacitons where we
-caputured the fees that were collected and utlimately collected payment prior to completing the transaction.
+capture input data for processes that ultimately ended in the creation of various types of credentials
+such as a drivers license. These transactional entities were linked to financial transactions where we
+captured the fees that were collected and ultimately collected payment prior to completing the transaction.
 
 We used a validation framework that validated a set of requirements at key points in the process 
 and at the end of the process prior to collecting payment. I have long been a fan of using this type of
-system that allows waivable requirements to be specified outside of the bounds of the process. This particular
+system that allows waiverable requirements to be specified outside of the bounds of the process. This particular
 implementation allowed process implementors to call CRM Action processes to complete a validation and 
 also allowed developers to create specific coded verifications that were activated via .NET Reflection 
 when needed.
@@ -28,7 +28,7 @@ The architecture was solid and served us well but it had some flaws:
 
 1. Each new "transaction" had to be linked into both the financial framework and the validation framework.
 2. The only natural way to kick off a process was by updating the transaction record which created some odd user experience situations.
-3. There was very little reuse of process steps because they work created specific to a particular "transaciton entity".
+3. There was very little reuse of process steps because they work created specific to a particular "transaction entity".
 4. Providing a consolidate list of Work In Progress (WIP) was complex because the list had to span multiple entity types. 
 5. Part of the financial implementation was based on a custom CRM activity type which led to issues in UX and security role management.
 6. The use of CRM workflows made it possible to decouple process from code but it also resulted in an explosion of workflows that made it difficult to see understand the overall all process.
@@ -41,16 +41,16 @@ of our approaches to enacting complex business processes.
 ### New Approach
 
 This framework was born out of projects related to issuing driving credentials but my intent is to provide 
-a starting point for creating a system to implement one or more complex multistep business process of any type. 
+a starting point for creating a system to implement one or more complex multi-step business process of any type. 
 I've evaluated the kinds of problems I've addressed over my career of creating Line Of Business applications 
 on top of the Dynamics CRM (aka PowerPlatorm) system and tried to make a framework that addresses the 
 common situations I've run into. To that end, this framework addresses the common requirements.
 
-- Managing Changes to Data Of Record - Most business processes result in creating a record or document that should not be modified without specific authority and auditability of the changes. In this framework that type of record is referred to as Data Of Record and changes to Data Of Record are completed via processes by people that are authorized to do so using defined processes with recorded history.
+- Managing Changes to Data Of Record - Most business processes result in creating a record or document that should not be modified without specific authority and auditable changes. In this framework that type of record is referred to as Data Of Record and changes to Data Of Record are completed via processes by people that are authorized to do so using defined processes with recorded history.
 
-- Data Collection - Most processes require a user experience that invovles entering data that is used by the process. In this framework that is handled by a Data Capture Entity which provides the structure to capture the data and one or more forms to guide the user experience.
+- Data Collection - Most processes require a user experience that involves entering data that is used by the process. In this framework that is handled by a Data Capture Entity which provides the structure to capture the data and one or more forms to guide the user experience.
  
-- Implementing Complex Processes - Complex problems have complex processes. This framwork provides a means to create reusable process steps. These steps provide branching capability, leveage existing CDS features such as Action processes, guide users through data entry, or execute coded implementations specific to a particular problem. Users navigate through the process in a series of Next and Back steps as needed until the process is completed.
+- Implementing Complex Processes - Complex problems have complex processes. This framework provides a means to create reusable process steps. These steps provide branching capability, leverage existing CDS features such as Action processes, guide users through data entry, or execute coded implementations specific to a particular problem. Users navigate through the process in a series of Next and Back steps as needed until the process is completed.
 
 - Understanding the Process Context - Many processes only make sense if they start from a specific record type. In this framework that is defined as the context and processes can only be initiated from records that meet initial context filters.
 
@@ -58,7 +58,7 @@ common situations I've run into. To that end, this framework addresses the commo
 
 - Fee Collection - Business processes often involve establishing fees and collecting payment from customers. This framework provides the required scaffolding to manage fees, apply fees to transactions, and collect fee payment.
 
-- Validating Requirements - The completion of a business process often involves ensuring a set of requirements have been met. In some cases requirements may be waived. This framework provides a validation engine that varifies defined requirements, documents any resulting deficiencies, and when needed supports role based waiving of specific requirements.
+- Validating Requirements - The completion of a business process often involves ensuring a set of requirements have been met. In some cases requirements may be waived. This framework provides a validation engine that verifies defined requirements, documents any resulting deficiencies, and when needed supports role based waiving of specific requirements.
 
 - Extensibility - We don't know what we don't know at the start of a project. Therefore the framework needs to be extensible allowing the addition of new types of process steps that solve the currently unknown problem.
 
@@ -68,17 +68,17 @@ This framework makes a single Transaction entity the center of the system. Each 
 
 1. Linked to a specific customer which can be either an Account or a Contact.
 2. Linked to a [Transaction Type](TransactionType.md) that defines requirements and the overall processes for completing the transaction.
-3. Linked to a starting [Context Record](ContextRecord.md) (the record where the transacion was initiated.) 
+3. Linked to a starting [Context Record](ContextRecord.md) (the record where the transaction was initiated.) 
 4. Linked to a [Data Capture Record](DataCaptureRecord.md) used for capturing user input and providing the user experience.
 5. Linked to a set of process history steps that captures when a particular process step was completed and information about the Agent and related Work Session at that time.
-6. Linked to a set of Evidence collected during the execution of the transaction process. Evidence can be either collected authoratative documents or API interactions with external systems.
-7. Linked to a set of Deficiencies that document the falure to meet requirements defined for the transaction type.
+6. Linked to a set of Evidence collected during the execution of the transaction process. Evidence can be either collected authoritative documents or API interactions with external systems.
+7. Linked to a set of Deficiencies that document the failure to meet requirements defined for the transaction type.
 7. Linked to a set of Fees that will be charged to complete the transaction.
 8. Linked to any Data Of Record that was created or modified as part of the transaction process.
 
 ### Process Definitions
 
-Processes are defined for each type of transaction. These processes consist of a series of steps that rely on pre-created 
+Processes are defined for each type of transaction. These processes consist of a series of steps that rely on reusable 
 Step Types combined with meta data included in the specific process step definition. New types of steps can be created and registered
 in the BTF for use in any process. The following types of steps are currently available or in development.
 
@@ -108,7 +108,7 @@ Step Types are an additional type of Deferred Implementation that provide any re
 to complete a the intended implementation of the step. 
 
 
-### Layerd Architecture
+### Layered Architecture
 
 The system consists of the following modules that provide layers of functionality that stack to provide an overall framework:
 
@@ -116,9 +116,9 @@ The system consists of the following modules that provide layers of functionalit
 
 - The **Revenue Module** provides the functionality and data storage related to tracking revenue generation including defining fees, capturing payment, and providing a journal of financial activity in the system. 
 
-- The **Documents Module** contains functionality to store authoratative documents captured as part of a process and to store documents created by the process. These are documents ar transaciton and process specific and by no means in the functionality intended to replace a document management system.
+- The **Documents Module** contains functionality to store authoritative documents captured as part of a process and to store documents created by the process. These are documents are transaction and process specific and by no means in the functionality intended to replace a document management system.
 
-- The **Process Module** provides the functionality to define Transaction Types and to define complex synchronus Processes to complete a transaction. Processes are build from a series of reusable step types that include user interaction and data capture, conditional branching and various function specific tasks. System users can navigate the process forwards or backwards as needed. New step types can be added to the system as needed.
+- The **Process Module** provides the functionality to define Transaction Types and to define complex synchronous Processes to complete a transaction. Processes are build from a series of reusable step types that include user interaction and data capture, conditional branching and various function specific tasks. System users can navigate the process forwards or backwards as needed. New step types can be added to the system as needed.
 
 Within each of these modules the architecture is further broken up into the following slices:
 
