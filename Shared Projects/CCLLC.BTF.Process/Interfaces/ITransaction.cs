@@ -5,7 +5,7 @@ using CCLLC.BTF.Documents;
 
 namespace CCLLC.BTF.Process
 {
-    public interface ITransaction : CCLLC.BTF.Platform.ITransaction
+    public interface ITransaction : CCLLC.BTF.Revenue.ITransaction, CCLLC.BTF.Platform.ITransaction
     {      
         ITransactionType TransactionType { get; }     
         IAgent InitiatingAgent { get; }
@@ -16,7 +16,7 @@ namespace CCLLC.BTF.Process
         ITransactionContext TransactionContext { get; }
         ITransactionDataRecord DataRecord { get; }
         IReadOnlyList<IRequirementDeficiency> Deficiencies { get; }
-        IReadOnlyList<IAppliedFee> AppliedFees { get; }
+        ITransactionFeeList Fees { get; }
         IReadOnlyList<IGeneratedDocument> GeneratedDocuments { get; }
         IReadOnlyList<ICollectedEvidence> CollectedEvidence { get; }
         IReadOnlyList<IDataOfRecord> AffectedRecords { get; }

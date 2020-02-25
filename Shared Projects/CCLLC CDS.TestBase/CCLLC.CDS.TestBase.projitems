@@ -80,7 +80,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgentFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAppliedFee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAppliedFeeManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeChannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomerFactory.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakePlatformManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeTransactionFeeListFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeWorkSession.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OrganizationServicePreProcessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\AccountState.cs" />

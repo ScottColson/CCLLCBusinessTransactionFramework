@@ -16,7 +16,7 @@ namespace CCLLC.BTF.Process
         protected ITransactionDataConnector DataConnector { get; }
         protected IAgentFactory AgentFactory { get; }
         protected IAlternateBranchFactory AlternateBranchFactory { get; }
-        protected IAppliedFeeManager AppliedFeeManager { get; }
+        protected ITransactionFeeListFactory FeeListFactory { get; }
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected IDeficiencyManager DeficiencyManager { get; }
@@ -35,7 +35,7 @@ namespace CCLLC.BTF.Process
 
 
         public TransactionManagerFactory(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
-            IAppliedFeeManager appliedFeeManager, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
+            ITransactionFeeListFactory feeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformManager platformManager, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
             IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
@@ -44,7 +44,7 @@ namespace CCLLC.BTF.Process
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory.");
             this.AlternateBranchFactory = alternateBranchFactory ?? throw new ArgumentNullException("alternateBrachFactory");
-            this.AppliedFeeManager = appliedFeeManager ?? throw new ArgumentNullException("appliedFeeManager.");
+            this.FeeListFactory = feeListFactory ?? throw new ArgumentNullException("feeListFactory");
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory.");
             this.DeficiencyManager = deficiencyManager ?? throw new ArgumentNullException("deficiencyManager");
@@ -149,7 +149,7 @@ namespace CCLLC.BTF.Process
                 executionContext.Trace("Creating Transaction Manager loaded with {0} Transaction Types.", registeredTransactions.Count);
 
                 // Create a new transaction manager and pass in required factory and record managers. 
-                var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.AppliedFeeManager, this.TransactionContextFactory, this.CustomerFactory, this.DeficiencyManager,
+                var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.FeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.DeficiencyManager,
                     this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, registeredTransactions);
 
                 if (useCache)

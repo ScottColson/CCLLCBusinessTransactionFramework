@@ -10,13 +10,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AppliedFee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AppliedFeeManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueModuleSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculatorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueDataConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeListFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionFeeList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionFeeListFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Enums\" />

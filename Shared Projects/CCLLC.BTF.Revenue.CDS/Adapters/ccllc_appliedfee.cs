@@ -8,7 +8,7 @@ namespace CCLLC.BTF.Revenue.CDS
     {
         public IRecordPointer<Guid> TransactionId => this.ccllc_TransactionId?.ToRecordPointer();
 
-        public IRecordPointer<Guid> FeeId => this.ccllc_FeeId?.ToRecordPointer();
+        public IRecordPointer<Guid> Fee => this.ccllc_FeeId?.ToRecordPointer();
 
         public decimal Quantity => this.ccllc_Quantity ?? 0m;
 
@@ -18,7 +18,6 @@ namespace CCLLC.BTF.Revenue.CDS
 
         public string RecordType => this.LogicalName;       
 
-        public string Name => this.ccllc_name;
-        
+        public string Name => this.ccllc_name;       
     }
 }

@@ -20,7 +20,7 @@ namespace CCLLC.BTF.Process
 
         protected ITransactionDataConnector DataConnector { get;}
         protected IAgentFactory AgentFactory { get; }
-        protected IAppliedFeeManager AppliedFeeManager { get; }
+        protected ITransactionFeeListFactory FeeListFactory { get; }
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected IDeficiencyManager DeficiencyManager { get; }
@@ -30,14 +30,14 @@ namespace CCLLC.BTF.Process
         protected IRequirementEvaluator RequirementEvaluator { get; }
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
 
-        protected internal TransactionManager(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAppliedFeeManager appliedFeeManager, 
+        protected internal TransactionManager(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, ITransactionFeeListFactory feeListFactory, 
             ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager,
             IEvidenceManager evidenceManager, ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory,
             IList<ITransactionType> registeredTransactions)
         {
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory");
-            this.AppliedFeeManager = appliedFeeManager ?? throw new ArgumentNullException("appliedFeeManager");
+            this.FeeListFactory = feeListFactory ?? throw new ArgumentNullException("feeListFactory");
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
             this.DeficiencyManager = deficiencyManager ?? throw new ArgumentNullException("deficiencyManager");
@@ -81,7 +81,7 @@ namespace CCLLC.BTF.Process
                 .ThenBy(t => t.Name)
                 .ToList();
 
-                executionContext.Trace("Returning {0} elibible Transaction Types out of {1} registered Transaction Types", availableTransactions.Count, RegisteredTransactionTypes.Count);
+                executionContext.Trace("Returning {0} eligible Transaction Types out of {1} registered Transaction Types", availableTransactions.Count, RegisteredTransactionTypes.Count);
 
                 return availableTransactions;
             }
@@ -147,11 +147,10 @@ namespace CCLLC.BTF.Process
 
                 transaction.TransactionHistory.AddToHistory(executionContext, workSession, transaction.CurrentStep, false);
 
-                //create applied fee entries for any items on the initial fee schedule
+                //create transaction fees entries for any items on the initial fee schedule
                 foreach (var fee in transactionType.InitialFeeSchedule)
                 {
-                    var tempList = new List<IAppliedFee>();
-                    AppliedFeeManager.AddAppliedFee(executionContext, tempList, transaction, fee);
+                    transaction.Fees.AddFee(executionContext, workSession, fee);                   
                 }
 
                 return transaction;
@@ -172,7 +171,7 @@ namespace CCLLC.BTF.Process
             if (transactionType == null) throw TransactionException.BuildException(TransactionException.ErrorCode.TransactionTypeNotFound);
             
             // Create a new Transaction object and pass in all the factories and record managers needed to load related data as needed.
-            ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.AppliedFeeManager, this.TransactionContextFactory, this.CustomerFactory,
+            ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.FeeListFactory, this.TransactionContextFactory, this.CustomerFactory,
                 this.DeficiencyManager, this.DocumentManager, this.EvidenceManager, this.LocationFactory, this.RequirementEvaluator, this.TransactionHistoryFactory,
                 this as ITransactionManager, transactionType, record);
            

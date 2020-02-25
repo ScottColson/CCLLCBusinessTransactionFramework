@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CCLLC.Core;
 using CCLLC.BTF.Revenue;
 
@@ -26,6 +22,8 @@ namespace CCLLC.CDS.Test.Fakes
 
         public string Name { get; }
 
+        IRecordPointer<Guid> IAppliedFeeRecord.Fee => throw new NotImplementedException();
+
         public FakeAppliedFee(TestProxy.ccllc_appliedfee record)
         {
             RecordType = record.LogicalName;
@@ -37,11 +35,19 @@ namespace CCLLC.CDS.Test.Fakes
             }
         }
 
-        public void CalculatePrice(IProcessExecutionContext executionContext, DateTime? pricingDate)
+        public void CalculatePrice(IProcessExecutionContext executionContext, IPriceCalculator priceCalculator)
         {
             throw new NotImplementedException();
         }
 
+        public void IncrementQuantity(decimal incrementValue = 1)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void DecrementQuantity(decimal decrementValue = 1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

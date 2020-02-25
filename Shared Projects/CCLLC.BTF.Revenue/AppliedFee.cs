@@ -6,15 +6,17 @@ namespace CCLLC.BTF.Revenue
 
     public class AppliedFee : RecordPointer<Guid>, IAppliedFee
     {
-        public IRecordPointer<Guid> TransactionId { get; }
-
-        public IFee Fee {get;}
-
         public decimal Quantity { get; }
 
         public decimal UnitPrice { get; }
 
         public decimal TotalPrice { get; }
+
+        public IFee Fee { get; }
+
+        public IRecordPointer<Guid> TransactionId { get; }
+
+        IRecordPointer<Guid> IAppliedFeeRecord.Fee => this.Fee as IRecordPointer<Guid>;              
 
         internal AppliedFee(IAppliedFeeRecord appliedFeeRecord, IFee fee) :
             base(appliedFeeRecord.RecordType,appliedFeeRecord.Id)
@@ -25,8 +27,18 @@ namespace CCLLC.BTF.Revenue
             TotalPrice = appliedFeeRecord.TotalPrice;
             Fee = fee;
         }
-       
-        public void CalculatePrice(IProcessExecutionContext executionContext, DateTime? pricingDate)
+
+        public void CalculatePrice(IProcessExecutionContext executionContext, IPriceCalculator priceCalculator)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void IncrementQuantity(decimal incrementValue = 1)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DecrementQuantity(decimal decrementValue = 1)
         {
             throw new NotImplementedException();
         }

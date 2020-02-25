@@ -21,7 +21,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
         {
             c.Implement<IAgentFactory>().Using<FakeAgentFactory>();
             c.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>();
-            c.Implement<IAppliedFeeManager>().Using<FakeAppliedFeeManager>();
+            c.Implement<ITransactionFeeListFactory>().Using<FakeTransactionFeeListFactory>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ICustomerFactory>().Using<FakeCustomerFactory>();
             c.Implement<IDeferredActivator>().Using<DeferredActivator>();

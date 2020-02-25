@@ -105,6 +105,12 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.csproj">
+      <Project>{cb57dcdc-7a70-42ee-b4db-61dd07fa313d}</Project>
+      <Name>CCLLC.BTF.Platform.CDS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
   <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

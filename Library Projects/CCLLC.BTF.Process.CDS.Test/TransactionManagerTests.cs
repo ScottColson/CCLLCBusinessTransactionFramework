@@ -1423,8 +1423,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                 Assert.AreEqual(Ids.Location.EntityId, transaction.InitiatingLocation.Id);
 
                 //Applied Fee generated based on initial fee schedule
-                Assert.AreEqual(1, transaction.AppliedFees.Count);                              
-                Assert.AreEqual(Ids.Fee1.EntityId, transaction.AppliedFees[0].Fee.Id);       
+                Assert.AreEqual(1, transaction.Fees.Count);                              
+                Assert.AreEqual(Ids.Fee1.EntityId, transaction.Fees[0].Fee.Id);       
             }
         }
 

@@ -12,7 +12,7 @@ namespace CCLLC.BTF.Process
     public class Transaction : RecordPointer<Guid>, ITransaction
     {
         private List<IDataOfRecord> _affectedRecords;
-        private List<IAppliedFee> _appliedFees;
+        private ITransactionFeeList _feeList;
         private List<ICollectedEvidence> _collectedEvidence;
         private ITransactionHistory _transactionHistory;
         private List<IRequirementDeficiency> _deficiencies;
@@ -23,7 +23,7 @@ namespace CCLLC.BTF.Process
         protected IProcessExecutionContext ExecutionContext { get; }
 
         protected IAgentFactory AgentFactory { get; }
-        protected IAppliedFeeManager AppliedFeeManager { get; }
+        protected ITransactionFeeListFactory FeeListFactory { get; }
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected IDeficiencyManager DeficiencyManager { get; }
@@ -164,16 +164,16 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        public IReadOnlyList<IAppliedFee> AppliedFees
+        public ITransactionFeeList Fees
         {
             get
             {
-                if (_appliedFees == null)
+                if (_feeList == null)
                 {
-                    _appliedFees = this.AppliedFeeManager.LoadAppliedFees(this.ExecutionContext, this).ToList();
+                    _feeList = FeeListFactory.CreateFeeList(ExecutionContext, this);
                 }
 
-                return _appliedFees;
+                return _feeList;
             }
         }
 
@@ -222,9 +222,11 @@ namespace CCLLC.BTF.Process
 
                 return _generatedDocuments;
             }
-        }     
+        }
 
-        public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, IAppliedFeeManager appliedFeeManager, ITransactionContextFactory transactionContextFactory,
+        public DateTime PricingDate { get; }
+
+        public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory feeListFactory, ITransactionContextFactory transactionContextFactory,
             ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
             ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionManager transactionManager,  
             ITransactionType transactionType, ITransactionRecord record) 
@@ -233,7 +235,7 @@ namespace CCLLC.BTF.Process
             this.ExecutionContext = executionContext ?? throw new ArgumentNullException("executionContext");
 
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory");
-            this.AppliedFeeManager = appliedFeeManager ?? throw new ArgumentNullException("appliedFeeManager");
+            this.FeeListFactory = feeListFactory ?? throw new ArgumentNullException("feeListFactory");
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
             this.DeficiencyManager = deficiencyManager ?? throw new ArgumentNullException("deficiencyManager");
@@ -248,6 +250,7 @@ namespace CCLLC.BTF.Process
                        
             this.Name = record.Name;
             this.ReferenceNumber = record.ReferenceNumber;
+            this.PricingDate = record.PricingDate ?? DateTime.Now.Date;
             this.InitiatingProcessId = record.InitiatingProcessId ?? throw new ArgumentNullException("InitiatingProcessId");
             this.CurrentProcessId = record.CurrentProcessId ?? throw new ArgumentNullException("CurrentProcessId");
             this.CurrentStepId = record.CurrentStepId ?? throw new ArgumentNullException("CurrentStepId");

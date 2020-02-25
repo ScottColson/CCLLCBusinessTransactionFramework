@@ -39,5 +39,10 @@ namespace CCLLC.BTF.Revenue.CDS
                 feeId.Id, new ColumnSet("ccllc_feeid", "ccllc_name"))
                     .ToEntity<ccllc_fee>();           
         }
+
+        public void UpdateAppliedTransactionFee(IDataService dataService, IAppliedFeeRecord record)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

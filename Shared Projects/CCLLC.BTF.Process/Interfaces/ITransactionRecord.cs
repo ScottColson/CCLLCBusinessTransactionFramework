@@ -12,6 +12,7 @@ namespace CCLLC.BTF.Process
         IRecordPointer<Guid> ContextRecordId { get; }
         string Name { get; }
         string ReferenceNumber { get; }
+        DateTime? PricingDate { get; }
 
         IRecordPointer<Guid> InitiatingProcessId { get; }
         IRecordPointer<Guid> CurrentProcessId { get; }
