@@ -94,12 +94,12 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        public void Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction)
+        public bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction)
         {
-            if (!Type.IsReversable) throw new Exception("Process step is not reversable");
+            if (!Type.IsReversable) return false;
 
             //complete any specific implementation for the step type
-            Type.Rollback(executionContext, transaction, Parameters);
+            return Type.Rollback(executionContext, transaction, Parameters);
         }
 
         public bool IsLastStep() => this.SubsequentStepPointer == null;

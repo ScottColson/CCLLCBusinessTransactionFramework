@@ -18,7 +18,7 @@ namespace CCLLC.BTF.Process
         private List<IRequirementDeficiency> _deficiencies;
         private List<IGeneratedDocument> _generatedDocuments;
 
-        #region Protected Contructor Properties
+        #region Protected Constructor Properties
 
         protected IProcessExecutionContext ExecutionContext { get; }
 
@@ -302,7 +302,8 @@ namespace CCLLC.BTF.Process
                 //archive existing history for all steps that are being reversed.
                 foreach (var step in reversingSteps)
                 {
-                    this.TransactionHistory.ArchiveHistoryForStep(this.ExecutionContext, session, step);
+                    bool isRolledBack = step.Rollback(this.ExecutionContext, session, this);
+                    this.TransactionHistory.ArchiveHistoryForStep(this.ExecutionContext, session, step, isRolledBack);
                 }
 
                 this.TransactionHistory.AddToHistory(this.ExecutionContext, session, lastReversingStep, false);
@@ -353,7 +354,7 @@ namespace CCLLC.BTF.Process
                         // step was executed.
                         var executionResult = startingStep.Execute(ExecutionContext, session, this, RequirementEvaluator);
                         nextStep = executionResult.NextStep;
-                        isBlocked = executionResult.StepIsBlocked; //valdiation requirements may block further advancemennt.
+                        isBlocked = executionResult.StepIsBlocked; //validation requirements may block further advancement.
 
                        this.TransactionHistory.AddToHistory(this.ExecutionContext, session, nextStep, true);
                     }

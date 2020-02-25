@@ -28,7 +28,7 @@ namespace CCLLC.BTF.Process.StepType
 
         public abstract void Execute(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters);
 
-        public abstract void Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters);
+        public abstract bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters);
 
         public abstract void ValidateStepParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters);
 

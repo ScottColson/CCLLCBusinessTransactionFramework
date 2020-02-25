@@ -58,8 +58,10 @@ namespace CCLLC.BTF.Process.CDS.StepType
             return null;
         }
 
-        public override void Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
-        { 
+        public override bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        {
+            //Step type does not rollback
+            return false;
         }
 
         public override void ValidateStepParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters)

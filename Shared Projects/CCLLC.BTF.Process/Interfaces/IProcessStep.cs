@@ -30,6 +30,13 @@ namespace CCLLC.BTF.Process
         /// <returns></returns>
         IStepExecutionResult Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, IRequirementEvaluator requirementEvaluator);
 
-        void Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction);
+        /// <summary>
+        /// Executes any code that would rollback the particular step if supported and returns true if rollback occurred.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="session"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction);
     }
 }
