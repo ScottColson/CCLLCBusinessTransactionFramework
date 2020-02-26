@@ -1,8 +1,7 @@
 ﻿using System;
-
+using CCLLC.Core;
 using CCLLC.BTF.Platform;
 using CCLLC.BTF.Revenue;
-using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.StepType
 {
@@ -29,15 +28,9 @@ namespace CCLLC.BTF.Process.StepType
 
             var fee = feeList.GetFee(executionContext, feeNumber) ?? throw new Exception("Fee not found.");
 
-            transaction.Fees.AddFee(executionContext, session, fee, quantity);
-
-            var contextRecord = transaction.TransactionContext;
-            var dataRecord = transaction.DataRecord;
+            transaction.Fees.AddFee(executionContext, session, fee, quantity);            
         }
-
-
-
-
+        
         public override IUIPointer GetUIPointer(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
         {
             return null;
@@ -45,7 +38,16 @@ namespace CCLLC.BTF.Process.StepType
 
         public override bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
-            throw new NotImplementedException();
+            var feeNumber = parameters[feeParameter];
+            var quantity = int.Parse(parameters.ContainsKey(feeQuantity) ? parameters[feeQuantity] : "1");
+
+            var feeList = executionContext.Container.Resolve<IFeeList>();
+
+            var fee = feeList.GetFee(executionContext, feeNumber) ?? throw new Exception("Fee not found.");
+
+            transaction.Fees.RemoveFee(executionContext, session, fee, quantity);
+
+            return true;
         }
 
         public override void ValidateStepParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters)
