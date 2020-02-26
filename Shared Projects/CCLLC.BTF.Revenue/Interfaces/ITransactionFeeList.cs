@@ -8,8 +8,8 @@ namespace CCLLC.BTF.Revenue
 
     public interface ITransactionFeeList : IReadOnlyList<ITransactionFee>
     {        
-        void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1);
+        void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1);
 
-        void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1);
+        void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1);
     }
 }

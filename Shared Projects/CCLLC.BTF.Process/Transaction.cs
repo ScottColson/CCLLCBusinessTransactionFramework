@@ -12,7 +12,7 @@ namespace CCLLC.BTF.Process
     public class Transaction : RecordPointer<Guid>, ITransaction
     {
         private List<IDataOfRecord> _affectedRecords;
-        private ITransactionFeeList _feeList;
+        private ITransactionFeeList _transactionFeeList;
         private List<ICollectedEvidence> _collectedEvidence;
         private ITransactionHistory _transactionHistory;
         private List<IRequirementDeficiency> _deficiencies;
@@ -23,7 +23,7 @@ namespace CCLLC.BTF.Process
         protected IProcessExecutionContext ExecutionContext { get; }
 
         protected IAgentFactory AgentFactory { get; }
-        protected ITransactionFeeListFactory FeeListFactory { get; }
+        protected ITransactionFeeListFactory TransactionFeeListFactory { get; }
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected IDeficiencyManager DeficiencyManager { get; }
@@ -168,12 +168,12 @@ namespace CCLLC.BTF.Process
         {
             get
             {
-                if (_feeList == null)
+                if (_transactionFeeList == null)
                 {
-                    _feeList = FeeListFactory.CreateFeeList(ExecutionContext, this);
+                    _transactionFeeList = TransactionFeeListFactory.CreateFeeList(ExecutionContext, this);
                 }
 
-                return _feeList;
+                return _transactionFeeList;
             }
         }
 
@@ -226,7 +226,7 @@ namespace CCLLC.BTF.Process
 
         public DateTime PricingDate { get; }
 
-        public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory feeListFactory, ITransactionContextFactory transactionContextFactory,
+        public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory,
             ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
             ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionManager transactionManager,  
             ITransactionType transactionType, ITransactionRecord record) 
@@ -235,7 +235,7 @@ namespace CCLLC.BTF.Process
             this.ExecutionContext = executionContext ?? throw new ArgumentNullException("executionContext");
 
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory");
-            this.FeeListFactory = feeListFactory ?? throw new ArgumentNullException("feeListFactory");
+            this.TransactionFeeListFactory = transactionFeeListFactory ?? throw new ArgumentNullException("transactionFeeListFactory");
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
             this.DeficiencyManager = deficiencyManager ?? throw new ArgumentNullException("deficiencyManager");
@@ -257,8 +257,7 @@ namespace CCLLC.BTF.Process
             this.ContextRecordId = record.ContextRecordId ?? throw new ArgumentNullException("contextRecordId");
             this.CustomerId = record.CustomerId ?? throw new ArgumentNullException("customerId");
             this.InitiatingAgentId = record.InitiatingAgentId ?? throw new ArgumentNullException("initiatingAgentId");
-            this.InitiatingLocationId = record.InitiatingLocationId ?? throw new ArgumentNullException("initiatingLocationId");
-            
+            this.InitiatingLocationId = record.InitiatingLocationId ?? throw new ArgumentNullException("initiatingLocationId");            
         }
 
       

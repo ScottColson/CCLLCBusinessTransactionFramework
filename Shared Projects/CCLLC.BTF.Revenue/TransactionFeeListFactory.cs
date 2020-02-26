@@ -29,7 +29,7 @@ namespace CCLLC.BTF.Revenue
 
                 foreach (var r in transactionFeeRecords)
                 {
-                    var fee = r.Fee != null ? DataConnector.GetFee(executionContext.DataService, r.Fee) : null;
+                    var fee = r.Fee != null ? DataConnector.GetFeeById(executionContext.DataService, r.Fee) : null;
                     transactionFees.Add(new TransactionFee(r, fee));
                 }
 

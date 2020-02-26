@@ -31,7 +31,7 @@ namespace CCLLC.CDS.Test.Fakes
 
             if(record.ccllc_FeeId != null)
             {
-                Fee = new Fee(record.ccllc_FeeId.LogicalName, record.ccllc_FeeId.Id, null);
+                Fee = new Fee(record.ccllc_FeeId.LogicalName, record.ccllc_FeeId.Id, record.ccllc_name, null);
             }
         }
 

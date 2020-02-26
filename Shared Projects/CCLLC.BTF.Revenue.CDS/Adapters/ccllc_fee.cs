@@ -7,5 +7,6 @@ namespace CCLLC.BTF.Revenue.CDS
         public string Name => this.ccllc_name;       
 
         public string RecordType => this.LogicalName;
+       
     }
 }

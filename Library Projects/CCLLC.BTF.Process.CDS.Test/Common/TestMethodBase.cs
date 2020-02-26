@@ -47,6 +47,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
             c.Implement<IRevenueDataConnector>().Using<RevenueDataConnector>();
+            c.Implement<IFeeList>().Using<LazyFeeList>();
         }
 
         protected override abstract void Test(IOrganizationService service);

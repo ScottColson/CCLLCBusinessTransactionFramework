@@ -32,12 +32,26 @@ namespace CCLLC.BTF.Revenue.CDS
                 .RetrieveAll().ToList<ITransactionFeeRecord>();
         }
 
-        public IFee GetFee(IDataService dataService, IRecordPointer<Guid> feeId)
+        public IFee GetFeeById(IDataService dataService, IRecordPointer<Guid> feeId)
         {
             return dataService.ToOrgService().Retrieve(
                 feeId.RecordType, 
                 feeId.Id, new ColumnSet("ccllc_feeid", "ccllc_name"))
                     .ToEntity<ccllc_fee>();           
+        }
+
+        public IFee GetFeeByName(IDataService dataService, string name)
+        {
+            var record = dataService.ToOrgService().Query<ccllc_fee>()
+                .IncludeAllColumns()
+                .Where(e => e
+                    .Attribute(a => a.Named("ccllc_name").Is(ConditionOperator.Equal).To(name))
+                    .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                .Retrieve().FirstOrDefault();
+
+            if (record is null) throw new Exception(string.Format("Fee '{0}' does not exist.", name));
+
+            return record;
         }
 
         public void UpdateTransactionFee(IDataService dataService, ITransactionFeeRecord record)

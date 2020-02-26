@@ -27,23 +27,20 @@ namespace CCLLC.BTF.Revenue
             FeeList = new List<ITransactionFee>(existingFees ?? throw new ArgumentNullException("existingFees"));
         }
 
-        public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
+        public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1)
         {
             try
-            {
-               
+            {               
                 // check to see if the related fee is already in the list. If so we will update that item rather than create
                 // a new one.
-                var transactionFee = FeeList.Where(r => r.Fee.Id == feeId.Id).FirstOrDefault();
+                var transactionFee = FeeList.Where(r => r.Fee.Id == fee.Id).FirstOrDefault();
 
                 if (transactionFee is null)
-                {
-                    var fee = DataConnector.GetFee(executionContext.DataService, feeId);
-
+                {           
                     var transactionFeeRecord = DataConnector.CreateTransactionFee(
                         executionContext.DataService,
                         Transaction,
-                        fee,
+                        fee as IRecordPointer<Guid>,
                         fee.Name,
                         quantity);
 
@@ -67,7 +64,7 @@ namespace CCLLC.BTF.Revenue
 
         }
 
-        public void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
+        public void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1)
         {
             throw new NotImplementedException();
         }        

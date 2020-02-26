@@ -16,7 +16,7 @@ namespace CCLLC.BTF.Process
         protected ITransactionDataConnector DataConnector { get; }
         protected IAgentFactory AgentFactory { get; }
         protected IAlternateBranchFactory AlternateBranchFactory { get; }
-        protected ITransactionFeeListFactory FeeListFactory { get; }
+        protected ITransactionFeeListFactory TransactionFeeListFactory { get; }
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected IDeficiencyManager DeficiencyManager { get; }
@@ -32,19 +32,20 @@ namespace CCLLC.BTF.Process
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
         protected ITransactionProcessFactory TransactionProcessFactory { get; }
         protected IParameterSerializer ParameterSerializer { get; }
+        protected IFeeList FeeList { get; }
 
 
         public TransactionManagerFactory(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
-            ITransactionFeeListFactory feeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
+            ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformManager platformManager, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
             IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
-            ITransactionProcessFactory transactionProcessFactory)
+            ITransactionProcessFactory transactionProcessFactory, IFeeList feeList)
         {
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory.");
             this.AlternateBranchFactory = alternateBranchFactory ?? throw new ArgumentNullException("alternateBrachFactory");
-            this.FeeListFactory = feeListFactory ?? throw new ArgumentNullException("feeListFactory");
+            this.TransactionFeeListFactory = transactionFeeListFactory ?? throw new ArgumentNullException("transactionFeeListFactory");
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory.");
             this.DeficiencyManager = deficiencyManager ?? throw new ArgumentNullException("deficiencyManager");
@@ -60,6 +61,7 @@ namespace CCLLC.BTF.Process
             this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
             this.TransactionProcessFactory = transactionProcessFactory ?? throw new ArgumentNullException("transactionProcessFactory.");
             this.ParameterSerializer = parameterSerializer ?? throw new ArgumentNullException("parameterSerializer");
+            this.FeeList = feeList ?? throw new ArgumentNullException("feeList");
         }
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace CCLLC.BTF.Process
                 executionContext.Trace("Retrieved {0} Transaction Type records.", transactionTypeRecords.Count);
 
                 // get all active records that are needed to fully define a transaction type. This includes complex objects for ITransactionProcess 
-                // and ITransactionRequirements as well as simplier objects for transaction groups, authorized channels, authorized roles, 
+                // and ITransactionRequirements as well as simpler objects for transaction groups, authorized channels, authorized roles, 
                 // initial fees, and eligible record contexts.
                 var processes = getProcesses(executionContext, cacheTimeOut);
 
@@ -149,8 +151,8 @@ namespace CCLLC.BTF.Process
                 executionContext.Trace("Creating Transaction Manager loaded with {0} Transaction Types.", registeredTransactions.Count);
 
                 // Create a new transaction manager and pass in required factory and record managers. 
-                var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.FeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.DeficiencyManager,
-                    this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, registeredTransactions);
+                var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.DeficiencyManager,
+                    this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, this.FeeList, registeredTransactions);
 
                 if (useCache)
                 {

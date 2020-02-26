@@ -15,7 +15,7 @@ namespace CCLLC.BTF.Process.StepType
 
         public override bool IsUIStep => true;
 
-        public override void Execute(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override void Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             //No action.
         }
@@ -41,7 +41,7 @@ namespace CCLLC.BTF.Process.StepType
             }
         }
 
-        public override bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             // No action.
             return false;
