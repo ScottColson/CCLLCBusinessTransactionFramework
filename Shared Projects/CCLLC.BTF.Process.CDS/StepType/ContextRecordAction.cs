@@ -7,8 +7,8 @@ using CCLLC.BTF.Process.StepType;
 namespace CCLLC.BTF.Process.CDS.StepType
 {
     /// <summary>
-    /// Executes an action bound to the context data record assoicated with a transaction. The action name and any 
-    /// optional action argumments are specified in the process step parameters.
+    /// Executes an action bound to the context data record associated with a transaction. The action name and any 
+    /// optional action arguments are specified in the process step parameters.
     /// </summary>
     public class ContextRecordAction : ProcessStepTypeBase
     {
@@ -23,7 +23,7 @@ namespace CCLLC.BTF.Process.CDS.StepType
 
         public override bool IsConditional => false;
 
-        public override void Execute(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override void Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace CCLLC.BTF.Process.CDS.StepType
             return null;
         }
 
-        public override bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             //No action
             return false;

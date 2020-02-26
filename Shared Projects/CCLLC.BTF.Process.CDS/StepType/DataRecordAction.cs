@@ -22,7 +22,7 @@ namespace CCLLC.BTF.Process.CDS.StepType
 
         public override bool IsConditional => false;
 
-        public override void Execute(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override void Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace CCLLC.BTF.Process.CDS.StepType
             return null;
         }
 
-        public override bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters)
+        public override bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters)
         {
             //Step type does not rollback
             return false;

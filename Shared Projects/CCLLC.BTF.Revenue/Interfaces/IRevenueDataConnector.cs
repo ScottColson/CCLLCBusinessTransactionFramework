@@ -7,12 +7,14 @@ namespace CCLLC.BTF.Revenue
 
     public interface IRevenueDataConnector
     {
-        IFee GetFeeRecord(IDataService dataService, IRecordPointer<Guid> feeId);
+        IFee GetFeeById(IDataService dataService, IRecordPointer<Guid> feeId);
 
-        IAppliedFeeRecord CreateAppliedTransactionFee(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> feeId, string name, decimal quantity, decimal? unitPrice = null, decimal? totalPrice = null);
+        IFee GetFeeByName(IDataService dataService, string name);
 
-        IList<IAppliedFeeRecord> GetAppliedTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId);
+        ITransactionFeeRecord CreateTransactionFee(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> feeId, string name, decimal quantity, decimal? unitPrice = null, decimal? totalPrice = null);
 
-        void UpdateAppliedTransactionFee(IDataService dataService, IAppliedFeeRecord record);
+        IList<ITransactionFeeRecord> GetTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId);
+
+        void UpdateTransactionFee(IDataService dataService, ITransactionFeeRecord record);
     }
 }

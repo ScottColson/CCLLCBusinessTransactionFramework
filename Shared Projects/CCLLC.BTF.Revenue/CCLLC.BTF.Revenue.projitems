@@ -9,14 +9,15 @@
     <Import_RootNamespace>CCLLC.BTF.Revenue</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LazyFeeList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFeeList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeRecord.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculatorFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueModuleSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueDataConnector.cs" />

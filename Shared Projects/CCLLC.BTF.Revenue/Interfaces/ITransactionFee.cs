@@ -2,7 +2,7 @@
 {
     using CCLLC.Core;
 
-    public interface IAppliedFee : IAppliedFeeRecord
+    public interface ITransactionFee : ITransactionFeeRecord
     {      
         new IFee Fee { get; }
                

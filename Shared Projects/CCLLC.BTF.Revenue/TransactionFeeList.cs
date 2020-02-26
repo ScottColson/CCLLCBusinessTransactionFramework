@@ -10,55 +10,52 @@ namespace CCLLC.BTF.Revenue
 
     public class TransactionFeeList : ITransactionFeeList
     {
-        private List<IAppliedFee> FeeList { get; }
+        private List<ITransactionFee> FeeList { get; }
         private ITransaction Transaction { get; }
         private IRevenueDataConnector DataConnector { get; }
         private IPriceCalculatorFactory PriceCalculatorFactory { get; }
 
-        public IAppliedFee this[int index] => FeeList?[index];
+        public ITransactionFee this[int index] => FeeList?[index];
 
         public int Count => FeeList?.Count ?? 0;
 
-        public TransactionFeeList(IRevenueDataConnector dataConnector, IPriceCalculatorFactory priceCalculatorFactory, ITransaction transaction, IList<IAppliedFee> existingFees)
+        public TransactionFeeList(IRevenueDataConnector dataConnector, IPriceCalculatorFactory priceCalculatorFactory, ITransaction transaction, IList<ITransactionFee> existingFees)
         {            
             DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             PriceCalculatorFactory = priceCalculatorFactory ?? throw new ArgumentNullException("priceCalculatorFactory");
             Transaction = transaction ?? throw new ArgumentNullException("transaction");
-            FeeList = new List<IAppliedFee>(existingFees ?? throw new ArgumentNullException("existingFees"));
+            FeeList = new List<ITransactionFee>(existingFees ?? throw new ArgumentNullException("existingFees"));
         }
 
-        public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
+        public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1)
         {
             try
-            {
-               
+            {               
                 // check to see if the related fee is already in the list. If so we will update that item rather than create
                 // a new one.
-                var appliedFee = FeeList.Where(r => r.Fee.Id == feeId.Id).FirstOrDefault();
+                var transactionFee = FeeList.Where(r => r.Fee.Id == fee.Id).FirstOrDefault();
 
-                if (appliedFee is null)
-                {
-                    var fee = DataConnector.GetFeeRecord(executionContext.DataService, feeId);
-
-                    var appliedFeeRecord = DataConnector.CreateAppliedTransactionFee(
+                if (transactionFee is null)
+                {           
+                    var transactionFeeRecord = DataConnector.CreateTransactionFee(
                         executionContext.DataService,
                         Transaction,
-                        fee,
+                        fee as IRecordPointer<Guid>,
                         fee.Name,
                         quantity);
 
-                    appliedFee = new AppliedFee(appliedFeeRecord, fee);
-                    FeeList.Add(appliedFee);                                   
+                    transactionFee = new TransactionFee(transactionFeeRecord, fee);
+                    FeeList.Add(transactionFee);                                   
                 }
                 else
                 {
-                    appliedFee.IncrementQuantity(quantity);                                        
+                    transactionFee.IncrementQuantity(quantity);                                        
                 }
 
                 var priceCalculator = PriceCalculatorFactory.CreatePriceCalculator(executionContext, session, Transaction);
-                appliedFee.CalculatePrice(executionContext, priceCalculator);
+                transactionFee.CalculatePrice(executionContext, priceCalculator);
 
-                DataConnector.UpdateAppliedTransactionFee(executionContext.DataService, appliedFee);                
+                DataConnector.UpdateTransactionFee(executionContext.DataService, transactionFee);                
             }
             catch (Exception ex)
             {
@@ -67,12 +64,12 @@ namespace CCLLC.BTF.Revenue
 
         }
 
-        public void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
+        public void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IFee fee, decimal quantity = 1)
         {
             throw new NotImplementedException();
         }        
 
-        public IEnumerator<IAppliedFee> GetEnumerator()
+        public IEnumerator<ITransactionFee> GetEnumerator()
         {
             return FeeList?.GetEnumerator();
         }        

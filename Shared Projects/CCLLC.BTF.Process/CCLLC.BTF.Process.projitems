@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirementRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StepType\AddFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionContextFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\eDeficiencyStatusEnum.cs" />

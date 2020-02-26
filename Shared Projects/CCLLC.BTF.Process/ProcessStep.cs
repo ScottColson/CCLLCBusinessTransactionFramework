@@ -54,8 +54,10 @@ namespace CCLLC.BTF.Process
                 bool blockProgress = false;
                 bool isValid = true;
 
+                Type.ValidateStepParameters(executionContext, Parameters);
+
                 //complete any specific implementation for the step type
-                Type.Execute(executionContext, transaction, Parameters);
+                Type.Execute(executionContext, session, transaction, Parameters);
 
                 if (ValidationRequirements.Count > 0)
                 {
@@ -99,7 +101,7 @@ namespace CCLLC.BTF.Process
             if (!Type.IsReversable) return false;
 
             //complete any specific implementation for the step type
-            return Type.Rollback(executionContext, transaction, Parameters);
+            return Type.Rollback(executionContext, session, transaction, Parameters);
         }
 
         public bool IsLastStep() => this.SubsequentStepPointer == null;

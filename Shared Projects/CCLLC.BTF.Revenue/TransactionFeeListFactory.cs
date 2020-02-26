@@ -23,17 +23,17 @@ namespace CCLLC.BTF.Revenue
                 if (executionContext is null) throw new ArgumentNullException("executionContext");
                 if (transaction is null) throw new ArgumentNullException("transaction");                             
 
-                IList<IAppliedFee> appliedFees = new List<IAppliedFee>();
+                IList<ITransactionFee> transactionFees = new List<ITransactionFee>();
 
-                var appliedFeeRecords = DataConnector.GetAppliedTransactionFees(executionContext.DataService, transaction);
+                var transactionFeeRecords = DataConnector.GetTransactionFees(executionContext.DataService, transaction);
 
-                foreach (var r in appliedFeeRecords)
+                foreach (var r in transactionFeeRecords)
                 {
-                    var fee = r.Fee != null ? DataConnector.GetFeeRecord(executionContext.DataService, r.Fee) : null;
-                    appliedFees.Add(new AppliedFee(r, fee));
+                    var fee = r.Fee != null ? DataConnector.GetFeeById(executionContext.DataService, r.Fee) : null;
+                    transactionFees.Add(new TransactionFee(r, fee));
                 }
 
-                return new TransactionFeeList(this.DataConnector, this.PriceCalculatorFactory, transaction, appliedFees);
+                return new TransactionFeeList(this.DataConnector, this.PriceCalculatorFactory, transaction, transactionFees);
                 
             }
             catch (Exception ex)

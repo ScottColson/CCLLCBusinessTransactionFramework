@@ -9,9 +9,9 @@ namespace CCLLC.BTF.Process
         bool IsReversable { get; }
         bool IsUIStep { get; }
        
-        void Execute(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters);
+        void Execute(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters);
 
-        bool Rollback(IProcessExecutionContext executionContext, ITransaction transaction, ISerializedParameters parameters);
+        bool Rollback(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, ISerializedParameters parameters);
 
         void ValidateStepParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters);
 
