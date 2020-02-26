@@ -9,10 +9,10 @@ namespace CCLLC.BTF.Revenue
     {
         IFee GetFeeRecord(IDataService dataService, IRecordPointer<Guid> feeId);
 
-        IAppliedFeeRecord CreateAppliedTransactionFee(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> feeId, string name, decimal quantity, decimal? unitPrice = null, decimal? totalPrice = null);
+        ITransactionFeeRecord CreateAppliedTransactionFee(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> feeId, string name, decimal quantity, decimal? unitPrice = null, decimal? totalPrice = null);
 
-        IList<IAppliedFeeRecord> GetAppliedTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId);
+        IList<ITransactionFeeRecord> GetAppliedTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId);
 
-        void UpdateAppliedTransactionFee(IDataService dataService, IAppliedFeeRecord record);
+        void UpdateAppliedTransactionFee(IDataService dataService, ITransactionFeeRecord record);
     }
 }

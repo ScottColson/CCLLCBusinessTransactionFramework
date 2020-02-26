@@ -10,21 +10,21 @@ namespace CCLLC.BTF.Revenue
 
     public class TransactionFeeList : ITransactionFeeList
     {
-        private List<IAppliedFee> FeeList { get; }
+        private List<ITransactionFee> FeeList { get; }
         private ITransaction Transaction { get; }
         private IRevenueDataConnector DataConnector { get; }
         private IPriceCalculatorFactory PriceCalculatorFactory { get; }
 
-        public IAppliedFee this[int index] => FeeList?[index];
+        public ITransactionFee this[int index] => FeeList?[index];
 
         public int Count => FeeList?.Count ?? 0;
 
-        public TransactionFeeList(IRevenueDataConnector dataConnector, IPriceCalculatorFactory priceCalculatorFactory, ITransaction transaction, IList<IAppliedFee> existingFees)
+        public TransactionFeeList(IRevenueDataConnector dataConnector, IPriceCalculatorFactory priceCalculatorFactory, ITransaction transaction, IList<ITransactionFee> existingFees)
         {            
             DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             PriceCalculatorFactory = priceCalculatorFactory ?? throw new ArgumentNullException("priceCalculatorFactory");
             Transaction = transaction ?? throw new ArgumentNullException("transaction");
-            FeeList = new List<IAppliedFee>(existingFees ?? throw new ArgumentNullException("existingFees"));
+            FeeList = new List<ITransactionFee>(existingFees ?? throw new ArgumentNullException("existingFees"));
         }
 
         public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
@@ -72,7 +72,7 @@ namespace CCLLC.BTF.Revenue
             throw new NotImplementedException();
         }        
 
-        public IEnumerator<IAppliedFee> GetEnumerator()
+        public IEnumerator<ITransactionFee> GetEnumerator()
         {
             return FeeList?.GetEnumerator();
         }        

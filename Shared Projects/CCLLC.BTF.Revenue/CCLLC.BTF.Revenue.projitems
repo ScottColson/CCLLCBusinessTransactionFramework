@@ -11,8 +11,8 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AppliedFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeRecord.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculatorFactory.cs" />

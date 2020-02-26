@@ -3,7 +3,7 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Revenue
 {
-    public interface IAppliedFeeRecord : IRecordPointer<Guid>
+    public interface ITransactionFeeRecord : IRecordPointer<Guid>
     {
         IRecordPointer<Guid> TransactionId { get; }
         IRecordPointer<Guid> Fee { get; }
