@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_evaluatortype")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_evaluatortype : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_evaluatortype";
 		
-		public const int EntityTypeCode = 10099;
+		public const int EntityTypeCode = 10141;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The assembly name the contains the evaluator implementation.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_assemblyname")]
+		public string ccllc_AssemblyName
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_assemblyname");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_AssemblyName");
+				this.SetAttributeValue("ccllc_assemblyname", value);
+				this.OnPropertyChanged("ccllc_AssemblyName");
+			}
+		}
+		
+		/// <summary>
+		/// The class name that implements the evaluator.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_classname")]
+		public string ccllc_ClassName
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_classname");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ClassName");
+				this.SetAttributeValue("ccllc_classname", value);
+				this.OnPropertyChanged("ccllc_ClassName");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
+		public System.Nullable<System.Guid> ccllc_evaluatortypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_evaluatortypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_evaluatortypeId");
+				this.SetAttributeValue("ccllc_evaluatortypeid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_evaluatortypeId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_evaluatortypeId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
 			}
 		}
 		
@@ -198,99 +291,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// The assembly name the contains the evaluator implementation.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_assemblyname")]
-		public string ccllc_AssemblyName
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_assemblyname");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_AssemblyName");
-				this.SetAttributeValue("ccllc_assemblyname", value);
-				this.OnPropertyChanged("ccllc_AssemblyName");
-			}
-		}
-		
-		/// <summary>
-		/// The class name that implements the evaluator.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_classname")]
-		public string ccllc_ClassName
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_classname");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ClassName");
-				this.SetAttributeValue("ccllc_classname", value);
-				this.OnPropertyChanged("ccllc_ClassName");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
-		public System.Nullable<System.Guid> ccllc_evaluatortypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_evaluatortypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_evaluatortypeId");
-				this.SetAttributeValue("ccllc_evaluatortypeid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_evaluatortypeId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_evaluatortypeId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
 			}
 		}
 		

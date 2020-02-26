@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("account")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class Account : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -1239,6 +1239,24 @@ namespace TestProxy
 					this.SetAttributeValue("businesstypecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
 				}
 				this.OnPropertyChanged("BusinessTypeCode");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_invoiceninjaid")]
+		public System.Nullable<int> ccllc_InvoiceNinjaId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("ccllc_invoiceninjaid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_InvoiceNinjaId");
+				this.SetAttributeValue("ccllc_invoiceninjaid", value);
+				this.OnPropertyChanged("ccllc_InvoiceNinjaId");
 			}
 		}
 		
@@ -2863,24 +2881,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N contact_customer_accounts
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
-		public System.Collections.Generic.IEnumerable<TestProxy.Contact> contact_customer_accounts
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.Contact>("contact_customer_accounts", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("contact_customer_accounts");
-				this.SetRelatedEntities<TestProxy.Contact>("contact_customer_accounts", null, value);
-				this.OnPropertyChanged("contact_customer_accounts");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N ccllc_account_authorizedagent
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_account_authorizedagent")]
@@ -2931,6 +2931,24 @@ namespace TestProxy
 				this.OnPropertyChanging("ccllc_account_transaction_customer");
 				this.SetRelatedEntities<TestProxy.ccllc_transaction>("ccllc_account_transaction_customer", null, value);
 				this.OnPropertyChanged("ccllc_account_transaction_customer");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N contact_customer_accounts
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
+		public System.Collections.Generic.IEnumerable<TestProxy.Contact> contact_customer_accounts
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.Contact>("contact_customer_accounts", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("contact_customer_accounts");
+				this.SetRelatedEntities<TestProxy.Contact>("contact_customer_accounts", null, value);
+				this.OnPropertyChanged("contact_customer_accounts");
 			}
 		}
 		

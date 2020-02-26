@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_device")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_device : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_device";
 		
-		public const int EntityTypeCode = 10078;
+		public const int EntityTypeCode = 10140;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Defines the capability of the device. A given device can have multiple capabilities.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_devicecapability")]
+		public object ccllc_DeviceCapability
+		{
+			get
+			{
+				return this.GetAttributeValue<object>("ccllc_devicecapability");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_DeviceCapability");
+				this.SetAttributeValue("ccllc_devicecapability", value);
+				this.OnPropertyChanged("ccllc_DeviceCapability");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_deviceid")]
+		public System.Nullable<System.Guid> ccllc_deviceId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_deviceid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_deviceId");
+				this.SetAttributeValue("ccllc_deviceid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_deviceId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_deviceid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_deviceId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The location where a device exists.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_locationid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_LocationId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_locationid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_LocationId");
+				this.SetAttributeValue("ccllc_locationid", value);
+				this.OnPropertyChanged("ccllc_LocationId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Defines the capability of the device. A given device can have multiple capabilities.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_devicecapability")]
-		public object ccllc_DeviceCapability
-		{
-			get
-			{
-				return this.GetAttributeValue<object>("ccllc_devicecapability");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_DeviceCapability");
-				this.SetAttributeValue("ccllc_devicecapability", value);
-				this.OnPropertyChanged("ccllc_DeviceCapability");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_deviceid")]
-		public System.Nullable<System.Guid> ccllc_deviceId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_deviceid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_deviceId");
-				this.SetAttributeValue("ccllc_deviceid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_deviceId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_deviceid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_deviceId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The location where a device exists.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_locationid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_LocationId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_locationid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_LocationId");
-				this.SetAttributeValue("ccllc_locationid", value);
-				this.OnPropertyChanged("ccllc_LocationId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Device
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,6 +422,25 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_location_device
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_locationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_location_device")]
+		public TestProxy.ccllc_location ccllc_location_device
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_location>("ccllc_location_device", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_location_device");
+				this.SetRelatedEntity<TestProxy.ccllc_location>("ccllc_location_device", null, value);
+				this.OnPropertyChanged("ccllc_location_device");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_device_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -470,25 +489,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_device_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_location_device
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_locationid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_location_device")]
-		public TestProxy.ccllc_location ccllc_location_device
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_location>("ccllc_location_device", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_location_device");
-				this.SetRelatedEntity<TestProxy.ccllc_location>("ccllc_location_device", null, value);
-				this.OnPropertyChanged("ccllc_location_device");
 			}
 		}
 		

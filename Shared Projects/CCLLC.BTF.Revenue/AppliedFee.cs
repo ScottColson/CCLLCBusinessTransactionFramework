@@ -6,11 +6,12 @@ namespace CCLLC.BTF.Revenue
 
     public class AppliedFee : RecordPointer<Guid>, IAppliedFee
     {
-        public decimal Quantity { get; }
+       
+        public decimal Quantity { get; private set; }
 
-        public decimal UnitPrice { get; }
+        public decimal UnitPrice { get; private set; }
 
-        public decimal TotalPrice { get; }
+        public decimal TotalPrice { get; private set; }
 
         public IFee Fee { get; }
 
@@ -20,7 +21,7 @@ namespace CCLLC.BTF.Revenue
 
         internal AppliedFee(IAppliedFeeRecord appliedFeeRecord, IFee fee) :
             base(appliedFeeRecord.RecordType,appliedFeeRecord.Id)
-        {
+        {            
             TransactionId = appliedFeeRecord.TransactionId;
             Quantity = appliedFeeRecord.Quantity;
             UnitPrice = appliedFeeRecord.UnitPrice;
@@ -30,17 +31,33 @@ namespace CCLLC.BTF.Revenue
 
         public void CalculatePrice(IProcessExecutionContext executionContext, IPriceCalculator priceCalculator)
         {
-            throw new NotImplementedException();
+            var unitPrice = priceCalculator.CalculateUnitPrice(executionContext, this.Fee, this.Quantity);
+            if(unitPrice != this.UnitPrice)
+            {
+                this.UnitPrice = UnitPrice;
+                this.TotalPrice = this.Quantity * unitPrice;                
+            }
+
         }
 
         public void IncrementQuantity(decimal incrementValue = 1)
         {
-            throw new NotImplementedException();
+            if(incrementValue > 0)
+            {
+                this.Quantity += incrementValue;
+                this.TotalPrice = this.Quantity * this.Quantity;
+            }
+
         }
 
         public void DecrementQuantity(decimal decrementValue = 1)
         {
-            throw new NotImplementedException();
+            if (decrementValue > 0)
+            {
+                this.Quantity -= decrementValue;
+                if (this.Quantity < 0) { this.Quantity = 0; }
+                this.TotalPrice = this.Quantity * this.Quantity;
+            }
         }
     }
 }

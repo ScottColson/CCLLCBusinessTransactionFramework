@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transactiontypeauthorizedchannel")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_transactiontypeauthorizedchannel : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_transactiontypeauthorizedchannel";
 		
-		public const int EntityTypeCode = 10093;
+		public const int EntityTypeCode = 10167;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The Channel assigned to the Transaction Type
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ChannelId");
+				this.SetAttributeValue("ccllc_channelid", value);
+				this.OnPropertyChanged("ccllc_ChannelId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeauthorizedchannelid")]
+		public System.Nullable<System.Guid> ccllc_transactiontypeauthorizedchannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactiontypeauthorizedchannelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontypeauthorizedchannelId");
+				this.SetAttributeValue("ccllc_transactiontypeauthorizedchannelid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_transactiontypeauthorizedchannelId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeauthorizedchannelid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_transactiontypeauthorizedchannelId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The Transaction Type authorized for the Channel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionTypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// The Channel assigned to the Transaction Type
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ChannelId");
-				this.SetAttributeValue("ccllc_channelid", value);
-				this.OnPropertyChanged("ccllc_ChannelId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeauthorizedchannelid")]
-		public System.Nullable<System.Guid> ccllc_transactiontypeauthorizedchannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactiontypeauthorizedchannelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontypeauthorizedchannelId");
-				this.SetAttributeValue("ccllc_transactiontypeauthorizedchannelid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_transactiontypeauthorizedchannelId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeauthorizedchannelid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_transactiontypeauthorizedchannelId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The Transaction Type authorized for the Channel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionTypeId");
-				this.SetAttributeValue("ccllc_transactiontypeid", value);
-				this.OnPropertyChanged("ccllc_TransactionTypeId");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Transaction Type Authorized Channel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,6 +422,44 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_channel_authorizedtransactiontype
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_channel_authorizedtransactiontype")]
+		public TestProxy.ccllc_channel ccllc_channel_authorizedtransactiontype
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_authorizedtransactiontype", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_channel_authorizedtransactiontype");
+				this.SetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_authorizedtransactiontype", null, value);
+				this.OnPropertyChanged("ccllc_channel_authorizedtransactiontype");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_transactiontype_authorizedchannel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_authorizedchannel")]
+		public TestProxy.ccllc_transactiontype ccllc_transactiontype_authorizedchannel
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_authorizedchannel", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontype_authorizedchannel");
+				this.SetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_authorizedchannel", null, value);
+				this.OnPropertyChanged("ccllc_transactiontype_authorizedchannel");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_transactiontypeauthorizedchannel_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -470,44 +508,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactiontypeauthorizedchannel_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_channel_authorizedtransactiontype
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_channel_authorizedtransactiontype")]
-		public TestProxy.ccllc_channel ccllc_channel_authorizedtransactiontype
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_authorizedtransactiontype", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_channel_authorizedtransactiontype");
-				this.SetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_authorizedtransactiontype", null, value);
-				this.OnPropertyChanged("ccllc_channel_authorizedtransactiontype");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_transactiontype_authorizedchannel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_authorizedchannel")]
-		public TestProxy.ccllc_transactiontype ccllc_transactiontype_authorizedchannel
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_authorizedchannel", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontype_authorizedchannel");
-				this.SetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_authorizedchannel", null, value);
-				this.OnPropertyChanged("ccllc_transactiontype_authorizedchannel");
 			}
 		}
 		

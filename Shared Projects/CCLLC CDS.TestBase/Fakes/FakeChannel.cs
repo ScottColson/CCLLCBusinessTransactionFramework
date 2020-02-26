@@ -8,6 +8,12 @@ namespace CCLLC.CDS.Test.Fakes
 
         public FakeChannel()
         {
+            RecordType = "ccllc_channel";
+            Id = Guid.Parse("366103A1-2946-43DB-BC8A-D068A9A3863E");
+            Type = eChannelTypeEnum.InternalDirect;
+            CustomerScope = eChannelCustomerScopeEnum.AnyCustomers;
+            Partner = null;
+            Name = "FakeChannel";
         }
 
         public FakeChannel(TestProxy.ccllc_channel record)

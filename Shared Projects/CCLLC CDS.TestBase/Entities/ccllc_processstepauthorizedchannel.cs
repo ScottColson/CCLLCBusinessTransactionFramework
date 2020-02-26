@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_processstepauthorizedchannel")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_processstepauthorizedchannel : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_processstepauthorizedchannel";
 		
-		public const int EntityTypeCode = 10089;
+		public const int EntityTypeCode = 10156;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The Channel assigned to the Process Step.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ChannelId");
+				this.SetAttributeValue("ccllc_channelid", value);
+				this.OnPropertyChanged("ccllc_ChannelId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepauthorizedchannelid")]
+		public System.Nullable<System.Guid> ccllc_processstepauthorizedchannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processstepauthorizedchannelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_processstepauthorizedchannelId");
+				this.SetAttributeValue("ccllc_processstepauthorizedchannelid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_processstepauthorizedchannelId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepauthorizedchannelid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_processstepauthorizedchannelId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The Process Step assigned to the Channel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ProcessStepId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_processstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ProcessStepId");
+				this.SetAttributeValue("ccllc_processstepid", value);
+				this.OnPropertyChanged("ccllc_ProcessStepId");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// The Channel assigned to the Process Step.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ChannelId");
-				this.SetAttributeValue("ccllc_channelid", value);
-				this.OnPropertyChanged("ccllc_ChannelId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepauthorizedchannelid")]
-		public System.Nullable<System.Guid> ccllc_processstepauthorizedchannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processstepauthorizedchannelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_processstepauthorizedchannelId");
-				this.SetAttributeValue("ccllc_processstepauthorizedchannelid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_processstepauthorizedchannelId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepauthorizedchannelid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_processstepauthorizedchannelId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The Process Step assigned to the Channel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ProcessStepId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_processstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ProcessStepId");
-				this.SetAttributeValue("ccllc_processstepid", value);
-				this.OnPropertyChanged("ccllc_ProcessStepId");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Process Step Authorized Channel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,6 +422,44 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_channel_stepauthorizedchannel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_channel_stepauthorizedchannel")]
+		public TestProxy.ccllc_channel ccllc_channel_stepauthorizedchannel
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_stepauthorizedchannel", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_channel_stepauthorizedchannel");
+				this.SetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_stepauthorizedchannel", null, value);
+				this.OnPropertyChanged("ccllc_channel_stepauthorizedchannel");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_step_ccllc_stepauthorizedchannel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_step_ccllc_stepauthorizedchannel")]
+		public TestProxy.ccllc_processstep ccllc_step_ccllc_stepauthorizedchannel
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_processstep>("ccllc_step_ccllc_stepauthorizedchannel", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_step_ccllc_stepauthorizedchannel");
+				this.SetRelatedEntity<TestProxy.ccllc_processstep>("ccllc_step_ccllc_stepauthorizedchannel", null, value);
+				this.OnPropertyChanged("ccllc_step_ccllc_stepauthorizedchannel");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_processstepauthorizedchannel_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -470,44 +508,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_processstepauthorizedchannel_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_channel_stepauthorizedchannel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_channel_stepauthorizedchannel")]
-		public TestProxy.ccllc_channel ccllc_channel_stepauthorizedchannel
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_stepauthorizedchannel", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_channel_stepauthorizedchannel");
-				this.SetRelatedEntity<TestProxy.ccllc_channel>("ccllc_channel_stepauthorizedchannel", null, value);
-				this.OnPropertyChanged("ccllc_channel_stepauthorizedchannel");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_step_ccllc_stepauthorizedchannel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_step_ccllc_stepauthorizedchannel")]
-		public TestProxy.ccllc_processstep ccllc_step_ccllc_stepauthorizedchannel
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_processstep>("ccllc_step_ccllc_stepauthorizedchannel", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_step_ccllc_stepauthorizedchannel");
-				this.SetRelatedEntity<TestProxy.ccllc_processstep>("ccllc_step_ccllc_stepauthorizedchannel", null, value);
-				this.OnPropertyChanged("ccllc_step_ccllc_stepauthorizedchannel");
 			}
 		}
 		

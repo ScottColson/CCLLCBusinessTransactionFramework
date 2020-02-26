@@ -25,7 +25,7 @@ namespace CCLLC.BTF.Process.CDS
 
         public string ReferenceNumber => this.ccllc_ReferenceNumber;
 
-        public DateTime? PricingDate => throw new NotImplementedException();
+        public DateTime? PricingDate => null; //throw new NotImplementedException();
 
         public IRecordPointer<Guid> InitiatingProcessId => this.ccllc_InitiatingProcessId?.ToRecordPointer();
 

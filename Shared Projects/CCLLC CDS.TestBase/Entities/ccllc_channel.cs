@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_channel")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_channel : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_channel";
 		
-		public const int EntityTypeCode = 10077;
+		public const int EntityTypeCode = 10139;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,147 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		public System.Nullable<System.Guid> ccllc_channelId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_channelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_channelId");
+				this.SetAttributeValue("ccllc_channelid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_channelId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_channelId = value;
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channeltypecode")]
+		public System.Nullable<TestProxy.ccllc_channeltypeoptions> ccllc_ChannelTypeCode
+		{
+			get
+			{
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_channeltypecode");
+				if ((optionSet != null))
+				{
+					return ((TestProxy.ccllc_channeltypeoptions)(System.Enum.ToObject(typeof(TestProxy.ccllc_channeltypeoptions), optionSet.Value)));
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ChannelTypeCode");
+				if ((value == null))
+				{
+					this.SetAttributeValue("ccllc_channeltypecode", null);
+				}
+				else
+				{
+					this.SetAttributeValue("ccllc_channeltypecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+				}
+				this.OnPropertyChanged("ccllc_ChannelTypeCode");
+			}
+		}
+		
+		/// <summary>
+		/// Defines the scope of customer interaction this channel supports.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerinteractionscopecode")]
+		public System.Nullable<TestProxy.ccllc_customerinteractionscopeoptions> ccllc_CustomerInteractionScopeCode
+		{
+			get
+			{
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_customerinteractionscopecode");
+				if ((optionSet != null))
+				{
+					return ((TestProxy.ccllc_customerinteractionscopeoptions)(System.Enum.ToObject(typeof(TestProxy.ccllc_customerinteractionscopeoptions), optionSet.Value)));
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_CustomerInteractionScopeCode");
+				if ((value == null))
+				{
+					this.SetAttributeValue("ccllc_customerinteractionscopecode", null);
+				}
+				else
+				{
+					this.SetAttributeValue("ccllc_customerinteractionscopecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+				}
+				this.OnPropertyChanged("ccllc_CustomerInteractionScopeCode");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Defines the partner that the channel supports.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_partnerid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_PartnerId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_partnerid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_PartnerId");
+				this.SetAttributeValue("ccllc_partnerid", value);
+				this.OnPropertyChanged("ccllc_PartnerId");
 			}
 		}
 		
@@ -198,147 +339,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		public System.Nullable<System.Guid> ccllc_channelId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_channelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_channelId");
-				this.SetAttributeValue("ccllc_channelid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_channelId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_channelId = value;
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channeltypecode")]
-		public System.Nullable<TestProxy.ccllc_channeltypeoptions> ccllc_ChannelTypeCode
-		{
-			get
-			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_channeltypecode");
-				if ((optionSet != null))
-				{
-					return ((TestProxy.ccllc_channeltypeoptions)(System.Enum.ToObject(typeof(TestProxy.ccllc_channeltypeoptions), optionSet.Value)));
-				}
-				else
-				{
-					return null;
-				}
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ChannelTypeCode");
-				if ((value == null))
-				{
-					this.SetAttributeValue("ccllc_channeltypecode", null);
-				}
-				else
-				{
-					this.SetAttributeValue("ccllc_channeltypecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
-				}
-				this.OnPropertyChanged("ccllc_ChannelTypeCode");
-			}
-		}
-		
-		/// <summary>
-		/// Defines the scope of customer interaction this channel supports.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerinteractionscopecode")]
-		public System.Nullable<TestProxy.ccllc_customerinteractionscopeoptions> ccllc_CustomerInteractionScopeCode
-		{
-			get
-			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_customerinteractionscopecode");
-				if ((optionSet != null))
-				{
-					return ((TestProxy.ccllc_customerinteractionscopeoptions)(System.Enum.ToObject(typeof(TestProxy.ccllc_customerinteractionscopeoptions), optionSet.Value)));
-				}
-				else
-				{
-					return null;
-				}
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_CustomerInteractionScopeCode");
-				if ((value == null))
-				{
-					this.SetAttributeValue("ccllc_customerinteractionscopecode", null);
-				}
-				else
-				{
-					this.SetAttributeValue("ccllc_customerinteractionscopecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
-				}
-				this.OnPropertyChanged("ccllc_CustomerInteractionScopeCode");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Defines the partner that the channel supports.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_partnerid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_PartnerId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_partnerid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_PartnerId");
-				this.SetAttributeValue("ccllc_partnerid", value);
-				this.OnPropertyChanged("ccllc_PartnerId");
 			}
 		}
 		
@@ -524,6 +524,25 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_partner_channel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_partnerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_partner_channel")]
+		public TestProxy.ccllc_partner ccllc_partner_channel
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_partner>("ccllc_partner_channel", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_partner_channel");
+				this.SetRelatedEntity<TestProxy.ccllc_partner>("ccllc_partner_channel", null, value);
+				this.OnPropertyChanged("ccllc_partner_channel");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_channel_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -572,25 +591,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_channel_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_partner_channel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_partnerid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_partner_channel")]
-		public TestProxy.ccllc_partner ccllc_partner_channel
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_partner>("ccllc_partner_channel", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_partner_channel");
-				this.SetRelatedEntity<TestProxy.ccllc_partner>("ccllc_partner_channel", null, value);
-				this.OnPropertyChanged("ccllc_partner_channel");
 			}
 		}
 		

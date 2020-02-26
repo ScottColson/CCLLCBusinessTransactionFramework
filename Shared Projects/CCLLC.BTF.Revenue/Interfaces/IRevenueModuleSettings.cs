@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace CCLLC.BTF.Revenue.Interfaces
+namespace CCLLC.BTF.Revenue
 {
     using CCLLC.Core;
 
     public interface IRevenueModuleSettings : ISettingsProvider
     {
-        TimeSpan? IPricingCalculatorCacheTimeout { get; }
+        TimeSpan? PricingCalculatorCacheTimeout { get; }
     }
 }

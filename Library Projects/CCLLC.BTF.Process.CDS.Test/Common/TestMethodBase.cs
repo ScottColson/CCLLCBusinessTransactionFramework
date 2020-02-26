@@ -4,6 +4,7 @@ using CCLLC.CDS.Test;
 using CCLLC.BTF.Platform;
 using CCLLC.BTF.Platform.CDS;
 using CCLLC.BTF.Revenue;
+using CCLLC.BTF.Revenue.CDS;
 using CCLLC.BTF.Documents;
 using CCLLC.CDS.Test.Fakes;
 
@@ -19,9 +20,10 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
 
         private void setupContainer(IIocContainer c)
         {
+            
             c.Implement<IAgentFactory>().Using<FakeAgentFactory>();
             c.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>();
-            c.Implement<ITransactionFeeListFactory>().Using<FakeTransactionFeeListFactory>();
+            c.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ICustomerFactory>().Using<FakeCustomerFactory>();
             c.Implement<IDeferredActivator>().Using<DeferredActivator>();
@@ -40,10 +42,11 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>();
             c.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>();
             c.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>();
-
+            c.Implement<IPriceCalculatorFactory>().Using<PriceCalculatorFactory>();
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
+            c.Implement<IRevenueDataConnector>().Using<RevenueDataConnector>();
         }
 
         protected override abstract void Test(IOrganizationService service);

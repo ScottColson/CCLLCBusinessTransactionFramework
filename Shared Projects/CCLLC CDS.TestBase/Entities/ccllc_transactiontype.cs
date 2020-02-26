@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transactiontype")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_transactiontype : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_transactiontype";
 		
-		public const int EntityTypeCode = 10072;
+		public const int EntityTypeCode = 10166;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,135 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Identifies the entity type of the data record that is used to collect input data for this transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_datarecordconfiguration")]
+		public string ccllc_DataRecordConfiguration
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_datarecordconfiguration");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_DataRecordConfiguration");
+				this.SetAttributeValue("ccllc_datarecordconfiguration", value);
+				this.OnPropertyChanged("ccllc_DataRecordConfiguration");
+			}
+		}
+		
+		/// <summary>
+		/// Sort order for displaying the Transaction Type in a list.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_displayrank")]
+		public System.Nullable<int> ccllc_DisplayRank
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("ccllc_displayrank");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_DisplayRank");
+				this.SetAttributeValue("ccllc_displayrank", value);
+				this.OnPropertyChanged("ccllc_DisplayRank");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// The Transaction process that is started when a new Transaction is created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_startupprocessid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_StartupProcessId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_startupprocessid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_StartupProcessId");
+				this.SetAttributeValue("ccllc_startupprocessid", value);
+				this.OnPropertyChanged("ccllc_StartupProcessId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Transaction Group associated with Transaction Type.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiongroupid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionGroupId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiongroupid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionGroupId");
+				this.SetAttributeValue("ccllc_transactiongroupid", value);
+				this.OnPropertyChanged("ccllc_TransactionGroupId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public System.Nullable<System.Guid> ccllc_transactiontypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_transactiontypeId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_transactiontypeId = value;
 			}
 		}
 		
@@ -198,135 +327,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Identifies the entity type of the data record that is used to collect input data for this transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_datarecordconfiguration")]
-		public string ccllc_DataRecordConfiguration
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_datarecordconfiguration");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_DataRecordConfiguration");
-				this.SetAttributeValue("ccllc_datarecordconfiguration", value);
-				this.OnPropertyChanged("ccllc_DataRecordConfiguration");
-			}
-		}
-		
-		/// <summary>
-		/// Sort order for displaying the Transaction Type in a list.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_displayrank")]
-		public System.Nullable<int> ccllc_DisplayRank
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("ccllc_displayrank");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_DisplayRank");
-				this.SetAttributeValue("ccllc_displayrank", value);
-				this.OnPropertyChanged("ccllc_DisplayRank");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// The Transaction process that is started when a new Transaction is created.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_startupprocessid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_StartupProcessId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_startupprocessid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_StartupProcessId");
-				this.SetAttributeValue("ccllc_startupprocessid", value);
-				this.OnPropertyChanged("ccllc_StartupProcessId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Group associated with Transaction Type.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiongroupid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionGroupId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiongroupid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionGroupId");
-				this.SetAttributeValue("ccllc_transactiongroupid", value);
-				this.OnPropertyChanged("ccllc_TransactionGroupId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public System.Nullable<System.Guid> ccllc_transactiontypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactiontypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontypeId");
-				this.SetAttributeValue("ccllc_transactiontypeid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_transactiontypeId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_transactiontypeId = value;
 			}
 		}
 		
@@ -584,6 +584,44 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_transactiontype_parentgroup
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiongroupid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_parentgroup")]
+		public TestProxy.ccllc_transactiongroup ccllc_transactiontype_parentgroup
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_transactiongroup>("ccllc_transactiontype_parentgroup", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontype_parentgroup");
+				this.SetRelatedEntity<TestProxy.ccllc_transactiongroup>("ccllc_transactiontype_parentgroup", null, value);
+				this.OnPropertyChanged("ccllc_transactiontype_parentgroup");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_transactiontype_startupprocess
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_startupprocessid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_startupprocess")]
+		public TestProxy.ccllc_transactionprocess ccllc_transactiontype_startupprocess
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_transactionprocess>("ccllc_transactiontype_startupprocess", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontype_startupprocess");
+				this.SetRelatedEntity<TestProxy.ccllc_transactionprocess>("ccllc_transactiontype_startupprocess", null, value);
+				this.OnPropertyChanged("ccllc_transactiontype_startupprocess");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_transactiontype_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -632,44 +670,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactiontype_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_transactiontype_parentgroup
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiongroupid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_parentgroup")]
-		public TestProxy.ccllc_transactiongroup ccllc_transactiontype_parentgroup
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_transactiongroup>("ccllc_transactiontype_parentgroup", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontype_parentgroup");
-				this.SetRelatedEntity<TestProxy.ccllc_transactiongroup>("ccllc_transactiontype_parentgroup", null, value);
-				this.OnPropertyChanged("ccllc_transactiontype_parentgroup");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_transactiontype_startupprocess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_startupprocessid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_startupprocess")]
-		public TestProxy.ccllc_transactionprocess ccllc_transactiontype_startupprocess
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_transactionprocess>("ccllc_transactiontype_startupprocess", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontype_startupprocess");
-				this.SetRelatedEntity<TestProxy.ccllc_transactionprocess>("ccllc_transactiontype_startupprocess", null, value);
-				this.OnPropertyChanged("ccllc_transactiontype_startupprocess");
 			}
 		}
 		

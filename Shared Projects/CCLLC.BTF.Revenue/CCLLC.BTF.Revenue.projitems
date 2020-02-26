@@ -14,13 +14,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFeeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAppliedFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFee.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueModuleSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPriceCalculatorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueModuleSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeListFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PriceCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PriceCalculatorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevenueModuleSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionFeeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionFeeListFactory.cs" />
   </ItemGroup>

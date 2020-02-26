@@ -42,7 +42,16 @@ namespace CCLLC.BTF.Revenue.CDS
 
         public void UpdateAppliedTransactionFee(IDataService dataService, IAppliedFeeRecord record)
         {
-            throw new NotImplementedException();
+            var updateRecord = new ccllc_appliedfee()
+            {
+                Id = record.Id,
+                ccllc_Quantity = record.Quantity,
+                ccllc_UnitPrice = new Microsoft.Xrm.Sdk.Money(record.UnitPrice),
+                ccllc_TotalPrice = new Microsoft.Xrm.Sdk.Money(record.TotalPrice)
+
+            };
+
+            dataService.ToOrgService().Update(updateRecord);
         }
     }
 }

@@ -89,8 +89,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakePlatformManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeTransactionFeeListFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeWorkSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_addresstypecode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_freighttermscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_shippingmethodcode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OrganizationServicePreProcessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\AccountState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\account_accountcategorycode.cs" />

@@ -17,7 +17,7 @@ namespace CCLLC.CDS.Test.Fakes
 
         public IAgent Agent { get; private set; }
 
-        public IChannel Channel => throw new NotImplementedException();
+        public IChannel Channel => new FakeChannel();
 
         public ILocation Location { get; private set; }
 

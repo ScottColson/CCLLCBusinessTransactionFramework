@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transactioninitialfee")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_transactioninitialfee : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_transactioninitialfee";
 		
-		public const int EntityTypeCode = 10096;
+		public const int EntityTypeCode = 10161;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Fee associated with Transaction Initial Fee.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_FeeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_feeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_FeeId");
+				this.SetAttributeValue("ccllc_feeid", value);
+				this.OnPropertyChanged("ccllc_FeeId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
+		public System.Nullable<System.Guid> ccllc_transactioninitialfeeId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactioninitialfeeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactioninitialfeeId");
+				this.SetAttributeValue("ccllc_transactioninitialfeeid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_transactioninitialfeeId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_transactioninitialfeeId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Transaction Type associated with Transaction Initial Fee.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionTypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Unique identifier for Fee associated with Transaction Initial Fee.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_FeeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_feeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_FeeId");
-				this.SetAttributeValue("ccllc_feeid", value);
-				this.OnPropertyChanged("ccllc_FeeId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
-		public System.Nullable<System.Guid> ccllc_transactioninitialfeeId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactioninitialfeeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactioninitialfeeId");
-				this.SetAttributeValue("ccllc_transactioninitialfeeid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_transactioninitialfeeId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_transactioninitialfeeId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Type associated with Transaction Initial Fee.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionTypeId");
-				this.SetAttributeValue("ccllc_transactiontypeid", value);
-				this.OnPropertyChanged("ccllc_TransactionTypeId");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Transaction Initial Fee
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,6 +422,44 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_fee_initialfee
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_initialfee")]
+		public TestProxy.ccllc_fee ccllc_fee_initialfee
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_fee>("ccllc_fee_initialfee", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_fee_initialfee");
+				this.SetRelatedEntity<TestProxy.ccllc_fee>("ccllc_fee_initialfee", null, value);
+				this.OnPropertyChanged("ccllc_fee_initialfee");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_transactiontype_initialfee
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_initialfee")]
+		public TestProxy.ccllc_transactiontype ccllc_transactiontype_initialfee
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_initialfee", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiontype_initialfee");
+				this.SetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_initialfee", null, value);
+				this.OnPropertyChanged("ccllc_transactiontype_initialfee");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_transactioninitialfee_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -470,44 +508,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactioninitialfee_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_fee_initialfee
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_initialfee")]
-		public TestProxy.ccllc_fee ccllc_fee_initialfee
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_fee>("ccllc_fee_initialfee", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_fee_initialfee");
-				this.SetRelatedEntity<TestProxy.ccllc_fee>("ccllc_fee_initialfee", null, value);
-				this.OnPropertyChanged("ccllc_fee_initialfee");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_transactiontype_initialfee
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_initialfee")]
-		public TestProxy.ccllc_transactiontype ccllc_transactiontype_initialfee
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_initialfee", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontype_initialfee");
-				this.SetRelatedEntity<TestProxy.ccllc_transactiontype>("ccllc_transactiontype_initialfee", null, value);
-				this.OnPropertyChanged("ccllc_transactiontype_initialfee");
 			}
 		}
 		

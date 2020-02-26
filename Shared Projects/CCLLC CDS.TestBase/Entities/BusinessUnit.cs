@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunit")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class BusinessUnit : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -1411,42 +1411,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_contacts
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
-		public System.Collections.Generic.IEnumerable<TestProxy.Contact> business_unit_contacts
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.Contact>("business_unit_contacts", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("business_unit_contacts");
-				this.SetRelatedEntities<TestProxy.Contact>("business_unit_contacts", null, value);
-				this.OnPropertyChanged("business_unit_contacts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_parent_business_unit
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<TestProxy.BusinessUnit> Referencedbusiness_unit_parent_business_unit
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.BusinessUnit>("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced);
-			}
-			set
-			{
-				this.OnPropertyChanging("Referencedbusiness_unit_parent_business_unit");
-				this.SetRelatedEntities<TestProxy.BusinessUnit>("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedbusiness_unit_parent_business_unit");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_ccllc_agent
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_agent")]
@@ -2019,6 +1983,42 @@ namespace TestProxy
 				this.OnPropertyChanging("business_unit_ccllc_worksession");
 				this.SetRelatedEntities<TestProxy.ccllc_worksession>("business_unit_ccllc_worksession", null, value);
 				this.OnPropertyChanged("business_unit_ccllc_worksession");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N business_unit_contacts
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
+		public System.Collections.Generic.IEnumerable<TestProxy.Contact> business_unit_contacts
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.Contact>("business_unit_contacts", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("business_unit_contacts");
+				this.SetRelatedEntities<TestProxy.Contact>("business_unit_contacts", null, value);
+				this.OnPropertyChanged("business_unit_contacts");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N business_unit_parent_business_unit
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
+		public System.Collections.Generic.IEnumerable<TestProxy.BusinessUnit> Referencedbusiness_unit_parent_business_unit
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.BusinessUnit>("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+			}
+			set
+			{
+				this.OnPropertyChanging("Referencedbusiness_unit_parent_business_unit");
+				this.SetRelatedEntities<TestProxy.BusinessUnit>("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedbusiness_unit_parent_business_unit");
 			}
 		}
 		

@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_agentauthorizedcustomer")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_agentauthorizedcustomer : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_agentauthorizedcustomer";
 		
-		public const int EntityTypeCode = 10074;
+		public const int EntityTypeCode = 10136;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentauthorizedcustomerid")]
+		public System.Nullable<System.Guid> ccllc_agentauthorizedcustomerId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentauthorizedcustomerid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_agentauthorizedcustomerId");
+				this.SetAttributeValue("ccllc_agentauthorizedcustomerid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_agentauthorizedcustomerId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentauthorizedcustomerid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_agentauthorizedcustomerId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Agent associated with Agent Authorized Customer.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_AgentId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_agentid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_AgentId");
+				this.SetAttributeValue("ccllc_agentid", value);
+				this.OnPropertyChanged("ccllc_AgentId");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_CustomerId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_customerid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_CustomerId");
+				this.SetAttributeValue("ccllc_customerid", value);
+				this.OnPropertyChanged("ccllc_CustomerId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentauthorizedcustomerid")]
-		public System.Nullable<System.Guid> ccllc_agentauthorizedcustomerId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentauthorizedcustomerid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_agentauthorizedcustomerId");
-				this.SetAttributeValue("ccllc_agentauthorizedcustomerid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_agentauthorizedcustomerId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentauthorizedcustomerid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_agentauthorizedcustomerId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Agent associated with Agent Authorized Customer.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_AgentId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_agentid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_AgentId");
-				this.SetAttributeValue("ccllc_agentid", value);
-				this.OnPropertyChanged("ccllc_AgentId");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_CustomerId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_customerid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_CustomerId");
-				this.SetAttributeValue("ccllc_customerid", value);
-				this.OnPropertyChanged("ccllc_CustomerId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Agent Authorized Customer
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,58 +422,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// N:1 lk_ccllc_agentauthorizedcustomer_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_createdby")]
-		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_createdby
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_createdby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_ccllc_agentauthorizedcustomer_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_createdonbehalfby")]
-		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_createdonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_createdonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_ccllc_agentauthorizedcustomer_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_modifiedby")]
-		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_modifiedby
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_modifiedby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby")]
-		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
 		/// N:1 ccllc_account_authorizedagent
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
@@ -527,6 +475,58 @@ namespace TestProxy
 				this.OnPropertyChanging("ccllc_contact_authorizedagent");
 				this.SetRelatedEntity<TestProxy.Contact>("ccllc_contact_authorizedagent", null, value);
 				this.OnPropertyChanged("ccllc_contact_authorizedagent");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ccllc_agentauthorizedcustomer_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_createdby")]
+		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_createdby
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ccllc_agentauthorizedcustomer_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_createdonbehalfby")]
+		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_createdonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_createdonbehalfby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ccllc_agentauthorizedcustomer_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_modifiedby")]
+		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_modifiedby
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby")]
+		public TestProxy.SystemUser lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentauthorizedcustomer_modifiedonbehalfby", null);
 			}
 		}
 		

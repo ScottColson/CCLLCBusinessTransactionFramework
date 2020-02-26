@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_agent")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_agent : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_agent";
 		
-		public const int EntityTypeCode = 10073;
+		public const int EntityTypeCode = 10135;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,114 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
+		public System.Nullable<System.Guid> ccllc_agentId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_agentId");
+				this.SetAttributeValue("ccllc_agentid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_agentId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_agentId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Defines the Type of Agent.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agenttype")]
+		public System.Nullable<TestProxy.ccllc_agent_ccllc_agenttype> ccllc_AgentType
+		{
+			get
+			{
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_agenttype");
+				if ((optionSet != null))
+				{
+					return ((TestProxy.ccllc_agent_ccllc_agenttype)(System.Enum.ToObject(typeof(TestProxy.ccllc_agent_ccllc_agenttype), optionSet.Value)));
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_AgentType");
+				if ((value == null))
+				{
+					this.SetAttributeValue("ccllc_agenttype", null);
+				}
+				else
+				{
+					this.SetAttributeValue("ccllc_agenttype", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+				}
+				this.OnPropertyChanged("ccllc_AgentType");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Link back to user that the agent record represents.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_userid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_UserId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_userid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_UserId");
+				this.SetAttributeValue("ccllc_userid", value);
+				this.OnPropertyChanged("ccllc_UserId");
 			}
 		}
 		
@@ -198,114 +306,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
-		public System.Nullable<System.Guid> ccllc_agentId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_agentId");
-				this.SetAttributeValue("ccllc_agentid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_agentId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_agentId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Defines the Type of Agent.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agenttype")]
-		public System.Nullable<TestProxy.ccllc_agent_ccllc_agenttype> ccllc_AgentType
-		{
-			get
-			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("ccllc_agenttype");
-				if ((optionSet != null))
-				{
-					return ((TestProxy.ccllc_agent_ccllc_agenttype)(System.Enum.ToObject(typeof(TestProxy.ccllc_agent_ccllc_agenttype), optionSet.Value)));
-				}
-				else
-				{
-					return null;
-				}
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_AgentType");
-				if ((value == null))
-				{
-					this.SetAttributeValue("ccllc_agenttype", null);
-				}
-				else
-				{
-					this.SetAttributeValue("ccllc_agenttype", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
-				}
-				this.OnPropertyChanged("ccllc_AgentType");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Link back to user that the agent record represents.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_userid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_UserId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_userid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_UserId");
-				this.SetAttributeValue("ccllc_userid", value);
-				this.OnPropertyChanged("ccllc_UserId");
 			}
 		}
 		
@@ -527,6 +527,25 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_systemuser_assignedagent
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_userid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_systemuser_assignedagent")]
+		public TestProxy.SystemUser ccllc_systemuser_assignedagent
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.SystemUser>("ccllc_systemuser_assignedagent", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_systemuser_assignedagent");
+				this.SetRelatedEntity<TestProxy.SystemUser>("ccllc_systemuser_assignedagent", null, value);
+				this.OnPropertyChanged("ccllc_systemuser_assignedagent");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_agent_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -575,25 +594,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agent_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_systemuser_assignedagent
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_userid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_systemuser_assignedagent")]
-		public TestProxy.SystemUser ccllc_systemuser_assignedagent
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("ccllc_systemuser_assignedagent", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_systemuser_assignedagent");
-				this.SetRelatedEntity<TestProxy.SystemUser>("ccllc_systemuser_assignedagent", null, value);
-				this.OnPropertyChanged("ccllc_systemuser_assignedagent");
 			}
 		}
 		

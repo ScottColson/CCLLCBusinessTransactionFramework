@@ -30,7 +30,8 @@ namespace CCLLC.BTF.Revenue
         public void AddFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)
         {
             try
-            {  
+            {
+               
                 // check to see if the related fee is already in the list. If so we will update that item rather than create
                 // a new one.
                 var appliedFee = FeeList.Where(r => r.Fee.Id == feeId.Id).FirstOrDefault();
@@ -47,26 +48,23 @@ namespace CCLLC.BTF.Revenue
                         quantity);
 
                     appliedFee = new AppliedFee(appliedFeeRecord, fee);
-
-                    var priceCalculator = PriceCalculatorFactory.CreatePriceCalculator(executionContext, session, Transaction);
-
-                    appliedFee.CalculatePrice(executionContext, null);
-                    DataConnector.UpdateAppliedTransactionFee(executionContext.DataService, appliedFee);
-
-                    FeeList.Add(appliedFee);
+                    FeeList.Add(appliedFee);                                   
                 }
                 else
                 {
-                    throw new NotImplementedException("Modifying an existing applied fee is not implemented yet.");
+                    appliedFee.IncrementQuantity(quantity);                                        
                 }
+
+                var priceCalculator = PriceCalculatorFactory.CreatePriceCalculator(executionContext, session, Transaction);
+                appliedFee.CalculatePrice(executionContext, priceCalculator);
+
+                DataConnector.UpdateAppliedTransactionFee(executionContext.DataService, appliedFee);                
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
-
-            throw new NotImplementedException();
         }
 
         public void RemoveFee(IProcessExecutionContext executionContext, IWorkSession session, IRecordPointer<Guid> feeId, decimal quantity = 1)

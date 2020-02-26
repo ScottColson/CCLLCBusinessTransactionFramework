@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contact")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class Contact : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -1029,33 +1029,33 @@ namespace TestProxy
 		/// <summary>
 		/// Unique identifier for address 3.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_addressid")]
-		public System.Nullable<System.Guid> Addresccllc_AddressId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_addressid")]
+		public System.Nullable<System.Guid> Address3_AddressId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("addresccllc_addressid");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("address3_addressid");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_AddressId");
-				this.SetAttributeValue("addresccllc_addressid", value);
-				this.OnPropertyChanged("Addresccllc_AddressId");
+				this.OnPropertyChanging("Address3_AddressId");
+				this.SetAttributeValue("address3_addressid", value);
+				this.OnPropertyChanged("Address3_AddressId");
 			}
 		}
 		
 		/// <summary>
 		/// Select the third address type.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_addresstypecode")]
-		public System.Nullable<TestProxy.contact_addresccllc_addresstypecode> Addresccllc_AddressTypeCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_addresstypecode")]
+		public System.Nullable<TestProxy.contact_address3_addresstypecode> Address3_AddressTypeCode
 		{
 			get
 			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("addresccllc_addresstypecode");
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address3_addresstypecode");
 				if ((optionSet != null))
 				{
-					return ((TestProxy.contact_addresccllc_addresstypecode)(System.Enum.ToObject(typeof(TestProxy.contact_addresccllc_addresstypecode), optionSet.Value)));
+					return ((TestProxy.contact_address3_addresstypecode)(System.Enum.ToObject(typeof(TestProxy.contact_address3_addresstypecode), optionSet.Value)));
 				}
 				else
 				{
@@ -1064,115 +1064,115 @@ namespace TestProxy
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_AddressTypeCode");
+				this.OnPropertyChanging("Address3_AddressTypeCode");
 				if ((value == null))
 				{
-					this.SetAttributeValue("addresccllc_addresstypecode", null);
+					this.SetAttributeValue("address3_addresstypecode", null);
 				}
 				else
 				{
-					this.SetAttributeValue("addresccllc_addresstypecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+					this.SetAttributeValue("address3_addresstypecode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
 				}
-				this.OnPropertyChanged("Addresccllc_AddressTypeCode");
+				this.OnPropertyChanged("Address3_AddressTypeCode");
 			}
 		}
 		
 		/// <summary>
 		/// Type the city for the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_city")]
-		public string Addresccllc_City
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_city")]
+		public string Address3_City
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_city");
+				return this.GetAttributeValue<string>("address3_city");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_City");
-				this.SetAttributeValue("addresccllc_city", value);
-				this.OnPropertyChanged("Addresccllc_City");
+				this.OnPropertyChanging("Address3_City");
+				this.SetAttributeValue("address3_city", value);
+				this.OnPropertyChanged("Address3_City");
 			}
 		}
 		
 		/// <summary>
 		/// Shows the complete third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_composite")]
-		public string Addresccllc_Composite
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_composite")]
+		public string Address3_Composite
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_composite");
+				return this.GetAttributeValue<string>("address3_composite");
 			}
 		}
 		
 		/// <summary>
 		/// the country or region for the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_country")]
-		public string Addresccllc_Country
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_country")]
+		public string Address3_Country
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_country");
+				return this.GetAttributeValue<string>("address3_country");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Country");
-				this.SetAttributeValue("addresccllc_country", value);
-				this.OnPropertyChanged("Addresccllc_Country");
+				this.OnPropertyChanging("Address3_Country");
+				this.SetAttributeValue("address3_country", value);
+				this.OnPropertyChanged("Address3_Country");
 			}
 		}
 		
 		/// <summary>
 		/// Type the county for the third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_county")]
-		public string Addresccllc_County
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_county")]
+		public string Address3_County
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_county");
+				return this.GetAttributeValue<string>("address3_county");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_County");
-				this.SetAttributeValue("addresccllc_county", value);
-				this.OnPropertyChanged("Addresccllc_County");
+				this.OnPropertyChanging("Address3_County");
+				this.SetAttributeValue("address3_county", value);
+				this.OnPropertyChanged("Address3_County");
 			}
 		}
 		
 		/// <summary>
 		/// Type the fax number associated with the third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_fax")]
-		public string Addresccllc_Fax
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_fax")]
+		public string Address3_Fax
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_fax");
+				return this.GetAttributeValue<string>("address3_fax");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Fax");
-				this.SetAttributeValue("addresccllc_fax", value);
-				this.OnPropertyChanged("Addresccllc_Fax");
+				this.OnPropertyChanging("Address3_Fax");
+				this.SetAttributeValue("address3_fax", value);
+				this.OnPropertyChanged("Address3_Fax");
 			}
 		}
 		
 		/// <summary>
 		/// Select the freight terms for the third address to make sure shipping orders are processed correctly.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_freighttermscode")]
-		public System.Nullable<TestProxy.contact_addresccllc_freighttermscode> Addresccllc_FreightTermsCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_freighttermscode")]
+		public System.Nullable<TestProxy.contact_address3_freighttermscode> Address3_FreightTermsCode
 		{
 			get
 			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("addresccllc_freighttermscode");
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address3_freighttermscode");
 				if ((optionSet != null))
 				{
-					return ((TestProxy.contact_addresccllc_freighttermscode)(System.Enum.ToObject(typeof(TestProxy.contact_addresccllc_freighttermscode), optionSet.Value)));
+					return ((TestProxy.contact_address3_freighttermscode)(System.Enum.ToObject(typeof(TestProxy.contact_address3_freighttermscode), optionSet.Value)));
 				}
 				else
 				{
@@ -1181,193 +1181,193 @@ namespace TestProxy
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_FreightTermsCode");
+				this.OnPropertyChanging("Address3_FreightTermsCode");
 				if ((value == null))
 				{
-					this.SetAttributeValue("addresccllc_freighttermscode", null);
+					this.SetAttributeValue("address3_freighttermscode", null);
 				}
 				else
 				{
-					this.SetAttributeValue("addresccllc_freighttermscode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+					this.SetAttributeValue("address3_freighttermscode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
 				}
-				this.OnPropertyChanged("Addresccllc_FreightTermsCode");
+				this.OnPropertyChanged("Address3_FreightTermsCode");
 			}
 		}
 		
 		/// <summary>
 		/// Type the latitude value for the third address for use in mapping and other applications.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_latitude")]
-		public System.Nullable<double> Addresccllc_Latitude
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_latitude")]
+		public System.Nullable<double> Address3_Latitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("addresccllc_latitude");
+				return this.GetAttributeValue<System.Nullable<double>>("address3_latitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Latitude");
-				this.SetAttributeValue("addresccllc_latitude", value);
-				this.OnPropertyChanged("Addresccllc_Latitude");
+				this.OnPropertyChanging("Address3_Latitude");
+				this.SetAttributeValue("address3_latitude", value);
+				this.OnPropertyChanged("Address3_Latitude");
 			}
 		}
 		
 		/// <summary>
 		/// the first line of the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_line1")]
-		public string Addresccllc_Line1
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line1")]
+		public string Address3_Line1
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_line1");
+				return this.GetAttributeValue<string>("address3_line1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Line1");
-				this.SetAttributeValue("addresccllc_line1", value);
-				this.OnPropertyChanged("Addresccllc_Line1");
+				this.OnPropertyChanging("Address3_Line1");
+				this.SetAttributeValue("address3_line1", value);
+				this.OnPropertyChanged("Address3_Line1");
 			}
 		}
 		
 		/// <summary>
 		/// the second line of the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_line2")]
-		public string Addresccllc_Line2
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line2")]
+		public string Address3_Line2
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_line2");
+				return this.GetAttributeValue<string>("address3_line2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Line2");
-				this.SetAttributeValue("addresccllc_line2", value);
-				this.OnPropertyChanged("Addresccllc_Line2");
+				this.OnPropertyChanging("Address3_Line2");
+				this.SetAttributeValue("address3_line2", value);
+				this.OnPropertyChanged("Address3_Line2");
 			}
 		}
 		
 		/// <summary>
 		/// the third line of the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_line3")]
-		public string Addresccllc_Line3
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_line3")]
+		public string Address3_Line3
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_line3");
+				return this.GetAttributeValue<string>("address3_line3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Line3");
-				this.SetAttributeValue("addresccllc_line3", value);
-				this.OnPropertyChanged("Addresccllc_Line3");
+				this.OnPropertyChanging("Address3_Line3");
+				this.SetAttributeValue("address3_line3", value);
+				this.OnPropertyChanged("Address3_Line3");
 			}
 		}
 		
 		/// <summary>
 		/// Type the longitude value for the third address for use in mapping and other applications.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_longitude")]
-		public System.Nullable<double> Addresccllc_Longitude
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_longitude")]
+		public System.Nullable<double> Address3_Longitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("addresccllc_longitude");
+				return this.GetAttributeValue<System.Nullable<double>>("address3_longitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Longitude");
-				this.SetAttributeValue("addresccllc_longitude", value);
-				this.OnPropertyChanged("Addresccllc_Longitude");
+				this.OnPropertyChanging("Address3_Longitude");
+				this.SetAttributeValue("address3_longitude", value);
+				this.OnPropertyChanged("Address3_Longitude");
 			}
 		}
 		
 		/// <summary>
 		/// Type a descriptive name for the third address, such as Corporate Headquarters.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_name")]
-		public string Addresccllc_Name
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_name")]
+		public string Address3_Name
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_name");
+				return this.GetAttributeValue<string>("address3_name");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Name");
-				this.SetAttributeValue("addresccllc_name", value);
-				this.OnPropertyChanged("Addresccllc_Name");
+				this.OnPropertyChanging("Address3_Name");
+				this.SetAttributeValue("address3_name", value);
+				this.OnPropertyChanged("Address3_Name");
 			}
 		}
 		
 		/// <summary>
 		/// the ZIP Code or postal code for the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_postalcode")]
-		public string Addresccllc_PostalCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_postalcode")]
+		public string Address3_PostalCode
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_postalcode");
+				return this.GetAttributeValue<string>("address3_postalcode");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_PostalCode");
-				this.SetAttributeValue("addresccllc_postalcode", value);
-				this.OnPropertyChanged("Addresccllc_PostalCode");
+				this.OnPropertyChanging("Address3_PostalCode");
+				this.SetAttributeValue("address3_postalcode", value);
+				this.OnPropertyChanged("Address3_PostalCode");
 			}
 		}
 		
 		/// <summary>
 		/// the post office box number of the 3rd address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_postofficebox")]
-		public string Addresccllc_PostOfficeBox
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_postofficebox")]
+		public string Address3_PostOfficeBox
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_postofficebox");
+				return this.GetAttributeValue<string>("address3_postofficebox");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_PostOfficeBox");
-				this.SetAttributeValue("addresccllc_postofficebox", value);
-				this.OnPropertyChanged("Addresccllc_PostOfficeBox");
+				this.OnPropertyChanging("Address3_PostOfficeBox");
+				this.SetAttributeValue("address3_postofficebox", value);
+				this.OnPropertyChanged("Address3_PostOfficeBox");
 			}
 		}
 		
 		/// <summary>
 		/// Type the name of the main contact at the account's third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_primarycontactname")]
-		public string Addresccllc_PrimaryContactName
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_primarycontactname")]
+		public string Address3_PrimaryContactName
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_primarycontactname");
+				return this.GetAttributeValue<string>("address3_primarycontactname");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_PrimaryContactName");
-				this.SetAttributeValue("addresccllc_primarycontactname", value);
-				this.OnPropertyChanged("Addresccllc_PrimaryContactName");
+				this.OnPropertyChanging("Address3_PrimaryContactName");
+				this.SetAttributeValue("address3_primarycontactname", value);
+				this.OnPropertyChanged("Address3_PrimaryContactName");
 			}
 		}
 		
 		/// <summary>
 		/// Select a shipping method for deliveries sent to this address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_shippingmethodcode")]
-		public System.Nullable<TestProxy.contact_addresccllc_shippingmethodcode> Addresccllc_ShippingMethodCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_shippingmethodcode")]
+		public System.Nullable<TestProxy.contact_address3_shippingmethodcode> Address3_ShippingMethodCode
 		{
 			get
 			{
-				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("addresccllc_shippingmethodcode");
+				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address3_shippingmethodcode");
 				if ((optionSet != null))
 				{
-					return ((TestProxy.contact_addresccllc_shippingmethodcode)(System.Enum.ToObject(typeof(TestProxy.contact_addresccllc_shippingmethodcode), optionSet.Value)));
+					return ((TestProxy.contact_address3_shippingmethodcode)(System.Enum.ToObject(typeof(TestProxy.contact_address3_shippingmethodcode), optionSet.Value)));
 				}
 				else
 				{
@@ -1376,124 +1376,124 @@ namespace TestProxy
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_ShippingMethodCode");
+				this.OnPropertyChanging("Address3_ShippingMethodCode");
 				if ((value == null))
 				{
-					this.SetAttributeValue("addresccllc_shippingmethodcode", null);
+					this.SetAttributeValue("address3_shippingmethodcode", null);
 				}
 				else
 				{
-					this.SetAttributeValue("addresccllc_shippingmethodcode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
+					this.SetAttributeValue("address3_shippingmethodcode", new Microsoft.Xrm.Sdk.OptionSetValue(((int)(value))));
 				}
-				this.OnPropertyChanged("Addresccllc_ShippingMethodCode");
+				this.OnPropertyChanged("Address3_ShippingMethodCode");
 			}
 		}
 		
 		/// <summary>
 		/// the state or province of the third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_stateorprovince")]
-		public string Addresccllc_StateOrProvince
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_stateorprovince")]
+		public string Address3_StateOrProvince
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_stateorprovince");
+				return this.GetAttributeValue<string>("address3_stateorprovince");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_StateOrProvince");
-				this.SetAttributeValue("addresccllc_stateorprovince", value);
-				this.OnPropertyChanged("Addresccllc_StateOrProvince");
+				this.OnPropertyChanging("Address3_StateOrProvince");
+				this.SetAttributeValue("address3_stateorprovince", value);
+				this.OnPropertyChanged("Address3_StateOrProvince");
 			}
 		}
 		
 		/// <summary>
 		/// Type the main phone number associated with the third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_telephone1")]
-		public string Addresccllc_Telephone1
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone1")]
+		public string Address3_Telephone1
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_telephone1");
+				return this.GetAttributeValue<string>("address3_telephone1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Telephone1");
-				this.SetAttributeValue("addresccllc_telephone1", value);
-				this.OnPropertyChanged("Addresccllc_Telephone1");
+				this.OnPropertyChanging("Address3_Telephone1");
+				this.SetAttributeValue("address3_telephone1", value);
+				this.OnPropertyChanged("Address3_Telephone1");
 			}
 		}
 		
 		/// <summary>
 		/// Type a second phone number associated with the third address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_telephone2")]
-		public string Addresccllc_Telephone2
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone2")]
+		public string Address3_Telephone2
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_telephone2");
+				return this.GetAttributeValue<string>("address3_telephone2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Telephone2");
-				this.SetAttributeValue("addresccllc_telephone2", value);
-				this.OnPropertyChanged("Addresccllc_Telephone2");
+				this.OnPropertyChanging("Address3_Telephone2");
+				this.SetAttributeValue("address3_telephone2", value);
+				this.OnPropertyChanged("Address3_Telephone2");
 			}
 		}
 		
 		/// <summary>
 		/// Type a third phone number associated with the primary address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_telephone3")]
-		public string Addresccllc_Telephone3
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_telephone3")]
+		public string Address3_Telephone3
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_telephone3");
+				return this.GetAttributeValue<string>("address3_telephone3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_Telephone3");
-				this.SetAttributeValue("addresccllc_telephone3", value);
-				this.OnPropertyChanged("Addresccllc_Telephone3");
+				this.OnPropertyChanging("Address3_Telephone3");
+				this.SetAttributeValue("address3_telephone3", value);
+				this.OnPropertyChanged("Address3_Telephone3");
 			}
 		}
 		
 		/// <summary>
 		/// Type the UPS zone of the third address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_upszone")]
-		public string Addresccllc_UPSZone
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_upszone")]
+		public string Address3_UPSZone
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("addresccllc_upszone");
+				return this.GetAttributeValue<string>("address3_upszone");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_UPSZone");
-				this.SetAttributeValue("addresccllc_upszone", value);
-				this.OnPropertyChanged("Addresccllc_UPSZone");
+				this.OnPropertyChanging("Address3_UPSZone");
+				this.SetAttributeValue("address3_upszone", value);
+				this.OnPropertyChanged("Address3_UPSZone");
 			}
 		}
 		
 		/// <summary>
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addresccllc_utcoffset")]
-		public System.Nullable<int> Addresccllc_UTCOffset
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_utcoffset")]
+		public System.Nullable<int> Address3_UTCOffset
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("addresccllc_utcoffset");
+				return this.GetAttributeValue<System.Nullable<int>>("address3_utcoffset");
 			}
 			set
 			{
-				this.OnPropertyChanging("Addresccllc_UTCOffset");
-				this.SetAttributeValue("addresccllc_utcoffset", value);
-				this.OnPropertyChanged("Addresccllc_UTCOffset");
+				this.OnPropertyChanging("Address3_UTCOffset");
+				this.SetAttributeValue("address3_utcoffset", value);
+				this.OnPropertyChanged("Address3_UTCOffset");
 			}
 		}
 		
@@ -1704,6 +1704,42 @@ namespace TestProxy
 				this.OnPropertyChanging("Callback");
 				this.SetAttributeValue("callback", value);
 				this.OnPropertyChanged("Callback");
+			}
+		}
+		
+		/// <summary>
+		/// This field denotes the federally issues identification. This could be SSN in US or something else in a different country.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_federalid")]
+		public string ccllc_FederalID
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_federalid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_FederalID");
+				this.SetAttributeValue("ccllc_federalid", value);
+				this.OnPropertyChanged("ccllc_FederalID");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_invoiceninjaid")]
+		public System.Nullable<int> ccllc_InvoiceNinjaId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("ccllc_invoiceninjaid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_InvoiceNinjaId");
+				this.SetAttributeValue("ccllc_invoiceninjaid", value);
+				this.OnPropertyChanged("ccllc_InvoiceNinjaId");
 			}
 		}
 		
@@ -3174,18 +3210,18 @@ namespace TestProxy
 		/// <summary>
 		/// This field denotes the federally issues identification. This could be SSN in US or something else in a different country.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_federalid")]
-		public string ccllc_FederalID
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("s3_federalid")]
+		public string s3_FederalID
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("ccllc_federalid");
+				return this.GetAttributeValue<string>("s3_federalid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_FederalID");
-				this.SetAttributeValue("ccllc_federalid", value);
-				this.OnPropertyChanged("ccllc_FederalID");
+				this.OnPropertyChanging("s3_FederalID");
+				this.SetAttributeValue("s3_federalid", value);
+				this.OnPropertyChanged("s3_FederalID");
 			}
 		}
 		
@@ -3694,60 +3730,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N contact_customer_contacts
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<TestProxy.Contact> Referencedcontact_customer_contacts
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced);
-			}
-			set
-			{
-				this.OnPropertyChanging("Referencedcontact_customer_contacts");
-				this.SetRelatedEntities<TestProxy.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedcontact_customer_contacts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Contact_CustomerAddress
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_CustomerAddress")]
-		public System.Collections.Generic.IEnumerable<TestProxy.CustomerAddress> Contact_CustomerAddress
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.CustomerAddress>("Contact_CustomerAddress", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("Contact_CustomerAddress");
-				this.SetRelatedEntities<TestProxy.CustomerAddress>("Contact_CustomerAddress", null, value);
-				this.OnPropertyChanged("Contact_CustomerAddress");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N contact_master_contact
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<TestProxy.Contact> Referencedcontact_master_contact
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced);
-			}
-			set
-			{
-				this.OnPropertyChanging("Referencedcontact_master_contact");
-				this.SetRelatedEntities<TestProxy.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedcontact_master_contact");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N ccllc_contact_authorizedagent
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_contact_authorizedagent")]
@@ -3798,6 +3780,60 @@ namespace TestProxy
 				this.OnPropertyChanging("ccllc_contact_transaction_customer");
 				this.SetRelatedEntities<TestProxy.ccllc_transaction>("ccllc_contact_transaction_customer", null, value);
 				this.OnPropertyChanged("ccllc_contact_transaction_customer");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N contact_customer_contacts
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
+		public System.Collections.Generic.IEnumerable<TestProxy.Contact> Referencedcontact_customer_contacts
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+			}
+			set
+			{
+				this.OnPropertyChanging("Referencedcontact_customer_contacts");
+				this.SetRelatedEntities<TestProxy.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedcontact_customer_contacts");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Contact_CustomerAddress
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_CustomerAddress")]
+		public System.Collections.Generic.IEnumerable<TestProxy.CustomerAddress> Contact_CustomerAddress
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.CustomerAddress>("Contact_CustomerAddress", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("Contact_CustomerAddress");
+				this.SetRelatedEntities<TestProxy.CustomerAddress>("Contact_CustomerAddress", null, value);
+				this.OnPropertyChanged("Contact_CustomerAddress");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N contact_master_contact
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
+		public System.Collections.Generic.IEnumerable<TestProxy.Contact> Referencedcontact_master_contact
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+			}
+			set
+			{
+				this.OnPropertyChanging("Referencedcontact_master_contact");
+				this.SetRelatedEntities<TestProxy.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedcontact_master_contact");
 			}
 		}
 		

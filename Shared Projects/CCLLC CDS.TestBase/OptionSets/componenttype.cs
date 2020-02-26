@@ -3,7 +3,7 @@ namespace TestProxy
 
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public enum componenttype
 	{
 		
@@ -246,5 +246,35 @@ namespace TestProxy
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		CanvasApp = 300,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Connector371 = 371,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Connector = 372,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EnvironmentVariableDefinition = 380,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EnvironmentVariableValue = 381,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AIProjectType = 400,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AIProject = 401,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AIConfiguration = 402,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityAnalyticsConfiguration = 430,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AttributeImageConfiguration = 431,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		EntityImageConfiguration = 432,
 	}
 }

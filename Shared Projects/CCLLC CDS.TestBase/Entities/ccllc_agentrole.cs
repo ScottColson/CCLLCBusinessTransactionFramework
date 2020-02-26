@@ -3,7 +3,7 @@ namespace TestProxy
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_agentrole")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_agentrole : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace TestProxy
 		
 		public const string EntityLogicalName = "ccllc_agentrole";
 		
-		public const int EntityTypeCode = 10076;
+		public const int EntityTypeCode = 10138;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace TestProxy
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Agent associated with Agent Role.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_AgentId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_agentid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_AgentId");
+				this.SetAttributeValue("ccllc_agentid", value);
+				this.OnPropertyChanged("ccllc_AgentId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentroleid")]
+		public System.Nullable<System.Guid> ccllc_agentroleId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentroleid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_agentroleId");
+				this.SetAttributeValue("ccllc_agentroleid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_agentroleId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentroleid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_agentroleId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Role associated with Agent Role.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_RoleId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_roleid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RoleId");
+				this.SetAttributeValue("ccllc_roleid", value);
+				this.OnPropertyChanged("ccllc_RoleId");
 			}
 		}
 		
@@ -202,99 +295,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Unique identifier for Agent associated with Agent Role.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_AgentId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_agentid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_AgentId");
-				this.SetAttributeValue("ccllc_agentid", value);
-				this.OnPropertyChanged("ccllc_AgentId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentroleid")]
-		public System.Nullable<System.Guid> ccllc_agentroleId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_agentroleid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_agentroleId");
-				this.SetAttributeValue("ccllc_agentroleid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_agentroleId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentroleid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_agentroleId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Role associated with Agent Role.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_RoleId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_roleid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_RoleId");
-				this.SetAttributeValue("ccllc_roleid", value);
-				this.OnPropertyChanged("ccllc_RoleId");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Agent Role
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -422,6 +422,44 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// N:1 ccllc_agent_agentrole
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_agent_agentrole")]
+		public TestProxy.ccllc_agent ccllc_agent_agentrole
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_agent>("ccllc_agent_agentrole", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_agent_agentrole");
+				this.SetRelatedEntity<TestProxy.ccllc_agent>("ccllc_agent_agentrole", null, value);
+				this.OnPropertyChanged("ccllc_agent_agentrole");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_role_agentrole
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_agentrole")]
+		public TestProxy.ccllc_role ccllc_role_agentrole
+		{
+			get
+			{
+				return this.GetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_agentrole", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_role_agentrole");
+				this.SetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_agentrole", null, value);
+				this.OnPropertyChanged("ccllc_role_agentrole");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 lk_ccllc_agentrole_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -470,44 +508,6 @@ namespace TestProxy
 			get
 			{
 				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_agentrole_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_agent_agentrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_agentid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_agent_agentrole")]
-		public TestProxy.ccllc_agent ccllc_agent_agentrole
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_agent>("ccllc_agent_agentrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_agent_agentrole");
-				this.SetRelatedEntity<TestProxy.ccllc_agent>("ccllc_agent_agentrole", null, value);
-				this.OnPropertyChanged("ccllc_agent_agentrole");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_role_agentrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_agentrole")]
-		public TestProxy.ccllc_role ccllc_role_agentrole
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_agentrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_role_agentrole");
-				this.SetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_agentrole", null, value);
-				this.OnPropertyChanged("ccllc_role_agentrole");
 			}
 		}
 		
