@@ -4,7 +4,7 @@ namespace CCLLC.BTF.Revenue
 {
     using CCLLC.Core;
 
-    public class AppliedFee : RecordPointer<Guid>, ITransactionFee
+    public class TransactionFee : RecordPointer<Guid>, ITransactionFee
     {
        
         public decimal Quantity { get; private set; }
@@ -19,7 +19,7 @@ namespace CCLLC.BTF.Revenue
 
         IRecordPointer<Guid> ITransactionFeeRecord.Fee => this.Fee as IRecordPointer<Guid>;              
 
-        internal AppliedFee(ITransactionFeeRecord transactionFeeRecord, IFee fee) :
+        internal TransactionFee(ITransactionFeeRecord transactionFeeRecord, IFee fee) :
             base(transactionFeeRecord.RecordType, transactionFeeRecord.Id)
         {            
             TransactionId = transactionFeeRecord.TransactionId;

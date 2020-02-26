@@ -34,31 +34,31 @@ namespace CCLLC.BTF.Revenue
                
                 // check to see if the related fee is already in the list. If so we will update that item rather than create
                 // a new one.
-                var appliedFee = FeeList.Where(r => r.Fee.Id == feeId.Id).FirstOrDefault();
+                var transactionFee = FeeList.Where(r => r.Fee.Id == feeId.Id).FirstOrDefault();
 
-                if (appliedFee is null)
+                if (transactionFee is null)
                 {
-                    var fee = DataConnector.GetFeeRecord(executionContext.DataService, feeId);
+                    var fee = DataConnector.GetFee(executionContext.DataService, feeId);
 
-                    var appliedFeeRecord = DataConnector.CreateAppliedTransactionFee(
+                    var transactionFeeRecord = DataConnector.CreateTransactionFee(
                         executionContext.DataService,
                         Transaction,
                         fee,
                         fee.Name,
                         quantity);
 
-                    appliedFee = new AppliedFee(appliedFeeRecord, fee);
-                    FeeList.Add(appliedFee);                                   
+                    transactionFee = new TransactionFee(transactionFeeRecord, fee);
+                    FeeList.Add(transactionFee);                                   
                 }
                 else
                 {
-                    appliedFee.IncrementQuantity(quantity);                                        
+                    transactionFee.IncrementQuantity(quantity);                                        
                 }
 
                 var priceCalculator = PriceCalculatorFactory.CreatePriceCalculator(executionContext, session, Transaction);
-                appliedFee.CalculatePrice(executionContext, priceCalculator);
+                transactionFee.CalculatePrice(executionContext, priceCalculator);
 
-                DataConnector.UpdateAppliedTransactionFee(executionContext.DataService, appliedFee);                
+                DataConnector.UpdateTransactionFee(executionContext.DataService, transactionFee);                
             }
             catch (Exception ex)
             {
