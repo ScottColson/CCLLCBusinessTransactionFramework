@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityRelationships>
-  <EntityRelationship Name="ccllc_fee_appliedfee">
+  <EntityRelationship Name="ccllc_fee_transactionfee">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ccllc_appliedfee</ReferencingEntityName>
+    <ReferencingEntityName>ccllc_transactionfee</ReferencingEntityName>
     <ReferencedEntityName>ccllc_fee</ReferencedEntityName>
     <CascadeAssign>NoCascade</CascadeAssign>
     <CascadeDelete>Restrict</CascadeDelete>
@@ -17,22 +17,17 @@
     <ReferencingAttributeName>ccllc_FeeId</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="The fee that is being applied to the current transaction" languagecode="1033" />
+        <Description description="The fee that is linked to the transaction" languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
       <EntityRelationshipRole>
-        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
-        <NavPaneArea>Details</NavPaneArea>
-        <NavPaneOrder>10000</NavPaneOrder>
+        <NavPaneDisplayOption>DoNotDisplay</NavPaneDisplayOption>
         <NavigationPropertyName>ccllc_FeeId</NavigationPropertyName>
-        <CustomLabels>
-          <CustomLabel description="" languagecode="1033" />
-        </CustomLabels>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>
-        <NavigationPropertyName>ccllc_fee_appliedfee</NavigationPropertyName>
+        <NavigationPropertyName>ccllc_fee_transactionfee</NavigationPropertyName>
         <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>

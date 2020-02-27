@@ -10,7 +10,7 @@ namespace CCLLC.BTF.Revenue.CDS
     {
         public ITransactionFeeRecord CreateTransactionFee(IDataService dataService, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> feeId, string name, decimal quantity, decimal? unitPrice = null, decimal? totalPrice = null)
         {            
-            var record = new ccllc_appliedfee
+            var record = new ccllc_transactionfee
             {
                 ccllc_TransactionId = transactionId.ToEntityReference(),
                 ccllc_FeeId = feeId.ToEntityReference(),
@@ -24,7 +24,7 @@ namespace CCLLC.BTF.Revenue.CDS
 
         public IList<ITransactionFeeRecord> GetTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId)
         {
-            return dataService.ToOrgService().Query<ccllc_appliedfee>()
+            return dataService.ToOrgService().Query<ccllc_transactionfee>()
                 .IncludeAllColumns()
                 .Where(e => e
                     .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId))
@@ -56,7 +56,7 @@ namespace CCLLC.BTF.Revenue.CDS
 
         public void UpdateTransactionFee(IDataService dataService, ITransactionFeeRecord record)
         {
-            var updateRecord = new ccllc_appliedfee()
+            var updateRecord = new ccllc_transactionfee()
             {
                 Id = record.Id,
                 ccllc_Quantity = record.Quantity,

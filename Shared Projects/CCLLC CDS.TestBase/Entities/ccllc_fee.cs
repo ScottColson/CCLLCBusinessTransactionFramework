@@ -373,24 +373,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N ccllc_fee_appliedfee
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_appliedfee")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> ccllc_fee_appliedfee
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("ccllc_fee_appliedfee", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_fee_appliedfee");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("ccllc_fee_appliedfee", null, value);
-				this.OnPropertyChanged("ccllc_fee_appliedfee");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N ccllc_fee_initialfee
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_initialfee")]
@@ -405,6 +387,24 @@ namespace TestProxy
 				this.OnPropertyChanging("ccllc_fee_initialfee");
 				this.SetRelatedEntities<TestProxy.ccllc_transactioninitialfee>("ccllc_fee_initialfee", null, value);
 				this.OnPropertyChanged("ccllc_fee_initialfee");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N ccllc_fee_transactionfee
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_transactionfee")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> ccllc_fee_transactionfee
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("ccllc_fee_transactionfee", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_fee_transactionfee");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("ccllc_fee_transactionfee", null, value);
+				this.OnPropertyChanged("ccllc_fee_transactionfee");
 			}
 		}
 		

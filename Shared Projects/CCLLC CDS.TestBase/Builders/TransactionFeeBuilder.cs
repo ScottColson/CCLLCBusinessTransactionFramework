@@ -4,29 +4,29 @@ using TestProxy;
 
 namespace CCLLC.CDS.Test.Builders
 {
-    public class AppliedFeeBuilder : EntityBuilder<ccllc_appliedfee>
+    public class TransactionFeeBuilder : EntityBuilder<ccllc_transactionfee>
     {
-        private ccllc_appliedfee Proxy { get; set; }
+        private ccllc_transactionfee Proxy { get; set; }
 
-        public AppliedFeeBuilder()
+        public TransactionFeeBuilder()
         {
-            Proxy = new ccllc_appliedfee();
+            Proxy = new ccllc_transactionfee();
         }
 
-        public AppliedFeeBuilder(Id id) : this()
+        public TransactionFeeBuilder(Id id) : this()
         {
             Id = id;
         }
 
         #region Fluent Methods
 
-        public AppliedFeeBuilder ForTransaction(Id id)
+        public TransactionFeeBuilder ForTransaction(Id id)
         {
             Proxy.ccllc_TransactionId = id.EntityReference;
             return this;
         }
 
-        public AppliedFeeBuilder WithFee(Id id)
+        public TransactionFeeBuilder WithFee(Id id)
         {
             Proxy.ccllc_FeeId = id.EntityReference;
             return this;
@@ -34,7 +34,7 @@ namespace CCLLC.CDS.Test.Builders
 
         #endregion
 
-        protected override ccllc_appliedfee BuildInternal()
+        protected override ccllc_transactionfee BuildInternal()
         {
             return Proxy;
         }

@@ -6,12 +6,12 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{5ecc2475-75b5-e811-a966-000d3a18bab7}</savedqueryid>
+    <savedqueryid>{bbd6b74a-8e59-ea11-a811-000d3a192705}</savedqueryid>
     <querytype>8192</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical" output-format="xml-platform">
-        <entity name="ccllc_appliedfee">
-          <attribute name="ccllc_appliedfeeid" />
+        <entity name="ccllc_transactionfee">
+          <attribute name="ccllc_transactionfeeid" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
             <condition attribute="ownerid" operator="eq-userid" />
@@ -19,12 +19,12 @@
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Applied Fees" languagecode="1033" />
+      <LocalizedName description="My Transaction Fees" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Applied Fees owned by me" languagecode="1033" />
+      <Description description="Active Transaction Fees owned by me" languagecode="1033" />
     </Descriptions>
   </savedquery>
 </savedqueries>

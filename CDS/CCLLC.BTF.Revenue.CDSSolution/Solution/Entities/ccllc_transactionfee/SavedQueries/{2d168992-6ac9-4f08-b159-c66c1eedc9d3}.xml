@@ -6,31 +6,32 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{c9bebc7a-4d19-43a3-b798-9f269443a106}</savedqueryid>
+    <savedqueryid>{2d168992-6ac9-4f08-b159-c66c1eedc9d3}</savedqueryid>
     <layoutxml>
-      <grid name="" jump="ccllc_name" select="1" icon="1" preview="0">
-        <row name="ccllc_appliedfee" id="ccllc_appliedfeeid">
+      <grid name="resultset" jump="ccllc_name" select="1" icon="1" preview="1">
+        <row name="result" id="ccllc_transactionfeeid">
           <cell name="ccllc_name" width="300" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
     </layoutxml>
-    <querytype>64</querytype>
+    <querytype>0</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical">
-        <entity name="ccllc_appliedfee">
-          <attribute name="ccllc_appliedfeeid" />
+        <entity name="ccllc_transactionfee">
+          <attribute name="ccllc_transactionfeeid" />
           <attribute name="ccllc_name" />
           <attribute name="createdon" />
+          <order attribute="ccllc_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Applied Fee Lookup View" languagecode="1033" />
+      <LocalizedName description="Active Transaction Fees" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

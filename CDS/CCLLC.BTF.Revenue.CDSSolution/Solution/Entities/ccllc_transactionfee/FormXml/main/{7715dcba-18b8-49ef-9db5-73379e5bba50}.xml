@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms>
   <systemform>
-    <formid>{af56e918-7212-43d9-98ab-561647b7a78d}</formid>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <formid>{7715dcba-18b8-49ef-9db5-73379e5bba50}</formid>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form>
       <tabs>
-        <tab verticallayout="true" id="{37c549ca-f05b-4613-8c54-d4ca48cdab68}" IsUserDefined="1">
+        <tab verticallayout="true" id="{f5194728-ffe9-4d52-984b-6abd96b95223}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e03fe660-a9dc-43dc-828c-1eb7ac775817}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{d9a3fc76-d465-48d1-bf1f-b5925e19c8c0}">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{167f8ec2-cc28-4ea5-b3aa-f6f91d07d517}">
+                      <cell id="{feb4274d-6bc0-4638-a1ef-d925a4a97589}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{ad930fd6-56d8-4ff5-ae04-3048e03dc693}">
+                      <cell id="{be3bc76e-464c-4995-8251-c96a62965d31}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

@@ -11,7 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Builders\AgentRoleBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\AlternateBranchBuilder.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\AppliedFeeBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\TransactionFeeBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\EvaluatorTypeBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\ProcessStepBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\StepHistoryBuilder.cs" />
@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Builders\TransactionRequirementBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\TransactionRoleBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Builders\TransactionTypeBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionfee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\new_transactiondatarecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExecutionContext\EnhancedOrgService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExecutionContext\ExecutionContext.cs" />
@@ -48,7 +49,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_agentprohibitedcustomer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_agentrole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_alternatebranch.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_appliedfee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_channel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_device.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_evaluatortype.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IdRecordPointerExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgentFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAppliedFee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeTransactionFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeChannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomerFactory.cs" />
@@ -90,6 +90,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakePlatformManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeWorkSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_transactionfeeState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_transactionfee_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_addresstypecode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_freighttermscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\contact_address3_shippingmethodcode.cs" />
@@ -183,8 +185,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_agent_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_alternatebranchState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_alternatebranch_statuscode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfeeState.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_appliedfee_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_channelState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_channeltypeoptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_channel_statuscode.cs" />

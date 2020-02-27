@@ -4,7 +4,7 @@ namespace CCLLC.BTF.Revenue.CDS
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public enum ccllc_appliedfee_statuscode
+	public enum ccllc_transactionfee_statuscode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

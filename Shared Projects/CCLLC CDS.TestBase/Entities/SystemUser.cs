@@ -2932,78 +2932,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N lk_ccllc_appliedfee_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_appliedfee_createdby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> lk_ccllc_appliedfee_createdby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_createdby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_appliedfee_createdby");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_createdby", null, value);
-				this.OnPropertyChanged("lk_ccllc_appliedfee_createdby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_appliedfee_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_appliedfee_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> lk_ccllc_appliedfee_createdonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_createdonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_appliedfee_createdonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_createdonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_appliedfee_createdonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_appliedfee_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_appliedfee_modifiedby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> lk_ccllc_appliedfee_modifiedby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_modifiedby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_appliedfee_modifiedby");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_modifiedby", null, value);
-				this.OnPropertyChanged("lk_ccllc_appliedfee_modifiedby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_appliedfee_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_appliedfee_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> lk_ccllc_appliedfee_modifiedonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_modifiedonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_appliedfee_modifiedonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("lk_ccllc_appliedfee_modifiedonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_appliedfee_modifiedonbehalfby");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N lk_ccllc_channel_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_channel_createdby")]
@@ -4156,6 +4084,78 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// 1:N lk_ccllc_transactionfee_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionfee_createdby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> lk_ccllc_transactionfee_createdby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_createdby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_transactionfee_createdby");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_createdby", null, value);
+				this.OnPropertyChanged("lk_ccllc_transactionfee_createdby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_transactionfee_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionfee_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> lk_ccllc_transactionfee_createdonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_createdonbehalfby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_transactionfee_createdonbehalfby");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ccllc_transactionfee_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_transactionfee_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionfee_modifiedby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> lk_ccllc_transactionfee_modifiedby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_modifiedby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_transactionfee_modifiedby");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_modifiedby", null, value);
+				this.OnPropertyChanged("lk_ccllc_transactionfee_modifiedby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_transactionfee_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionfee_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> lk_ccllc_transactionfee_modifiedonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_modifiedonbehalfby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_transactionfee_modifiedonbehalfby");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("lk_ccllc_transactionfee_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ccllc_transactionfee_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N lk_ccllc_transactiongroup_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactiongroup_createdby")]
@@ -5236,24 +5236,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N user_ccllc_appliedfee
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_appliedfee")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> user_ccllc_appliedfee
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("user_ccllc_appliedfee", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("user_ccllc_appliedfee");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("user_ccllc_appliedfee", null, value);
-				this.OnPropertyChanged("user_ccllc_appliedfee");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N user_ccllc_channel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_channel")]
@@ -5538,6 +5520,24 @@ namespace TestProxy
 				this.OnPropertyChanging("user_ccllc_transaction");
 				this.SetRelatedEntities<TestProxy.ccllc_transaction>("user_ccllc_transaction", null, value);
 				this.OnPropertyChanged("user_ccllc_transaction");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N user_ccllc_transactionfee
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_transactionfee")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> user_ccllc_transactionfee
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("user_ccllc_transactionfee", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("user_ccllc_transactionfee");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("user_ccllc_transactionfee", null, value);
+				this.OnPropertyChanged("user_ccllc_transactionfee");
 			}
 		}
 		

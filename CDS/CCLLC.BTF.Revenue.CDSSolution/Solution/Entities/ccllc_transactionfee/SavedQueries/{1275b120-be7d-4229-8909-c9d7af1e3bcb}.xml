@@ -6,10 +6,10 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{f3ac981e-dee9-4fc7-89de-9aac585cdf78}</savedqueryid>
+    <savedqueryid>{1275b120-be7d-4229-8909-c9d7af1e3bcb}</savedqueryid>
     <layoutxml>
       <grid name="resultset" jump="ccllc_name" select="1" icon="1" preview="1">
-        <row name="result" id="ccllc_appliedfeeid">
+        <row name="result" id="ccllc_transactionfeeid">
           <cell name="ccllc_name" width="300" />
           <cell name="createdon" width="125" />
         </row>
@@ -18,17 +18,17 @@
     <querytype>1</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical">
-        <entity name="ccllc_appliedfee">
-          <attribute name="ccllc_appliedfeeid" />
+        <entity name="ccllc_transactionfee">
+          <attribute name="ccllc_transactionfeeid" />
           <attribute name="ccllc_name" />
           <attribute name="createdon" />
           <order attribute="ccllc_name" descending="false" />
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Applied Fee Advanced Find View" languagecode="1033" />
+      <LocalizedName description="Transaction Fee Advanced Find View" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

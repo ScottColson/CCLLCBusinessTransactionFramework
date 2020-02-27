@@ -1,68 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entity>
-  <Name LocalizedName="Applied Fee" OriginalName="Applied Fee">ccllc_appliedfee</Name>
+  <Name LocalizedName="Transaction Fee" OriginalName="Transaction Fee">ccllc_transactionfee</Name>
   <EntityInfo>
-    <entity Name="ccllc_appliedfee">
+    <entity Name="ccllc_transactionfee">
       <LocalizedNames>
-        <LocalizedName description="Applied Fee" languagecode="1033" />
+        <LocalizedName description="Transaction Fee" languagecode="1033" />
       </LocalizedNames>
       <LocalizedCollectionNames>
-        <LocalizedCollectionName description="Applied Fees" languagecode="1033" />
+        <LocalizedCollectionName description="Transaction Fees" languagecode="1033" />
       </LocalizedCollectionNames>
       <Descriptions>
-        <Description description="Defines fees applied to a specific Transaction in the Business Transaction Framework." languagecode="1033" />
+        <Description description="" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="ccllc_appliedfeeId">
-          <Type>primarykey</Type>
-          <Name>ccllc_appliedfeeid</Name>
-          <LogicalName>ccllc_appliedfeeid</LogicalName>
-          <RequiredLevel>systemrequired</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
-          <ValidForReadApi>1</ValidForReadApi>
-          <ValidForCreateApi>1</ValidForCreateApi>
-          <IsCustomField>0</IsCustomField>
-          <IsAuditEnabled>0</IsAuditEnabled>
-          <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
-          <IsCustomizable>1</IsCustomizable>
-          <IsRenameable>1</IsRenameable>
-          <CanModifySearchSettings>1</CanModifySearchSettings>
-          <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
-          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
-          <SourceType>0</SourceType>
-          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-          <IsSortableEnabled>0</IsSortableEnabled>
-          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
-          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
-          <IsDataSourceSecret>0</IsDataSourceSecret>
-          <AutoNumberFormat></AutoNumberFormat>
-          <IsSearchable>0</IsSearchable>
-          <IsFilterable>1</IsFilterable>
-          <IsRetrievable>1</IsRetrievable>
-          <IsLocalizable>0</IsLocalizable>
-          <displaynames>
-            <displayname description="Applied Fee" languagecode="1033" />
-          </displaynames>
-          <Descriptions>
-            <Description description="Unique identifier for entity instances" languagecode="1033" />
-          </Descriptions>
-        </attribute>
         <attribute PhysicalName="ccllc_FeeId">
           <Type>lookup</Type>
           <Name>ccllc_feeid</Name>
           <LogicalName>ccllc_feeid</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
+          <RequiredLevel>required</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -85,7 +48,7 @@
             <displayname description="Fee" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="The fee that is being applied to the current transaction" languagecode="1033" />
+            <Description description="The fee that is linked to the transaction" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ccllc_name">
@@ -101,7 +64,7 @@
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -158,14 +121,14 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <MinValue>-100000000000</MinValue>
+          <MinValue>1</MinValue>
           <MaxValue>100000000000</MaxValue>
-          <Accuracy>2</Accuracy>
+          <Accuracy>0</Accuracy>
           <displaynames>
             <displayname description="Quantity" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="" languagecode="1033" />
+            <Description description="The quantity of the specific fee." languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ccllc_TotalPrice">
@@ -249,20 +212,55 @@
             <Description description="Value of the Total Price in base currency." languagecode="1033" />
           </Descriptions>
         </attribute>
+        <attribute PhysicalName="ccllc_transactionfeeId">
+          <Type>primarykey</Type>
+          <Name>ccllc_transactionfeeid</Name>
+          <LogicalName>ccllc_transactionfeeid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>0</IsCustomField>
+          <IsAuditEnabled>0</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>1</IsFilterable>
+          <IsRetrievable>1</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <displaynames>
+            <displayname description="Transaction Fee" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Unique identifier for entity instances" languagecode="1033" />
+          </Descriptions>
+        </attribute>
         <attribute PhysicalName="ccllc_TransactionId">
           <Type>lookup</Type>
           <Name>ccllc_transactionid</Name>
           <LogicalName>ccllc_transactionid</LogicalName>
           <RequiredLevel>required</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -285,7 +283,7 @@
             <displayname description="Transaction" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="The transaction the fee is being applied to." languagecode="1033" />
+            <Description description="The transaction the fee applies to." languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ccllc_UnitPrice">
@@ -380,7 +378,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -417,7 +415,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -455,7 +453,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -531,7 +529,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -569,7 +567,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -606,7 +604,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -644,7 +642,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -682,7 +680,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -722,7 +720,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -761,7 +759,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -798,7 +796,7 @@
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsLogical>1</IsLogical>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -835,7 +833,7 @@
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsLogical>1</IsLogical>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -873,7 +871,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -890,15 +888,15 @@
           <IsFilterable>1</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <optionset Name="ccllc_appliedfee_statecode">
+          <optionset Name="ccllc_transactionfee_statecode">
             <OptionSetType>state</OptionSetType>
-            <IntroducedVersion>0.0.0.0</IntroducedVersion>
+            <IntroducedVersion>0.0.0.2</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
             <displaynames>
               <displayname description="Status" languagecode="1033" />
             </displaynames>
             <Descriptions>
-              <Description description="Status of the Applied Fee" languagecode="1033" />
+              <Description description="Status of the Transaction Fee" languagecode="1033" />
             </Descriptions>
             <states>
               <state value="0" defaultstatus="1" invariantname="Active">
@@ -917,7 +915,7 @@
             <displayname description="Status" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Status of the Applied Fee" languagecode="1033" />
+            <Description description="Status of the Transaction Fee" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="statuscode">
@@ -933,7 +931,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -950,15 +948,15 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <optionset Name="ccllc_appliedfee_statuscode">
+          <optionset Name="ccllc_transactionfee_statuscode">
             <OptionSetType>status</OptionSetType>
-            <IntroducedVersion>0.0.0.0</IntroducedVersion>
+            <IntroducedVersion>0.0.0.2</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
             <displaynames>
               <displayname description="Status Reason" languagecode="1033" />
             </displaynames>
             <Descriptions>
-              <Description description="Reason for the status of the Applied Fee" languagecode="1033" />
+              <Description description="Reason for the status of the Transaction Fee" languagecode="1033" />
             </Descriptions>
             <statuses>
               <status value="1" state="0">
@@ -977,7 +975,7 @@
             <displayname description="Status Reason" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Reason for the status of the Applied Fee" languagecode="1033" />
+            <Description description="Reason for the status of the Transaction Fee" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="TimeZoneRuleVersionNumber">
@@ -992,7 +990,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1070,7 +1068,7 @@
           <IsCustomField>0</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.0</IntroducedVersion>
+          <IntroducedVersion>0.0.0.2</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1098,7 +1096,7 @@
           </Descriptions>
         </attribute>
       </attributes>
-      <EntitySetName>ccllc_appliedfees</EntitySetName>
+      <EntitySetName>ccllc_transactionfees</EntitySetName>
       <IsDuplicateCheckSupported>0</IsDuplicateCheckSupported>
       <IsBusinessProcessEnabled>0</IsBusinessProcessEnabled>
       <IsRequiredOffline>0</IsRequiredOffline>
@@ -1133,7 +1131,7 @@
       <IsReadingPaneEnabled>0</IsReadingPaneEnabled>
       <IsQuickCreateEnabled>0</IsQuickCreateEnabled>
       <SyncToExternalSearchIndex>0</SyncToExternalSearchIndex>
-      <IntroducedVersion>0.0.0.0</IntroducedVersion>
+      <IntroducedVersion>0.0.0.2</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <IsRenameable>1</IsRenameable>
       <IsMappable>1</IsMappable>

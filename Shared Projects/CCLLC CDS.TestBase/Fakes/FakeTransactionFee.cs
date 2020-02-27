@@ -4,7 +4,7 @@ using CCLLC.BTF.Revenue;
 
 namespace CCLLC.CDS.Test.Fakes
 {
-    public class FakeAppliedFee : ITransactionFee
+    public class FakeTransactionFee : ITransactionFee
     {
         public IRecordPointer<Guid> TransactionId => throw new NotImplementedException();
 
@@ -24,7 +24,7 @@ namespace CCLLC.CDS.Test.Fakes
 
         IRecordPointer<Guid> ITransactionFeeRecord.Fee => throw new NotImplementedException();
 
-        public FakeAppliedFee(TestProxy.ccllc_appliedfee record)
+        public FakeTransactionFee(TestProxy.ccllc_transactionfee record)
         {
             RecordType = record.LogicalName;
             Id = record.Id;

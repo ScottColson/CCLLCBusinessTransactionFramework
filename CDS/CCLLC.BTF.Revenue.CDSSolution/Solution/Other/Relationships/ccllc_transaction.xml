@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityRelationships>
-  <EntityRelationship Name="ccllc_transaction_appliedfee">
+  <EntityRelationship Name="ccllc_transaction_transactionfee">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>0.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.0.0.2</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ccllc_appliedfee</ReferencingEntityName>
+    <ReferencingEntityName>ccllc_transactionfee</ReferencingEntityName>
     <ReferencedEntityName>ccllc_transaction</ReferencedEntityName>
     <CascadeAssign>NoCascade</CascadeAssign>
     <CascadeDelete>Restrict</CascadeDelete>
@@ -17,22 +17,17 @@
     <ReferencingAttributeName>ccllc_TransactionId</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="The transaction the fee is being applied to." languagecode="1033" />
+        <Description description="The transaction the fee applies to." languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
       <EntityRelationshipRole>
-        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
-        <NavPaneArea>Details</NavPaneArea>
-        <NavPaneOrder>10000</NavPaneOrder>
+        <NavPaneDisplayOption>DoNotDisplay</NavPaneDisplayOption>
         <NavigationPropertyName>ccllc_TransactionId</NavigationPropertyName>
-        <CustomLabels>
-          <CustomLabel description="" languagecode="1033" />
-        </CustomLabels>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>
-        <NavigationPropertyName>ccllc_transaction_appliedfee</NavigationPropertyName>
+        <NavigationPropertyName>ccllc_transaction_transactionfee</NavigationPropertyName>
         <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>

@@ -1501,24 +1501,6 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_ccllc_appliedfee
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_appliedfee")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_appliedfee> business_unit_ccllc_appliedfee
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_appliedfee>("business_unit_ccllc_appliedfee", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("business_unit_ccllc_appliedfee");
-				this.SetRelatedEntities<TestProxy.ccllc_appliedfee>("business_unit_ccllc_appliedfee", null, value);
-				this.OnPropertyChanged("business_unit_ccllc_appliedfee");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_ccllc_channel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_channel")]
@@ -1803,6 +1785,24 @@ namespace TestProxy
 				this.OnPropertyChanging("business_unit_ccllc_transaction");
 				this.SetRelatedEntities<TestProxy.ccllc_transaction>("business_unit_ccllc_transaction", null, value);
 				this.OnPropertyChanged("business_unit_ccllc_transaction");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N business_unit_ccllc_transactionfee
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_transactionfee")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionfee> business_unit_ccllc_transactionfee
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_transactionfee>("business_unit_ccllc_transactionfee", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("business_unit_ccllc_transactionfee");
+				this.SetRelatedEntities<TestProxy.ccllc_transactionfee>("business_unit_ccllc_transactionfee", null, value);
+				this.OnPropertyChanged("business_unit_ccllc_transactionfee");
 			}
 		}
 		

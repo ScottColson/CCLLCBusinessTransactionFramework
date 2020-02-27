@@ -4,7 +4,7 @@ namespace CCLLC.BTF.Revenue.CDS
 {
     using CCLLC.Core;
 
-    public partial class ccllc_appliedfee : ITransactionFeeRecord
+    public partial class ccllc_transactionfee : ITransactionFeeRecord
     {
         public IRecordPointer<Guid> TransactionId => this.ccllc_TransactionId?.ToRecordPointer();
 

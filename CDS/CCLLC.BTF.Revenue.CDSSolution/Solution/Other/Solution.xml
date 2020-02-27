@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.12629" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.13230" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>CCLLCBTFRevenue</UniqueName>
     <LocalizedNames>
@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="Defines entities and processes used for capturing and reporting revenue within the Business Transaction Framework. This solution is dependent on the CCLLC.BTF.Platform solution." languagecode="1033" />
     </Descriptions>
-    <Version>0.0.0.2</Version>
+    <Version>0.0.0.3</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>colsoncodellc</UniqueName>
@@ -82,21 +82,26 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="1" schemaName="ccllc_appliedfee" behavior="0" />
       <RootComponent type="1" schemaName="ccllc_fee" behavior="0" />
+      <RootComponent type="1" schemaName="ccllc_transaction" behavior="2" />
+      <RootComponent type="1" schemaName="ccllc_transactionfee" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="2" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_transactionfee" displayName="ccllc_transaction_transactionfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="3" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="1" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="2" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_transactionfee" displayName="ccllc_transaction_transactionfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="3" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="1" type="10" schemaName="ccllc_transaction_transactionfee" displayName="ccllc_transaction_transactionfee" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>

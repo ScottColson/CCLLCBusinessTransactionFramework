@@ -5,7 +5,7 @@
             Comma seperate list of entity logical names.
             I've not provided support for -all- entities because this results in unneccessarily large plugins!
             */
-            "entities": "ccllc_fee,ccllc_appliedfee",
+            "entities": "ccllc_fee,ccllc_transactionfee",
             /*
             Set to 'true' to generate Enums for optionsets
             */

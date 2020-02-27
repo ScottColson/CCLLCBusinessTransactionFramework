@@ -1278,7 +1278,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id CreatedTransaction = new Id<TestProxy.ccllc_transaction>("4F4C8FA9-C2ED-4483-BE04-8B45B94F4AA2");
                 public static readonly Id CreatedStepHistory = new Id<TestProxy.ccllc_stephistory>("D265A4E8-6F8C-49EC-9429-5CA7FA7AD066");
-                public static readonly Id CreatedAppliedFee = new Id<TestProxy.ccllc_appliedfee>("3D864697-B1BC-44CA-A2C9-ED04C975C55D");
+                public static readonly Id CreatedTransactionFee = new Id<TestProxy.ccllc_transactionfee>("3D864697-B1BC-44CA-A2C9-ED04C975C55D");
             }
 
             protected override void InitializeTestData(IOrganizationService service)
@@ -1367,7 +1367,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                     #endregion           
 
                         .WithEntities<Ids>()
-                        .ExceptEntities(Ids.CreatedTransaction, Ids.CreatedStepHistory, Ids.CreatedAppliedFee)
+                        .ExceptEntities(Ids.CreatedTransaction, Ids.CreatedStepHistory, Ids.CreatedTransactionFee)
                         .Create(service);
                 }
                 catch (Exception ex)
@@ -1382,7 +1382,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .WithIdsDefaultedForCreate(
                         Ids.CreatedTransaction,
                         Ids.CreatedStepHistory,
-                        Ids.CreatedAppliedFee)                                   
+                        Ids.CreatedTransactionFee)                                   
                     .Build();
 
                 var customer = new FakeCustomer(Ids.Contact);

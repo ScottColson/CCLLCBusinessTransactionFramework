@@ -373,20 +373,20 @@ namespace CCLLC.BTF.Revenue.CDS
 		}
 		
 		/// <summary>
-		/// 1:N ccllc_fee_appliedfee
+		/// 1:N ccllc_fee_transactionfee
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_appliedfee")]
-		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Revenue.CDS.ccllc_appliedfee> ccllc_fee_appliedfee
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_fee_transactionfee")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Revenue.CDS.ccllc_transactionfee> ccllc_fee_transactionfee
 		{
 			get
 			{
-				return this.GetRelatedEntities<CCLLC.BTF.Revenue.CDS.ccllc_appliedfee>("ccllc_fee_appliedfee", null);
+				return this.GetRelatedEntities<CCLLC.BTF.Revenue.CDS.ccllc_transactionfee>("ccllc_fee_transactionfee", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_fee_appliedfee");
-				this.SetRelatedEntities<CCLLC.BTF.Revenue.CDS.ccllc_appliedfee>("ccllc_fee_appliedfee", null, value);
-				this.OnPropertyChanged("ccllc_fee_appliedfee");
+				this.OnPropertyChanging("ccllc_fee_transactionfee");
+				this.SetRelatedEntities<CCLLC.BTF.Revenue.CDS.ccllc_transactionfee>("ccllc_fee_transactionfee", null, value);
+				this.OnPropertyChanged("ccllc_fee_transactionfee");
 			}
 		}
 	}
