@@ -26,6 +26,8 @@
   <EntityRelationship Name="ccllc_partner_channel" />
   <EntityRelationship Name="ccllc_role_agentrole" />
   <EntityRelationship Name="ccllc_systemuser_assignedagent" />
+  <EntityRelationship Name="ccllc_transaction_initiatingagent" />
+  <EntityRelationship Name="ccllc_transaction_initiatinglocation" />
   <EntityRelationship Name="lk_ccllc_agent_createdby" />
   <EntityRelationship Name="lk_ccllc_agent_modifiedby" />
   <EntityRelationship Name="lk_ccllc_agentauthorizedcustomer_createdby" />

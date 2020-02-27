@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.12629" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.13230" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>CCLLCBTFPlatform</UniqueName>
     <LocalizedNames>
       <LocalizedName description="CCLLC.BTF.Platform" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>0.0.0.1</Version>
+    <Version>0.0.0.2</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>colsoncodellc</UniqueName>
@@ -110,7 +110,7 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required key="0" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.1001)" />
+        <Required key="0" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.3007)" />
         <Dependent key="1" type="60" displayName="Information" parentDisplayName="Agent" id="{5eb5e2de-d16f-45de-be8f-15a72e0029e3}" />
       </MissingDependency>
     </MissingDependencies>

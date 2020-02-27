@@ -40,7 +40,31 @@
                         <labels>
                           <label description="Transaction Type" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_transactiontypeid" />
+                        <control disabled="false" id="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_transactiontypeid" uniqueid="{0839ddbc-5469-a149-9961-7a91048051c6}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db509ba8-3100-e393-8ddd-3e4c8c024193}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Initiating Agent" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_initiatingagentdd" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatingagentdd" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{55e01c08-ab91-d9ee-d238-178e36b1256d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Initiating Location" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_initiatinglocationd" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatinglocationd" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ce0020d5-16bc-a935-4466-319448abc56a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="InitiatingProcess" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_initiatingprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatingprocessid" disabled="false" />
                       </cell>
                     </row>
                     <row>
@@ -57,22 +81,6 @@
                           <label description="CurrentStep" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_currentstepid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_currentstepid" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{5b883177-4a89-68c6-9694-0e812a77e473}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Initiating Agent" languagecode="1033" />
-                        </labels>
-                        <control disabled="false" id="ccllc_initiatingagentid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatingagentid" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{979a8124-18e4-5131-d184-e62d0e94d83d}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Initiating Location" languagecode="1033" />
-                        </labels>
-                        <control disabled="false" id="ccllc_initiatinglocationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatinglocationid" />
                       </cell>
                     </row>
                     <row>

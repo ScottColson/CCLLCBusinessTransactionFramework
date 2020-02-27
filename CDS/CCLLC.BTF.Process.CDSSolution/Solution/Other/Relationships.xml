@@ -41,8 +41,6 @@
   <EntityRelationship Name="ccllc_subsequentprocessstep_alternatebranch" />
   <EntityRelationship Name="ccllc_transaction_currentprocess" />
   <EntityRelationship Name="ccllc_transaction_currentprocessstep" />
-  <EntityRelationship Name="ccllc_transaction_initiatingagent" />
-  <EntityRelationship Name="ccllc_transaction_initiatinglocation" />
   <EntityRelationship Name="ccllc_transaction_initiatingprocess" />
   <EntityRelationship Name="ccllc_transaction_stephistory" />
   <EntityRelationship Name="ccllc_transaction_transactionissue" />

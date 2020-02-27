@@ -6,7 +6,9 @@ namespace CCLLC.BTF.Platform
     public interface ITransaction : IRecordPointer<Guid>
     {   
         string Name { get; }
-        ICustomer Customer { get; }
         string ReferenceNumber { get; }
+        ICustomer Customer { get; } 
+        IAgent InitiatingAgent { get; }
+        ILocation InitiatingLocation { get; }
     }
 }

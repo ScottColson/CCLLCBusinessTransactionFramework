@@ -8,8 +8,6 @@ namespace CCLLC.BTF.Process
     public interface ITransaction : CCLLC.BTF.Revenue.ITransaction, CCLLC.BTF.Platform.ITransaction
     {      
         ITransactionType TransactionType { get; }     
-        IAgent InitiatingAgent { get; }
-        ILocation InitiatingLocation { get;}
         ITransactionProcess InitiatingProcess { get; }
         ITransactionProcess CurrentProcess { get; }
         IProcessStep CurrentStep { get; }

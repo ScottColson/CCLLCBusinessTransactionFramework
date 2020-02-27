@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.12935" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.13230" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>CCLLCBTFProcess</UniqueName>
     <LocalizedNames>
@@ -132,7 +132,7 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="0" type="1" schemaName="ccllc_transaction" displayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
@@ -144,215 +144,231 @@
         <Dependent key="4" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="6" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="7" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="5" type="1" schemaName="ccllc_role" displayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="8" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="10" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="11" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="9" type="1" schemaName="ccllc_channel" displayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="12" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="13" type="1" schemaName="ccllc_location" displayName="Location" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="13" type="1" schemaName="ccllc_location" displayName="Location" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="14" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_location" parentDisplayName="Location" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="15" type="1" schemaName="ccllc_agent" displayName="Agent" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="15" type="1" schemaName="ccllc_agent" displayName="Agent" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="16" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="18" type="62" schemaName="ccllc_TransactionConfigurationManager" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="19" type="80" schemaName="ccllc_TransactionConfigurationManager" displayName="Transaction Configuration Manager" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="20" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="17" type="1" schemaName="ccllc_evaluatortype" displayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="21" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="22" type="2" schemaName="ccllc_agentid" displayName="Agent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="22" type="2" schemaName="ccllc_agentid" displayName="Agent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="16" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="23" type="2" schemaName="createdon" displayName="Created On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="24" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+        <Required key="23" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="10" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="25" type="2" schemaName="ccllc_feeid" displayName="Fee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
+        <Required key="23" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="11" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="23" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="12" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="24" type="2" schemaName="ccllc_initiatingagentdd" displayName="Initiating Agent" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="26" type="2" schemaName="createdon" displayName="Created On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="27" type="2" schemaName="ccllc_feeid" displayName="Fee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
         <Dependent key="4" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="26" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="8" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required key="26" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="28" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="7" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="26" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="28" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="8" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="28" type="2" schemaName="ccllc_roleid" displayName="Role" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="6" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="27" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="10" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
+        <Required key="29" type="2" schemaName="ccllc_customerid" displayName="Customer" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="27" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="11" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required key="27" type="2" schemaName="ccllc_channelid" displayName="Channel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="30" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="12" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="28" type="2" schemaName="ccllc_customerid" displayName="Customer" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="24" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required key="29" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="12" type="10" schemaName="ccllc_channel_authorizedtransactiontype" displayName="ccllc_channel_authorizedtransactiontype" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required key="29" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="30" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="11" type="10" schemaName="ccllc_channel_processauthorizedchannel" displayName="ccllc_channel_processauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="29" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="30" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_channel" parentDisplayName="Channel" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="10" type="10" schemaName="ccllc_channel_stepauthorizedchannel" displayName="ccllc_channel_stepauthorizedchannel" parentSchemaName="ccllc_channel" parentDisplayName="Channel" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="30" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="31" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="20" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="30" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="31" type="2" schemaName="ccllc_evaluatortypeid" displayName="Evaluator Type" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="21" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="32" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="33" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="33" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="34" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="34" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="35" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="35" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="36" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="36" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="37" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="31" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="37" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
+        <Required key="32" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="38" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="38" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="39" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="21" type="10" schemaName="ccllc_evaluatortype_alternatebranch" displayName="ccllc_evaluatortype_alternatebranch" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="38" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="39" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="20" type="10" schemaName="ccllc_evaluatortype_transactionrequirement" displayName="ccllc_evaluatortype_transactionrequirement" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="39" type="2" schemaName="modifiedon" displayName="Modified On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="24" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+        <Required key="40" type="2" schemaName="modifiedon" displayName="Modified On" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="40" type="2" schemaName="ccllc_locationid" displayName="Location" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="41" type="2" schemaName="ccllc_locationid" displayName="Location" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="14" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_location" parentDisplayName="Location" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="41" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="42" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="14" type="10" schemaName="ccllc_location_stepcompletedlocation" displayName="ccllc_location_stepcompletedlocation" parentSchemaName="ccllc_location" parentDisplayName="Location" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="42" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="43" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="16" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="43" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="44" type="2" schemaName="ccllc_initiatinglocationd" displayName="Initiating Location" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="8" type="10" schemaName="ccllc_role_requirementwaiverrole" displayName="ccllc_role_requirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="43" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="45" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="7" type="10" schemaName="ccllc_role_transactionrequirementwaiverrole" displayName="ccllc_role_transactionrequirementwaiverrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="43" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.1)" />
+        <Required key="45" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_role" parentDisplayName="Role" solution="CCLLCBTFPlatform (0.0.0.2)" />
         <Dependent key="6" type="10" schemaName="ccllc_transactiontype_authorizedrole" displayName="ccllc_transactiontype_authorizedrole" parentSchemaName="ccllc_role" parentDisplayName="Role" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="44" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
+        <Required key="46" type="2" schemaName="ccllc_name" displayName="Name" parentSchemaName="ccllc_fee" parentDisplayName="Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
         <Dependent key="4" type="10" schemaName="ccllc_fee_initialfee" displayName="ccllc_fee_initialfee" parentSchemaName="ccllc_fee" parentDisplayName="Fee" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="32" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="33" type="29" displayName="BTF_CanNavigateBackward" id="{bdb6c028-b17d-479f-a567-0796066d817a}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="33" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="34" type="29" displayName="BTF_CanNavigateForward" id="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="36" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="37" type="29" displayName="BTF_NavigateForward" id="{6f629a04-8b3a-4963-b012-2f6145e94921}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="35" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="36" type="10" schemaName="ccllc_transaction_transactionissue" displayName="ccllc_transaction_transactionissue" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="37" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="38" type="29" displayName="BTF_NavigateBackward" id="{7f94d5f0-f3c6-4a09-9fcc-c0cbacfaa173}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="45" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.1)" />
-        <Dependent key="34" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
+        <Required key="47" type="2" schemaName="ccllc_transactionid" displayName="Transaction" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="35" type="10" schemaName="ccllc_transaction_stephistory" displayName="ccllc_transaction_stephistory" parentSchemaName="ccllc_transaction" parentDisplayName="Transaction" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="46" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
+        <Required key="48" type="10" schemaName="ccllc_transaction_appliedfee" displayName="ccllc_transaction_appliedfee" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="CCLLCBTFRevenue (0.0.0.2)" />
         <Dependent key="2" type="60" displayName="Transaction Fee List" parentDisplayName="Transaction" id="{4635fce2-359c-4232-814d-1a42356bc099}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="47" type="26" schemaName="Evaluator Type Lookup View" displayName="Evaluator Type Lookup View" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.1)" id="{adf1f4a7-44eb-4774-9e91-ce3a715f99ad}" />
-        <Dependent key="48" type="60" displayName="Information" parentDisplayName="Transaction Requirement" id="{848ba7be-b294-4370-9469-a142a2cecf9b}" />
+        <Required key="49" type="10" schemaName="ccllc_transaction_initiatinglocation" displayName="ccllc_transaction_initiatinglocation" parentSchemaName="ccllc_location" parentDisplayName="Location" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="49" type="26" schemaName="Active Applied Fees" displayName="Active Applied Fees" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="CCLLCBTFRevenue (0.0.0.2)" id="{060f7752-b917-4802-a1b1-d9d3d548e84c}" />
+        <Required key="50" type="10" schemaName="ccllc_transaction_initiatingagent" displayName="ccllc_transaction_initiatingagent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" solution="CCLLCBTFPlatform (0.0.0.2)" />
+        <Dependent key="25" type="60" displayName="Transaction Details" parentDisplayName="Transaction" id="{6fca572e-64ef-40fe-9c31-6d1090b16dea}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="51" type="26" schemaName="Evaluator Type Lookup View" displayName="Evaluator Type Lookup View" parentSchemaName="ccllc_evaluatortype" parentDisplayName="Evaluator Type" solution="CCLLCBTFPlatform (0.0.0.2)" id="{adf1f4a7-44eb-4774-9e91-ce3a715f99ad}" />
+        <Dependent key="52" type="60" displayName="Information" parentDisplayName="Transaction Requirement" id="{848ba7be-b294-4370-9469-a142a2cecf9b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="53" type="26" schemaName="Active Applied Fees" displayName="Active Applied Fees" parentSchemaName="ccllc_appliedfee" parentDisplayName="Applied Fee" solution="CCLLCBTFRevenue (0.0.0.2)" id="{060f7752-b917-4802-a1b1-d9d3d548e84c}" />
         <Dependent key="2" type="60" displayName="Transaction Fee List" parentDisplayName="Transaction" id="{4635fce2-359c-4232-814d-1a42356bc099}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="50" type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Required key="54" type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
         <Dependent key="19" type="80" schemaName="ccllc_TransactionConfigurationManager" displayName="Transaction Configuration Manager" />
       </MissingDependency>
     </MissingDependencies>
