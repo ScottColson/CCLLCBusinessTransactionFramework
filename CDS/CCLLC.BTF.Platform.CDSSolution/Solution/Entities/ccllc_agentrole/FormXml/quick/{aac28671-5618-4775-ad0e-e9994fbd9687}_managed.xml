@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{2a9d0454-6b12-4c34-89e6-ac6e8276d9d3}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{e2698ff6-e1d4-42ec-b4a7-6d1e07d800f9}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

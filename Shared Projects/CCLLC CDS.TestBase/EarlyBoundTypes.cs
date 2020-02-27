@@ -18702,38 +18702,38 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// The agent that initiated the transaction.
+		/// Unique identifier for Agent associated with Transaction.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentdd")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_initiatingagentdd
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingAgentId
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingagentdd");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingagentid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_initiatingagentdd");
-				this.SetAttributeValue("ccllc_initiatingagentdd", value);
-				this.OnPropertyChanged("ccllc_initiatingagentdd");
+				this.OnPropertyChanging("ccllc_InitiatingAgentId");
+				this.SetAttributeValue("ccllc_initiatingagentid", value);
+				this.OnPropertyChanged("ccllc_InitiatingAgentId");
 			}
 		}
 		
 		/// <summary>
 		/// Unique identifier for Location associated with Transaction.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationd")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_initiatinglocationd
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingLocationId
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatinglocationd");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatinglocationid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_initiatinglocationd");
-				this.SetAttributeValue("ccllc_initiatinglocationd", value);
-				this.OnPropertyChanged("ccllc_initiatinglocationd");
+				this.OnPropertyChanging("ccllc_InitiatingLocationId");
+				this.SetAttributeValue("ccllc_initiatinglocationid", value);
+				this.OnPropertyChanged("ccllc_InitiatingLocationId");
 			}
 		}
 		
@@ -19252,7 +19252,7 @@ namespace TestProxy
 		/// <summary>
 		/// N:1 ccllc_transaction_initiatingagent
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentdd")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transaction_initiatingagent")]
 		public TestProxy.ccllc_agent ccllc_transaction_initiatingagent
 		{
@@ -19271,7 +19271,7 @@ namespace TestProxy
 		/// <summary>
 		/// N:1 ccllc_transaction_initiatinglocation
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationd")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transaction_initiatinglocation")]
 		public TestProxy.ccllc_location ccllc_transaction_initiatinglocation
 		{

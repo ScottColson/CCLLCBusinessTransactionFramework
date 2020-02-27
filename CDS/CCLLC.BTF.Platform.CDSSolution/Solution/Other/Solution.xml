@@ -6,7 +6,7 @@
       <LocalizedName description="CCLLC.BTF.Platform" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>0.0.0.2</Version>
+    <Version>0.0.0.5</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>colsoncodellc</UniqueName>

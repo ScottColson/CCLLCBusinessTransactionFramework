@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{e900cf37-77a0-4568-85e5-c2368a35bf71}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{c60b98b1-07ab-05e1-84a7-dca2b435506b}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Assembly Name" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_assemblyname" datafieldname="ccllc_assemblyname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{ad5be167-95d2-855d-48e3-d71e47ad7a6d}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Class Name" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ccllc_classname" datafieldname="ccllc_classname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" uniqueid="{c8c1ba6a-5803-be40-58cd-62847b266667}" />
                       </cell>
@@ -46,7 +46,7 @@
                     <row>
                       <cell id="{b9a269ac-3e5d-4de9-a0ff-008762fe7e3a}" showlabel="true" locklevel="1" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control disabled="false" id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{4a550556-e2bb-2188-6988-656ad68606d4}">
                           <parameters>

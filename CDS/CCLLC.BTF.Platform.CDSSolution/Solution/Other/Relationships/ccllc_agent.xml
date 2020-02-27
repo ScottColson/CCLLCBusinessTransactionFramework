@@ -112,7 +112,7 @@
   <EntityRelationship Name="ccllc_transaction_initiatingagent">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <IntroducedVersion>0.0.0.4</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
     <ReferencingEntityName>ccllc_transaction</ReferencingEntityName>
     <ReferencedEntityName>ccllc_agent</ReferencedEntityName>
@@ -123,18 +123,16 @@
     <CascadeUnshare>NoCascade</CascadeUnshare>
     <CascadeRollupView>NoCascade</CascadeRollupView>
     <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-    <ReferencingAttributeName>ccllc_initiatingagentdd</ReferencingAttributeName>
+    <ReferencingAttributeName>ccllc_InitiatingAgentId</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="The agent that initiated the transaction." languagecode="1033" />
+        <Description description="Unique identifier for Agent associated with Transaction." languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
       <EntityRelationshipRole>
         <NavPaneDisplayOption>DoNotDisplay</NavPaneDisplayOption>
-        <NavPaneArea>Details</NavPaneArea>
-        <NavPaneOrder>10000</NavPaneOrder>
-        <NavigationPropertyName>ccllc_initiatingagentdd</NavigationPropertyName>
+        <NavigationPropertyName>ccllc_InitiatingAgentId</NavigationPropertyName>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>

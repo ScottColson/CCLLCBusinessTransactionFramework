@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{8918062d-15b5-4aac-af9e-7a001dd4780e}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
                       </cell>

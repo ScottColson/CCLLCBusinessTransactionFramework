@@ -50,20 +50,19 @@
             <Description description="The customer associated with the transaction." languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="ccllc_initiatingagentdd">
+        <attribute PhysicalName="ccllc_InitiatingAgentId">
           <Type>lookup</Type>
-          <Name>ccllc_initiatingagentdd</Name>
-          <LogicalName>ccllc_initiatingagentdd</LogicalName>
+          <Name>ccllc_initiatingagentid</Name>
+          <LogicalName>ccllc_initiatingagentid</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.1</IntroducedVersion>
+          <IntroducedVersion>0.0.0.4</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -86,23 +85,22 @@
             <displayname description="Initiating Agent" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="The agent that initiated the transaction." languagecode="1033" />
+            <Description description="Unique identifier for Agent associated with Transaction." languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="ccllc_initiatinglocationd">
+        <attribute PhysicalName="ccllc_InitiatingLocationId">
           <Type>lookup</Type>
-          <Name>ccllc_initiatinglocationd</Name>
-          <LogicalName>ccllc_initiatinglocationd</LogicalName>
+          <Name>ccllc_initiatinglocationid</Name>
+          <LogicalName>ccllc_initiatinglocationid</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.1</IntroducedVersion>
+          <IntroducedVersion>0.0.0.4</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
