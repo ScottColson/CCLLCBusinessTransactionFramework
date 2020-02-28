@@ -27,6 +27,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Documents", "..\.
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Process.CDS", "..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.shproj", "{E6FF234B-606C-4B40-8EA7-F2619AA96C53}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CCLLC.BTF.Revenue.CDS", "..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.shproj", "{DF1D0D6F-6119-4A6D-8506-1BB1D4D3E60F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{29c88c19-2980-46d8-9172-aea759e9d1c1}*SharedItemsImports = 13
@@ -36,10 +38,12 @@ Global
 		..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
 		..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
 		..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
+		..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
 		..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{67501249-3c0f-4971-b468-2a56632ebbb7}*SharedItemsImports = 4
 		..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems*{a9a5d524-42a9-44b7-80ed-af5ec522cbee}*SharedItemsImports = 13
 		..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{c49bcdea-04f3-4dd5-a175-e3123dcac337}*SharedItemsImports = 13
 		..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{c9fae0ca-731b-4006-ae5e-d8b5c6e16325}*SharedItemsImports = 13
+		..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems*{df1d0d6f-6119-4a6d-8506-1bb1d4d3e60f}*SharedItemsImports = 13
 		..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{e6ff234b-606c-4b40-8ea7-f2619aa96c53}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,7 @@ Global
 		{C9FAE0CA-731B-4006-AE5E-D8B5C6E16325} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
 		{C49BCDEA-04F3-4DD5-A175-E3123DCAC337} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
 		{E6FF234B-606C-4B40-8EA7-F2619AA96C53} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
+		{DF1D0D6F-6119-4A6D-8506-1BB1D4D3E60F} = {8F3F0727-916E-43C7-B2A7-262C790F8F3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82E3915D-1346-4181-8DBD-4DADD58BA818}
