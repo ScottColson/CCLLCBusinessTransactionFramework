@@ -175,15 +175,15 @@
   </ItemGroup>
   <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems" Label="Shared" />
   <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.projitems" Label="Shared" />
-  <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
   <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems" Label="Shared" />
   <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems" Label="Shared" />
   <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems" Label="Shared" />
+  <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
+  <Import Project="..\..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- 
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>    
+    </PropertyGroup>
   </Target>
 </Project>

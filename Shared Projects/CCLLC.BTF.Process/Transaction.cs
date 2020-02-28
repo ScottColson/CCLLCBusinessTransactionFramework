@@ -261,29 +261,10 @@ namespace CCLLC.BTF.Process
         }
 
       
-
-        public bool CanJumpTo(IWorkSession session, IStepHistory step) => false;
-
         public bool CanNavigateBackward(IWorkSession session) => this.TransactionHistory.GetReversingSteps()?.LastOrDefault() != null;
 
         public bool CanNavigateForward(IWorkSession session) => this.CurrentStep != null && !this.CurrentStep.IsLastStep();
 
-        /// <summary>
-        /// Jump to the specified step in the <see cref="ITransactionProcess"/>.
-        /// </summary>
-        /// <param name="session"></param>
-        /// <param name="processHistoryStep"></param>
-        /// <returns></returns>
-        public IProcessStep JumpTo(IWorkSession session, IStepHistory processHistoryStep)
-        {
-            if (!this.CanJumpTo(session, processHistoryStep)) throw TransactionException.BuildException(TransactionException.ErrorCode.ActionNotAvailable);
-
-            var processStep = GetProcessStepById(processHistoryStep.ProcessStepId);
-
-            if (processStep is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepNotFound);
-
-            return processStep;
-        }
 
         /// <summary>
         /// Navigate the <see cref="ITransactionProcess"/> back to the previously completed UI step.

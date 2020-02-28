@@ -19,12 +19,10 @@ namespace CCLLC.BTF.Process
         IReadOnlyList<ICollectedEvidence> CollectedEvidence { get; }
         IReadOnlyList<IDataOfRecord> AffectedRecords { get; }
         ITransactionHistory TransactionHistory { get; }
-
         bool CanNavigateForward(IWorkSession session);
-        bool CanNavigateBackward(IWorkSession session);
-        bool CanJumpTo(IWorkSession session, IStepHistory processHistoryStep);
+        bool CanNavigateBackward(IWorkSession session);        
         IProcessStep NavigateForward(IWorkSession session);
         IProcessStep NavigateBackward(IWorkSession session);
-        IProcessStep JumpTo(IWorkSession session, IStepHistory processHistoryStep);
+        
     }
 }
