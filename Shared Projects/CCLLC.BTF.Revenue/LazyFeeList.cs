@@ -15,15 +15,17 @@ namespace CCLLC.BTF.Revenue
         private const string CACHE_KEY = "CCLLC.BTF.Revenue.FeeList";
 
         private IRevenueDataConnector DataConnector { get; }
+        private IRevenueSettingsFactory SettingsFactory { get; }
 
-        public LazyFeeList(IRevenueDataConnector dataConnector)
+        public LazyFeeList(IRevenueSettingsFactory settingsFactory, IRevenueDataConnector dataConnector)
         {
+            SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
             DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
         }
 
-        public IFee GetFee(IProcessExecutionContext executionContext, IRecordPointer<Guid> feeId, TimeSpan? overrideCacheTimeout = null)
+        public IFee GetFee(IProcessExecutionContext executionContext, IRecordPointer<Guid> feeId, bool useCache = true)
         {
-            var feeList = getFeeList(executionContext, overrideCacheTimeout);
+            var feeList = getFeeList(executionContext, useCache);
 
             var fee = feeList.Where(r => r.Id == feeId.Id).FirstOrDefault();
 
@@ -31,17 +33,19 @@ namespace CCLLC.BTF.Revenue
             {
                 fee = DataConnector.GetFeeById(executionContext.DataService, feeId) ?? throw new Exception("Requested Fee does not exist."); ;
 
-                feeList.Add(fee);
-
-                cacheFeeList(executionContext, feeList, overrideCacheTimeout);
+                if (useCache)
+                {
+                    feeList.Add(fee);
+                    cacheFeeList(executionContext, feeList);
+                }
             }
 
             return fee;
         }
 
-        public IFee GetFee(IProcessExecutionContext executionContext, string name, TimeSpan? overrideCacheTimeout = null)
-        {
-            var feeList = getFeeList(executionContext, overrideCacheTimeout);
+        public IFee GetFee(IProcessExecutionContext executionContext, string name, bool useCache = true)
+        {           
+            var feeList = getFeeList(executionContext, useCache);
 
             var fee = feeList.Where(r => r.Name == name).FirstOrDefault();
 
@@ -49,29 +53,28 @@ namespace CCLLC.BTF.Revenue
             {
                 fee = DataConnector.GetFeeByName(executionContext.DataService, name) ?? throw new Exception("Requested Fee does not exist.");
 
-                feeList.Add(fee);
-
-                cacheFeeList(executionContext, feeList, overrideCacheTimeout);
+                if (useCache)
+                {
+                    feeList.Add(fee);
+                    cacheFeeList(executionContext, feeList);
+                }
             }
 
             return fee;
         }
 
-        private IList<IFee> getFeeList(IProcessExecutionContext executionContext, TimeSpan? overrideCacheTimeout)
+        private IList<IFee> getFeeList(IProcessExecutionContext executionContext, bool useCache)
         {
-            var cacheTimeout = getCacheTimeout(executionContext, overrideCacheTimeout);
+            useCache = useCache && executionContext.Cache != null;
 
-            var useCache = executionContext.Cache != null && cacheTimeout != null;
+            var cacheTimeout = useCache ? getCacheTimeout(executionContext) : null;
 
-            if (useCache)
+            if (useCache && executionContext.Cache.Equals(CACHE_KEY))
             {
-                if (executionContext.Cache.Equals(CACHE_KEY))
-                {
-                    return executionContext.Cache.Get<IList<IFee>>(CACHE_KEY);
-                }
-            }
+                return executionContext.Cache.Get<IList<IFee>>(CACHE_KEY);
+            }            
 
-            var feeList =  new List<IFee>();
+            var feeList = new List<IFee>();
 
             if (useCache)
             {
@@ -81,26 +84,21 @@ namespace CCLLC.BTF.Revenue
             return feeList;
         }
 
-        private void cacheFeeList(IProcessExecutionContext executionContext, IList<IFee> feeList, TimeSpan? overrideCacheTimeout)
+        private void cacheFeeList(IProcessExecutionContext executionContext, IList<IFee> feeList)
         {
-            var cacheTimeout = getCacheTimeout(executionContext, overrideCacheTimeout);
-
-            var useCache = executionContext.Cache != null && cacheTimeout != null;
+            var useCache = executionContext.Cache != null;
 
             if (useCache)
             {
-                if (executionContext.Cache.Equals(CACHE_KEY))
-                {
-                    executionContext.Cache.Add<IList<IFee>>(CACHE_KEY, feeList, cacheTimeout.Value);
-                }
+                var cacheTimeout = getCacheTimeout(executionContext);
+                executionContext.Cache.Add<IList<IFee>>(CACHE_KEY, feeList, cacheTimeout.Value);
             }
         }
 
-        private TimeSpan? getCacheTimeout(IProcessExecutionContext executionContext, TimeSpan? overrideCacheTimeout)
+        private TimeSpan? getCacheTimeout(IProcessExecutionContext executionContext)
         {
-            var settings = new RevenueModuleSettings(executionContext.Settings);
-
-            return overrideCacheTimeout ?? settings.FeeListCacheTimeout;
+            var settings = SettingsFactory.CreateSettings(executionContext.Settings);            
+            return settings.FeeListCacheTimeout;
         }
     }
 }
