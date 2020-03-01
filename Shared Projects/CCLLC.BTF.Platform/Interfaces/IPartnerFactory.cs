@@ -5,8 +5,8 @@ namespace CCLLC.BTF.Platform
 {
     interface IPartnerFactory
     {
-        IPartner BuildPartner(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, TimeSpan? cacheTimeOut = null);
+        IPartner BuildPartner(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, bool useCache = true);
 
-        IPartner BuildPartner(IProcessExecutionContext executionContext, Guid id, string name, TimeSpan? cacheTimeOut = null);
+        IPartner BuildPartner(IProcessExecutionContext executionContext, Guid id, string name, bool useCache = true);
     }
 }

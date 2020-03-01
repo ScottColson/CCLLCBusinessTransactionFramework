@@ -48,7 +48,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPartnerWorker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformManagerSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatformSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRecordClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISerializedParameters.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorTypeBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlatformSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SerializedParameters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SystemUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WorkSession.cs" />

@@ -9,26 +9,27 @@ namespace CCLLC.BTF.Platform
 
         protected IDeferredActivator Activator { get; }
         protected IPlatformDataConnector DataConnector { get; }
+        protected IPlatformSettingsFactory SettingsFactory { get; }
 
-        public LogicEvaluatorTypeFactory(IPlatformDataConnector dataConnector, IDeferredActivator activator)
+        public LogicEvaluatorTypeFactory(IPlatformSettingsFactory settingsFactory, IPlatformDataConnector dataConnector, IDeferredActivator activator)
         {
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             this.Activator = activator ?? throw new ArgumentNullException("activator");
         }
 
-        public ILogicEvaluatorType BuildEvaluatorType(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorTypeId, TimeSpan? cacheTimeout = null)
+        public ILogicEvaluatorType BuildEvaluatorType(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorTypeId, bool useCache = true)
         {
             if (evaluatorTypeId is null) throw new ArgumentNullException("evaluatorTypeId");
 
+            var cacheTimeout = useCache ? getCacheTimeout(executionContext) : null;
+
+            useCache = useCache && executionContext.Cache != null && cacheTimeout != null;
+
             string cacheKey = null;
-
-            if (executionContext.Cache != null && cacheTimeout != null)
+            if (useCache)
             {
-                cacheKey = CACHE_KEY + evaluatorTypeId.Id.ToString();
-            }
-
-            if (cacheKey != null)
-            {
+                cacheKey = CACHE_KEY + evaluatorTypeId.Id.ToString();            
                 if (executionContext.Cache.Exists(cacheKey))
                 {
                     return executionContext.Cache.Get<ILogicEvaluatorType>(cacheKey);
@@ -39,7 +40,7 @@ namespace CCLLC.BTF.Platform
             {
                 var record = DataConnector.GetEvaluatorTypeRecord(executionContext.DataService, evaluatorTypeId);
 
-                return this.BuildEvaluatorType(executionContext, record, record.Name, record.AssemblyName, record.ClassName, cacheTimeout);
+                return this.BuildEvaluatorType(executionContext, record, record.Name, record.AssemblyName, record.ClassName);
             }
             catch (Exception)
             {
@@ -49,9 +50,11 @@ namespace CCLLC.BTF.Platform
         }
 
 
-        public ILogicEvaluatorType BuildEvaluatorType(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorTypeId, string name, string implementationAssemblyName, string implementationClassName, TimeSpan? cacheTimeout = null)
+        public ILogicEvaluatorType BuildEvaluatorType(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorTypeId, string name, string implementationAssemblyName, string implementationClassName, bool useCache = true)
         {
             if (evaluatorTypeId is null) throw new ArgumentNullException("evaluatorTypeId");
+
+            var cacheTimeout = useCache ? getCacheTimeout(executionContext) : null;
 
             string cacheKey = null;
 
@@ -85,6 +88,12 @@ namespace CCLLC.BTF.Platform
             }
         }
 
-       
+
+        private TimeSpan? getCacheTimeout(IProcessExecutionContext executionContext)
+        {            
+            var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+            return settings.LogicEvaluatorTypeTimeout;
+        }
+
     }
 }

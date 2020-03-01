@@ -5,6 +5,6 @@ namespace CCLLC.BTF.Platform
 {
     public interface ICustomerFactory
     {
-        ICustomer CreateCustomer(IProcessExecutionContext executionContext, IRecordPointer<Guid> customerId, TimeSpan? cacheTimeout = null);
+        ICustomer CreateCustomer(IProcessExecutionContext executionContext, IRecordPointer<Guid> customerId, bool useCache = true);
     }
 }
