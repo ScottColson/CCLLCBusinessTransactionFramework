@@ -9,6 +9,6 @@ namespace CCLLC.BTF.Process
     {
         IProcessStep CreateProcessStep(IProcessExecutionContext executionContext, IRecordPointer<Guid> stepId, string name, IRecordPointer<Guid> transactionProcessPointer,
             IProcessStepType processStepType, string parameters, IRecordPointer<Guid> subsequentStepPointer, IEnumerable<IAlternateBranch> alternateBranches,
-            IEnumerable<IChannel> authorizedChannels, IEnumerable<IStepRequirement> validationRequirements, TimeSpan? cacheTimeout = null);
+            IEnumerable<IChannel> authorizedChannels, IEnumerable<IStepRequirement> validationRequirements, bool useCache = true);
     }
 }

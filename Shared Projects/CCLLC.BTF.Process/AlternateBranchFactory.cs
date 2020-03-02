@@ -10,45 +10,45 @@ namespace CCLLC.BTF.Process
 
         protected ILogicEvaluatorTypeFactory EvaluatorTypeFactory { get; }
         protected ILogicEvaluatorFactory EvaluatorFactory { get; }
+        protected IProcessSettingsFactory SettingsFactory { get; }
 
-        public AlternateBranchFactory(ILogicEvaluatorTypeFactory evaluatorTypeFactory, ILogicEvaluatorFactory evaluatorFactory)
+        public AlternateBranchFactory(IProcessSettingsFactory settingsFactory, ILogicEvaluatorTypeFactory evaluatorTypeFactory, ILogicEvaluatorFactory evaluatorFactory)
         {
-            try
-            {
-                EvaluatorTypeFactory = evaluatorTypeFactory ?? throw new ArgumentNullException("evaluatorTypeFactory");
-                EvaluatorFactory = evaluatorFactory ?? throw new ArgumentNullException("evaluatorFactory");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+            EvaluatorTypeFactory = evaluatorTypeFactory ?? throw new ArgumentNullException("evaluatorTypeFactory");
+            EvaluatorFactory = evaluatorFactory ?? throw new ArgumentNullException("evaluatorFactory");
         }
 
-        public IAlternateBranch CreateAlternateBranch(IProcessExecutionContext executionContext, IRecordPointer<Guid> alternateBranchId, string name, int evaluationOrder, IRecordPointer<Guid> parentStepId, IRecordPointer<Guid> subsequentStepId, IRecordPointer<Guid> evaluatorTypeId, string parameters, TimeSpan? cacheTimeout = null)
+        public IAlternateBranch CreateAlternateBranch(IProcessExecutionContext executionContext, IRecordPointer<Guid> alternateBranchId, string name, int evaluationOrder, IRecordPointer<Guid> parentStepId, IRecordPointer<Guid> subsequentStepId, IRecordPointer<Guid> evaluatorTypeId, string parameters, bool useCache = true)
         {
             try
             {
+                useCache = useCache && executionContext.Cache != null;
+
                 string cacheKey = null;
-                if (executionContext.Cache != null && cacheTimeout != null)
+                
+                if (useCache)
                 {
                     cacheKey = CACHE_KEY + alternateBranchId.ToString();
-                }
 
-                if (executionContext.Cache.Exists(cacheKey))
-                {
-                    return executionContext.Cache.Get<IAlternateBranch>(cacheKey);
+                    if (executionContext.Cache.Exists(cacheKey))
+                    {
+                        return executionContext.Cache.Get<IAlternateBranch>(cacheKey);
+                    }
                 }
-                
 
                 if (evaluatorTypeId is null) throw new ArgumentNullException("evaluatorTypeId");
 
-                var evaluatorType = EvaluatorTypeFactory.BuildEvaluatorType(executionContext, evaluatorTypeId, cacheTimeout);
-                var evaluator = EvaluatorFactory.CreateEvaluator(executionContext, alternateBranchId, evaluatorType, parameters, cacheTimeout);
+                var evaluatorType = EvaluatorTypeFactory.BuildEvaluatorType(executionContext, evaluatorTypeId, useCache);
+                var evaluator = EvaluatorFactory.CreateEvaluator(executionContext, alternateBranchId, evaluatorType, parameters, useCache);
 
                 var alternateBranch = new AlternateBranch(alternateBranchId.RecordType,alternateBranchId.Id, name, evaluationOrder, parentStepId, subsequentStepId, evaluator);
 
-                if (cacheKey != null)
+                if (useCache)
                 {
+                    var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                    var cacheTimeout = settings.AlternateBranchCacheTimeout;
+
                     executionContext.Cache.Add<IAlternateBranch>(cacheKey, alternateBranch, cacheTimeout.Value);
                 }
 

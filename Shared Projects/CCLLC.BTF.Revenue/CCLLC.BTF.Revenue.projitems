@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRevenueSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LazyFeeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFeeList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevenueSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionFeeRecord.cs" />

@@ -9,19 +9,25 @@ namespace CCLLC.BTF.Process
     {
         private const string CACHE_KEY = "CCLLC.BTF.TransactionProcessFactory";
 
-        public ITransactionProcess CreateTransactionProcess(IProcessExecutionContext executionContext, IRecordPointer<Guid> processId, string name, IRecordPointer<Guid> transactionTypeId, IRecordPointer<Guid> initialStepId, IEnumerable<IProcessStep> processSteps, TimeSpan? cacheTimeout = null)
+        private IProcessSettingsFactory SettingsFactory { get; }
+
+        public TransactionProcessFactory(IProcessSettingsFactory settingsFactory)
+        {
+            SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+        }
+
+        public ITransactionProcess CreateTransactionProcess(IProcessExecutionContext executionContext, IRecordPointer<Guid> processId, string name, IRecordPointer<Guid> transactionTypeId, IRecordPointer<Guid> initialStepId, IEnumerable<IProcessStep> processSteps, bool useCache = true)
         {
             if (executionContext is null) throw new ArgumentNullException("executionContext");
             if (processId is null) throw new ArgumentNullException("processId");
 
+            useCache = useCache && executionContext.Cache != null;
+
             string cacheKey = null;
-            if (executionContext.Cache != null && cacheTimeout != null)
+            if (useCache)
             {
                 cacheKey = CACHE_KEY + processId.Id.ToString();
-            }            
             
-            if (cacheKey != null)
-            {
                 if (executionContext.Cache.Exists(cacheKey))
                 {
                     return executionContext.Cache.Get<ITransactionProcess>(cacheKey);
@@ -37,8 +43,11 @@ namespace CCLLC.BTF.Process
 
                 var process = new TransactionProcess(processId, name, transactionTypeId, initialStepId.Id, processSteps);
 
-                if (cacheKey != null)
+                if (useCache)
                 {
+                    var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                    var cacheTimeout = settings.TransactionProcessCacheTimeout;
+
                     executionContext.Cache.Add<ITransactionProcess>(cacheKey, process, cacheTimeout.Value);
                 }
 

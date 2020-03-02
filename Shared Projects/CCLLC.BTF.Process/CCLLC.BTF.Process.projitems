@@ -17,6 +17,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedChannelRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedRoleRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IInitialFeeRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStepRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementWaiverRole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStepTypeRecord.cs" />
@@ -26,6 +28,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirementRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProcessSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProcessSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\AddFee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionContextFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionContext.cs" />

@@ -13,6 +13,6 @@ namespace CCLLC.BTF.Process
         /// <param name="transactionId"></param>
         /// <param name="cacheTimeOut"></param>
         /// <returns></returns>
-        IList<IRequirementDeficiency> LoadDeficiencies(IProcessExecutionContext executionContext, Guid transactionId, TimeSpan? cacheTimeOut = null);
+        IList<IRequirementDeficiency> LoadDeficiencies(IProcessExecutionContext executionContext, Guid transactionId, bool useCache = true);
     }
 }

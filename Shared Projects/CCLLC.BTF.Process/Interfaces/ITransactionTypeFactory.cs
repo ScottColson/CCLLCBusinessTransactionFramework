@@ -5,6 +5,6 @@ namespace CCLLC.BTF.Process
 {
     public interface ITransactionTypeFactory
     {
-        ITransactionType CreateTransactionType(IProcessExecutionContext executionContext, TimeSpan? cacheTimeOut = null);
+        ITransactionType CreateTransactionType(IProcessExecutionContext executionContext, bool useCache = true);
     }
 }

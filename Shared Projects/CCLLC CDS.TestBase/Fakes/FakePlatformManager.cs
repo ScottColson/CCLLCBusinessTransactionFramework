@@ -8,24 +8,23 @@ using Microsoft.Xrm.Sdk;
 namespace CCLLC.CDS.Test.Fakes
 {
     public class FakePlatformManager : IPlatformManager
-    {      
-
-        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, ICustomer customer, TimeSpan? cacheTimeOut = null)
+    {
+        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, ICustomer customer, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, ISystemUser systemUser, TimeSpan? cacheTimeOut = null)
+        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, ISystemUser systemUser, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, IPartnerWorker partnerWorker, TimeSpan? cacheTimeOut = null)
+        public IWorkSession GenerateSession(IProcessExecutionContext executionContext, IPartnerWorker partnerWorker, bool useCache = true)
         {
             throw new NotImplementedException();
         }
-
-        public IList<IChannel> GetChannels(IProcessExecutionContext executionContext, TimeSpan? cacheTimeOut = null)
+               
+        public IList<IChannel> GetChannels(IProcessExecutionContext executionContext, bool useCache = true)
         {
             List<IChannel> channels = new List<IChannel>();
 
@@ -37,18 +36,18 @@ namespace CCLLC.CDS.Test.Fakes
 
             foreach (var r in records)
             {
-                channels.Add(new FakeChannel(r));                
-            }            
+                channels.Add(new FakeChannel(r));
+            }
 
-            return channels;            
+            return channels;
         }
 
-        public IList<IPartner> GetPartners(IProcessExecutionContext executionContext, TimeSpan? cacheTimeOut = null)
+        public IList<IPartner> GetPartners(IProcessExecutionContext executionContext, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public IList<IRole> GetRoles(IProcessExecutionContext executionContext, TimeSpan? cacheTimeOut = null)
+        public IList<IRole> GetRoles(IProcessExecutionContext executionContext, bool useCache = true)
         {
             throw new NotImplementedException();
         }

@@ -64,6 +64,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)LogicEvaluatorTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlatformSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SerializedParameters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SystemUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WorkSession.cs" />

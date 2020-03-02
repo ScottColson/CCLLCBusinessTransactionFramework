@@ -7,7 +7,7 @@ namespace CCLLC.CDS.Test.Fakes
 {
     public class FakeCustomerFactory : ICustomerFactory
     {       
-        public ICustomer CreateCustomer(IProcessExecutionContext executionContext, IRecordPointer<Guid> customerId, TimeSpan? cacheTimeout = null)
+        public ICustomer CreateCustomer(IProcessExecutionContext executionContext, IRecordPointer<Guid> customerId, bool useCache = true)
         {
             return new FakeCustomer(customerId);
         }
