@@ -240,7 +240,7 @@ namespace CCLLC.BTF.Process
 
                     registeredProceses.Add(
                         this.TransactionProcessFactory.CreateTransactionProcess(
-                            executionContext, process as IRecordPointer<Guid>,
+                            executionContext, process,
                             process.Name,
                             process.TransactionTypeId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid), 
                             process.InitialProcessStepId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid),
