@@ -12,6 +12,6 @@ namespace CCLLC.BTF.Process
         IRecordPointer<Guid> SubsequentStepPointer { get; }
         ILogicEvaluatorType Type { get; }
         ISerializedParameters Parameters { get; }
-        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionRecordPointer);
+        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ITransaction transaction);
     }
 }

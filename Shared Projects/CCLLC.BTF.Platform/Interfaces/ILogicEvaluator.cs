@@ -1,5 +1,4 @@
-﻿using System;
-using CCLLC.Core;
+﻿using CCLLC.Core;
 
 namespace CCLLC.BTF.Platform
 {
@@ -8,6 +7,6 @@ namespace CCLLC.BTF.Platform
         ILogicEvaluatorType Type { get; }
         ISerializedParameters Parameters { get; }
 
-        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, IRecordPointer<Guid> record);
+        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ITransaction transaction);
     }
 }

@@ -19,7 +19,7 @@ namespace CCLLC.BTF.Platform
             this.ImplementationClass = implementationClass;
         }     
 
-        public abstract ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, IRecordPointer<Guid> record);
+        public abstract ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, ITransaction transaction);
 
         public abstract void ValidateParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters);
        

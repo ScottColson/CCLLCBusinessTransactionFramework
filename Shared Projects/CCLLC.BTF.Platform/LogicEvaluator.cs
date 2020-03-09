@@ -1,5 +1,4 @@
-﻿using System;
-using CCLLC.Core;
+﻿using CCLLC.Core;
 
 namespace CCLLC.BTF.Platform
 {
@@ -15,9 +14,9 @@ namespace CCLLC.BTF.Platform
             Parameters = parameters;
         }
 
-        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, IRecordPointer<Guid> record)
+        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ITransaction transaction)
         {
-            return Type.Evaluate(executionContext, Parameters, record);
+            return Type.Evaluate(executionContext, Parameters, transaction);
         }
         
     }
