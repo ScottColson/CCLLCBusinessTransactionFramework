@@ -2,7 +2,7 @@
 {
     public interface ILogicEvaluationResult
     {
-        bool Result { get; }
+        bool Passed { get; }
         bool HasMessage { get; }
         string Message { get; }
     }

@@ -174,7 +174,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
-                Assert.AreEqual(true, result.Result);
+                Assert.AreEqual(true, result.Passed);
 
             }
         }
@@ -343,7 +343,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
-                Assert.AreEqual(false, result.Result);
+                Assert.AreEqual(false, result.Passed);
                 Assert.AreEqual("Action did not succeed.", result.Message);
 
             }

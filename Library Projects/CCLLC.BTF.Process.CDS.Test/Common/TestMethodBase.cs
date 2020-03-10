@@ -24,7 +24,6 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>();           
             c.Implement<ICustomerFactory>().Using<FakeCustomerFactory>();
             c.Implement<IDeferredActivator>().Using<DeferredActivator>();
-            c.Implement<IDeficiencyManager>().Using<DeficiencyManager>();
             c.Implement<IDocumentManager>().Using<FakeDocumentManager>();
             c.Implement<IEvidenceManager>().Using<EvidenceManager>();
             c.Implement<IFeeList>().Using<LazyFeeList>();
@@ -39,12 +38,13 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IProcessSettingsFactory>().Using<ProcessSettingsFactory>();
             c.Implement<IProcessStepFactory>().Using<ProcessStepFactory>();
             c.Implement<IProcessStepTypeFactory>().Using<ProcessStepTypeFactory>();
-            c.Implement<IRequirementEvaluator>().Using<DefaultRequirementEvaluator>();
+            c.Implement<IRequirementEvaluator>().Using<RequirementEvaluator>();
             c.Implement<IRevenueDataConnector>().Using<RevenueDataConnector>();
             c.Implement<IRevenueSettingsFactory>().Using<RevenueSettingsFactory>();
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
+            c.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficiencyFactory>();
             c.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>();
             c.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>();
             c.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>();

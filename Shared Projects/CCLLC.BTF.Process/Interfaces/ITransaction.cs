@@ -13,7 +13,7 @@ namespace CCLLC.BTF.Process
         IProcessStep CurrentStep { get; }
         ITransactionContext TransactionContext { get; }
         ITransactionDataRecord DataRecord { get; }
-        IReadOnlyList<IRequirementDeficiency> Deficiencies { get; }
+        ITransactionDeficiencies Deficiencies { get; }
         ITransactionFeeList Fees { get; }
         IReadOnlyList<IGeneratedDocument> GeneratedDocuments { get; }
         IReadOnlyList<ICollectedEvidence> CollectedEvidence { get; }

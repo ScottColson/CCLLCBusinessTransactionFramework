@@ -308,5 +308,10 @@ namespace CCLLC.BTF.Process.CDS
                         .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
                     .RetrieveAll().ToList<IAlternateBranchRecord>();
         }
+
+        public IList<IRequirementDeficiencyRecord> GetDeficiencyRecords(IDataService dataService, IRecordPointer<Guid> transactionId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

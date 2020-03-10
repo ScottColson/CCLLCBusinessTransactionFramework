@@ -11,7 +11,10 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AlternateBranch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AlternateBranchFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DeficiencyManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementDeficiencyRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDeficienciesFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequirementDeficiency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequirementEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvidenceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAlternateBranchRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedChannelRecord.cs" />
@@ -24,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStepTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDeficiencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
@@ -46,7 +50,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IComplientEvidence.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDeficiencyManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceRequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceType.cs" />
@@ -81,6 +84,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ProcessStepTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepExecutionResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficiencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficiencyFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionHistoryFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\Branch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\DataForm.cs" />

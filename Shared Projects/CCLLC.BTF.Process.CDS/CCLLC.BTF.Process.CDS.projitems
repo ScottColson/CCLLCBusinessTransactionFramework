@@ -25,7 +25,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedrole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypecontext.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DefaultRequirementEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_alternatebranch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processstep.cs" />
