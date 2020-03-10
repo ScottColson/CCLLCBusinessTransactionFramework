@@ -5,7 +5,7 @@ namespace CCLLC.BTF.Platform
 {
     public interface ILogicEvaluatorType : IDeferredImplementation
     {       
-        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, IRecordPointer<Guid> record);
+        ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, ITransaction transaction);
 
         void ValidateParameters(IProcessExecutionContext executionContext, ISerializedParameters parameters);
     }

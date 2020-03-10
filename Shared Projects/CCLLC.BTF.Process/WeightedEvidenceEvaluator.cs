@@ -15,10 +15,11 @@ namespace CCLLC.BTF.Process
             this.Type = new WeightedEvidenceEvaluatorType();
         }
 
-        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, IRecordPointer<Guid> record)
+        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, Platform.ITransaction transaction)
         {
-            return Type.Evaluate(executionContext, Parameters, record);
+            return Type.Evaluate(executionContext, Parameters, transaction);
         }
+       
     }
 
     internal class WeightedEvidenceEvaluatorType : RecordPointer<Guid>, ILogicEvaluatorType
@@ -29,7 +30,7 @@ namespace CCLLC.BTF.Process
 
         public string ImplementationClass => throw new NotImplementedException();
 
-        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, IRecordPointer<Guid> record)
+        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, Platform.ITransaction transaction)
         {
             throw new NotImplementedException();
         }

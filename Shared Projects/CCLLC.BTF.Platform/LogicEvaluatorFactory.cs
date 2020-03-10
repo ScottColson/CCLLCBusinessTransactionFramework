@@ -9,24 +9,26 @@ namespace CCLLC.BTF.Platform
 
         protected  IParameterSerializer ParameterSerializer { get; }
         protected ILogicEvaluatorTypeFactory EvaluatorTypeFactory { get; }
+        protected IPlatformSettingsFactory SettingsFactory { get; }
 
-        public LogicEvaluatorFactory(ILogicEvaluatorTypeFactory evaluatorTypeFactory, IParameterSerializer parameterSerializer)
+        public LogicEvaluatorFactory(IPlatformSettingsFactory settingsFactory, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IParameterSerializer parameterSerializer)
         {
+            this.SettingsFactory = settingsFactory;
             this.EvaluatorTypeFactory = evaluatorTypeFactory;
             this.ParameterSerializer = parameterSerializer;        
         }
 
-        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, ILogicEvaluatorType evaluatorType, string parameters, TimeSpan? cacheTimeOut = null)
+        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, ILogicEvaluatorType evaluatorType, string parameters, bool useCache = true)
         {
             string recordKey = CACHE_KEY + evaluatorId.Id.ToString();
-            bool useCache = executionContext.Cache != null && cacheTimeOut != null;
 
-            if (useCache)
+            var cacheTimeout = useCache ? getCacheTimeout(executionContext) : null;
+
+            useCache = useCache && executionContext.Cache != null && cacheTimeout != null;
+
+            if (useCache && executionContext.Cache.Exists(recordKey))
             {
-                if (executionContext.Cache.Exists(recordKey))
-                {
-                    return executionContext.Cache.Get<ILogicEvaluator>(recordKey);
-                }
+                return executionContext.Cache.Get<ILogicEvaluator>(recordKey);
             }
 
             var serializedParameter = ParameterSerializer.CreateParamters(parameters);
@@ -35,40 +37,44 @@ namespace CCLLC.BTF.Platform
 
             if (useCache)
             {
-                executionContext.Cache.Add<ILogicEvaluator>(recordKey, evaluator, cacheTimeOut.Value);
+                executionContext.Cache.Add<ILogicEvaluator>(recordKey, evaluator, cacheTimeout.Value);
             }
 
-            return evaluator;
-           
+            return evaluator;           
         }
 
 
-        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, IRecordPointer<Guid> evaluatorTypeId, string evaluatorTypeName, string implementationAssemblyName, string implementationClassName, string parameters, TimeSpan? cacheTimeout = null)
+        public ILogicEvaluator CreateEvaluator(IProcessExecutionContext executionContext, IRecordPointer<Guid> evaluatorId, IRecordPointer<Guid> evaluatorTypeId, string evaluatorTypeName, string implementationAssemblyName, string implementationClassName, string parameters, bool useCache = true)
         {
-            string recordKey = CACHE_KEY + evaluatorId.Id.ToString();
-            bool useCache = executionContext.Cache != null && cacheTimeout != null;
-
-            if (useCache)
+            try
             {
-                if (executionContext.Cache.Exists(recordKey))
+                string recordKey = CACHE_KEY + evaluatorId.Id.ToString();
+
+                var cacheTimeout = useCache ? getCacheTimeout(executionContext) : null;
+
+                useCache = useCache && executionContext.Cache != null && cacheTimeout != null;
+
+                if (useCache && executionContext.Cache.Exists(recordKey))
                 {
                     return executionContext.Cache.Get<ILogicEvaluator>(recordKey);
                 }
-            }
+                
+                var evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, evaluatorTypeId, evaluatorTypeName, implementationAssemblyName, implementationClassName, useCache);
 
-
-            try
-            {
-                var evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, evaluatorTypeId, evaluatorTypeName, implementationAssemblyName, implementationClassName, cacheTimeout);
-
-                return this.CreateEvaluator(executionContext, evaluatorId, evaluatorType, parameters, cacheTimeout);
+                return this.CreateEvaluator(executionContext, evaluatorId, evaluatorType, parameters);
 
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
         }
-        
+
+        private TimeSpan? getCacheTimeout(IProcessExecutionContext executionContext)
+        {            
+            var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+            return settings.LogicEvaluatorTimeout;
+        }
+
     }
 }

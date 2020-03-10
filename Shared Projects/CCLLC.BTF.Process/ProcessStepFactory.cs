@@ -10,33 +10,33 @@ namespace CCLLC.BTF.Process
         private const string CACHE_KEY = "CCLLC.BTF.ProcessStepFactory";
        
         protected IParameterSerializer ParameterSerializer { get; }
+        protected IProcessSettingsFactory SettingsFactory { get; }
 
-        public ProcessStepFactory(IParameterSerializer parameterSerializer)
+        public ProcessStepFactory(IProcessSettingsFactory settingsFactory, IParameterSerializer parameterSerializer)
         {
-            this.ParameterSerializer = parameterSerializer ?? throw new ArgumentNullException("parameterSerializer is null");
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+            this.ParameterSerializer = parameterSerializer ?? throw new ArgumentNullException("parameterSerializer");
         }
 
-        public IProcessStep CreateProcessStep(IProcessExecutionContext executionContext, IRecordPointer<Guid> stepId, string name, IRecordPointer<Guid> transactionProcessPointer, IProcessStepType processStepType, string parameters, IRecordPointer<Guid> subsequentStepPointer, IEnumerable<IAlternateBranch> alternateBranches, IEnumerable<IChannel> authorizedChannels, IEnumerable<IStepRequirement> validationRequirements, TimeSpan? cacheTimeout = null)
+        public IProcessStep CreateProcessStep(IProcessExecutionContext executionContext, IRecordPointer<Guid> stepId, string name, IRecordPointer<Guid> transactionProcessPointer, IProcessStepType processStepType, string parameters, IRecordPointer<Guid> subsequentStepPointer, IEnumerable<IAlternateBranch> alternateBranches, IEnumerable<IChannel> authorizedChannels, IEnumerable<IStepRequirement> validationRequirements, bool useCache = true)
         {
-            if (executionContext is null) throw new ArgumentNullException("executionContext");
-            if (stepId is null) throw new ArgumentNullException("stepId");
-
-            string cacheKey = null;
-            if (executionContext.Cache != null && cacheTimeout != null)
-            {
-                cacheKey = CACHE_KEY + stepId.Id.ToString();
-            }
-
-            if (cacheKey != null)
-            {
-                if (executionContext.Cache.Exists(cacheKey))
-                {
-                    return executionContext.Cache.Get<IProcessStep>(cacheKey);
-                }
-            }           
-
             try
             {
+                if (executionContext is null) throw new ArgumentNullException("executionContext");
+                if (stepId is null) throw new ArgumentNullException("stepId");
+
+                useCache = useCache && executionContext.Cache != null;
+
+                string cacheKey = null;                
+                if (useCache)
+                {
+                    cacheKey = CACHE_KEY + stepId?.Id.ToString();
+                   
+                    if (executionContext.Cache.Exists(cacheKey))
+                    {
+                        return executionContext.Cache.Get<IProcessStep>(cacheKey);
+                    }
+                }
 
                 if (transactionProcessPointer == null) throw new ArgumentNullException("transactionProcessPointer.");
                 if (processStepType == null) throw new ArgumentNullException("processStepType");
@@ -47,16 +47,19 @@ namespace CCLLC.BTF.Process
                 var serializedParameter = this.ParameterSerializer.CreateParamters(parameters);
                 processStepType.ValidateStepParameters(executionContext, serializedParameter);
 
-                IProcessStep step = new ProcessStep(stepId, name, transactionProcessPointer, processStepType, serializedParameter,subsequentStepPointer, alternateBranches, authorizedChannels, validationRequirements);
-                              
-                if (cacheKey != null)
+                IProcessStep step = new ProcessStep(stepId, name, transactionProcessPointer, processStepType, serializedParameter, subsequentStepPointer, alternateBranches, authorizedChannels, validationRequirements);
+
+                if (useCache)
                 {
+                    var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                    var cacheTimeout = settings.ProcessStepCacheTimeout;
+
                     executionContext.Cache.Add<IProcessStep>(cacheKey, step, cacheTimeout.Value);
                 }
 
                 return step;
 
-            }            
+            }
             catch (Exception ex)
             {
                 throw ex;

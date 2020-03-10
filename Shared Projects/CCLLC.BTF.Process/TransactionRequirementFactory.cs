@@ -11,35 +11,40 @@ namespace CCLLC.BTF.Process
         protected const string CACHE_KEY = "CCLLC.BTF.Process.TransactionRequirementFactory";
 
         protected ILogicEvaluatorFactory EvaluatorFactory { get; }
+        protected IProcessSettingsFactory SettingsFactory { get; }
 
-        public TransactionRequirementFactory(ILogicEvaluatorFactory evaluatorFacotry)
+        public TransactionRequirementFactory(IProcessSettingsFactory settingsFactory, ILogicEvaluatorFactory evaluatorFacotry)
         {
-            this.EvaluatorFactory = evaluatorFacotry;
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+            this.EvaluatorFactory = evaluatorFacotry ?? throw new ArgumentNullException("evaluatorFactory");
         }
 
-        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, TimeSpan? cacheTimeout = null)
+        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
         {
             try
             {
+                useCache = useCache && executionContext.Cache != null;
 
-                string cacheKey = null;
+                string cacheKey = null;                
+
+                if (useCache)
+                {
+                    cacheKey = CACHE_KEY + requirementId.ToString();                    
+
+                    if (executionContext.Cache.Exists(cacheKey))
+                    {
+                        return executionContext.Cache.Get<ITransactionRequirement>(cacheKey);
+                    }
+                }
                 
-                if (executionContext.Cache != null && cacheTimeout != null)
-                {
-                    cacheKey = CACHE_KEY + requirementId.ToString();
-                }
-
-                if (executionContext.Cache.Exists(cacheKey))
-                {
-                    return executionContext.Cache.Get<ITransactionRequirement>(cacheKey);
-                }
-
-                var evaluator = EvaluatorFactory.CreateEvaluator(executionContext, requirementId, evaluatorType, parameters, cacheTimeout);
+                var evaluator = EvaluatorFactory.CreateEvaluator(executionContext, requirementId, evaluatorType, parameters, useCache);
                 var requirement = new TransactionRequirement(requirementId.RecordType,requirementId.Id, name, requirementType, transactionTypeId, evaluator, waiverRoles);
-
-
-                if (cacheKey != null)
+                
+                if (useCache)
                 {
+                    var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                    var cacheTimeout = settings.TransactionRequirementCacheTimeout;
+
                     executionContext.Cache.Add<ITransactionRequirement>(cacheKey, requirement, cacheTimeout.Value);
                 }
 
@@ -52,17 +57,17 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, TimeSpan? cacheTimeout = null)
+        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, TimeSpan? cacheTimeout = null)
+        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, TimeSpan? cacheTimeout = null)
+        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
         {
             throw new NotImplementedException();
         }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using CCLLC.BTF.Platform;
 using CCLLC.Core;
 
@@ -9,28 +7,39 @@ namespace CCLLC.BTF.Revenue
     public class PriceCalculatorFactory : IPriceCalculatorFactory
     {
         private const string CACHE_KEY = "CCLLC.BTF.PriceCalculator.{0}.{1}.{2}";
-        public IPriceCalculator CreatePriceCalculator(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, TimeSpan? overrideCacheTimeout = null)
+
+        protected IRevenueSettingsFactory SettingsFactory { get; }
+
+        public PriceCalculatorFactory(IRevenueSettingsFactory settingsFactory)
         {
-            var settings = new RevenueModuleSettings(executionContext.Settings);
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+        }
 
-            var cacheTimeout = overrideCacheTimeout ?? settings.PricingCalculatorCacheTimeout;
+        public IPriceCalculator CreatePriceCalculator(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, bool useCache = true)
+        {
+            useCache = useCache && executionContext.Cache != null;
 
+            TimeSpan? cacheTimeout = null;
             string cacheKey = null;
-            if(executionContext.Cache != null && cacheTimeout != null)
-            {
-                cacheKey = string.Format(CACHE_KEY, session.Location.Id, session.Channel.Id, transaction.PricingDate.ToShortDateString());
-            }
 
-            if(executionContext.Cache.Exists(cacheKey))
+            if (useCache)
             {
-                return executionContext.Cache.Get<IPriceCalculator>(cacheKey);
+                cacheKey = string.Format(CACHE_KEY, session?.Location?.Id, session?.Channel?.Id, transaction?.PricingDate.ToShortDateString());
+
+                var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                cacheTimeout = settings.PricingCalculatorCacheTimeout;
+
+                if (executionContext.Cache.Exists(cacheKey))
+                {
+                    return executionContext.Cache.Get<IPriceCalculator>(cacheKey);
+                }
             }
 
             //TEMPORARY IMPLEMENTATION
 
             var priceCalculator = new PriceCalculator();
 
-            if(cacheKey != null)
+            if(useCache)
             {
                 executionContext.Cache.Add<IPriceCalculator>(cacheKey, priceCalculator, cacheTimeout.Value);
             }

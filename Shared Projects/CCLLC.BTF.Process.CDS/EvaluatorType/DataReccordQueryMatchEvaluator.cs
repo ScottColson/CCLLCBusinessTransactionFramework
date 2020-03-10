@@ -14,25 +14,20 @@ namespace CCLLC.BTF.Process.CDS.EvaluatorType
         {
         }
 
-        public override ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, IRecordPointer<Guid> transactionRecordPointer)
+        public override ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, Platform.ITransaction transaction)
         {
             executionContext.Trace("DataRecordQueryMatchEvaluator is Evaluating.");
 
             if (executionContext is null) throw new ArgumentNullException("executionContext");
             if (executionContext.Container is null) throw new ArgumentException("executionContext must provide a Container.");
             if (parameters is null) throw new ArgumentNullException("parameters");
-            if (transactionRecordPointer is null) throw new ArgumentNullException("transactionRecordPointer");
-            if (transactionRecordPointer.RecordType != "ccllc_transaction") throw new ArgumentException("transactionRecordPointer must reference a ccllc_transaction record.");
+            if (transaction is null) throw new ArgumentNullException("transaction");
+            if (!(transaction is ITransaction)) throw new ArgumentException("transaction does not represent a valid Process Transaction.");
 
             ValidateParameters(executionContext, parameters);
 
-            // get the Transaction Manager from the container and then build a transaction manager using default caching.
-            var transMgrFactory = executionContext.Container.Resolve<ITransactionManagerFactory>();
-            var transManager = transMgrFactory.CreateTransactionManager(executionContext);
-
-            var transaction = transManager.LoadTransaction(executionContext, transactionRecordPointer);
-                        
-            var dataRecord = transaction.DataRecord;
+                                   
+            var dataRecord = (transaction as ITransaction).DataRecord;
             
 
             var orgService = executionContext.DataService.ToOrgService();

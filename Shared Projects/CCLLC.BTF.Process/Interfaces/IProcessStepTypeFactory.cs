@@ -6,6 +6,6 @@ namespace CCLLC.BTF.Process
     public interface IProcessStepTypeFactory
     {
         IProcessStepType CreateStepType(IProcessExecutionContext executionContext, IRecordPointer<Guid> processStepTypeId, string name, bool isConditional, string implementationAssemblyName, 
-            string implementationClassName, TimeSpan? cacheTimeout = null);
+            string implementationClassName, bool useCache = true);
     }
 }

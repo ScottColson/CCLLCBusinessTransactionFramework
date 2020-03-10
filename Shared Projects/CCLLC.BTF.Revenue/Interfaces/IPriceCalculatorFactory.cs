@@ -7,6 +7,6 @@ namespace CCLLC.BTF.Revenue
 
     public interface IPriceCalculatorFactory
     {
-        IPriceCalculator CreatePriceCalculator(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, TimeSpan? overrideCacheTimeout = null);
+        IPriceCalculator CreatePriceCalculator(IProcessExecutionContext executionContext, IWorkSession session, ITransaction transaction, bool useCache = true);
     }
 }

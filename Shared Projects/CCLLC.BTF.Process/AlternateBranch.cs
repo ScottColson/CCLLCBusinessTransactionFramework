@@ -37,9 +37,9 @@ namespace CCLLC.BTF.Process
             }
         }
         
-        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionRecordPointer)
+        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ITransaction transaction)
         {
-            return LogicEvaluator?.Evaluate(executionContext, transactionRecordPointer);
+            return LogicEvaluator?.Evaluate(executionContext, transaction);
         }
     }
 }

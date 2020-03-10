@@ -32,8 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CCLLC.Core.ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.0.0-beta\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.1.0\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>
@@ -93,10 +92,6 @@
     <Content Include="bin\coretools\SolutionPackagerLib.dll" />
     <Content Include="bin\coretools\System.Diagnostics.DiagnosticSource.dll" />
     <Content Include="bin\coretools\System.ValueTuple.dll" />
-    <Content Include="bin\Debug\CCLLC.BTF.Revenue.CDS.dll" />
-    <Content Include="bin\Debug\CCLLC.BTF.Revenue.CDS.pdb" />
-    <Content Include="bin\Debug\CCLLC.Core.ProcessModel.dll" />
-    <Content Include="bin\Debug\CCLLCIocContainer.dll" />
     <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.dll" />
     <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.xml" />
     <Content Include="bin\Debug\Microsoft.Xrm.Sdk.dll" />
@@ -111,7 +106,7 @@
       <Name>CCLLC.BTF.Platform.CDS</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
   <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems" Label="Shared" />
+  <Import Project="..\..\Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

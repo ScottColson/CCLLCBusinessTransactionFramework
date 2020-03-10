@@ -9,7 +9,7 @@ namespace CCLLC.BTF.Platform
     {
         public LocationFactory() { }
         
-        public ILocation CreateLocation(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, TimeSpan? cacheTimeout = null)
+        public ILocation CreateLocation(IProcessExecutionContext executionContext, IRecordPointer<Guid> locationId, bool useCache = true)
         {
             throw new NotImplementedException();
         }

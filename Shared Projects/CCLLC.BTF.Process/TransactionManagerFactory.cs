@@ -33,15 +33,17 @@ namespace CCLLC.BTF.Process
         protected ITransactionProcessFactory TransactionProcessFactory { get; }
         protected IParameterSerializer ParameterSerializer { get; }
         protected IFeeList FeeList { get; }
+        protected IProcessSettingsFactory SettingsFactory { get; }
 
 
-        public TransactionManagerFactory(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
+        public TransactionManagerFactory(IProcessSettingsFactory settingsFactory, ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
             ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, IDeficiencyManager deficiencyManager, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformManager platformManager, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
             IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
             ITransactionProcessFactory transactionProcessFactory, IFeeList feeList)
         {
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
             this.AgentFactory = agentFactory ?? throw new ArgumentNullException("agentFactory.");
             this.AlternateBranchFactory = alternateBranchFactory ?? throw new ArgumentNullException("alternateBrachFactory");
@@ -68,11 +70,13 @@ namespace CCLLC.BTF.Process
         /// Builds a new Transaction Manager preloaded with all available Transaction Type configurations.
         /// </summary>
         /// <param name="executionContext"></param>
-        /// <param name="cacheTimeOut">Sets amount of time to cache the transaction manager to service future build requests. When null, cacheing is not used.</param>
+        /// <param name="cacheTimeOut">Sets amount of time to cache the transaction manager to service future build requests. When null, caching is not used.</param>
         /// <returns></returns>
-        public ITransactionManager CreateTransactionManager(IProcessExecutionContext executionContext, TimeSpan? cacheTimeOut = null)
+        public ITransactionManager CreateTransactionManager(IProcessExecutionContext executionContext, bool useCache = true)
         {
-            bool useCache = executionContext.Cache != null && cacheTimeOut != null;
+            try
+            {
+                useCache = useCache && executionContext.Cache != null;
 
             if (useCache)
             {
@@ -83,8 +87,7 @@ namespace CCLLC.BTF.Process
                 }
             }
 
-            try
-            {
+           
 
                 IList<ITransactionType> registeredTransactions = new List<ITransactionType>();
                                 
@@ -94,9 +97,9 @@ namespace CCLLC.BTF.Process
                 // get all active records that are needed to fully define a transaction type. This includes complex objects for ITransactionProcess 
                 // and ITransactionRequirements as well as simpler objects for transaction groups, authorized channels, authorized roles, 
                 // initial fees, and eligible record contexts.
-                var processes = getProcesses(executionContext, cacheTimeOut);
+                var processes = getProcesses(executionContext, useCache);
 
-                var requirements = getRequirements(executionContext, cacheTimeOut);
+                var requirements = getRequirements(executionContext, useCache);
 
                 var transactionGroups = DataConnector.GetAllTransactionGroups(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Group records.", transactionGroups.Count);
@@ -134,11 +137,11 @@ namespace CCLLC.BTF.Process
                     }
 
                     registeredTransactions.Add(new TransactionType(
-                        t as IRecordPointer<Guid>,
+                        t,
                         t.Name,
                         t.DisplayRank,
                         transactionGroups.Where(r => t.TransactionGroupId != null && r.Id == t.TransactionGroupId.Id).FirstOrDefault(),
-                        t.StartupProcessId ?? throw new Exception("Transaction type is missnig a startup process id."),
+                        t.StartupProcessId ?? throw new Exception("Transaction type is missing a startup process id."),
                         dataRecordConfig,
                         authorizedChannels.Where(r => r.ParentId.Id == t.Id).Select(r => r.ChannelId),
                         authorizedRoles.Where(r => r.ParentId.Id == t.Id).Select(r => r.RoleId),
@@ -156,8 +159,11 @@ namespace CCLLC.BTF.Process
 
                 if (useCache)
                 {
-                    executionContext.Cache.Add<ITransactionManager>(CACHE_KEY, transactionManager, cacheTimeOut.Value);
-                    executionContext.Trace("Cached Transaction Manager for {0}.", cacheTimeOut.Value);
+                    var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                    var cacheTimeout = settings.PlatformManagerCacheTimeout;
+
+                    executionContext.Cache.Add<ITransactionManager>(CACHE_KEY, transactionManager, cacheTimeout.Value);
+                    executionContext.Trace("Cached Transaction Manager for {0}.", cacheTimeout.Value);
                 }
 
                 executionContext.TrackEvent("TransactionManagerFactory.BuildTransactionManager");
@@ -173,7 +179,7 @@ namespace CCLLC.BTF.Process
         }
 
 
-        private IList<ITransactionRequirement> getRequirements(IProcessExecutionContext executionContext, TimeSpan? cacheTimeout)
+        private IList<ITransactionRequirement> getRequirements(IProcessExecutionContext executionContext, bool useCache)
         {
             try
             {
@@ -185,7 +191,7 @@ namespace CCLLC.BTF.Process
 
                 foreach (var requirement in requirements)
                 {
-                    ILogicEvaluatorType evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, requirement.EvaluatorTypeId, cacheTimeout);
+                    ILogicEvaluatorType evaluatorType = this.EvaluatorTypeFactory.BuildEvaluatorType(executionContext, requirement.EvaluatorTypeId, useCache);
                     
                     registeredRequirements.Add(
                         RequirementFactory.CreateRequirement(
@@ -197,7 +203,7 @@ namespace CCLLC.BTF.Process
                             evaluatorType,
                             requirement.RequirementParameters, 
                             waiverRoles.Where(r => r.TransactionRequirementId != null && r.TransactionRequirementId.Id == requirement.Id).Select(r => r.RoleId), 
-                            cacheTimeout));
+                            useCache));
                 }
 
                 return registeredRequirements;
@@ -215,7 +221,7 @@ namespace CCLLC.BTF.Process
         /// <param name="executionContext"></param>
         /// <param name="cacheTimeout"></param>
         /// <returns></returns>
-        private IList<ITransactionProcess> getProcesses(IProcessExecutionContext executionContext, TimeSpan? cacheTimeout)
+        private IList<ITransactionProcess> getProcesses(IProcessExecutionContext executionContext, bool useCache)
         {
             try
             {
@@ -224,7 +230,7 @@ namespace CCLLC.BTF.Process
                 var processes = DataConnector.GetAllTransactionProcesses(executionContext.DataService);
                 executionContext.Trace("Retrieved {0} Transaction Process records.", processes.Count);
 
-                var processSteps = getProcessSteps(executionContext, cacheTimeout);
+                var processSteps = getProcessSteps(executionContext, useCache);
 
                 foreach (var process in processes)
                 {
@@ -234,12 +240,12 @@ namespace CCLLC.BTF.Process
 
                     registeredProceses.Add(
                         this.TransactionProcessFactory.CreateTransactionProcess(
-                            executionContext, process as IRecordPointer<Guid>,
+                            executionContext, process,
                             process.Name,
                             process.TransactionTypeId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid), 
                             process.InitialProcessStepId ?? throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessInvalid),
                             steps, 
-                            cacheTimeout));
+                            useCache));
                 }
 
                 return registeredProceses;
@@ -257,7 +263,7 @@ namespace CCLLC.BTF.Process
         /// <param name="executionContext"></param>
         /// <param name="cacheTimeout"></param>
         /// <returns></returns>
-        private IList<IProcessStep> getProcessSteps(IProcessExecutionContext executionContext, TimeSpan? cacheTimeout)
+        private IList<IProcessStep> getProcessSteps(IProcessExecutionContext executionContext, bool useCache)
         {
             try
             {
@@ -274,7 +280,7 @@ namespace CCLLC.BTF.Process
 
                 var alternateBranches = DataConnector.GetAlternateBranches(executionContext.DataService);
 
-                var channels = PlatformManager.GetChannels(executionContext, cacheTimeout);
+                var channels = PlatformManager.GetChannels(executionContext, useCache);
 
                 foreach (var step in steps)
                 {
@@ -289,7 +295,7 @@ namespace CCLLC.BTF.Process
                         stype.SupportsConditionalBranching ?? false , 
                         stype.AssemblyName, 
                         stype.ClassName, 
-                        cacheTimeout);
+                        useCache);
 
                     var assignedChannels = new List<IChannel>();
                     foreach (var c in stepChannels.Where(r => r.ParentId != null && r.ChannelId != null && r.ParentId.Id == step.Id))
@@ -313,7 +319,7 @@ namespace CCLLC.BTF.Process
                             b.SubsequentStepId,
                             b.EvaluatorTypeId,
                             b.EvaluationParameters,
-                            cacheTimeout);
+                            useCache);
                         assignedBranches.Add(branch);
                     }
 
@@ -329,7 +335,7 @@ namespace CCLLC.BTF.Process
                         assignedBranches,
                         assignedChannels, 
                         assignedRequirements, 
-                        cacheTimeout);
+                        useCache);
 
                     registeredSteps.Add(processStep);
 

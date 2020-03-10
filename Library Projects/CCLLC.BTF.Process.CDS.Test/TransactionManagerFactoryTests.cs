@@ -27,9 +27,9 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var factory = Container.Resolve<ITransactionManagerFactory>();                
 
-                var transactionManager1 = factory.CreateTransactionManager(executionContext, new TimeSpan(0, 0, 10));
-                var transactionManager2 = factory.CreateTransactionManager(executionContext, new TimeSpan(0, 0, 10));
-                var transactionManager3 = factory.CreateTransactionManager(executionContext);
+                var transactionManager1 = factory.CreateTransactionManager(executionContext);
+                var transactionManager2 = factory.CreateTransactionManager(executionContext);
+                var transactionManager3 = factory.CreateTransactionManager(executionContext,false);
 
                 Assert.AreSame(transactionManager1, transactionManager2);
                 Assert.AreNotSame(transactionManager1, transactionManager3);
@@ -301,7 +301,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var factory = Container.Resolve<ITransactionManagerFactory>();
 
-                var transactionManager = factory.CreateTransactionManager(executionContext);
+                var transactionManager = factory.CreateTransactionManager(executionContext, false);
 
                 Assert.AreEqual(2, transactionManager.RegisteredTransactionTypes.Count);
 

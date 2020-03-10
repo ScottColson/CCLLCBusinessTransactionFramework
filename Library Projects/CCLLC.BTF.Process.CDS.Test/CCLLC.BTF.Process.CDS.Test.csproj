@@ -44,7 +44,7 @@
       <HintPath>..\..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="CCLLC.Core.ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.0.0-beta\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.1.0\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>

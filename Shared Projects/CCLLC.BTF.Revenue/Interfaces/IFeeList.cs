@@ -9,8 +9,8 @@ namespace CCLLC.BTF.Revenue
     /// </summary>
     public interface IFeeList
     {
-        IFee GetFee(IProcessExecutionContext executionContext,  IRecordPointer<Guid> feeId, TimeSpan? overrideCacheTimeout = null);
+        IFee GetFee(IProcessExecutionContext executionContext,  IRecordPointer<Guid> feeId, bool useCache = true);
 
-        IFee GetFee(IProcessExecutionContext executionContext, string referenceNumber, TimeSpan? overrideCacheTimeout = null);
+        IFee GetFee(IProcessExecutionContext executionContext, string referenceNumber, bool useCache = true);
     }
 }

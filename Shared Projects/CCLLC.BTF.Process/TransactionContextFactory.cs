@@ -11,34 +11,42 @@ namespace CCLLC.BTF.Process
 
         protected ICustomerFactory CustomerFactory { get; }
         protected ITransactionDataConnector DataConnector { get; }
+        protected IProcessSettingsFactory SettingsFactory { get; }
 
-        public TransactionContextFactory(ITransactionDataConnector dataConnector, ICustomerFactory customerFactory)
+        public TransactionContextFactory(IProcessSettingsFactory settingsFactory, ITransactionDataConnector dataConnector, ICustomerFactory customerFactory)
         {
-            this.DataConnector = dataConnector;
-            this.CustomerFactory = customerFactory;
+            this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
+            this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
+            this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
         }
        
-        public ITransactionContext CreateTransactionContext(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionContextId, TimeSpan? cacheTimeout = null)
+        public ITransactionContext CreateTransactionContext(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionContextId, bool useCache = true)
         {
+            useCache = useCache && executionContext.Cache != null;
+
             string cacheKey = null;
-            if (executionContext.Cache != null && cacheTimeout != null)
+            if (useCache)
             {
                 cacheKey = CACHE_KEY + transactionContextId.Id.ToString();
-            }
 
-            if (executionContext.Cache.Exists(cacheKey))
-            {
-                return executionContext.Cache.Get<ITransactionContext>(cacheKey);
+                if (executionContext.Cache.Exists(cacheKey))
+                {
+                    return executionContext.Cache.Get<ITransactionContext>(cacheKey);
+                }
             }
+            
 
             var record = DataConnector.GetTransactionContextRecord(executionContext.DataService, transactionContextId);
 
-            var customer = CustomerFactory.CreateCustomer(executionContext, record.CustomerId, cacheTimeout);
+            var customer = CustomerFactory.CreateCustomer(executionContext, record.CustomerId, useCache);
 
             var transactionContext = new TransactionContext(record, customer);
 
-            if (cacheKey != null)
+            if (useCache)
             {
+                var settings = SettingsFactory.CreateSettings(executionContext.Settings);
+                var cacheTimeout = settings.TransactionContextCacheTimeout;
+
                 executionContext.Cache.Add<ITransactionContext>(cacheKey, transactionContext, cacheTimeout.Value);
             }
 

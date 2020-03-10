@@ -6,7 +6,7 @@ namespace CCLLC.BTF.Process
 {
     public class DeficiencyManager : IDeficiencyManager
     {
-        public IList<IRequirementDeficiency> LoadDeficiencies(IProcessExecutionContext executionContext, Guid transactionId, TimeSpan? cacheTimeOut = null)
+        public IList<IRequirementDeficiency> LoadDeficiencies(IProcessExecutionContext executionContext, Guid transactionId, bool useCache = true)
         {
             throw new NotImplementedException();
         }
