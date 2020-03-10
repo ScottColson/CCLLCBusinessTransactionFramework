@@ -5,33 +5,33 @@
     <CanBeDeleted>0</CanBeDeleted>
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
-    <isdefault>1</isdefault>
-    <savedqueryid>{dcc97e6b-dea9-43a5-94e1-a665ecc79baf}</savedqueryid>
+    <isdefault>0</isdefault>
+    <savedqueryid>{d1fc3976-4121-4a79-ab0f-0df30bdf6927}</savedqueryid>
     <layoutxml>
-      <grid name="" jump="ccllc_name" select="1" icon="1" preview="1">
-        <row name="ccllc_transactionissue" id="ccllc_transactionissueid">
+      <grid name="resultset" jump="ccllc_name" select="1" icon="1" preview="1">
+        <row name="result" id="ccllc_transactiondeficiencyid">
           <cell name="ccllc_name" width="300" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
     </layoutxml>
-    <querytype>2</querytype>
+    <querytype>0</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical">
-        <entity name="ccllc_transactionissue">
-          <attribute name="ccllc_transactionissueid" />
+        <entity name="ccllc_transactiondeficiency">
+          <attribute name="ccllc_transactiondeficiencyid" />
           <attribute name="ccllc_name" />
           <attribute name="createdon" />
           <order attribute="ccllc_name" descending="false" />
           <filter type="and">
-            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="statecode" operator="eq" value="1" />
           </filter>
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Transaction Issue Associated View" languagecode="1033" />
+      <LocalizedName description="Inactive Transaction Deficiencies" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

@@ -37,24 +37,24 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="ccllc_transaction_transactionissue">
+  <EntityRelationship Name="ccllc_transactiondeficiency_transaction">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ccllc_transactionissue</ReferencingEntityName>
+    <ReferencingEntityName>ccllc_transactiondeficiency</ReferencingEntityName>
     <ReferencedEntityName>ccllc_transaction</ReferencedEntityName>
-    <CascadeAssign>Cascade</CascadeAssign>
-    <CascadeDelete>Cascade</CascadeDelete>
-    <CascadeReparent>Cascade</CascadeReparent>
-    <CascadeShare>Cascade</CascadeShare>
-    <CascadeUnshare>Cascade</CascadeUnshare>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
     <CascadeRollupView>NoCascade</CascadeRollupView>
     <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
     <ReferencingAttributeName>ccllc_TransactionId</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="The transaction that the issue is related to." languagecode="1033" />
+        <Description description="The transaction that the deficiency affects." languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
@@ -63,13 +63,10 @@
         <NavPaneArea>Details</NavPaneArea>
         <NavPaneOrder>10000</NavPaneOrder>
         <NavigationPropertyName>ccllc_TransactionId</NavigationPropertyName>
-        <CustomLabels>
-          <CustomLabel description="" languagecode="1033" />
-        </CustomLabels>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>
-        <NavigationPropertyName>ccllc_transaction_transactionissue</NavigationPropertyName>
+        <NavigationPropertyName>ccllc_transactiondeficiency_transaction</NavigationPropertyName>
         <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>

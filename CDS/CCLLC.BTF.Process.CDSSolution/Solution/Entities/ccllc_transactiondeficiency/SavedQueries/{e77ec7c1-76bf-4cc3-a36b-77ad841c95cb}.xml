@@ -6,10 +6,10 @@
     <isquickfindquery>1</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{7dfa1674-be41-424f-a20c-3c3d7f562731}</savedqueryid>
+    <savedqueryid>{e77ec7c1-76bf-4cc3-a36b-77ad841c95cb}</savedqueryid>
     <layoutxml>
       <grid name="resultset" jump="ccllc_name" select="1" icon="1" preview="1">
-        <row name="result" id="ccllc_transactionissueid">
+        <row name="result" id="ccllc_transactiondeficiencyid">
           <cell name="ccllc_name" width="300" />
           <cell name="createdon" width="125" />
         </row>
@@ -18,8 +18,8 @@
     <querytype>4</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical">
-        <entity name="ccllc_transactionissue">
-          <attribute name="ccllc_transactionissueid" />
+        <entity name="ccllc_transactiondeficiency">
+          <attribute name="ccllc_transactiondeficiencyid" />
           <attribute name="ccllc_name" />
           <attribute name="createdon" />
           <order attribute="ccllc_name" descending="false" />
@@ -32,9 +32,9 @@
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Quick Find Active Transaction Issues" languagecode="1033" />
+      <LocalizedName description="Quick Find Active Transaction Deficiencies" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

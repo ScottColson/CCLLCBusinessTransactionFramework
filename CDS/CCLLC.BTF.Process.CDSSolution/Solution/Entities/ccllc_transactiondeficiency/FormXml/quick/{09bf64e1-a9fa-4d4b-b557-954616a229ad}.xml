@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms>
   <systemform>
-    <formid>{c918cad5-94f4-45dd-b1b5-572478cffa54}</formid>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <formid>{09bf64e1-a9fa-4d4b-b557-954616a229ad}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form>
       <tabs>
-        <tab verticallayout="true" id="{3fbc6b66-97aa-44ea-b86a-d330d51c592a}" IsUserDefined="1">
+        <tab verticallayout="true" id="{f2dcf523-c4b6-40cd-9aa6-04701c5b6d01}" IsUserDefined="1">
           <labels>
             <label description="" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{a48f4bad-c66d-4b08-a90d-0aa86a33b268}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{9fa9b86b-16e8-43b8-ad9a-da872b74223e}">
                   <labels>
                     <label description="GENERAL" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{eac8f34c-fd19-45c6-abcb-1278983a693e}">
+                      <cell id="{4dd7a805-fa83-4aa1-b766-590de53d01c1}">
                         <labels>
                           <label description="Name" languagecode="1033" />
                         </labels>
@@ -28,7 +28,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{5fa01b86-4ba1-4dcd-8eec-8b96a5104400}">
+                      <cell id="{d6ee89c3-27f1-45b1-ad3c-b0d68eb040b6}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
                         </labels>

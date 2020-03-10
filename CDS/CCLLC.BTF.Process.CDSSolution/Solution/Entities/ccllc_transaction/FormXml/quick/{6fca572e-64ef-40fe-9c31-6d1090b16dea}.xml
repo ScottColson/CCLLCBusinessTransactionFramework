@@ -44,22 +44,6 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{db509ba8-3100-e393-8ddd-3e4c8c024193}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Initiating Agent" languagecode="1033" />
-                        </labels>
-                        <control id="ccllc_initiatingagentdd" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatingagentdd" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{55e01c08-ab91-d9ee-d238-178e36b1256d}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Initiating Location" languagecode="1033" />
-                        </labels>
-                        <control id="ccllc_initiatinglocationd" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ccllc_initiatinglocationd" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
                       <cell id="{ce0020d5-16bc-a935-4466-319448abc56a}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="InitiatingProcess" languagecode="1033" />

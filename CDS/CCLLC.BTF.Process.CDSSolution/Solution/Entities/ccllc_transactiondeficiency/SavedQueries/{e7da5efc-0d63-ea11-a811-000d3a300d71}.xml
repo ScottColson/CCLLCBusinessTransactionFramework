@@ -6,12 +6,12 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{2206a8c8-8dd5-e811-a969-000d3a3ac6bb}</savedqueryid>
+    <savedqueryid>{e7da5efc-0d63-ea11-a811-000d3a300d71}</savedqueryid>
     <querytype>8192</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical" output-format="xml-platform">
-        <entity name="ccllc_transactionissue">
-          <attribute name="ccllc_transactionissueid" />
+        <entity name="ccllc_transactiondeficiency">
+          <attribute name="ccllc_transactiondeficiencyid" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
             <condition attribute="ownerid" operator="eq-userid" />
@@ -19,12 +19,12 @@
         </entity>
       </fetch>
     </fetchxml>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Transaction Issues" languagecode="1033" />
+      <LocalizedName description="My Transaction Deficiencies" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Transaction Issues owned by me" languagecode="1033" />
+      <Description description="Active Transaction Deficiencies owned by me" languagecode="1033" />
     </Descriptions>
   </savedquery>
 </savedqueries>
