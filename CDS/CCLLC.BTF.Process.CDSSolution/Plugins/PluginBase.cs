@@ -1,5 +1,4 @@
-﻿using System;
-using CCLLC.Core;
+﻿using CCLLC.Core;
 using CCLLC.CDS.Sdk;
 using CCLLC.BTF.Platform;
 using CCLLC.BTF.Platform.CDS;
@@ -10,13 +9,7 @@ using CCLLC.BTF.Documents;
 namespace CCLLC.BTF.Process.CDS.Plugins
 {
     public class PluginBase : CDSPlugin
-    {
-        internal static class Settings
-        {
-            public static TimeSpan? BuildContextRecordCacheTimeout => new TimeSpan(0, 5, 0);
-            public static TimeSpan? BuildTransactionManagerCacheTimout => new TimeSpan(0, 1, 0);
-            public static TimeSpan? GenerateSessionCacheTimeout => null;           
-        }
+    {      
 
         // Override default container with a static implementation so that all plugins in this 
         // assembly will use the same container and therefore the same instance of components registered
@@ -33,7 +26,9 @@ namespace CCLLC.BTF.Process.CDS.Plugins
         
 
         public PluginBase(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig)
-        {           
+        {
+            // All processes will run with elevated system access.
+            this.RunAs = eRunAs.System;
         }       
 
         public override void RegisterContainerServices()

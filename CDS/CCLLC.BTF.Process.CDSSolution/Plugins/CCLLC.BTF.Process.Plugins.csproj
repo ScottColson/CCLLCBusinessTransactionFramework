@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -74,31 +76,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\CDSExecutionContext.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\CDSExecutionContextFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\CDSPlugin.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\CDSPluginExecutionContext.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\CDSWebRequestFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\EnhancedOrganizationService.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\ExtensionSettings.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\ExtensionSettingsConfig.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\ExtensionSettingsFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Extensions\CDSEntityExtensions.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Extensions\FluentQuery.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\ICDSExecutionContext.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\ICDSExecutionContextFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\ICDSPlugin.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\ICDSPluginExecutionContext.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\ICDSWebRequestFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\IEnhancedOrganizationService.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\IExtensionSettingsConfig.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\IExtensionSettingsFactory.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\IXmlConfigurationResource.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\Interfaces\IXmlConfigurationResourceFactory .cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\MessageNames.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\PluginEvent.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\XmlConfigurationResource.cs" />
-    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.0.0\XmlConfigurationResourceFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\CDSExecutionContext.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\CDSExecutionContextFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\CDSPlugin.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\CDSPluginExecutionContext.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\CDSWebRequestFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\EnhancedOrganizationService.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Enums\eRunAs.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Extensions\CDSEntityExtensions.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Extensions\FluentQuery.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Extensions\ProcessModelExtension.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\ICDSExecutionContext.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\ICDSExecutionContextFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\ICDSPlugin.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\ICDSPluginExecutionContext.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\ICDSWebRequestFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\IEnhancedOrganizationService.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\IXmlConfigurationResource.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\Interfaces\IXmlConfigurationResourceFactory .cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\MessageNames.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\PluginEvent.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\SettingsDataConnector.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\XmlConfigurationResource.cs" />
+    <Compile Include="App_Packages\CCLLC.CDS.Sdk.Sources.1.1.0-beta\XmlConfigurationResourceFactory.cs" />
     <Compile Include="App_Packages\CCLLC.Core.Encryption.Sources.1.0.0\DefaultEncryptor.cs" />
     <Compile Include="App_Packages\CCLLC.Core.Encryption.Sources.1.0.0\Interfaces\IEncryptionService.cs" />
     <Compile Include="App_Packages\CCLLC.Core.IocContainer.Sources.2.0.0\ContainerContract.cs" />
@@ -112,14 +112,18 @@
     <Compile Include="App_Packages\CCLLC.Core.Net.Sources.1.0.0\HttpWebResponseWrapper.cs" />
     <Compile Include="App_Packages\CCLLC.Core.Net.Sources.1.0.0\Interfaces\IHttpWebRequest.cs" />
     <Compile Include="App_Packages\CCLLC.Core.Net.Sources.1.0.0\Interfaces\IHttpWebResponse.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\DefaultCache.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Enums\eSeverityLevel.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Interfaces\ICache.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Interfaces\IDataService.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Interfaces\IProcessExecutionContext.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Interfaces\IRecordPointer.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\Interfaces\ISettingsProvider.cs" />
-    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.0.0\RecordPointer.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\DefaultCache.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Enums\eSeverityLevel.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\ICache.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\IDataService.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\IProcessExecutionContext.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\IRecordPointer.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\ISettingsProvider.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\ISettingsProviderDataConnector.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\Interfaces\ISettingsProviderFactory.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\RecordPointer.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\SettingsProvider.cs" />
+    <Compile Include="App_Packages\CCLLC.Core.ProcessModel.Sources.1.1.0\SettingsProviderFactory.cs" />
     <Compile Include="ProcessNavigationActionHandlers.cs" />
     <Compile Include="CrmPluginRegistrationAttribute.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />

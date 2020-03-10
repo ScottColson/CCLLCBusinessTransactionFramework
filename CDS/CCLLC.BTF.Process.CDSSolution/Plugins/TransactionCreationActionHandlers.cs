@@ -39,14 +39,14 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
             var platformManager = Container.Resolve<IPlatformManager>();
-            var session = platformManager.GenerateSession(executionContext, systemUser, Settings.GenerateSessionCacheTimeout);
+            var session = platformManager.GenerateSession(executionContext, systemUser);
 
             var contextFactory = Container.Resolve<ITransactionContextFactory>();
-            var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId, Settings.BuildContextRecordCacheTimeout);
+            var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId);
             
           
             var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext, Settings.BuildTransactionManagerCacheTimout);
+            var manager = managerFactory.CreateTransactionManager(executionContext);
 
             var available = manager.GetAvaialbleTransactionTypes(executionContext, session, transactionContext);
                        
@@ -73,13 +73,13 @@ namespace CCLLC.BTF.Process.CDS.Plugins
 
             var platformManager = Container.Resolve<IPlatformManager>();
 
-            var session = platformManager.GenerateSession(executionContext, systemUser, Settings.GenerateSessionCacheTimeout);
+            var session = platformManager.GenerateSession(executionContext, systemUser);
 
             var contextFactory = Container.Resolve<ITransactionContextFactory>();
-            var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId, Settings.BuildContextRecordCacheTimeout);
+            var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId);
 
             var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext, Settings.BuildTransactionManagerCacheTimout);
+            var manager = managerFactory.CreateTransactionManager(executionContext);
 
             var transactionType = manager.GetAvaialbleTransactionTypes(executionContext, session, transactionContext).Where(r => r.Id == transactionTypeId.Id).FirstOrDefault();
 
