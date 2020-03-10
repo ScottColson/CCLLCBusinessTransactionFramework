@@ -85,7 +85,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)StepExecutionResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficiencies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficiencyFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficienciesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionHistoryFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\Branch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\DataForm.cs" />

@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_processsteptype")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_processsteptype : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_processsteptype";
 		
-		public const int EntityTypeCode = 10088;
+		public const int EntityTypeCode = 10158;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,117 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The name of the assembly that implements the step type.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_assemblyname")]
+		public string ccllc_AssemblyName
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_assemblyname");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_AssemblyName");
+				this.SetAttributeValue("ccllc_assemblyname", value);
+				this.OnPropertyChanged("ccllc_AssemblyName");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the class within the assembly that implements the step type.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_classname")]
+		public string ccllc_ClassName
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_classname");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ClassName");
+				this.SetAttributeValue("ccllc_classname", value);
+				this.OnPropertyChanged("ccllc_ClassName");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
+		public System.Nullable<System.Guid> ccllc_processsteptypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processsteptypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_processsteptypeId");
+				this.SetAttributeValue("ccllc_processsteptypeid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_processsteptypeId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_processsteptypeId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Flag indicating if the step supports conditional branching.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_supportsconditionalbranching")]
+		public System.Nullable<bool> ccllc_SupportsConditionalBranching
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("ccllc_supportsconditionalbranching");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_SupportsConditionalBranching");
+				this.SetAttributeValue("ccllc_supportsconditionalbranching", value);
+				this.OnPropertyChanged("ccllc_SupportsConditionalBranching");
 			}
 		}
 		
@@ -198,117 +309,6 @@ namespace CCLLC.BTF.Process.CDS
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the assembly that implements the step type.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_assemblyname")]
-		public string ccllc_AssemblyName
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_assemblyname");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_AssemblyName");
-				this.SetAttributeValue("ccllc_assemblyname", value);
-				this.OnPropertyChanged("ccllc_AssemblyName");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the class within the assembly that implements the step type.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_classname")]
-		public string ccllc_ClassName
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_classname");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ClassName");
-				this.SetAttributeValue("ccllc_classname", value);
-				this.OnPropertyChanged("ccllc_ClassName");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
-		public System.Nullable<System.Guid> ccllc_processsteptypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processsteptypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_processsteptypeId");
-				this.SetAttributeValue("ccllc_processsteptypeid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_processsteptypeId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_processsteptypeId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Flag indicating if the step supports conditional branching.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_supportsconditionalbranching")]
-		public System.Nullable<bool> ccllc_SupportsConditionalBranching
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("ccllc_supportsconditionalbranching");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_SupportsConditionalBranching");
-				this.SetAttributeValue("ccllc_supportsconditionalbranching", value);
-				this.OnPropertyChanged("ccllc_SupportsConditionalBranching");
 			}
 		}
 		

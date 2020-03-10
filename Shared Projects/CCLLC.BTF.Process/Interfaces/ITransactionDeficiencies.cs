@@ -10,7 +10,7 @@ namespace CCLLC.BTF.Process
     {
         IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement);
 
-        void RemoveDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement);
+        void ClearDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement);
 
         IRequirementDeficiency GetCurrentRequirementDeficiency(ITransactionRequirement requirement);
     }

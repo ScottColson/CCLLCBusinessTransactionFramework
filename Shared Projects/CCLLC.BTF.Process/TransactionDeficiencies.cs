@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CCLLC.Core;
 
 namespace CCLLC.BTF.Process
@@ -7,9 +8,9 @@ namespace CCLLC.BTF.Process
     public class TransactionDeficiencies : List<IRequirementDeficiency>, ITransactionDeficiencies
     {
         private ITransaction Transaction { get; }
-        private ITransactionDataConnector DataConnector {get;}
+        private ITransactionDataConnector DataConnector { get; }
 
-        public TransactionDeficiencies(ITransactionDataConnector dataConnector, ITransaction transaction, IList<IRequirementDeficiency> deficiencies) 
+        public TransactionDeficiencies(ITransactionDataConnector dataConnector, ITransaction transaction, IList<IRequirementDeficiency> deficiencies)
             : base(deficiencies)
         {
             this.DataConnector = dataConnector ?? throw new ArgumentNullException("dataConnector");
@@ -18,17 +19,26 @@ namespace CCLLC.BTF.Process
 
         public IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement)
         {
-            throw new NotImplementedException();
+            var record = DataConnector.CreateDeficiencyRecord(executionContext.DataService, requirement.Name, this.Transaction, requirement);
+            var deficiency = new RequirementDeficiency(requirement, record.Status, null, null);
+            base.Add(deficiency);
+            return deficiency;
         }
 
         public IRequirementDeficiency GetCurrentRequirementDeficiency(ITransactionRequirement requirement)
         {
-            throw new NotImplementedException();
-        }       
+            return this.Where(r => r.Requirement.Id == requirement.Id && r.Status != eDeficiencyStatusEnum.Cleared).FirstOrDefault();
+        }
 
-        public void RemoveDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement)
+        public void ClearDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement)
         {
-            throw new NotImplementedException();
-        }       
+            var deficiency = GetCurrentRequirementDeficiency(requirement);
+            if (deficiency.Status != eDeficiencyStatusEnum.Waived)
+            {
+                DataConnector.UpdateDeficiencyRecordStatus(executionContext.DataService, deficiency, eDeficiencyStatusEnum.Cleared);
+                base.Remove(deficiency);
+            }
+
+        }
     }
 }

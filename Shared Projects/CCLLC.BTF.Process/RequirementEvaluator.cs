@@ -29,7 +29,7 @@ namespace CCLLC.BTF.Process
 
                 if (result.Passed && existingDeficiency != null && existingDeficiency.Status != eDeficiencyStatusEnum.Waived)
                 {
-                    transaction.Deficiencies.RemoveDeficiency(executionContext, requirement);
+                    transaction.Deficiencies.ClearDeficiency(executionContext, requirement);
                 }
                 
                 if(!result.Passed)

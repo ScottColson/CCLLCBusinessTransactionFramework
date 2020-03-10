@@ -44,7 +44,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
-            c.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficiencyFactory>();
+            c.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficienciesFactory>();
             c.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>();
             c.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>();
             c.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>();

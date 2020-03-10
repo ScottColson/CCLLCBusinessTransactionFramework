@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transactioninitialfee")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_transactioninitialfee : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_transactioninitialfee";
 		
-		public const int EntityTypeCode = 10096;
+		public const int EntityTypeCode = 10161;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Fee associated with Transaction Initial Fee.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_FeeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_feeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_FeeId");
+				this.SetAttributeValue("ccllc_feeid", value);
+				this.OnPropertyChanged("ccllc_FeeId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
+		public System.Nullable<System.Guid> ccllc_transactioninitialfeeId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactioninitialfeeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactioninitialfeeId");
+				this.SetAttributeValue("ccllc_transactioninitialfeeid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_transactioninitialfeeId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_transactioninitialfeeId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Transaction Type associated with Transaction Initial Fee.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionTypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		
@@ -198,99 +291,6 @@ namespace CCLLC.BTF.Process.CDS
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Fee associated with Transaction Initial Fee.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_feeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_FeeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_feeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_FeeId");
-				this.SetAttributeValue("ccllc_feeid", value);
-				this.OnPropertyChanged("ccllc_FeeId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
-		public System.Nullable<System.Guid> ccllc_transactioninitialfeeId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactioninitialfeeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactioninitialfeeId");
-				this.SetAttributeValue("ccllc_transactioninitialfeeid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_transactioninitialfeeId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactioninitialfeeid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_transactioninitialfeeId = value;
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Type associated with Transaction Initial Fee.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionTypeId");
-				this.SetAttributeValue("ccllc_transactiontypeid", value);
-				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		

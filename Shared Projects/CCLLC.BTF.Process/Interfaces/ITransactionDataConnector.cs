@@ -49,5 +49,9 @@ namespace CCLLC.BTF.Process
         IList<IAlternateBranchRecord> GetAlternateBranches(IDataService dataService);
 
         IList<IRequirementDeficiencyRecord> GetDeficiencyRecords(IDataService dataService, IRecordPointer<Guid> transactionId);
+
+        IRequirementDeficiencyRecord CreateDeficiencyRecord(IDataService dataService, string name, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> requirementId);
+
+        void UpdateDeficiencyRecordStatus(IDataService dataService, IRecordPointer<Guid> deficiencyId, eDeficiencyStatusEnum status);
     }
 }

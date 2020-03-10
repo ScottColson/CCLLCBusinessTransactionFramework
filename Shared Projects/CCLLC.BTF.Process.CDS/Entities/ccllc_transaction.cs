@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transaction")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_transaction : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_transaction";
 		
-		public const int EntityTypeCode = 10083;
+		public const int EntityTypeCode = 10145;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,243 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The GUID of the context record used to initiate the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_contextrecordguid")]
+		public string ccllc_ContextRecordGUID
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_contextrecordguid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ContextRecordGUID");
+				this.SetAttributeValue("ccllc_contextrecordguid", value);
+				this.OnPropertyChanged("ccllc_ContextRecordGUID");
+			}
+		}
+		
+		/// <summary>
+		/// The logical name of the context record used to initiate the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_contextrecordtype")]
+		public string ccllc_ContextRecordType
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_contextrecordtype");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ContextRecordType");
+				this.SetAttributeValue("ccllc_contextrecordtype", value);
+				this.OnPropertyChanged("ccllc_ContextRecordType");
+			}
+		}
+		
+		/// <summary>
+		/// The current process being used to complete the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_currentprocessid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_CurrentProcessId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_currentprocessid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_CurrentProcessId");
+				this.SetAttributeValue("ccllc_currentprocessid", value);
+				this.OnPropertyChanged("ccllc_CurrentProcessId");
+			}
+		}
+		
+		/// <summary>
+		/// The current process step for the transaction
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_currentstepid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_CurrentStepId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_currentstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_CurrentStepId");
+				this.SetAttributeValue("ccllc_currentstepid", value);
+				this.OnPropertyChanged("ccllc_CurrentStepId");
+			}
+		}
+		
+		/// <summary>
+		/// The customer associated with the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_CustomerId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_customerid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_CustomerId");
+				this.SetAttributeValue("ccllc_customerid", value);
+				this.OnPropertyChanged("ccllc_CustomerId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Agent associated with Transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingAgentId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingagentid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_InitiatingAgentId");
+				this.SetAttributeValue("ccllc_initiatingagentid", value);
+				this.OnPropertyChanged("ccllc_InitiatingAgentId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Location associated with Transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingLocationId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatinglocationid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_InitiatingLocationId");
+				this.SetAttributeValue("ccllc_initiatinglocationid", value);
+				this.OnPropertyChanged("ccllc_InitiatingLocationId");
+			}
+		}
+		
+		/// <summary>
+		/// The transaction process that started the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingprocessid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingProcessId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingprocessid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_InitiatingProcessId");
+				this.SetAttributeValue("ccllc_initiatingprocessid", value);
+				this.OnPropertyChanged("ccllc_InitiatingProcessId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// A unique reference number assigned to the transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_referencenumber")]
+		public string ccllc_ReferenceNumber
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_referencenumber");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ReferenceNumber");
+				this.SetAttributeValue("ccllc_referencenumber", value);
+				this.OnPropertyChanged("ccllc_ReferenceNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionid")]
+		public System.Nullable<System.Guid> ccllc_transactionId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactionid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactionId");
+				this.SetAttributeValue("ccllc_transactionid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_transactionId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_transactionId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The type of the Transaction.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionTypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		
@@ -202,243 +439,6 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// The GUID of the context record used to initiate the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_contextrecordguid")]
-		public string ccllc_ContextRecordGUID
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_contextrecordguid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ContextRecordGUID");
-				this.SetAttributeValue("ccllc_contextrecordguid", value);
-				this.OnPropertyChanged("ccllc_ContextRecordGUID");
-			}
-		}
-		
-		/// <summary>
-		/// The logical name of the context record used to initiate the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_contextrecordtype")]
-		public string ccllc_ContextRecordType
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_contextrecordtype");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ContextRecordType");
-				this.SetAttributeValue("ccllc_contextrecordtype", value);
-				this.OnPropertyChanged("ccllc_ContextRecordType");
-			}
-		}
-		
-		/// <summary>
-		/// The current process being used to complete the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_currentprocessid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_CurrentProcessId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_currentprocessid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_CurrentProcessId");
-				this.SetAttributeValue("ccllc_currentprocessid", value);
-				this.OnPropertyChanged("ccllc_CurrentProcessId");
-			}
-		}
-		
-		/// <summary>
-		/// The current process step for the transaction
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_currentstepid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_CurrentStepId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_currentstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_CurrentStepId");
-				this.SetAttributeValue("ccllc_currentstepid", value);
-				this.OnPropertyChanged("ccllc_CurrentStepId");
-			}
-		}
-		
-		/// <summary>
-		/// The customer associated with the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_CustomerId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_customerid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_CustomerId");
-				this.SetAttributeValue("ccllc_customerid", value);
-				this.OnPropertyChanged("ccllc_CustomerId");
-			}
-		}
-		
-		/// <summary>
-		/// The agent that initiated the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingagentid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingAgentId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingagentid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_InitiatingAgentId");
-				this.SetAttributeValue("ccllc_initiatingagentid", value);
-				this.OnPropertyChanged("ccllc_InitiatingAgentId");
-			}
-		}
-		
-		/// <summary>
-		/// The location where the transaction was initiated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatinglocationid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingLocationId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatinglocationid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_InitiatingLocationId");
-				this.SetAttributeValue("ccllc_initiatinglocationid", value);
-				this.OnPropertyChanged("ccllc_InitiatingLocationId");
-			}
-		}
-		
-		/// <summary>
-		/// The transaction process that started the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_initiatingprocessid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_InitiatingProcessId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_initiatingprocessid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_InitiatingProcessId");
-				this.SetAttributeValue("ccllc_initiatingprocessid", value);
-				this.OnPropertyChanged("ccllc_InitiatingProcessId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// A unique reference number assigned to the transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_referencenumber")]
-		public string ccllc_ReferenceNumber
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_referencenumber");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ReferenceNumber");
-				this.SetAttributeValue("ccllc_referencenumber", value);
-				this.OnPropertyChanged("ccllc_ReferenceNumber");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionid")]
-		public System.Nullable<System.Guid> ccllc_transactionId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactionid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactionId");
-				this.SetAttributeValue("ccllc_transactionid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_transactionId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_transactionId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The type of the Transaction.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionTypeId");
-				this.SetAttributeValue("ccllc_transactiontypeid", value);
-				this.OnPropertyChanged("ccllc_TransactionTypeId");
-			}
-		}
-		
-		/// <summary>
 		/// Status of the Transaction
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
@@ -567,6 +567,62 @@ namespace CCLLC.BTF.Process.CDS
 				this.OnPropertyChanging("ccllc_transaction_stephistory");
 				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_stephistory>("ccllc_transaction_stephistory", null, value);
 				this.OnPropertyChanged("ccllc_transaction_stephistory");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N ccllc_transactiondeficiency_transaction
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiondeficiency_transaction")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency> ccllc_transactiondeficiency_transaction
+		{
+			get
+			{
+				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency>("ccllc_transactiondeficiency_transaction", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiondeficiency_transaction");
+				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency>("ccllc_transactiondeficiency_transaction", null, value);
+				this.OnPropertyChanged("ccllc_transactiondeficiency_transaction");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_account_transaction_customer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_account_transaction_customer")]
+		public CCLLC.BTF.Process.CDS.Account ccllc_account_transaction_customer
+		{
+			get
+			{
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.Account>("ccllc_account_transaction_customer", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_account_transaction_customer");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.Account>("ccllc_account_transaction_customer", null, value);
+				this.OnPropertyChanged("ccllc_account_transaction_customer");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 ccllc_contact_transaction_customer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_contact_transaction_customer")]
+		public CCLLC.BTF.Process.CDS.Contact ccllc_contact_transaction_customer
+		{
+			get
+			{
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.Contact>("ccllc_contact_transaction_customer", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_contact_transaction_customer");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.Contact>("ccllc_contact_transaction_customer", null, value);
+				this.OnPropertyChanged("ccllc_contact_transaction_customer");
 			}
 		}
 		

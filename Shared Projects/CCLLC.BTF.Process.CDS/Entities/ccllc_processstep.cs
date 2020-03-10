@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_processstep")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_processstep : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_processstep";
 		
-		public const int EntityTypeCode = 10070;
+		public const int EntityTypeCode = 10170;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,135 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
+		public System.Nullable<System.Guid> ccllc_processstepId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_processstepId");
+				this.SetAttributeValue("ccllc_processstepid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_processstepId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_processstepId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The type of the Process Step
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ProcessStepTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_processsteptypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ProcessStepTypeId");
+				this.SetAttributeValue("ccllc_processsteptypeid", value);
+				this.OnPropertyChanged("ccllc_ProcessStepTypeId");
+			}
+		}
+		
+		/// <summary>
+		/// Contains parameter information used during the execution of the process step.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_stepparameters")]
+		public string ccllc_StepParameters
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_stepparameters");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_StepParameters");
+				this.SetAttributeValue("ccllc_stepparameters", value);
+				this.OnPropertyChanged("ccllc_StepParameters");
+			}
+		}
+		
+		/// <summary>
+		/// The next step completed after this step if no other conditional branching occurs.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_subsequentstepid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_SubsequentStepId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_subsequentstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_SubsequentStepId");
+				this.SetAttributeValue("ccllc_subsequentstepid", value);
+				this.OnPropertyChanged("ccllc_SubsequentStepId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Transaction Process associated with Process Step.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionprocessid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionProcessId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionprocessid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionProcessId");
+				this.SetAttributeValue("ccllc_transactionprocessid", value);
+				this.OnPropertyChanged("ccllc_TransactionProcessId");
 			}
 		}
 		
@@ -198,135 +327,6 @@ namespace CCLLC.BTF.Process.CDS
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
-		public System.Nullable<System.Guid> ccllc_processstepId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_processstepId");
-				this.SetAttributeValue("ccllc_processstepid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_processstepId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processstepid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_processstepId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The type of the Process Step
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processsteptypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ProcessStepTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_processsteptypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ProcessStepTypeId");
-				this.SetAttributeValue("ccllc_processsteptypeid", value);
-				this.OnPropertyChanged("ccllc_ProcessStepTypeId");
-			}
-		}
-		
-		/// <summary>
-		/// Contains parameter information used during the execution of the process step.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_stepparameters")]
-		public string ccllc_StepParameters
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_stepparameters");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_StepParameters");
-				this.SetAttributeValue("ccllc_stepparameters", value);
-				this.OnPropertyChanged("ccllc_StepParameters");
-			}
-		}
-		
-		/// <summary>
-		/// The next step completed after this step if no other conditional branching occurs.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_subsequentstepid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_SubsequentStepId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_subsequentstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_SubsequentStepId");
-				this.SetAttributeValue("ccllc_subsequentstepid", value);
-				this.OnPropertyChanged("ccllc_SubsequentStepId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Process associated with Process Step.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionprocessid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionProcessId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionprocessid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionProcessId");
-				this.SetAttributeValue("ccllc_transactionprocessid", value);
-				this.OnPropertyChanged("ccllc_TransactionProcessId");
 			}
 		}
 		

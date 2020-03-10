@@ -53,7 +53,7 @@ namespace CCLLC.BTF.Process.CDS
                             },
                             Orders =
                             {
-                            new OrderExpression("createdon", OrderType.Ascending) //newest firsit
+                            new OrderExpression("createdon", OrderType.Ascending) //newest first
                             }
                         });
 
@@ -311,7 +311,57 @@ namespace CCLLC.BTF.Process.CDS
 
         public IList<IRequirementDeficiencyRecord> GetDeficiencyRecords(IDataService dataService, IRecordPointer<Guid> transactionId)
         {
-            throw new NotImplementedException();
+            _ = transactionId ?? throw new ArgumentNullException("transactionId");
+
+            return dataService.ToOrgService().Query<ccllc_transactiondeficiency>()
+                .IncludeAllColumns()
+                .Where(e => e
+                    .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0))
+                    .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId.Id)))
+                .RetrieveAll().ToList<IRequirementDeficiencyRecord>();
+        }
+
+        public IRequirementDeficiencyRecord CreateDeficiencyRecord(IDataService dataService, string name, IRecordPointer<Guid> transactionId, IRecordPointer<Guid> requirementId)
+        {
+            var record = new ccllc_transactiondeficiency
+            {
+                ccllc_name = name,
+                ccllc_TransactionId = transactionId?.ToEntityReference(),
+                ccllc_TransactionRequirementId = requirementId?.ToEntityReference(),
+                statuscode = ccllc_transactiondeficiency_statuscode.Active
+            };
+
+            record.Id = dataService.ToOrgService().Create(record);
+
+            return record;
+        }
+
+        public void UpdateDeficiencyRecordStatus(IDataService dataService, IRecordPointer<Guid> deficiencyId, eDeficiencyStatusEnum status)
+        {
+            ccllc_transactiondeficiency_statuscode statusCode = ccllc_transactiondeficiency_statuscode.Active;
+            ccllc_transactiondeficiencyState stateCode = ccllc_transactiondeficiencyState.Active;
+
+            switch (status)
+            {
+                case eDeficiencyStatusEnum.Cleared:
+                    stateCode = ccllc_transactiondeficiencyState.Inactive;
+                    statusCode = ccllc_transactiondeficiency_statuscode.Cleared;
+                    break;
+                case eDeficiencyStatusEnum.Waived:
+                    stateCode = ccllc_transactiondeficiencyState.Active;
+                    statusCode = ccllc_transactiondeficiency_statuscode.Waived;
+                    break;
+            }
+
+            var record = new ccllc_transactiondeficiency
+            {
+                Id = deficiencyId.Id,
+                statecode = stateCode,
+                statuscode = statusCode
+            };
+
+            dataService.ToOrgService().Update(record);
+
         }
     }
 }
