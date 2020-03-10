@@ -32,13 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CCLLC.Core.ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.0.0-beta\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.1.0\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCCoreEncryption, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.Encryption.1.0.0-beta\lib\net462\CCLLCCoreEncryption.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.Encryption.1.0.0\lib\net462\CCLLCCoreEncryption.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCCoreNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.Net.1.0.0-alpha\lib\net462\CCLLCCoreNet.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.Net.1.0.0\lib\net462\CCLLCCoreNet.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>
@@ -71,7 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCLLC.BTF.Platform.CDS\CCLLC.BTF.Platform.CDS.csproj">
