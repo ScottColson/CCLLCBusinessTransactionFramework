@@ -170,16 +170,23 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
+                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
+                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+
+                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+
                 var evaluatorType = new EvaluatorType.DataReccordQueryMatchEvaluator(
-                    Ids.DataRecordQueryEvaluator.ToRecordPointer(), "TestEvaluator",
-                    "S3.D365.Transactions",
-                    "CCLLC.BTF.Process.CDS.EvaluatorType.DataReccordQueryMatchEvaluator");
+                   Ids.DataRecordQueryEvaluator.ToRecordPointer(), "TestEvaluator",
+                   "S3.D365.Transactions",
+                   "CCLLC.BTF.Process.CDS.EvaluatorType.DataReccordQueryMatchEvaluator");
+
+                
 
                 string parameterJson = "{\"FetchXml\":\"<fetch><entity name='new_transactiondatarecord'><filter type='and'><condition value='TestValue' attribute='new_datafield1' operator='eq'/></filter></entity></fetch>\"}";
 
                 var parameters = serializer.CreateParamters(parameterJson);
 
-                var result = evaluatorType.Evaluate(executionContext, parameters, transactionPointer);
+                var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
                 Assert.AreEqual(true, result.Result);
 
@@ -345,6 +352,12 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
+                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
+                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+
+                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+
+
                 var evaluatorType = new EvaluatorType.DataReccordQueryMatchEvaluator(
                     Ids.DataRecordQueryEvaluator.ToRecordPointer(), "TestEvaluator",
                     "S3.D365.Transactions",
@@ -354,7 +367,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var parameters = serializer.CreateParamters(parameterJson);
 
-                var result = evaluatorType.Evaluate(executionContext, parameters, transactionPointer);
+                var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
                 Assert.AreEqual(false, result.Result);
 

@@ -35,7 +35,7 @@ namespace CCLLC.CDS.Test.Fakes
             Id = id.Id; ;
         }
 
-        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, IRecordPointer<Guid> record)
+        public ILogicEvaluationResult Evaluate(IProcessExecutionContext executionContext, ISerializedParameters parameters, ITransaction transaction)
         {
             ValidateParameters(executionContext, parameters);
 

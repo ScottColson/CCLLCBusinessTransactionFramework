@@ -33,12 +33,15 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<ILogicEvaluatorTypeFactory>().Using<FakeLogicEvaluatorTypeFactory>();
             c.Implement<IParameterSerializer>().Using<DefaultSerializer>();
             c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
+            c.Implement<IPlatformSettingsFactory>().Using<PlatformSettingsFactory>();
             c.Implement<IPlatformManager>().Using<FakePlatformManager>();
             c.Implement<IPriceCalculatorFactory>().Using<PriceCalculatorFactory>();
+            c.Implement<IProcessSettingsFactory>().Using<ProcessSettingsFactory>();
             c.Implement<IProcessStepFactory>().Using<ProcessStepFactory>();
             c.Implement<IProcessStepTypeFactory>().Using<ProcessStepTypeFactory>();
             c.Implement<IRequirementEvaluator>().Using<DefaultRequirementEvaluator>();
             c.Implement<IRevenueDataConnector>().Using<RevenueDataConnector>();
+            c.Implement<IRevenueSettingsFactory>().Using<RevenueSettingsFactory>();
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
