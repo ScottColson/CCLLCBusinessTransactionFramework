@@ -5,10 +5,11 @@ using CCLLC.BTF.Platform.CDS;
 using CCLLC.BTF.Revenue;
 using CCLLC.BTF.Revenue.CDS;
 using CCLLC.BTF.Documents;
+using CCLLC.Telemetry;
 
 namespace CCLLC.BTF.Process.CDS.Plugins
 {
-    public class PluginBase : CDSPlugin
+    public class PluginBase : InstrumentedCDSPlugin
     {      
 
         // Override default container with a static implementation so that all plugins in this 
@@ -23,24 +24,31 @@ namespace CCLLC.BTF.Process.CDS.Plugins
                 return _container;
             }
         }
-        
+
+
+        // Override the telemetry sink to make it static so all plugins use the same sink.
+        private static ITelemetrySink telemetrySink;
+        public override ITelemetrySink TelemetrySink
+        {
+            get => telemetrySink;
+            protected set => telemetrySink = value;
+        }
 
         public PluginBase(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig)
         {
             // All processes will run with elevated system access.
             this.RunAs = eRunAs.System;
-        }       
 
-        public override void RegisterContainerServices()
-        {
-            base.RegisterContainerServices();
+            // Setup ApplicationInsights defaults.
+            this.DefaultInstrumentationKey = "7a6ecb67-6c9c-4640-81d2-80ce76c3ca34"; //DEV ApplicationInsights
+            this.TrackExecutionPerformance = true;
 
             // Register implementation classes from the model libraries. The container will 
             // resolve these implementations as needed for dependency injection.
             this.Container.Implement<IAgentFactory>().Using<AgentFactory>().AsSingleInstance();
-            this.Container.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>().AsSingleInstance();            
+            this.Container.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>().AsSingleInstance();
             this.Container.Implement<ICustomerFactory>().Using<CustomerFactory>().AsSingleInstance();
-            this.Container.Implement<IDeferredActivator>().Using<DeferredActivator>().AsSingleInstance();           
+            this.Container.Implement<IDeferredActivator>().Using<DeferredActivator>().AsSingleInstance();
             this.Container.Implement<IDocumentManager>().Using<DocumentManager>().AsSingleInstance();
             this.Container.Implement<IEvidenceManager>().Using<EvidenceManager>().AsSingleInstance();
             this.Container.Implement<IFeeList>().Using<LazyFeeList>().AsSingleInstance();
@@ -61,9 +69,11 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             this.Container.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficienciesFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>().AsSingleInstance();
-            this.Container.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>().AsSingleInstance();    
+            this.Container.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>().AsSingleInstance();
-        }
+        }       
+
+       
     }
 }
