@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xrm.Sdk.Query;
 using CCLLC.Core;
+using CCLLC.CDS.Sdk;
 
 namespace CCLLC.BTF.Revenue.CDS
 {
@@ -25,10 +26,10 @@ namespace CCLLC.BTF.Revenue.CDS
         public IList<ITransactionFeeRecord> GetTransactionFees(IDataService dataService, IRecordPointer<Guid> transactionId)
         {
             return dataService.ToOrgService().Query<ccllc_transactionfee>()
-                .IncludeAllColumns()
-                .Where(e => e
-                    .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId))
-                    .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                .SelectAll()
+                .WhereAll(e => e
+                    .IsActive()
+                    .Attribute("ccllc_transactionid").IsEqualTo(transactionId))                    
                 .RetrieveAll().ToList<ITransactionFeeRecord>();
         }
 
@@ -43,10 +44,10 @@ namespace CCLLC.BTF.Revenue.CDS
         public IFee GetFeeByName(IDataService dataService, string name)
         {
             var record = dataService.ToOrgService().Query<ccllc_fee>()
-                .IncludeAllColumns()
-                .Where(e => e
-                    .Attribute(a => a.Named("ccllc_name").Is(ConditionOperator.Equal).To(name))
-                    .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                .SelectAll()
+                .WhereAll(e => e
+                    .IsActive()
+                    .Attribute("ccllc_name").IsEqualTo(name))                    
                 .Retrieve().FirstOrDefault();
 
             if (record is null) throw new Exception(string.Format("Fee '{0}' does not exist.", name));
