@@ -4,6 +4,8 @@ using Microsoft.Xrm.Sdk;
 namespace CCLLC.BTF.Platform.CDS
 {
     using CCLLC.Core;
+    using System.Collections.Generic;
+    using System.Linq;
 
     static class ProcessModelExtension
     {
@@ -20,6 +22,11 @@ namespace CCLLC.BTF.Platform.CDS
         public static EntityReference ToEntityReference(this IRecordPointer<Guid> recordPointer)
         {
             return new EntityReference(recordPointer.RecordType, recordPointer.Id);
+        }
+
+        public static IList<IRecordPointer<Guid>> ToRecordPointers(this IList<Entity> records)
+        {
+            return records.Select(r => r.ToEntityReference().ToRecordPointer()).ToList();
         }
     }
 }
