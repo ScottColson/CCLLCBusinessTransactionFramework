@@ -7,7 +7,7 @@ using Microsoft.Xrm.Sdk;
 
 namespace CCLLC.CDS.Test.Fakes
 {
-    public class FakePlatformManager : IPlatformManager
+    public class FakePlatformService : IPlatformService
     {
         public IWorkSession GenerateSession(IProcessExecutionContext executionContext, ICustomer customer, bool useCache = true)
         {

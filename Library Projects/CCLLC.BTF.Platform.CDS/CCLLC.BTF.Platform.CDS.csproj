@@ -32,13 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CCLLC.Core.ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.1.0\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.ProcessModel.1.1.2\lib\net462\CCLLC.Core.ProcessModel.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCCDSSdkData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=123e29a4f4f84d01, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.CDS.Sdk.Data.0.1.0-beta\lib\net462\CCLLCCDSSdkData.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.CDS.Sdk.Data.1.1.0\lib\net462\CCLLCCDSSdkData.dll</HintPath>
     </Reference>
     <Reference Include="CCLLCIocContainer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=506847acdbcda1d9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.0\lib\net462\CCLLCIocContainer.dll</HintPath>
+      <HintPath>..\..\packages\CCLLC.Core.IocContainer.2.0.1\lib\net462\CCLLCIocContainer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.23\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>

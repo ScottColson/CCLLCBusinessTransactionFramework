@@ -24,7 +24,7 @@ namespace CCLLC.BTF.Process
         protected ILogicEvaluatorTypeFactory EvaluatorTypeFactory { get; }
         protected IEvidenceManager EvidenceManager { get; }
         protected ILocationFactory LocationFactory { get; }
-        protected IPlatformManager PlatformManager { get; }
+        protected IPlatformService PlatformService { get; }
         protected IProcessStepFactory ProcessStepFactory { get; }
         protected IProcessStepTypeFactory ProcessStepTypeFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
@@ -39,7 +39,7 @@ namespace CCLLC.BTF.Process
         public TransactionManagerFactory(IProcessSettingsFactory settingsFactory, ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
             ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
-            IParameterSerializer parameterSerializer, IPlatformManager platformManager, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
+            IParameterSerializer parameterSerializer, IPlatformService platformService, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
             IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
             ITransactionProcessFactory transactionProcessFactory, IFeeList feeList)
         {
@@ -55,7 +55,7 @@ namespace CCLLC.BTF.Process
             this.EvaluatorTypeFactory = evaluatorTypeFactory ?? throw new ArgumentNullException("evaluatorTypeFactory.");
             this.EvidenceManager = evidenceManager ?? throw new ArgumentNullException("evidenceManager");
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory.");
-            this.PlatformManager = platformManager ?? throw new ArgumentNullException("platformManager.");
+            this.PlatformService = platformService ?? throw new ArgumentNullException("platformService.");
             this.ProcessStepFactory = processStepFactory ?? throw new ArgumentNullException("processStepFactory.");
             this.ProcessStepTypeFactory = processStepTypeFactory ?? throw new ArgumentNullException("processStepTypeFactory.");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
@@ -280,7 +280,7 @@ namespace CCLLC.BTF.Process
 
                 var alternateBranches = DataConnector.GetAlternateBranches(executionContext.DataService);
 
-                var channels = PlatformManager.GetChannels(executionContext, useCache);
+                var channels = PlatformService.GetChannels(executionContext, useCache);
 
                 foreach (var step in steps)
                 {

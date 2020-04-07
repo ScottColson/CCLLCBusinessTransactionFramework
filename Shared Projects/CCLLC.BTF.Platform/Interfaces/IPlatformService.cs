@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CCLLC.Core;
 
 namespace CCLLC.BTF.Platform
 {
-    public interface IPlatformManager
+    public interface IPlatformService
     {     
         IList<IChannel> GetChannels(IProcessExecutionContext executionContext, bool useCache = true);
        

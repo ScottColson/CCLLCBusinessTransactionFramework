@@ -33,7 +33,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IParameterSerializer>().Using<DefaultSerializer>();
             c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
             c.Implement<IPlatformSettingsFactory>().Using<PlatformSettingsFactory>();
-            c.Implement<IPlatformManager>().Using<FakePlatformManager>();
+            c.Implement<IPlatformService>().Using<FakePlatformService>();
             c.Implement<IPriceCalculatorFactory>().Using<PriceCalculatorFactory>();
             c.Implement<IProcessSettingsFactory>().Using<ProcessSettingsFactory>();
             c.Implement<IProcessStepFactory>().Using<ProcessStepFactory>();

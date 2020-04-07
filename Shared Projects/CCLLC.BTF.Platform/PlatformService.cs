@@ -5,16 +5,16 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Platform
 {
-    public class PlatformManager : IPlatformManager
+    public class PlatformService : IPlatformService
     {
-        protected const string CACHE_KEY = "CCLLC.BTF.Platform.PlatformManager";
+        protected const string CACHE_KEY = "CCLLC.BTF.Platform.Service";
 
         protected IPlatformDataConnector DataConnector { get; }
         protected IAgentFactory AgentFactory { get; }
         protected ILocationFactory LocationFactory { get; }
         protected IPlatformSettingsFactory SettingsFactory { get; }
 
-        public PlatformManager(IPlatformSettingsFactory settingsFactory, IPlatformDataConnector dataConnector, IAgentFactory agentFactory, ILocationFactory locationFactory)
+        public PlatformService(IPlatformSettingsFactory settingsFactory, IPlatformDataConnector dataConnector, IAgentFactory agentFactory, ILocationFactory locationFactory)
         {
             SettingsFactory = settingsFactory;
             DataConnector = dataConnector;

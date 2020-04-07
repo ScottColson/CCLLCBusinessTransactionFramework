@@ -88,7 +88,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLocationFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorTypeFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakePlatformManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakePlatformService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeWorkSession.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_transactionfeeState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_transactionfee_statuscode.cs" />
