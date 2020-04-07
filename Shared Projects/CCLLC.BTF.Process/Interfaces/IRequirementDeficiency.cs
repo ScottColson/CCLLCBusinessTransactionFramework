@@ -5,16 +5,13 @@ namespace CCLLC.BTF.Process
 {
     using CCLLC.Core;
 
-    public interface IRequirementDeficiency : IRecordPointer<Guid>
+    public interface IRequirementDeficiency : IRequirementDeficiencyRecord
     {
-        ITransactionRequirement Requirement { get; }
-        IStepHistory ValidationStep { get; }
-        IAgent WaivedBy { get; }
-        DateTime? WaivedOn { get; }
-        eDeficiencyStatusEnum Status { get; }
+        new ITransactionRequirement Requirement { get; }
+        new IAgent WaivedBy { get; }        
+        
+        bool CanWaive(IWorkSession workSession);
 
-        bool CanWaive(IAgent agent);
-
-        void Waive(IAgent agent);
+        void Waive(IProcessExecutionContext executionContext, IWorkSession workSession);
     }
 }

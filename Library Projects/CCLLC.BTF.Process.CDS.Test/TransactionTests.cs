@@ -171,9 +171,9 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .AllowAllChannels()
                     .AllowAllRoles();
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
 
                 //Verify starting on Step 1 and can navigate forward but not backward
                 var step = transaction.CurrentStep;
@@ -416,9 +416,9 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .AllowAllChannels()
                     .AllowAllRoles();
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
 
                 //Verify starting on Step 1 and can navigate forward but not backward
                 var step = transaction.CurrentStep;
@@ -742,9 +742,9 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .AllowAllChannels()
                     .AllowAllRoles();
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
 
                 //Verify starting on Step 1 and can navigate forward but not backward
                 var step = transaction.CurrentStep;
@@ -1068,9 +1068,9 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .AllowAllChannels()
                     .AllowAllRoles();
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
 
                 //Verify starting on Step 1 and can navigate forward but not backward
                 var step = transaction.CurrentStep;
@@ -1398,9 +1398,9 @@ namespace CCLLC.BTF.Process.CDS.Test
                     .AllowAllChannels()
                     .AllowAllRoles();
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.Transaction.ToRecordPointer());
 
                 //Verify starting on Step 1 and can navigate forward but not backward
                 var step = transaction.CurrentStep;

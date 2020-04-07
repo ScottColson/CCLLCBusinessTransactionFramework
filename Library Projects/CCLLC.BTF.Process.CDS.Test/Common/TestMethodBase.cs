@@ -24,9 +24,8 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>();           
             c.Implement<ICustomerFactory>().Using<FakeCustomerFactory>();
             c.Implement<IDeferredActivator>().Using<DeferredActivator>();
-            c.Implement<IDeficiencyManager>().Using<DeficiencyManager>();
-            c.Implement<IDocumentManager>().Using<FakeDocumentManager>();
-            c.Implement<IEvidenceManager>().Using<EvidenceManager>();
+            c.Implement<IDocumentService>().Using<FakeDocumentService>();
+            c.Implement<IEvidenceService>().Using<EvidenceService>();
             c.Implement<IFeeList>().Using<LazyFeeList>();
             c.Implement<ILocationFactory>().Using<FakeLocationFactory>();
             c.Implement<ILogicEvaluatorFactory>().Using<LogicEvaluatorFactory>();
@@ -34,20 +33,21 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IParameterSerializer>().Using<DefaultSerializer>();
             c.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
             c.Implement<IPlatformSettingsFactory>().Using<PlatformSettingsFactory>();
-            c.Implement<IPlatformManager>().Using<FakePlatformManager>();
+            c.Implement<IPlatformService>().Using<FakePlatformService>();
             c.Implement<IPriceCalculatorFactory>().Using<PriceCalculatorFactory>();
             c.Implement<IProcessSettingsFactory>().Using<ProcessSettingsFactory>();
             c.Implement<IProcessStepFactory>().Using<ProcessStepFactory>();
             c.Implement<IProcessStepTypeFactory>().Using<ProcessStepTypeFactory>();
-            c.Implement<IRequirementEvaluator>().Using<DefaultRequirementEvaluator>();
+            c.Implement<IRequirementEvaluator>().Using<RequirementEvaluator>();
             c.Implement<IRevenueDataConnector>().Using<RevenueDataConnector>();
             c.Implement<IRevenueSettingsFactory>().Using<RevenueSettingsFactory>();
             c.Implement<IStepHistoryDataConnector>().Using<StepHistoryDataConnector>();
             c.Implement<ITransactionContextFactory>().Using<TransactionContextFactory>();
             c.Implement<ITransactionDataConnector>().Using<TransactionDataConnector>();
+            c.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficienciesFactory>();
             c.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>();
             c.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>();
-            c.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>();
+            c.Implement<ITransactionServiceFactory>().Using<TransactionServiceFactory>();
             c.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>();
             c.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>();            
         }

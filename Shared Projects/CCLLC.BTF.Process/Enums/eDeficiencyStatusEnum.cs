@@ -3,6 +3,7 @@
     public enum eDeficiencyStatusEnum
     {
         Invalid,
-        Waived
+        Waived,
+        Cleared
     }
 }

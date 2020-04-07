@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_processauthorizedchannel")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_processauthorizedchannel : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_processauthorizedchannel";
 		
-		public const int EntityTypeCode = 10087;
+		public const int EntityTypeCode = 10155;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,99 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// The Channel assigned to the Transaction Process.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ChannelId");
+				this.SetAttributeValue("ccllc_channelid", value);
+				this.OnPropertyChanged("ccllc_ChannelId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processauthorizedchannelid")]
+		public System.Nullable<System.Guid> ccllc_processauthorizedchannelId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processauthorizedchannelid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_processauthorizedchannelId");
+				this.SetAttributeValue("ccllc_processauthorizedchannelid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_processauthorizedchannelId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processauthorizedchannelid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_processauthorizedchannelId = value;
+			}
+		}
+		
+		/// <summary>
+		/// The Transaction Process assigned to the Channel.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionprocessid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionProcessId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionprocessid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionProcessId");
+				this.SetAttributeValue("ccllc_transactionprocessid", value);
+				this.OnPropertyChanged("ccllc_TransactionProcessId");
 			}
 		}
 		
@@ -198,99 +291,6 @@ namespace CCLLC.BTF.Process.CDS
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// The Channel assigned to the Transaction Process.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_channelid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ChannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_channelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ChannelId");
-				this.SetAttributeValue("ccllc_channelid", value);
-				this.OnPropertyChanged("ccllc_ChannelId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processauthorizedchannelid")]
-		public System.Nullable<System.Guid> ccllc_processauthorizedchannelId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_processauthorizedchannelid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_processauthorizedchannelId");
-				this.SetAttributeValue("ccllc_processauthorizedchannelid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_processauthorizedchannelId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_processauthorizedchannelid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_processauthorizedchannelId = value;
-			}
-		}
-		
-		/// <summary>
-		/// The Transaction Process assigned to the Channel.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionprocessid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionProcessId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionprocessid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionProcessId");
-				this.SetAttributeValue("ccllc_transactionprocessid", value);
-				this.OnPropertyChanged("ccllc_TransactionProcessId");
 			}
 		}
 		

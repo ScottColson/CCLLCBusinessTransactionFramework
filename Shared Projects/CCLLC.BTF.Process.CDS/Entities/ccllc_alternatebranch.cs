@@ -3,7 +3,7 @@ namespace CCLLC.BTF.Process.CDS
 
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_alternatebranch")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
 	public partial class ccllc_alternatebranch : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process.CDS
 		
 		public const string EntityLogicalName = "ccllc_alternatebranch";
 		
-		public const int EntityTypeCode = 10108;
+		public const int EntityTypeCode = 10154;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -36,6 +36,153 @@ namespace CCLLC.BTF.Process.CDS
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_alternatebranchid")]
+		public System.Nullable<System.Guid> ccllc_alternatebranchId
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_alternatebranchid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_alternatebranchId");
+				this.SetAttributeValue("ccllc_alternatebranchid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+				this.OnPropertyChanged("ccllc_alternatebranchId");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_alternatebranchid")]
+		public override System.Guid Id
+		{
+			get
+			{
+				return base.Id;
+			}
+			set
+			{
+				this.ccllc_alternatebranchId = value;
+			}
+		}
+		
+		/// <summary>
+		/// A relative ranking order to evaluate branch conditions. Branches are evaluated from lowest number to highest number.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluationorder")]
+		public System.Nullable<int> ccllc_EvaluationOrder
+		{
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("ccllc_evaluationorder");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_EvaluationOrder");
+				this.SetAttributeValue("ccllc_evaluationorder", value);
+				this.OnPropertyChanged("ccllc_EvaluationOrder");
+			}
+		}
+		
+		/// <summary>
+		/// Parameter information used during evaluation of the branching logic.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluationparameters")]
+		public string ccllc_EvaluationParameters
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_evaluationparameters");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_EvaluationParameters");
+				this.SetAttributeValue("ccllc_evaluationparameters", value);
+				this.OnPropertyChanged("ccllc_EvaluationParameters");
+			}
+		}
+		
+		/// <summary>
+		/// The type of evaluator the branch uses to determine if it should be taken.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_EvaluatorTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_evaluatortypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_EvaluatorTypeId");
+				this.SetAttributeValue("ccllc_evaluatortypeid", value);
+				this.OnPropertyChanged("ccllc_EvaluatorTypeId");
+			}
+		}
+		
+		/// <summary>
+		/// The name of the custom entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
+		public string ccllc_name
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_name");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_name");
+				this.SetAttributeValue("ccllc_name", value);
+				this.OnPropertyChanged("ccllc_name");
+			}
+		}
+		
+		/// <summary>
+		/// The Process Step that parents the Alternate Branch.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_parentstepid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_ParentStepId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_parentstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_ParentStepId");
+				this.SetAttributeValue("ccllc_parentstepid", value);
+				this.OnPropertyChanged("ccllc_ParentStepId");
+			}
+		}
+		
+		/// <summary>
+		/// The first Process Step executed on this branch.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_subsequentstepid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_SubsequentStepId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_subsequentstepid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_SubsequentStepId");
+				this.SetAttributeValue("ccllc_subsequentstepid", value);
+				this.OnPropertyChanged("ccllc_SubsequentStepId");
 			}
 		}
 		
@@ -198,153 +345,6 @@ namespace CCLLC.BTF.Process.CDS
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_alternatebranchid")]
-		public System.Nullable<System.Guid> ccllc_alternatebranchId
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_alternatebranchid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_alternatebranchId");
-				this.SetAttributeValue("ccllc_alternatebranchid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-				this.OnPropertyChanged("ccllc_alternatebranchId");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_alternatebranchid")]
-		public override System.Guid Id
-		{
-			get
-			{
-				return base.Id;
-			}
-			set
-			{
-				this.ccllc_alternatebranchId = value;
-			}
-		}
-		
-		/// <summary>
-		/// A relative ranking order to evaluate branch conditions. Branches are evaluated from lowest number to highest number.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluationorder")]
-		public System.Nullable<int> ccllc_EvaluationOrder
-		{
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("ccllc_evaluationorder");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_EvaluationOrder");
-				this.SetAttributeValue("ccllc_evaluationorder", value);
-				this.OnPropertyChanged("ccllc_EvaluationOrder");
-			}
-		}
-		
-		/// <summary>
-		/// Parameter information used during evaluation of the branching logic.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluationparameters")]
-		public string ccllc_EvaluationParameters
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_evaluationparameters");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_EvaluationParameters");
-				this.SetAttributeValue("ccllc_evaluationparameters", value);
-				this.OnPropertyChanged("ccllc_EvaluationParameters");
-			}
-		}
-		
-		/// <summary>
-		/// The type of evaluator the branch uses to determine if it should be taken.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_EvaluatorTypeId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_evaluatortypeid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_EvaluatorTypeId");
-				this.SetAttributeValue("ccllc_evaluatortypeid", value);
-				this.OnPropertyChanged("ccllc_EvaluatorTypeId");
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
-		{
-			get
-			{
-				return this.GetAttributeValue<string>("ccllc_name");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_name");
-				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// The Process Step that parents the Alternate Branch.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_parentstepid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_ParentStepId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_parentstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_ParentStepId");
-				this.SetAttributeValue("ccllc_parentstepid", value);
-				this.OnPropertyChanged("ccllc_ParentStepId");
-			}
-		}
-		
-		/// <summary>
-		/// The first Process Step executed on this branch.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_subsequentstepid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_SubsequentStepId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_subsequentstepid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_SubsequentStepId");
-				this.SetAttributeValue("ccllc_subsequentstepid", value);
-				this.OnPropertyChanged("ccllc_SubsequentStepId");
 			}
 		}
 		

@@ -62,7 +62,7 @@ namespace CCLLC.BTF.Process
                 if (ValidationRequirements.Count > 0)
                 {
                     var requirementPointers = ValidationRequirements.Select(r => r.RequirementId).ToList();
-                    var deficiencies = requirementEvaluator.Evaluate(executionContext, requirementPointers);
+                    var deficiencies = requirementEvaluator.Evaluate(executionContext, transaction, requirementPointers);
 
                     if (deficiencies.Count > 0)
                     {
@@ -122,7 +122,7 @@ namespace CCLLC.BTF.Process
                     foreach(var branch in this.AlternateBranches.OrderBy(b => b.EvaluationOrder))
                     {
                         var evaluationResult = branch.Evaluate(executionContext, transaction);
-                        if(evaluationResult.Result == true)
+                        if(evaluationResult.Passed)
                         {
                             executionContext.Trace("Selected branch {0}", branch.Name);
 

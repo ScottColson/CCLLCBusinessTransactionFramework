@@ -352,3 +352,4 @@ MigrationBackup/
 **/spkl/Log*.txt
 OrganizationServiceContext1.cs
 /CDS/CCLLC.BTF.Process.CDSSolution/Plugins/App_Packages
+/Shared Projects/CCLLC.BTF.Process.CDS/EarlyBoundTypes.cs

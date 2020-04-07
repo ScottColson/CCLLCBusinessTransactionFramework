@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entity>
-  <Name LocalizedName="Transaction Fee" OriginalName="Transaction Fee">ccllc_transactioninitialfee</Name>
+  <Name LocalizedName="Initial Fee" OriginalName="Transaction Fee">ccllc_transactioninitialfee</Name>
   <EntityInfo>
     <entity Name="ccllc_transactioninitialfee">
       <LocalizedNames>
-        <LocalizedName description="Transaction Fee" languagecode="1033" />
+        <LocalizedName description="Initial Fee" languagecode="1033" />
       </LocalizedNames>
       <LocalizedCollectionNames>
-        <LocalizedCollectionName description="Transaction Fees" languagecode="1033" />
+        <LocalizedCollectionName description="Initial Fees" languagecode="1033" />
       </LocalizedCollectionNames>
       <Descriptions>
         <Description description="Defines the fees applied at the beginning of a new Transaction." languagecode="1033" />

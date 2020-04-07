@@ -156,10 +156,10 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
-                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+                var transaction = transactionService.LoadTransaction(executionContext, transactionPointer);
 
 
                 var evaluatorType = new EvaluatorType.DataRecordActionEvaluator(
@@ -174,7 +174,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
-                Assert.AreEqual(true, result.Result);
+                Assert.AreEqual(true, result.Passed);
 
             }
         }
@@ -325,10 +325,10 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
-                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+                var transaction = transactionService.LoadTransaction(executionContext, transactionPointer);
 
 
                 var evaluatorType = new EvaluatorType.DataRecordActionEvaluator(
@@ -343,7 +343,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var result = evaluatorType.Evaluate(executionContext, parameters, transaction);
 
-                Assert.AreEqual(false, result.Result);
+                Assert.AreEqual(false, result.Passed);
                 Assert.AreEqual("Action did not succeed.", result.Message);
 
             }

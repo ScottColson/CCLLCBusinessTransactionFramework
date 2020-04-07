@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xrm.Sdk.Query;
+using CCLLC.CDS.Sdk;
 
 namespace CCLLC.BTF.Process.CDS
 {
@@ -27,10 +28,10 @@ namespace CCLLC.BTF.Process.CDS
         public IList<IStepHistory> QueryTransactionStepHistory(IDataService dataService, IRecordPointer<Guid> transactionId)
         {          
             return dataService.ToOrgService().Query<ccllc_stephistory>()
-                .IncludeAllColumns()
-                .Where(e => e
-                    .Attribute(a => a.Named("ccllc_transactionid").Is(ConditionOperator.Equal).To(transactionId.Id))
-                    .Attribute(a => a.Named("statecode").Is(ConditionOperator.Equal).To(0)))
+                .SelectAll()
+                .WhereAll(e => e
+                    .IsActive()
+                    .Attribute("ccllc_transactionid").IsEqualTo(transactionId.Id))                    
                 .RetrieveAll().ToList<IStepHistory>();
         }
 

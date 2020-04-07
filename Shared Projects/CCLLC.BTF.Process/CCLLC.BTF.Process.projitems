@@ -11,8 +11,11 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AlternateBranch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AlternateBranchFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DeficiencyManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EvidenceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementDeficiencyRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDeficienciesFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequirementDeficiency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequirementEvaluator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EvidenceService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAlternateBranchRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedChannelRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedRoleRecord.cs" />
@@ -24,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStepTypeRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDeficiencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
@@ -46,8 +50,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IComplientEvidence.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDeficiencyManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceRequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStep.cs" />
@@ -65,9 +68,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDataRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionGroup.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManagerFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManagerSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirement.cs" />
@@ -81,6 +83,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ProcessStepTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepExecutionResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficiencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionDeficienciesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionHistoryFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\Branch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\DataForm.cs" />
@@ -88,8 +92,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Transaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionHistory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionManagerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcessFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionRequirement.cs" />
