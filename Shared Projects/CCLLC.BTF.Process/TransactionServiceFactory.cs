@@ -67,10 +67,10 @@ namespace CCLLC.BTF.Process
         }
 
         /// <summary>
-        /// Builds a new Transaction Manager preloaded with all available Transaction Type configurations.
+        /// Builds a new Transaction Service preloaded with all available Transaction Type configurations.
         /// </summary>
         /// <param name="executionContext"></param>
-        /// <param name="cacheTimeOut">Sets amount of time to cache the transaction manager to service future build requests. When null, caching is not used.</param>
+        /// <param name="cacheTimeOut">Sets amount of time to cache the transaction service to service future build requests. When null, caching is not used.</param>
         /// <returns></returns>
         public ITransactionService CreateTransactionService(IProcessExecutionContext executionContext, bool useCache = true)
         {
@@ -82,7 +82,7 @@ namespace CCLLC.BTF.Process
             {
                 if (executionContext.Cache.Exists(CACHE_KEY))
                 {
-                    executionContext.Trace("Returning Transaction Manager from cache.");
+                    executionContext.Trace("Returning Transaction Service from cache.");
                     return executionContext.Cache.Get<ITransactionService>(CACHE_KEY);
                 }
             }
@@ -151,19 +151,19 @@ namespace CCLLC.BTF.Process
                         contexts.Where(r => r.TransactionTypeId.Id == t.Id)));
                 }
 
-                executionContext.Trace("Creating Transaction Manager loaded with {0} Transaction Types.", registeredTransactions.Count);
+                executionContext.Trace("Creating Transaction Service loaded with {0} Transaction Types.", registeredTransactions.Count);
 
-                // Create a new transaction manager and pass in required factory and record managers. 
+                // Create a new transaction service and pass in required factory and record services. 
                 var transactionService = new TransactionService(this.DataConnector, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.TransactionDeficienciesFactory,
                     this.DocumentService, this.EvidenceService,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, this.FeeList, registeredTransactions);
 
                 if (useCache)
                 {
                     var settings = SettingsFactory.CreateSettings(executionContext.Settings);
-                    var cacheTimeout = settings.PlatformManagerCacheTimeout;
+                    var cacheTimeout = settings.PlatformServiceCacheTimeout;
 
                     executionContext.Cache.Add<ITransactionService>(CACHE_KEY, transactionService, cacheTimeout.Value);
-                    executionContext.Trace("Cached Transaction Manager for {0}.", cacheTimeout.Value);
+                    executionContext.Trace("Cached Transaction Service for {0}.", cacheTimeout.Value);
                 }
 
                 executionContext.TrackEvent("TransactionServiceFactory.BuildTransactionService");

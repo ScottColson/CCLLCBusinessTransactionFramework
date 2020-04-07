@@ -10,7 +10,7 @@ namespace CCLLC.BTF.Process
     {
         public TimeSpan? AlternateBranchCacheTimeout => GetValue<TimeSpan?>("BTF.AlternateBranchCacheTimeout", TimeSpan.FromMinutes(10));
 
-        public TimeSpan? PlatformManagerCacheTimeout => GetValue<TimeSpan?>("BTF.PlatformManagerCacheTimeout", TimeSpan.FromMinutes(10));
+        public TimeSpan? PlatformServiceCacheTimeout => GetValue<TimeSpan?>("BTF.PlatformServiceCacheTimeout", TimeSpan.FromMinutes(10));
 
         public TimeSpan? ProcessStepCacheTimeout => GetValue<TimeSpan?>("BTF.ProcessStepCacheTimeout", TimeSpan.FromMinutes(10));
 

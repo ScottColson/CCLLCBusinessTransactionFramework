@@ -173,7 +173,7 @@ namespace CCLLC.BTF.Process
 
             if (transactionType == null) throw TransactionException.BuildException(TransactionException.ErrorCode.TransactionTypeNotFound);
             
-            // Create a new Transaction object and pass in all the factories and record managers needed to load related data as needed.
+            // Create a new Transaction object and pass in all the factories and record services needed to load related data as needed.
             ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory,
                 this.TransactionDeficienciesFactory, this.DocumentService, this.EvidenceService, this.LocationFactory, this.RequirementEvaluator, this.TransactionHistoryFactory,
                 this as ITransactionService, transactionType, record);

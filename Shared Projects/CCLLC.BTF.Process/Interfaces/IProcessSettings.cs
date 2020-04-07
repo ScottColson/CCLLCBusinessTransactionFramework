@@ -8,7 +8,7 @@ namespace CCLLC.BTF.Process
     {
         TimeSpan? AlternateBranchCacheTimeout { get; }
 
-        TimeSpan? PlatformManagerCacheTimeout { get; }
+        TimeSpan? PlatformServiceCacheTimeout { get; }
 
         TimeSpan? ProcessStepCacheTimeout { get; }
 
