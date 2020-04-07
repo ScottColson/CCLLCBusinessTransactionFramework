@@ -14,7 +14,7 @@ using CCLLC.CDS.TestBase;
 namespace CCLLC.BTF.Process.CDS.Test
 {
     [TestClass]
-    public class TransactionManagerTests
+    public class TransactionServiceTests
     {
         #region GetAvailableTransactions_Should_FilterOnContextRecord
 
@@ -208,8 +208,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var workSession = A.Fake<IWorkSession>();
                 A.CallTo(workSession).WithReturnType<bool>().Returns(true);               
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
                 //Generate context based on contact
                 var contextFactory = Container.Resolve<ITransactionContextFactory>();
@@ -217,7 +217,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var contextRecord = contextFactory.CreateTransactionContext(executionContext, customerId, false);
 
                 //Two transactions match contact context
-                var transactionTypes = transactionManager.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
+                var transactionTypes = transactionService.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
                 Assert.AreEqual(2, transactionTypes.Count);
 
                 //Generate context based on account 
@@ -225,7 +225,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                 contextRecord = contextFactory.CreateTransactionContext(executionContext, customerId);
 
                 //One transaction matches account context
-                transactionTypes = transactionManager.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
+                transactionTypes = transactionService.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
                 Assert.AreEqual(1, transactionTypes.Count);
 
             }
@@ -437,11 +437,11 @@ namespace CCLLC.BTF.Process.CDS.Test
                 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
                 //Only Transaction Type 1 matches
-                var transactionTypes = transactionManager.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
+                var transactionTypes = transactionService.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
                 Assert.AreEqual(1, transactionTypes.Count);
                 Assert.AreEqual(Ids.TransactionType1.EntityId, transactionTypes[0].Id);  
 
@@ -743,11 +743,11 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
                 //Only Transaction Type 2 matches
-                var transactionTypes = transactionManager.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
+                var transactionTypes = transactionService.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
                 Assert.AreEqual(1, transactionTypes.Count);
                 Assert.AreEqual(Ids.TransactionType2.EntityId, transactionTypes[0].Id);
             }
@@ -1061,11 +1061,11 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
             
-                var transactionTypes = transactionManager.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
+                var transactionTypes = transactionService.GetAvaialbleTransactionTypes(executionContext, workSession, contextRecord);
 
                 //Should return three transaction types ordered as Type3, Type2, Type1
                 Assert.AreEqual(3, transactionTypes.Count);
@@ -1198,10 +1198,10 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
 
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
 
                 Assert.AreEqual(Ids.ExistingTransaction.EntityId, transaction.Id);                
             }
@@ -1403,12 +1403,12 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
-                var targetTransactionType = transactionManager.RegisteredTransactionTypes.Where(t => t.Id == Ids.TransactionType1.EntityId).First();
+                var targetTransactionType = transactionService.RegisteredTransactionTypes.Where(t => t.Id == Ids.TransactionType1.EntityId).First();
 
-                var transaction = transactionManager.NewTransaction(executionContext, workSession, contextRecord, targetTransactionType);
+                var transaction = transactionService.NewTransaction(executionContext, workSession, contextRecord, targetTransactionType);
 
                 //correct transaction type, process, and step
                 Assert.AreEqual(Ids.TransactionType1.EntityId, transaction.TransactionType.Id);
@@ -1557,10 +1557,10 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext);
                 
-                transactionManager.SaveTransactionCurrentStep(executionContext, Ids.ExistingTransaction.ToRecordPointer(), Ids.Step1_2.ToRecordPointer());
+                transactionService.SaveTransactionCurrentStep(executionContext, Ids.ExistingTransaction.ToRecordPointer(), Ids.Step1_2.ToRecordPointer());
 
                 var record = service.Retrieve(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId, new Microsoft.Xrm.Sdk.Query.ColumnSet(true)).ToEntity<TestProxy.ccllc_transaction>();
 
@@ -1699,11 +1699,11 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext,false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext,false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
 
-                var dataRecord = transactionManager.LoadTransactionDataRecord(executionContext, transaction);
+                var dataRecord = transactionService.LoadTransactionDataRecord(executionContext, transaction);
 
                 Assert.AreEqual(Ids.ExistingDataRecord.EntityId, dataRecord.Id);
                 Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);
@@ -1840,11 +1840,11 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
-                var transaction = transactionManager.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
+                var transaction = transactionService.LoadTransaction(executionContext, Ids.ExistingTransaction.ToRecordPointer());
 
-                var dataRecord = transactionManager.LoadTransactionDataRecord(executionContext, transaction);
+                var dataRecord = transactionService.LoadTransactionDataRecord(executionContext, transaction);
 
                 Assert.AreEqual(Ids.CreatedDataRecord.EntityId, dataRecord.Id);
                 Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);

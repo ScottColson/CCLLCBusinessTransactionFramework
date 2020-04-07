@@ -170,10 +170,10 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
-                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+                var transaction = transactionService.LoadTransaction(executionContext, transactionPointer);
 
                 var evaluatorType = new EvaluatorType.DataReccordQueryMatchEvaluator(
                    Ids.DataRecordQueryEvaluator.ToRecordPointer(), "TestEvaluator",
@@ -352,10 +352,10 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var serializer = new DefaultSerializer();
                 var transactionPointer = new RecordPointer<Guid>(Ids.ExistingTransaction.LogicalName, Ids.ExistingTransaction.EntityId);
 
-                var transactionManagerFactory = Container.Resolve<ITransactionManagerFactory>();
-                var transactionManager = transactionManagerFactory.CreateTransactionManager(executionContext, false);
+                var transactionServiceFactory = Container.Resolve<ITransactionServiceFactory>();
+                var transactionService = transactionServiceFactory.CreateTransactionService(executionContext, false);
 
-                var transaction = transactionManager.LoadTransaction(executionContext, transactionPointer);
+                var transaction = transactionService.LoadTransaction(executionContext, transactionPointer);
 
 
                 var evaluatorType = new EvaluatorType.DataReccordQueryMatchEvaluator(

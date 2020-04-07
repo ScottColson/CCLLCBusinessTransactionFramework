@@ -68,9 +68,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDataRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDataConnector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionGroup.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManagerFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionManagerSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirement.cs" />
@@ -93,8 +92,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Transaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionHistory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionManagerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcessFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionRequirement.cs" />

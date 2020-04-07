@@ -8,31 +8,31 @@ using CCLLC.CDS.Test.Builders;
 namespace CCLLC.BTF.Process.CDS.Test
 {
     [TestClass]
-    public class TransactionManagerFactoryTests
+    public class TransactionServiceFactoryTests
     {
-        #region BuildTransactionManager_Should_ReturnTransactionManagerFromCache
+        #region BuildTransactionService_Should_ReturnTransactionServiceFromCache
 
         [TestMethod]
-        public void Test_BuildTransactionManager_Should_ReturnTransactionManagerFromCache()
+        public void Test_BuildTransactionService_Should_ReturnTransactionServiceFromCache()
         {
-            new BuildTransactionManager_Should_ReturnTransactionManagerFromCache().Test();
+            new BuildTransactionService_Should_ReturnTransactionServiceFromCache().Test();
         }
 
-        private class BuildTransactionManager_Should_ReturnTransactionManagerFromCache : Common.TestMethodBase
+        private class BuildTransactionService_Should_ReturnTransactionServiceFromCache : Common.TestMethodBase
         {       
 
             protected override void Test(IOrganizationService service)
             {
                 var executionContext = GetExecutionContext(service);
 
-                var factory = Container.Resolve<ITransactionManagerFactory>();                
+                var factory = Container.Resolve<ITransactionServiceFactory>();                
 
-                var transactionManager1 = factory.CreateTransactionManager(executionContext);
-                var transactionManager2 = factory.CreateTransactionManager(executionContext);
-                var transactionManager3 = factory.CreateTransactionManager(executionContext,false);
+                var transactionService1 = factory.CreateTransactionService(executionContext);
+                var transactionService2 = factory.CreateTransactionService(executionContext);
+                var transactionService3 = factory.CreateTransactionService(executionContext,false);
 
-                Assert.AreSame(transactionManager1, transactionManager2);
-                Assert.AreNotSame(transactionManager1, transactionManager3);
+                Assert.AreSame(transactionService1, transactionService2);
+                Assert.AreNotSame(transactionService1, transactionService3);
             }
         }
 
@@ -40,16 +40,16 @@ namespace CCLLC.BTF.Process.CDS.Test
         #endregion
 
 
-        #region BuildTransactionManager_Should_CreateTransactionManagerWithTwoConfiguredTransactionTypes
+        #region BuildTransactionService_Should_CreateTransactionServiceWithTwoConfiguredTransactionTypes
 
         [TestMethod]
-        public void Test_BuildTransactionManager_Should_CreateTransactionManagerWithTwoConfiguredTransactionTypes()
+        public void Test_BuildTransactionService_Should_CreateTransactionServiceWithTwoConfiguredTransactionTypes()
         {
-            new BuildTransactionManager_Should_CreateTransactionManagerWithTwoConfiguredTransactionTypes().Test();
+            new BuildTransactionService_Should_CreateTransactionServiceWithTwoConfiguredTransactionTypes().Test();
         }
 
 
-        private class BuildTransactionManager_Should_CreateTransactionManagerWithTwoConfiguredTransactionTypes : Common.TestMethodBase
+        private class BuildTransactionService_Should_CreateTransactionServiceWithTwoConfiguredTransactionTypes : Common.TestMethodBase
         {
             private struct Ids
             {
@@ -299,13 +299,13 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 var executionContext = GetExecutionContext(service);
 
-                var factory = Container.Resolve<ITransactionManagerFactory>();
+                var factory = Container.Resolve<ITransactionServiceFactory>();
 
-                var transactionManager = factory.CreateTransactionManager(executionContext, false);
+                var transactionService = factory.CreateTransactionService(executionContext, false);
 
-                Assert.AreEqual(2, transactionManager.RegisteredTransactionTypes.Count);
+                Assert.AreEqual(2, transactionService.RegisteredTransactionTypes.Count);
 
-                var transactionType = transactionManager.RegisteredTransactionTypes.Where(r => r.Id == Ids.TransactionType1.EntityId).First();
+                var transactionType = transactionService.RegisteredTransactionTypes.Where(r => r.Id == Ids.TransactionType1.EntityId).First();
                 Assert.AreEqual(Ids.TransactionType1.EntityId, transactionType.Id);
 
                 Assert.AreEqual(2, transactionType.AuthorizedChannels.Count);

@@ -9,9 +9,9 @@ using CCLLC.BTF.Documents;
 
 namespace CCLLC.BTF.Process
 {
-    public class TransactionManagerFactory : ITransactionManagerFactory
+    public class TransactionServiceFactory : ITransactionServiceFactory
     {
-        private const string CACHE_KEY = "CCLLC.BTF.Process.TransactionManagerFactory";
+        private const string CACHE_KEY = "CCLLC.BTF.Process.TransactionServiceFactory";
 
         protected ITransactionDataConnector DataConnector { get; }
         protected IAgentFactory AgentFactory { get; }
@@ -36,7 +36,7 @@ namespace CCLLC.BTF.Process
         protected IProcessSettingsFactory SettingsFactory { get; }
 
 
-        public TransactionManagerFactory(IProcessSettingsFactory settingsFactory, ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
+        public TransactionServiceFactory(IProcessSettingsFactory settingsFactory, ITransactionDataConnector dataConnector, IAgentFactory agentFactory, IAlternateBranchFactory alternateBranchFactory, 
             ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, 
             IDocumentManager documentManager, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceManager evidenceManager, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformService platformService, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
@@ -72,7 +72,7 @@ namespace CCLLC.BTF.Process
         /// <param name="executionContext"></param>
         /// <param name="cacheTimeOut">Sets amount of time to cache the transaction manager to service future build requests. When null, caching is not used.</param>
         /// <returns></returns>
-        public ITransactionManager CreateTransactionManager(IProcessExecutionContext executionContext, bool useCache = true)
+        public ITransactionService CreateTransactionService(IProcessExecutionContext executionContext, bool useCache = true)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace CCLLC.BTF.Process
                 if (executionContext.Cache.Exists(CACHE_KEY))
                 {
                     executionContext.Trace("Returning Transaction Manager from cache.");
-                    return executionContext.Cache.Get<ITransactionManager>(CACHE_KEY);
+                    return executionContext.Cache.Get<ITransactionService>(CACHE_KEY);
                 }
             }
 
@@ -154,7 +154,7 @@ namespace CCLLC.BTF.Process
                 executionContext.Trace("Creating Transaction Manager loaded with {0} Transaction Types.", registeredTransactions.Count);
 
                 // Create a new transaction manager and pass in required factory and record managers. 
-                var transactionManager = new TransactionManager(this.DataConnector, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.TransactionDeficienciesFactory,
+                var transactionService = new TransactionService(this.DataConnector, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory, this.TransactionDeficienciesFactory,
                     this.DocumentManager, this.EvidenceManager,  this.LocationFactory, RequirementEvaluator,this.TransactionHistoryFactory, this.FeeList, registeredTransactions);
 
                 if (useCache)
@@ -162,13 +162,13 @@ namespace CCLLC.BTF.Process
                     var settings = SettingsFactory.CreateSettings(executionContext.Settings);
                     var cacheTimeout = settings.PlatformManagerCacheTimeout;
 
-                    executionContext.Cache.Add<ITransactionManager>(CACHE_KEY, transactionManager, cacheTimeout.Value);
+                    executionContext.Cache.Add<ITransactionService>(CACHE_KEY, transactionService, cacheTimeout.Value);
                     executionContext.Trace("Cached Transaction Manager for {0}.", cacheTimeout.Value);
                 }
 
-                executionContext.TrackEvent("TransactionManagerFactory.BuildTransactionManager");
+                executionContext.TrackEvent("TransactionServiceFactory.BuildTransactionService");
 
-                return transactionManager;
+                return transactionService;
 
             }
             catch (Exception)

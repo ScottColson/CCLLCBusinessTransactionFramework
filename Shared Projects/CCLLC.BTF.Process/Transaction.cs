@@ -32,7 +32,7 @@ namespace CCLLC.BTF.Process
         protected ILocationFactory LocationFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
-        protected ITransactionManager TransactionManager { get; }
+        protected ITransactionService TransactionService { get; }
       
         protected IRecordPointer<Guid> ContextRecordId { get; }
         protected IRecordPointer<Guid> CustomerId { get;  }
@@ -147,7 +147,7 @@ namespace CCLLC.BTF.Process
             get
             {
                 var recordType = this.TransactionType.TransactionDataRecordType;
-                return this.TransactionManager.LoadTransactionDataRecord(this.ExecutionContext, this);
+                return this.TransactionService.LoadTransactionDataRecord(this.ExecutionContext, this);
             }
         }
 
@@ -157,7 +157,7 @@ namespace CCLLC.BTF.Process
             {
                 if (_affectedRecords == null)
                 {
-                   _affectedRecords = this.TransactionManager.LoadAffectedRecords(this.ExecutionContext, this, this.TransactionType.AffectedRecordTypes).ToList();
+                   _affectedRecords = this.TransactionService.LoadAffectedRecords(this.ExecutionContext, this, this.TransactionType.AffectedRecordTypes).ToList();
                 }
 
                 return _affectedRecords;
@@ -228,7 +228,7 @@ namespace CCLLC.BTF.Process
 
         public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory,
             ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
-            ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionManager transactionManager,  
+            ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionService transactionService,  
             ITransactionType transactionType, ITransactionRecord record) 
             : base(record.RecordType,record.Id)
         {            
@@ -244,7 +244,7 @@ namespace CCLLC.BTF.Process
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
             this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
-            this.TransactionManager = transactionManager ?? throw new ArgumentNullException("transactionManager");
+            this.TransactionService = transactionService ?? throw new ArgumentNullException("transactionService");
             
             this.TransactionType = transactionType ?? throw new ArgumentNullException("transactionType");
                        
@@ -293,7 +293,7 @@ namespace CCLLC.BTF.Process
 
                 // Update the transaction with the new current step
                 this.CurrentStepId = lastReversingStep;
-                this.TransactionManager.SaveTransactionCurrentStep(this.ExecutionContext, this, this.CurrentStepId);
+                this.TransactionService.SaveTransactionCurrentStep(this.ExecutionContext, this, this.CurrentStepId);
 
                 return this.CurrentStep;
             }
@@ -376,7 +376,7 @@ namespace CCLLC.BTF.Process
 
                 // save the current step to the data base.
                 this.CurrentStepId = nextStep;
-                this.TransactionManager.SaveTransactionCurrentStep(this.ExecutionContext, this, this.CurrentStepId);
+                this.TransactionService.SaveTransactionCurrentStep(this.ExecutionContext, this, this.CurrentStepId);
 
                 return this.CurrentStep;
             }            

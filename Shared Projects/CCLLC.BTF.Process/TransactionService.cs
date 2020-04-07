@@ -9,12 +9,12 @@ namespace CCLLC.BTF.Process
     using CCLLC.BTF.Revenue;
     using CCLLC.BTF.Documents;
 
-    public class TransactionManager : ITransactionManager
+    public class TransactionService : ITransactionService
     {
 
         /// <summary>
         /// A list of existing <see cref="ITransactionType"/> items defined in the system. This 
-        /// list is loaded when the <see cref="TransactionManager"/> is instantiated.
+        /// list is loaded when the <see cref="TransactionService"/> is instantiated.
         /// </summary>
         public IReadOnlyList<ITransactionType> RegisteredTransactionTypes { get; }
 
@@ -31,7 +31,7 @@ namespace CCLLC.BTF.Process
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
         protected IFeeList FeeList { get; }
 
-        protected internal TransactionManager(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, 
+        protected internal TransactionService(ITransactionDataConnector dataConnector, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, 
             ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentManager documentManager,
             IEvidenceManager evidenceManager, ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory,
             IFeeList feeList,  IList<ITransactionType> registeredTransactions)
@@ -176,7 +176,7 @@ namespace CCLLC.BTF.Process
             // Create a new Transaction object and pass in all the factories and record managers needed to load related data as needed.
             ITransaction transaction = new Transaction(executionContext, this.AgentFactory, this.TransactionFeeListFactory, this.TransactionContextFactory, this.CustomerFactory,
                 this.TransactionDeficienciesFactory, this.DocumentManager, this.EvidenceManager, this.LocationFactory, this.RequirementEvaluator, this.TransactionHistoryFactory,
-                this as ITransactionManager, transactionType, record);
+                this as ITransactionService, transactionType, record);
            
             return transaction;
         }

@@ -5,7 +5,7 @@ using CCLLC.BTF.Platform;
 
 namespace CCLLC.BTF.Process
 {
-    public interface ITransactionManager
+    public interface ITransactionService
     {
         /// <summary>
         /// Returns a read only list of all <see cref="ITransactionType"/> records registered in the system.
