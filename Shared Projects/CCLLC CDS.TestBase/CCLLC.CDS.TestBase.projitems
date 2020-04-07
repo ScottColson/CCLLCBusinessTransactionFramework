@@ -83,7 +83,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeChannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeCustomerFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeDocumentManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeDocumentService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLocation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLocationFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeLogicEvaluatorType.cs" />

@@ -5,7 +5,7 @@ using CCLLC.Core;
 
 namespace CCLLC.CDS.Test.Fakes
 {
-    public class FakeDocumentManager : IDocumentManager
+    public class FakeDocumentService : IDocumentService
     {       
         public IList<IGeneratedDocument> LoadGeneratedDocuments(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, TimeSpan? cacheTimeOut = null)
         {

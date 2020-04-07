@@ -24,7 +24,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>();           
             c.Implement<ICustomerFactory>().Using<FakeCustomerFactory>();
             c.Implement<IDeferredActivator>().Using<DeferredActivator>();
-            c.Implement<IDocumentManager>().Using<FakeDocumentManager>();
+            c.Implement<IDocumentService>().Using<FakeDocumentService>();
             c.Implement<IEvidenceManager>().Using<EvidenceManager>();
             c.Implement<IFeeList>().Using<LazyFeeList>();
             c.Implement<ILocationFactory>().Using<FakeLocationFactory>();

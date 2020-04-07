@@ -5,7 +5,7 @@ namespace CCLLC.BTF.Documents
 {
     using CCLLC.Core;
 
-    public interface IDocumentManager
+    public interface IDocumentService
     {
         IList<IGeneratedDocument> LoadGeneratedDocuments(IProcessExecutionContext executionContext, IRecordPointer<Guid> transactionId, TimeSpan? cacheTimeOut = null);
     }

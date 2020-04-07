@@ -9,8 +9,8 @@
     <Import_RootNamespace>CCLLC.BTF.Documents</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)DocumentManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDocumentManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DocumentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDocumentService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IGeneratedDocument.cs" />
   </ItemGroup>
 </Project>

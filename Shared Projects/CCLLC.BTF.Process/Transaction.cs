@@ -27,7 +27,7 @@ namespace CCLLC.BTF.Process
         protected ITransactionContextFactory TransactionContextFactory { get; }
         protected ICustomerFactory CustomerFactory { get; }
         protected ITransactionDeficienciesFactory TransactionDeficienciesFactory { get; }
-        protected IDocumentManager DocumentManager { get; }
+        protected IDocumentService DocumentService { get; }
         protected IEvidenceManager EvidenceManager { get; }
         protected ILocationFactory LocationFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
@@ -217,7 +217,7 @@ namespace CCLLC.BTF.Process
             {
                 if (_generatedDocuments == null)
                 {
-                    _generatedDocuments = this.DocumentManager.LoadGeneratedDocuments(this.ExecutionContext, this).ToList();
+                    _generatedDocuments = this.DocumentService.LoadGeneratedDocuments(this.ExecutionContext, this).ToList();
                 }
 
                 return _generatedDocuments;
@@ -227,7 +227,7 @@ namespace CCLLC.BTF.Process
         public DateTime PricingDate { get; }
 
         public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory,
-            ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentManager documentManager, IEvidenceManager evidenceManager, 
+            ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentService documentService, IEvidenceManager evidenceManager, 
             ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionService transactionService,  
             ITransactionType transactionType, ITransactionRecord record) 
             : base(record.RecordType,record.Id)
@@ -239,7 +239,7 @@ namespace CCLLC.BTF.Process
             this.TransactionContextFactory = transactionContextFactory ?? throw new ArgumentNullException("transactionContextFactory");
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
             this.TransactionDeficienciesFactory = transactionDeficienciesFactory ?? throw new ArgumentNullException("transactionDeficienciesFactory");
-            this.DocumentManager = documentManager ?? throw new ArgumentNullException("documentManager");
+            this.DocumentService = documentService ?? throw new ArgumentNullException("documentService");
             this.EvidenceManager = evidenceManager ?? throw new ArgumentNullException("evidenceManager");
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
