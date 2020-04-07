@@ -38,17 +38,17 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             var userId = req.UserId ?? new EntityReference("systemuser",executionContext.InitiatingUserId);           
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
+            var platformManager = Container.Resolve<IPlatformService>();
             var session = platformManager.GenerateSession(executionContext, systemUser);
 
             var contextFactory = Container.Resolve<ITransactionContextFactory>();
             var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId);
             
           
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var serviceFactory = Container.Resolve<ITransactionServiceFactory>();
+            var service = serviceFactory.CreateTransactionService(executionContext);
 
-            var available = manager.GetAvaialbleTransactionTypes(executionContext, session, transactionContext);
+            var available = service.GetAvaialbleTransactionTypes(executionContext, session, transactionContext);
                        
             executionContext.OutputParameters["TransactionTypes"] = available.Serialize();
         }
@@ -71,21 +71,21 @@ namespace CCLLC.BTF.Process.CDS.Plugins
           
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
+            var platformService = Container.Resolve<IPlatformService>();
 
-            var session = platformManager.GenerateSession(executionContext, systemUser);
+            var session = platformService.GenerateSession(executionContext, systemUser);
 
             var contextFactory = Container.Resolve<ITransactionContextFactory>();
             var transactionContext = contextFactory.CreateTransactionContext(executionContext, contextRecordId);
 
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var serviceFactory = Container.Resolve<ITransactionServiceFactory>();
+            var service = serviceFactory.CreateTransactionService(executionContext);
 
-            var transactionType = manager.GetAvaialbleTransactionTypes(executionContext, session, transactionContext).Where(r => r.Id == transactionTypeId.Id).FirstOrDefault();
+            var transactionType = service.GetAvaialbleTransactionTypes(executionContext, session, transactionContext).Where(r => r.Id == transactionTypeId.Id).FirstOrDefault();
 
             if (transactionType == null) throw TransactionException.BuildException(TransactionException.ErrorCode.TransactionTypeNotFound);
 
-            var transaction = manager.NewTransaction(executionContext, session, transactionContext, transactionType);
+            var transaction = service.NewTransaction(executionContext, session, transactionContext, transactionType);
 
             IUIPointer uiPointer = null;
 

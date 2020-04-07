@@ -49,15 +49,15 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             this.Container.Implement<IAlternateBranchFactory>().Using<AlternateBranchFactory>().AsSingleInstance();
             this.Container.Implement<ICustomerFactory>().Using<CustomerFactory>().AsSingleInstance();
             this.Container.Implement<IDeferredActivator>().Using<DeferredActivator>().AsSingleInstance();
-            this.Container.Implement<IDocumentManager>().Using<DocumentManager>().AsSingleInstance();
-            this.Container.Implement<IEvidenceManager>().Using<EvidenceManager>().AsSingleInstance();
+            this.Container.Implement<IDocumentService>().Using<DocumentService>().AsSingleInstance();
+            this.Container.Implement<IEvidenceService>().Using<EvidenceService>().AsSingleInstance();
             this.Container.Implement<IFeeList>().Using<LazyFeeList>().AsSingleInstance();
             this.Container.Implement<ILocationFactory>().Using<LocationFactory>().AsSingleInstance();
             this.Container.Implement<ILogicEvaluatorFactory>().Using<LogicEvaluatorFactory>().AsSingleInstance();
             this.Container.Implement<ILogicEvaluatorTypeFactory>().Using<LogicEvaluatorTypeFactory>().AsSingleInstance();
             this.Container.Implement<IParameterSerializer>().Using<DefaultSerializer>().AsSingleInstance();
             this.Container.Implement<IPlatformDataConnector>().Using<PlatformDataConnector>();
-            this.Container.Implement<IPlatformManager>().Using<PlatformManager>().AsSingleInstance();
+            this.Container.Implement<IPlatformService>().Using<PlatformService>().AsSingleInstance();
             this.Container.Implement<IPriceCalculatorFactory>().Using<PriceCalculatorFactory>();
             this.Container.Implement<IProcessStepFactory>().Using<ProcessStepFactory>().AsSingleInstance();
             this.Container.Implement<IProcessStepTypeFactory>().Using<ProcessStepTypeFactory>().AsSingleInstance();
@@ -69,7 +69,7 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             this.Container.Implement<ITransactionDeficienciesFactory>().Using<TransactionDeficienciesFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionFeeListFactory>().Using<TransactionFeeListFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>().AsSingleInstance();
-            this.Container.Implement<ITransactionManagerFactory>().Using<TransactionManagerFactory>().AsSingleInstance();
+            this.Container.Implement<ITransactionServiceFactory>().Using<TransactionServiceFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>().AsSingleInstance();
         }       

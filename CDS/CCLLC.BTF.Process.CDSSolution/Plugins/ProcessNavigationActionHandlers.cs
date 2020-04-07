@@ -36,11 +36,11 @@ namespace CCLLC.BTF.Process.CDS.Plugins
                                    
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
-            var session = platformManager.GenerateSession(executionContext, systemUser);            
+            var platformService = Container.Resolve<IPlatformService>();
+            var session = platformService.GenerateSession(executionContext, systemUser);            
 
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var managerFactory = Container.Resolve<ITransactionServiceFactory>();
+            var manager = managerFactory.CreateTransactionService(executionContext);
 
             var transaction = manager.LoadTransaction(executionContext, transactionId.ToRecordPointer());
 
@@ -58,11 +58,11 @@ namespace CCLLC.BTF.Process.CDS.Plugins
 
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
-            var session = platformManager.GenerateSession(executionContext, systemUser);
+            var platformService = Container.Resolve<IPlatformService>();
+            var session = platformService.GenerateSession(executionContext, systemUser);
 
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var managerFactory = Container.Resolve<ITransactionServiceFactory>();
+            var manager = managerFactory.CreateTransactionService(executionContext);
 
             var transaction = manager.LoadTransaction(executionContext, transactionId.ToRecordPointer());
 
@@ -80,11 +80,11 @@ namespace CCLLC.BTF.Process.CDS.Plugins
                      
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
-            var session = platformManager.GenerateSession(executionContext, systemUser);
+            var platformService = Container.Resolve<IPlatformService>();
+            var session = platformService.GenerateSession(executionContext, systemUser);
 
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var managerFactory = Container.Resolve<ITransactionServiceFactory>();
+            var manager = managerFactory.CreateTransactionService(executionContext);
 
             var transaction = manager.LoadTransaction(executionContext, transactionId.ToRecordPointer());
 
@@ -119,11 +119,11 @@ namespace CCLLC.BTF.Process.CDS.Plugins
           
             var systemUser = new SystemUser(userId.LogicalName, userId.Id, userId.Name);
 
-            var platformManager = Container.Resolve<IPlatformManager>();
-            var session = platformManager.GenerateSession(executionContext, systemUser);
+            var platformService = Container.Resolve<IPlatformService>();
+            var session = platformService.GenerateSession(executionContext, systemUser);
 
-            var managerFactory = Container.Resolve<ITransactionManagerFactory>();
-            var manager = managerFactory.CreateTransactionManager(executionContext);
+            var managerFactory = Container.Resolve<ITransactionServiceFactory>();
+            var manager = managerFactory.CreateTransactionService(executionContext);
 
             var transaction = manager.LoadTransaction(executionContext, transactionId.ToRecordPointer());
 
