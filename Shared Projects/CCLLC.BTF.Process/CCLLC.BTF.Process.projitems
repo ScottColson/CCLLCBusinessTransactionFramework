@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionDeficienciesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequirementDeficiency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequirementEvaluator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EvidenceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EvidenceService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAlternateBranchRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedChannelRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAuthroizedRoleRecord.cs" />
@@ -50,7 +50,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IComplientEvidence.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionContextFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceRequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEvidenceType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProcessStep.cs" />

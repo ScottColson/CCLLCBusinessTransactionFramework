@@ -28,7 +28,7 @@ namespace CCLLC.BTF.Process
         protected ICustomerFactory CustomerFactory { get; }
         protected ITransactionDeficienciesFactory TransactionDeficienciesFactory { get; }
         protected IDocumentService DocumentService { get; }
-        protected IEvidenceManager EvidenceManager { get; }
+        protected IEvidenceService EvidenceService { get; }
         protected ILocationFactory LocationFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
@@ -227,7 +227,7 @@ namespace CCLLC.BTF.Process
         public DateTime PricingDate { get; }
 
         public Transaction(IProcessExecutionContext executionContext, IAgentFactory agentFactory, ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory,
-            ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentService documentService, IEvidenceManager evidenceManager, 
+            ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, IDocumentService documentService, IEvidenceService evidenceService, 
             ILocationFactory locationFactory, IRequirementEvaluator requirementEvaluator, ITransactionHistoryFactory transactionHistoryFactory, ITransactionService transactionService,  
             ITransactionType transactionType, ITransactionRecord record) 
             : base(record.RecordType,record.Id)
@@ -240,7 +240,7 @@ namespace CCLLC.BTF.Process
             this.CustomerFactory = customerFactory ?? throw new ArgumentNullException("customerFactory");
             this.TransactionDeficienciesFactory = transactionDeficienciesFactory ?? throw new ArgumentNullException("transactionDeficienciesFactory");
             this.DocumentService = documentService ?? throw new ArgumentNullException("documentService");
-            this.EvidenceManager = evidenceManager ?? throw new ArgumentNullException("evidenceManager");
+            this.EvidenceService = evidenceService ?? throw new ArgumentNullException("evidenceService");
             this.LocationFactory = locationFactory ?? throw new ArgumentNullException("locationFactory");
             this.RequirementEvaluator = requirementEvaluator ?? throw new ArgumentNullException("requirementEvaluator");
             this.TransactionHistoryFactory = transactionHistoryFactory ?? throw new ArgumentNullException("transactionHistoryFactory");
