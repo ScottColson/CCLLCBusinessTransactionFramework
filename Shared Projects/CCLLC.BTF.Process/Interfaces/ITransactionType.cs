@@ -7,7 +7,7 @@ using CCLLC.BTF.Revenue;
 namespace CCLLC.BTF.Process
 {
     /// <summary>
-    /// Defines a type of transation.
+    /// Defines transaction type.
     /// </summary>
     public interface ITransactionType : IRecordPointer<Guid>
     {        
