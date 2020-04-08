@@ -7,7 +7,7 @@ using CCLLC.BTF.Process.StepType;
 namespace CCLLC.BTF.Process.CDS.StepType
 {
     /// <summary>
-    /// Executes an action bound to a transaction data record. The action name and any optional action argumments are specified in the process step parameters.
+    /// Executes an action bound to a transaction data record. The action name and any optional action arguments are specified in the process step parameters.
     /// </summary>
     public class DataRecordAction : ProcessStepTypeBase
     {
