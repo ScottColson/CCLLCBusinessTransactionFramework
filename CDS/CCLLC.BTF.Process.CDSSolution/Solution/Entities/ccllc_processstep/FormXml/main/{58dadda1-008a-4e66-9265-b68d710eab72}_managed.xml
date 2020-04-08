@@ -36,13 +36,20 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{a3c0571e-1c0c-088a-b10a-ee66a3e61b41}" showlabel="true" locklevel="0">
+                      <cell id="{a3c0571e-1c0c-088a-b10a-ee66a3e61b41}" showlabel="true" locklevel="0" rowspan="8">
                         <labels>
                           <label description="Step Parameters" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_stepparameters" datafieldname="ccllc_stepparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" />
+                        <control disabled="false" id="ccllc_stepparameters" datafieldname="ccllc_stepparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" uniqueid="{92d05804-7425-724e-7a35-61842468b84e}" />
                       </cell>
                     </row>
+                    <row></row>
+                    <row></row>
+                    <row></row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
                     <row>
                       <cell id="{8b4a44a6-7ed0-7e68-47ce-4da81565a443}" showlabel="true" locklevel="0">
                         <labels>

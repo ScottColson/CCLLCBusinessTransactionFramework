@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.13841" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.15060" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>CCLLCBTFProcess</UniqueName>
     <LocalizedNames>
@@ -257,11 +257,11 @@
       </MissingDependency>
       <MissingDependency>
         <Required key="0" type="1" schemaName="ccllc_agent" displayName="Agent" solution="CCLLCBTFPlatform (0.0.0.5)" />
-        <Dependent key="31" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
+        <Dependent key="31" type="10" schemaName="ccllc_systemuser_assignedagent" displayName="ccllc_systemuser_assignedagent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
       </MissingDependency>
       <MissingDependency>
         <Required key="0" type="1" schemaName="ccllc_agent" displayName="Agent" solution="CCLLCBTFPlatform (0.0.0.5)" />
-        <Dependent key="32" type="10" schemaName="ccllc_systemuser_assignedagent" displayName="ccllc_systemuser_assignedagent" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
+        <Dependent key="32" type="10" schemaName="ccllc_agent_stephistorycompletedby" displayName="ccllc_agent_stephistorycompletedby" parentSchemaName="ccllc_agent" parentDisplayName="Agent" />
       </MissingDependency>
       <MissingDependency>
         <Required key="0" type="1" schemaName="ccllc_agent" displayName="Agent" solution="CCLLCBTFPlatform (0.0.0.5)" />

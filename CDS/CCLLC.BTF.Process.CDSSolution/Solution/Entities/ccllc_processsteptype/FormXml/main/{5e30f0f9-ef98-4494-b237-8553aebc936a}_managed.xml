@@ -64,6 +64,21 @@
                         </control>
                       </cell>
                     </row>
+                    <row>
+                      <cell id="{8d66cc4e-5019-8867-daa9-d5dde59094b0}" showlabel="true" locklevel="0" rowspan="8">
+                        <labels>
+                          <label description="Step Parameter Template" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_stepparametertemplate" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_stepparametertemplate" disabled="false" uniqueid="{1bec02bd-763e-995c-1d9a-9c8310b77938}" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
                   </rows>
                 </section>
               </sections>
