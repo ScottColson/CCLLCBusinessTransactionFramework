@@ -133,6 +133,24 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_stepparametertemplate")]
+		public string ccllc_StepParameterTemplate
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_stepparametertemplate");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_StepParameterTemplate");
+				this.SetAttributeValue("ccllc_stepparametertemplate", value);
+				this.OnPropertyChanged("ccllc_StepParameterTemplate");
+			}
+		}
+		
+		/// <summary>
 		/// Flag indicating if the step supports conditional branching.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_supportsconditionalbranching")]
