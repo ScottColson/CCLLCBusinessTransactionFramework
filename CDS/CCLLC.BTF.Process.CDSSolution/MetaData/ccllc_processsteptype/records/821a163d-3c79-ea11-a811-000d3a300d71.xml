@@ -1,0 +1,10 @@
+﻿<record id="821a163d-3c79-ea11-a811-000d3a300d71">
+  <field name="ccllc_description" value="Adds a specified fee to fee list for the current transaction. The fee to be added is defined in the JSON step parameters using key value &amp;quot;FeeReference&amp;quot;. An optional &amp;quot;Quantity&amp;quot; value can also be specified in the step parameters if a quantity other than 1 is needed." />
+  <field name="ccllc_name" value="Add Fee" />
+  <field name="ccllc_processsteptypeid" value="821a163d-3c79-ea11-a811-000d3a300d71" />
+  <field name="ccllc_stepparametertemplate" value="{&#xA;&amp;quot;FeeReference&amp;quot;:&amp;quot;Fee ref number&amp;quot;,&#xA;&amp;quot;Quantity&amp;quot;:&amp;quot;number or omit for default of 1&amp;quot;&#xA;}" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.StepType.AddFee" />
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+</record>

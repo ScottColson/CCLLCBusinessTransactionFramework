@@ -1,0 +1,10 @@
+﻿<record id="c4bb35e6-a252-ea11-a812-000d3a300068">
+  <field name="ccllc_description" value="Displays a named form of the data capture entity related to the transaction. The name of the form to display is specified in JSON name-value pair step parameters for key value &amp;quot;FormId&amp;quot;, (e.g. {&amp;quot;FormId&amp;quot;:&amp;quot;MyFormName&amp;quot;}. " />
+  <field name="ccllc_name" value="Data Form" />
+  <field name="ccllc_processsteptypeid" value="c4bb35e6-a252-ea11-a812-000d3a300068" />
+  <field name="ccllc_stepparametertemplate" value="{&amp;quot;FormId&amp;quot;:&amp;quot;EnityFormName&amp;quot;}" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.StepType.DataForm" />
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+</record>

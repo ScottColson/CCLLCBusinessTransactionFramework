@@ -1,0 +1,10 @@
+﻿<record id="6d23b78c-a052-ea11-a812-000d3a300068">
+  <field name="ccllc_description" value="Executes a bound action against the initiating data context record for the transaction. The name of the action must be specified in the JSON step parameter using key value &amp;quot;ActionName&amp;quot;. In addition to the default Target input parameter, the specified action must have have an input parameter named Transaction that accepts an EntityReference for the current transaction record and an input parameter named DataRecord that accepts an EntityReference for the current transaction data capture record. Additional optional input parameters of type string are allowed. These optional parameters can can be set by passing the input parameter name and associated value through the step parameters." />
+  <field name="ccllc_name" value="Execute Context Action" />
+  <field name="ccllc_processsteptypeid" value="6d23b78c-a052-ea11-a812-000d3a300068" />
+  <field name="ccllc_stepparametertemplate" value="{&amp;quot;ActionName&amp;quot;:&amp;quot;new_actionname&amp;quot;}" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.CDS.StepType.ContextRecordAction" />
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+</record>
