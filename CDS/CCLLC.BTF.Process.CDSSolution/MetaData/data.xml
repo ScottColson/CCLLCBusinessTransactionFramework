@@ -1,0 +1,4 @@
+﻿<entities xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" timestamp="2020-04-09T03:34:59.6091463Z">
+  <entity name="ccllc_processsteptype" displayname="Process Step Type" />
+  <entity name="ccllc_evaluatortype" displayname="Evaluator Type" />
+</entities>

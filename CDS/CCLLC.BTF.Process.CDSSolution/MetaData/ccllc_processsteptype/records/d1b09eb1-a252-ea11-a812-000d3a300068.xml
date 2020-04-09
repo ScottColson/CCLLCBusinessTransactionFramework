@@ -1,0 +1,10 @@
+﻿<record id="d1b09eb1-a252-ea11-a812-000d3a300068">
+  <field name="ccllc_description" value="Evaluates conditional alternate branches in the order specified and executes the step assigned to the first matching branch. If not matches are found the conditional will execute the standard subsequent step as a default. This step does not use any step parameters." />
+  <field name="ccllc_name" value="Conidtional Branch" />
+  <field name="ccllc_processsteptypeid" value="d1b09eb1-a252-ea11-a812-000d3a300068" />
+  <field name="ccllc_stepparametertemplate" value="{}" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.StepType.Branch" />
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+</record>

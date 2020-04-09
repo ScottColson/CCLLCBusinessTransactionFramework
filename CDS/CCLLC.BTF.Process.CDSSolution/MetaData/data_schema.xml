@@ -1,0 +1,4 @@
+﻿<entities>
+  <entity name="ccllc_processsteptype" displayname="Process Step Type" />
+  <entity name="ccllc_evaluatortype" displayname="Evaluator Type" />
+</entities>

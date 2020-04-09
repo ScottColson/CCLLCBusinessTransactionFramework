@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" Name="BTF_CanNavigateForward">
+<Workflow WorkflowId="{f5896c5b-8e68-4a6b-87b3-ead5fd5bf5f1}" Name="BTF_CanNavigateForward" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <XamlFileName>/Workflows/BTF_CanNavigateForward-F5896C5B-8E68-4A6B-87B3-EAD5FD5BF5F1.xaml</XamlFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Entity>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name LocalizedName="Process Step Requirement" OriginalName="Process Step Requirement">ccllc_processsteprequirement</Name>
   <EntityInfo>
     <entity Name="ccllc_processsteprequirement">
@@ -17,7 +17,7 @@
           <Type>nvarchar</Type>
           <Name>ccllc_name</Name>
           <LogicalName>ccllc_name</LogicalName>
-          <RequiredLevel>required</RequiredLevel>
+          <RequiredLevel>none</RequiredLevel>
           <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
           <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>

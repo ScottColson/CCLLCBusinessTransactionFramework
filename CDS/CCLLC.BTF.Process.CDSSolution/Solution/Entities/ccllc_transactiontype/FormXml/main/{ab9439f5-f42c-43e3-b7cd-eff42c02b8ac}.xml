@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<forms>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
     <formid>{ab9439f5-f42c-43e3-b7cd-eff42c02b8ac}</formid>
     <IntroducedVersion>0.0.0.0</IntroducedVersion>
@@ -72,8 +72,8 @@
                         <control disabled="false" id="ccllc_datarecordconfiguration" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_datarecordconfiguration" uniqueid="{44ebcc62-a205-561a-b600-714a42a0365a}" />
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
+                    <row />
+                    <row />
                     <row />
                     <row />
                     <row />
@@ -95,26 +95,30 @@
                     </row>
                   </rows>
                 </section>
-                <section id="{ce9e8c25-42bc-2e63-69ee-8527c046a20d}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_4" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" layout="varwidth" labelwidth="115">
+              </sections>
+            </column>
+            <column width="66%">
+              <sections>
+                <section id="{d1ab3dad-9d4e-d002-2b2c-39688aaa5a75}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_6" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
                   <labels>
-                    <label description="Eligible Context" languagecode="1033" />
+                    <label description="Section" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{6e99dd1d-9bb8-9c01-d466-7ce5e47aa7b0}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                      <cell id="{838cd833-0176-1780-8266-24b914186c70}" showlabel="true" rowspan="7" auto="false" colspan="1">
                         <labels>
-                          <label description="Record Contexts" languagecode="1033" />
+                          <label description="Transaction Processes" languagecode="1033" />
                         </labels>
-                        <control id="RecordContexts" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{69193b04-4446-0756-8c7b-9191c744d5b8}" indicationOfSubgrid="true">
+                        <control id="Processes" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{ada249b2-c036-a1d4-5e59-c70c7299e4b6}" indicationOfSubgrid="true">
                           <parameters>
-                            <ViewId>{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <ViewId>{1380A906-2341-429C-A118-94112066A9EF}</ViewId>
                             <IsUserView>false</IsUserView>
-                            <RelationshipName>ccllc_transactiontype_context</RelationshipName>
-                            <TargetEntityType>ccllc_transactiontypecontext</TargetEntityType>
+                            <RelationshipName>ccllc_transactiontype_availableprocesses</RelationshipName>
+                            <TargetEntityType>ccllc_transactionprocess</TargetEntityType>
                             <AutoExpand>Fixed</AutoExpand>
                             <EnableQuickFind>false</EnableQuickFind>
                             <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{A70B0EC5-F706-416D-AD5C-AAA84A3CB9AB},{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <ViewIds>{1380A906-2341-429C-A118-94112066A9EF}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>All</ChartGridMode>
                             <VisualizationId />
@@ -134,7 +138,106 @@
                     <row />
                   </rows>
                 </section>
-                <section id="{1bb7d9da-d839-37c6-2b9c-86a84302e082}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_3" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                <section id="{1188a856-3575-726a-1378-98b1e80a29b3}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_2" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" layout="varwidth" labelwidth="115">
+                  <labels>
+                    <label description="Fee Schedule" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bd7c7361-c973-b16a-5215-6d9269e1289d}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                        <labels>
+                          <label description="Fee Schedule" languagecode="1033" />
+                        </labels>
+                        <control id="FeeSchedule" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{9a7c0da7-2ac6-5c4a-7e0d-e8ddc613540d}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_initialfee</RelationshipName>
+                            <TargetEntityType>ccllc_transactioninitialfee</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{8B2F6CE1-5504-4CC7-8203-D90DE6BC21B6},{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_requirements" id="{702be2ce-6a79-5ce6-cbd1-cc9351720718}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Requirements" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{880956e5-d744-606e-7ca2-d82856438778}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{81b637b4-8023-1745-d248-c2320674d6bb}" showlabel="false" rowspan="6" auto="false" colspan="1">
+                        <labels>
+                          <label description="Requirements " languagecode="1033" />
+                        </labels>
+                        <control id="Requirements" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{2341bc43-8359-0bda-9994-ca08b03d535d}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactiontype_requirements</RelationshipName>
+                            <TargetEntityType>ccllc_transactionrequirement</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_authorization" id="{4a920a77-555e-4363-c769-29615424ded4}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Authorization" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section name="tab_3_section_1" showlabel="false" showbar="false" locklevel="0" id="{19de3a53-0873-6593-8501-929227527e5e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                   <labels>
                     <label description="Section" languagecode="1033" />
                   </labels>
@@ -173,7 +276,11 @@
                     <row />
                   </rows>
                 </section>
-                <section id="{075604de-ac29-6087-08b9-c094ba624371}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_5" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="tab_3_section_2" showlabel="false" showbar="false" locklevel="0" id="{0258ceb8-c6b5-1a47-be2d-913a96edbe92}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                   <labels>
                     <label description="Section" languagecode="1033" />
                   </labels>
@@ -216,108 +323,26 @@
             </column>
             <column width="33%">
               <sections>
-                <section id="{1188a856-3575-726a-1378-98b1e80a29b3}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_2" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" celllabelposition="Left" celllabelalignment="Left" layout="varwidth" labelwidth="115">
-                  <labels>
-                    <label description="Fee Schedule" languagecode="1033" />
-                  </labels>
-                  <rows>
-                    <row>
-                      <cell id="{bd7c7361-c973-b16a-5215-6d9269e1289d}" showlabel="true" rowspan="7" auto="false" colspan="1">
-                        <labels>
-                          <label description="Fee Schedule" languagecode="1033" />
-                        </labels>
-                        <control id="FeeSchedule" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{9a7c0da7-2ac6-5c4a-7e0d-e8ddc613540d}" indicationOfSubgrid="true">
-                          <parameters>
-                            <ViewId>{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
-                            <IsUserView>false</IsUserView>
-                            <RelationshipName>ccllc_transactiontype_initialfee</RelationshipName>
-                            <TargetEntityType>ccllc_transactioninitialfee</TargetEntityType>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <EnableQuickFind>false</EnableQuickFind>
-                            <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{8B2F6CE1-5504-4CC7-8203-D90DE6BC21B6},{5D29EC23-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
-                            <EnableJumpBar>false</EnableJumpBar>
-                            <ChartGridMode>All</ChartGridMode>
-                            <VisualizationId />
-                            <IsUserChart>false</IsUserChart>
-                            <EnableChartPicker>true</EnableChartPicker>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
-                          </parameters>
-                        </control>
-                      </cell>
-                    </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                  </rows>
-                </section>
-                <section id="{d1ab3dad-9d4e-d002-2b2c-39688aaa5a75}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_6" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
+                <section name="tab_3_section_3" showlabel="false" showbar="false" locklevel="0" id="{54112292-28e5-ca92-7c04-809ecd740403}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                   <labels>
                     <label description="Section" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{838cd833-0176-1780-8266-24b914186c70}" showlabel="true" rowspan="7" auto="false" colspan="1">
+                      <cell id="{6e99dd1d-9bb8-9c01-d466-7ce5e47aa7b0}" showlabel="true" rowspan="7" auto="false" colspan="1">
                         <labels>
-                          <label description="Transaction Processes" languagecode="1033" />
+                          <label description="Record Contexts" languagecode="1033" />
                         </labels>
-                        <control id="Processes" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{ada249b2-c036-a1d4-5e59-c70c7299e4b6}" indicationOfSubgrid="true">
+                        <control id="RecordContexts" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{69193b04-4446-0756-8c7b-9191c744d5b8}" indicationOfSubgrid="true">
                           <parameters>
-                            <ViewId>{1380A906-2341-429C-A118-94112066A9EF}</ViewId>
+                            <ViewId>{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewId>
                             <IsUserView>false</IsUserView>
-                            <RelationshipName>ccllc_transactiontype_availableprocesses</RelationshipName>
-                            <TargetEntityType>ccllc_transactionprocess</TargetEntityType>
+                            <RelationshipName>ccllc_transactiontype_context</RelationshipName>
+                            <TargetEntityType>ccllc_transactiontypecontext</TargetEntityType>
                             <AutoExpand>Fixed</AutoExpand>
                             <EnableQuickFind>false</EnableQuickFind>
                             <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{1380A906-2341-429C-A118-94112066A9EF}</ViewIds>
-                            <EnableJumpBar>false</EnableJumpBar>
-                            <ChartGridMode>All</ChartGridMode>
-                            <VisualizationId />
-                            <IsUserChart>false</IsUserChart>
-                            <EnableChartPicker>true</EnableChartPicker>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
-                          </parameters>
-                        </control>
-                      </cell>
-                    </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                  </rows>
-                </section>
-              </sections>
-            </column>
-            <column width="33%">
-              <sections>
-                <section id="{019d07a6-daae-ab0a-37ae-c88375dbc992}" name="{96aa0ab8-00c8-49fe-8e76-9ef70d5dfbc8}_section_7" IsUserDefined="0" showlabel="false" locklevel="0" columns="1" showbar="false" layout="varwidth" labelwidth="115">
-                  <labels>
-                    <label description="Section" languagecode="1033" />
-                  </labels>
-                  <rows>
-                    <row>
-                      <cell id="{81b637b4-8023-1745-d248-c2320674d6bb}" showlabel="true" rowspan="7" auto="false" colspan="1">
-                        <labels>
-                          <label description="Requirements " languagecode="1033" />
-                        </labels>
-                        <control id="Requirements" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{2341bc43-8359-0bda-9994-ca08b03d535d}" indicationOfSubgrid="true">
-                          <parameters>
-                            <ViewId>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewId>
-                            <IsUserView>false</IsUserView>
-                            <RelationshipName>ccllc_transactiontype_requirements</RelationshipName>
-                            <TargetEntityType>ccllc_transactionrequirement</TargetEntityType>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <EnableQuickFind>false</EnableQuickFind>
-                            <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewIds>
+                            <ViewIds>{A70B0EC5-F706-416D-AD5C-AAA84A3CB9AB},{60A3F863-8CC6-E811-A965-000D3A3ACAF8}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>All</ChartGridMode>
                             <VisualizationId />

@@ -1,7 +1,7 @@
 ﻿param (
     # The connection parameters for the target organization
     [Parameter(Mandatory)]
-    [ValidateSet("DEV_1","DEV_2")] # update this list based on files in the CrmConnectionParameters folder
+    [ValidateSet("DEV_1","DEV_2","BTF_Test")] # update this list based on files in the CrmConnectionParameters folder
     [string]
     $CrmConnectionName,
 

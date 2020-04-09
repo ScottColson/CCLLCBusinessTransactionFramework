@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PluginAssembly FullName="CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginAssemblyId="b931aa56-2d54-ea11-a812-000d3a300a85" CustomizationLevel="1">
+<PluginAssembly FullName="CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginAssemblyId="b931aa56-2d54-ea11-a812-000d3a300a85" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <IsolationMode>2</IsolationMode>
   <SourceType>0</SourceType>
   <IntroducedVersion>1.0</IntroducedVersion>
@@ -10,6 +10,9 @@
     </PluginType>
     <PluginType AssemblyQualifiedName="CCLLC.BTF.Process.CDS.Plugins.TransactionCreationActionHandler, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="6327acaf-2d54-ea11-a812-000d3a300a85" Name="CCLLC.BTF.Process.CDS.Plugins.TransactionCreationActionHandler">
       <FriendlyName>CCLLC.BTF.Process.CDS.Plugins.TransactionCreationActionHandler</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="CCLLC.BTF.Process.CDS.Plugins.TransactionTypeSetupHelpers, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38" PluginTypeId="e4241b72-2e79-ea11-a811-000d3a300d71" Name="CCLLC.BTF.Process.CDS.Plugins.TransactionTypeSetupHelpers">
+      <FriendlyName>CCLLC.BTF.Process.CDS.Plugins.TransactionTypeSetupHelpers</FriendlyName>
     </PluginType>
   </PluginTypes>
 </PluginAssembly>

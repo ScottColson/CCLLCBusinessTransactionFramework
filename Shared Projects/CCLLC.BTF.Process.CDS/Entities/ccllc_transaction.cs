@@ -589,44 +589,6 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// N:1 ccllc_account_transaction_customer
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_account_transaction_customer")]
-		public CCLLC.BTF.Process.CDS.Account ccllc_account_transaction_customer
-		{
-			get
-			{
-				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.Account>("ccllc_account_transaction_customer", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_account_transaction_customer");
-				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.Account>("ccllc_account_transaction_customer", null, value);
-				this.OnPropertyChanged("ccllc_account_transaction_customer");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_contact_transaction_customer
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_customerid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_contact_transaction_customer")]
-		public CCLLC.BTF.Process.CDS.Contact ccllc_contact_transaction_customer
-		{
-			get
-			{
-				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.Contact>("ccllc_contact_transaction_customer", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_contact_transaction_customer");
-				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.Contact>("ccllc_contact_transaction_customer", null, value);
-				this.OnPropertyChanged("ccllc_contact_transaction_customer");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 ccllc_transaction_currentprocess
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_currentprocessid")]

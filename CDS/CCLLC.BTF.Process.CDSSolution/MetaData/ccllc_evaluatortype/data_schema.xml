@@ -1,0 +1,10 @@
+﻿<entity name="ccllc_evaluatortype" displayname="Evaluator Type" etc="10141" primaryidfield="ccllc_evaluatortypeid" primarynamefield="ccllc_name" disableplugins="true">
+  <fields>
+    <field displayname="Assembly Name" name="ccllc_assemblyname" type="string" customfield="true" />
+    <field displayname="Class Name" name="ccllc_classname" type="string" customfield="true" />
+    <field displayname="Evaluator Type" name="ccllc_evaluatortypeid" type="guid" primaryKey="true" />
+    <field displayname="Name" name="ccllc_name" type="string" customfield="true" />
+    <field displayname="Status" name="statecode" type="state" />
+    <field displayname="Status Reason" name="statuscode" type="status" />
+  </fields>
+</entity>

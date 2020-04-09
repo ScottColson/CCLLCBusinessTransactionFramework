@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WebResource>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <WebResourceId>{414473ba-82d2-e811-a967-000d3a3acaf8}</WebResourceId>
   <Name>ccllc_/js/transactions/common.js</Name>
   <DisplayName>ccllc_/js/transactions/common.js</DisplayName>

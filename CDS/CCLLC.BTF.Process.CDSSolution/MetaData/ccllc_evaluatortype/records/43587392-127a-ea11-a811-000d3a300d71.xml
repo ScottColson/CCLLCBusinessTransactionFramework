@@ -1,0 +1,8 @@
+﻿<record id="43587392-127a-ea11-a811-000d3a300d71">
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.CDS.EvaluatorType.CustomerRecordActionEvaluator" />
+  <field name="ccllc_evaluatortypeid" value="43587392-127a-ea11-a811-000d3a300d71" />
+  <field name="ccllc_name" value="Customer Record Action" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+</record>

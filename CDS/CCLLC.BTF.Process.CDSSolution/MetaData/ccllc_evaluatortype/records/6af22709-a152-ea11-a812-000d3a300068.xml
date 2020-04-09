@@ -1,0 +1,8 @@
+﻿<record id="6af22709-a152-ea11-a812-000d3a300068">
+  <field name="ccllc_assemblyname" value="CCLLCBTFProcessPlugins" />
+  <field name="ccllc_classname" value="CCLLC.BTF.Process.CDS.EvaluatorType.DataReccordQueryMatchEvaluator" />
+  <field name="ccllc_evaluatortypeid" value="6af22709-a152-ea11-a812-000d3a300068" />
+  <field name="ccllc_name" value="Data Query Match" />
+  <field name="statecode" value="0" />
+  <field name="statuscode" value="1" />
+</record>

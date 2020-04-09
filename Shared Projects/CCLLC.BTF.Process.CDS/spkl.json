@@ -5,7 +5,7 @@
             Comma seperate list of entity logical names.
             I've not provided support for -all- entities because this results in unneccessarily large plugins!
             */
-      "entities": "account,contact,ccllc_alternatebranch,ccllc_processauthorizedchannel,ccllc_processstep,ccllc_processstepauthorizedchannel,ccllc_processsteprequirement,ccllc_processsteptype,ccllc_requirementwaiverrole,ccllc_stephistory,ccllc_transaction,ccllc_transactiongroup,ccllc_transactioninitialfee,ccllc_transactionprocess,ccllc_transactionrequirement,ccllc_transactionrequirementwaiverrole,ccllc_transactiontype,ccllc_transactiontypeauthorizedchannel,ccllc_transactiontypeauthorizedrole,ccllc_transactiontypecontext,ccllc_transactiondeficiency",
+      "entities": "ccllc_alternatebranch,ccllc_processauthorizedchannel,ccllc_processstep,ccllc_processstepauthorizedchannel,ccllc_processsteprequirement,ccllc_processsteptype,ccllc_requirementwaiverrole,ccllc_stephistory,ccllc_transaction,ccllc_transactiongroup,ccllc_transactioninitialfee,ccllc_transactionprocess,ccllc_transactionrequirement,ccllc_transactionrequirementwaiverrole,ccllc_transactiontype,ccllc_transactiontypeauthorizedchannel,ccllc_transactiontypeauthorizedrole,ccllc_transactiontypecontext,ccllc_transactiondeficiency",
       /*            
             Set to 'true' to generate Enums for optionsets
             */

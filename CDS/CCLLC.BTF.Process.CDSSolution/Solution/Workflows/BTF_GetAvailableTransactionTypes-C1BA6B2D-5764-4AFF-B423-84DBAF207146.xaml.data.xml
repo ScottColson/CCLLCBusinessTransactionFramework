@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{c1ba6b2d-5764-4aff-b423-84dbaf207146}" Name="BTF_GetAvailableTransactionTypes">
+<Workflow WorkflowId="{c1ba6b2d-5764-4aff-b423-84dbaf207146}" Name="BTF_GetAvailableTransactionTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <XamlFileName>/Workflows/BTF_GetAvailableTransactionTypes-C1BA6B2D-5764-4AFF-B423-84DBAF207146.xaml</XamlFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>
