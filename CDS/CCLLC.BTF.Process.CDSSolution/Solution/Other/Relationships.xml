@@ -6,7 +6,6 @@
   <EntityRelationship Name="business_unit_ccllc_processstepauthorizedchannel" />
   <EntityRelationship Name="business_unit_ccllc_processsteprequirement" />
   <EntityRelationship Name="business_unit_ccllc_processsteptype" />
-  <EntityRelationship Name="business_unit_ccllc_requirementwaiverrole" />
   <EntityRelationship Name="business_unit_ccllc_stephistory" />
   <EntityRelationship Name="business_unit_ccllc_transactiondeficiency" />
   <EntityRelationship Name="business_unit_ccllc_transactiongroup" />
@@ -32,8 +31,6 @@
   <EntityRelationship Name="ccllc_processstep_steprequirement" />
   <EntityRelationship Name="ccllc_processstep_steptype" />
   <EntityRelationship Name="ccllc_processstep_subsequentstep" />
-  <EntityRelationship Name="ccllc_requirement_requirementwaiverrole" />
-  <EntityRelationship Name="ccllc_role_requirementwaiverrole" />
   <EntityRelationship Name="ccllc_role_transactionrequirementwaiverrole" />
   <EntityRelationship Name="ccllc_step_ccllc_stepauthorizedchannel" />
   <EntityRelationship Name="ccllc_stephistory_nextrecord" />
@@ -72,8 +69,6 @@
   <EntityRelationship Name="lk_ccllc_processsteprequirement_modifiedby" />
   <EntityRelationship Name="lk_ccllc_processsteptype_createdby" />
   <EntityRelationship Name="lk_ccllc_processsteptype_modifiedby" />
-  <EntityRelationship Name="lk_ccllc_requirementwaiverrole_createdby" />
-  <EntityRelationship Name="lk_ccllc_requirementwaiverrole_modifiedby" />
   <EntityRelationship Name="lk_ccllc_stephistory_createdby" />
   <EntityRelationship Name="lk_ccllc_stephistory_modifiedby" />
   <EntityRelationship Name="lk_ccllc_transactiondeficiency_createdby" />
@@ -102,7 +97,6 @@
   <EntityRelationship Name="owner_ccllc_processstepauthorizedchannel" />
   <EntityRelationship Name="owner_ccllc_processsteprequirement" />
   <EntityRelationship Name="owner_ccllc_processsteptype" />
-  <EntityRelationship Name="owner_ccllc_requirementwaiverrole" />
   <EntityRelationship Name="owner_ccllc_stephistory" />
   <EntityRelationship Name="owner_ccllc_transactiondeficiency" />
   <EntityRelationship Name="owner_ccllc_transactiongroup" />
@@ -120,7 +114,6 @@
   <EntityRelationship Name="team_ccllc_processstepauthorizedchannel" />
   <EntityRelationship Name="team_ccllc_processsteprequirement" />
   <EntityRelationship Name="team_ccllc_processsteptype" />
-  <EntityRelationship Name="team_ccllc_requirementwaiverrole" />
   <EntityRelationship Name="team_ccllc_stephistory" />
   <EntityRelationship Name="team_ccllc_transactiondeficiency" />
   <EntityRelationship Name="team_ccllc_transactiongroup" />
@@ -138,7 +131,6 @@
   <EntityRelationship Name="user_ccllc_processstepauthorizedchannel" />
   <EntityRelationship Name="user_ccllc_processsteprequirement" />
   <EntityRelationship Name="user_ccllc_processsteptype" />
-  <EntityRelationship Name="user_ccllc_requirementwaiverrole" />
   <EntityRelationship Name="user_ccllc_stephistory" />
   <EntityRelationship Name="user_ccllc_transactiondeficiency" />
   <EntityRelationship Name="user_ccllc_transactiongroup" />

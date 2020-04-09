@@ -7,14 +7,14 @@
     <FormActivationState>1</FormActivationState>
     <form>
       <tabs>
-        <tab id="{b05e03e7-a58a-45d0-b28a-a99f2e149278}" IsUserDefined="1" verticallayout="true">
+        <tab id="{b05e03e7-a58a-45d0-b28a-a99f2e149278}" IsUserDefined="1" verticallayout="true" name="{b05e03e7-a58a-45d0-b28a-a99f2e149278}" locklevel="0" expanded="true" showlabel="true">
           <labels>
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
-            <column width="100%">
+            <column width="34%">
               <sections>
-                <section id="{107b568c-7c3d-4343-9e09-69a5e14a4da7}" IsUserDefined="0" showbar="false" showlabel="false">
+                <section id="{107b568c-7c3d-4343-9e09-69a5e14a4da7}" IsUserDefined="0" showbar="false" showlabel="false" name="{107b568c-7c3d-4343-9e09-69a5e14a4da7}" columns="1" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
@@ -24,7 +24,7 @@
                         <labels>
                           <label description="Name" languagecode="1033" />
                         </labels>
-                        <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" />
+                        <control id="ccllc_name" datafieldname="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" uniqueid="{b21d7586-4ea7-2b3b-bad9-84b6a1938204}" />
                       </cell>
                     </row>
                     <row>
@@ -53,19 +53,33 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{4291c28b-1b4b-a4ba-4697-47bc0928b2c5}" showlabel="true" locklevel="0">
+                      <cell id="{4291c28b-1b4b-a4ba-4697-47bc0928b2c5}" showlabel="true" locklevel="0" rowspan="6">
                         <labels>
                           <label description="Requirement Parameters" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_requirementparameters" datafieldname="ccllc_requirementparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" />
+                        <control disabled="false" id="ccllc_requirementparameters" datafieldname="ccllc_requirementparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" uniqueid="{68da3604-0a31-8866-98b7-a5d650207868}" />
                       </cell>
                     </row>
+                    <row></row>
+                    <row></row>
+                    <row></row>
+                    <row></row>
+                    <row></row>
                     <row>
                       <cell id="{0157cab2-8408-94b6-1281-793c087d07c6}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Transaction Type" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_transactiontypeid" datafieldname="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                        <control disabled="true" id="ccllc_transactiontypeid" datafieldname="ccllc_transactiontypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{e90b5d01-177b-4aa8-e14d-5338771de4ee}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{81B592B7-0329-4FAE-8534-48A0B9F08D6A}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
                       </cell>
                     </row>
                     <row>
@@ -81,6 +95,48 @@
                         </control>
                       </cell>
                     </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="66%">
+              <sections>
+                <section name="{b05e03e7-a58a-45d0-b28a-a99f2e149278}_section_2" showlabel="true" showbar="false" locklevel="0" id="{8bee9094-c37c-d00e-3116-863d9236d633}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Authorized Waiver Roles" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0db25cc3-a80d-d1e1-1277-6e1e7a0455bd}" showlabel="false" colspan="1" auto="false" rowspan="6">
+                        <labels>
+                          <label description="Transaction Requirement Waiver Roles (Transaction Requirement)" languagecode="1033" />
+                        </labels>
+                        <control id="WaiverRoles" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{17A3CB64-887A-EA11-A811-000D3A300D71}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_transactionrequirement_waiverrole</RelationshipName>
+                            <TargetEntityType>ccllc_transactionrequirementwaiverrole</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{47659FF9-CA82-4B2C-B589-ECA14F244D5C},{17A3CB64-887A-EA11-A811-000D3A300D71}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
                   </rows>
                 </section>
               </sections>
@@ -137,7 +193,23 @@
         </rows>
       </footer>
       <Navigation>
-        <NavBar></NavBar>
+        <NavBar>
+          <NavBarByRelationshipItem RelationshipName="ccllc_transactionrequirement__processstep" Sequence="10001" Area="Info" Id="nav_ccllc_transactionrequirement__processstep">
+            <Titles>
+              <Title LCID="1033" Text="Process Step Requirements" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="ccllc_transactiondeficiency_requirement" Sequence="10003" Area="Info" Id="nav_ccllc_transactiondeficiency_requirement">
+            <Titles>
+              <Title LCID="1033" Text="Transaction Deficiencies" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="ccllc_transactionrequirement_waiverrole" Sequence="10004" Area="Info" Id="nav_ccllc_transactionrequirement_waiverrole" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Transaction Requirement Waiver Roles" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
         <NavBarAreas>
           <NavBarArea Id="Info">
             <Titles>

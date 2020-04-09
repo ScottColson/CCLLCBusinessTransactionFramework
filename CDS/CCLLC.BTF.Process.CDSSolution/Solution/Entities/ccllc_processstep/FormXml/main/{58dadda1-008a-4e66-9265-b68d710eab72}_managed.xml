@@ -43,9 +43,9 @@
                         <control disabled="false" id="ccllc_stepparameters" datafieldname="ccllc_stepparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" uniqueid="{92d05804-7425-724e-7a35-61842468b84e}" />
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row></row>
+                    <row />
+                    <row />
+                    <row />
                     <row />
                     <row />
                     <row />
@@ -75,15 +75,29 @@
                         <labels>
                           <label description="Transaction Process" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_transactionprocessid" datafieldname="ccllc_transactionprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                        <control disabled="true" id="ccllc_transactionprocessid" datafieldname="ccllc_transactionprocessid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{e0d8bd5d-5d26-c2de-5433-ad2611e03342}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{D5850E9D-D08B-4C5C-B890-F2971BD9035D}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{5431a6e3-4e75-4171-838e-e885dc8be094}">
+                      <cell id="{5431a6e3-4e75-4171-838e-e885dc8be094}" showlabel="true" locklevel="1" visible="false">
                         <labels>
                           <label description="Owner" languagecode="1033" />
                         </labels>
-                        <control id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" />
+                        <control id="ownerid" datafieldname="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" uniqueid="{892699bb-30c5-26d2-edb7-8e543d873d82}" disabled="false">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
                       </cell>
                     </row>
                   </rows>
@@ -92,6 +106,44 @@
             </column>
             <column width="66%">
               <sections>
+                <section name="{22df890d-d3b0-49c4-b694-e79d8cb78af5}_section_3" showlabel="true" showbar="false" locklevel="0" id="{668e7470-add4-5ce9-10b7-22d0bc39cc40}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top">
+                  <labels>
+                    <label description="Evaluated Requirements" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be15dec3-5c11-93e0-8cad-b3e140cab81c}" showlabel="false" colspan="1" auto="false" rowspan="6">
+                        <labels>
+                          <label description="Evaluated Requirements" languagecode="1033" />
+                        </labels>
+                        <control id="EvaluatedRequirements" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{3a233dd3-17bb-688d-e253-412598e249c0}">
+                          <parameters>
+                            <ViewId>{5039E0C1-837A-EA11-A811-000D3A300D71}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>ccllc_processstep_steprequirement</RelationshipName>
+                            <TargetEntityType>ccllc_processsteprequirement</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{64789C0A-FF85-4843-AF6D-BDA06CC99142},{5039E0C1-837A-EA11-A811-000D3A300D71}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
                 <section id="{b0828766-8b4a-d390-e852-b8eb58b2e477}" name="{22df890d-d3b0-49c4-b694-e79d8cb78af5}_section_2" height="auto" IsUserDefined="0" columns="1" showbar="false" showlabel="true" locklevel="0" layout="varwidth" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
                   <labels>
                     <label description="Alternate Branches" languagecode="1033" />
