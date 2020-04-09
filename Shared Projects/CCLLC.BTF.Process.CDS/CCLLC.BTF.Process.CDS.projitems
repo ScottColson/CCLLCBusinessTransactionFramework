@@ -45,6 +45,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedrole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypecontext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\CustomerRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
