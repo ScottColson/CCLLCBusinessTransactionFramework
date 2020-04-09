@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SdkMessageProcessingStep Name="ccllc_BTF_NavigateForward Action Handler" SdkMessageProcessingStepId="{41b24a47-70c0-4c39-bc8b-65792269361c}">
+<SdkMessageProcessingStep Name="ccllc_BTF_NavigateForward Action Handler" SdkMessageProcessingStepId="{41b24a47-70c0-4c39-bc8b-65792269361c}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <PluginTypeName>CCLLC.BTF.Process.CDS.Plugins.ProcessNavigationActionHandlers, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
   <PluginTypeId>cb31aa56-2d54-ea11-a812-000d3a300a85</PluginTypeId>
   <AsyncAutoDelete>0</AsyncAutoDelete>

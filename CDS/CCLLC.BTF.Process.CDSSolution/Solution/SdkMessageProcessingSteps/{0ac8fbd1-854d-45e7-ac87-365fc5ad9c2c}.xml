@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SdkMessageProcessingStep Name="ccllc_BTF_GetAvailableTransactionTypes Action Handler" SdkMessageProcessingStepId="{0ac8fbd1-854d-45e7-ac87-365fc5ad9c2c}">
+<SdkMessageProcessingStep Name="ccllc_BTF_GetAvailableTransactionTypes Action Handler" SdkMessageProcessingStepId="{0ac8fbd1-854d-45e7-ac87-365fc5ad9c2c}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <PluginTypeName>CCLLC.BTF.Process.CDS.Plugins.TransactionCreationActionHandler, CCLLCBTFProcessPlugins, Version=0.0.0.2, Culture=neutral, PublicKeyToken=4039c8b782dc3d38</PluginTypeName>
   <PluginTypeId>6327acaf-2d54-ea11-a812-000d3a300a85</PluginTypeId>
   <AsyncAutoDelete>0</AsyncAutoDelete>

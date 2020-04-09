@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{ccfe8860-e93c-4045-8a87-7a9fdb7e063b}" Name="BTF_InitiateTransaction">
+<Workflow WorkflowId="{ccfe8860-e93c-4045-8a87-7a9fdb7e063b}" Name="BTF_InitiateTransaction" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <XamlFileName>/Workflows/BTF_InitiateTransaction-CCFE8860-E93C-4045-8A87-7A9FDB7E063B.xaml</XamlFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>

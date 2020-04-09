@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityRelationships>
-  <EntityRelationship Name="business_unit_ccllc_agent" />
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityRelationship Name="business_unit_ccllc_alternatebranch" />
   <EntityRelationship Name="business_unit_ccllc_processauthorizedchannel" />
   <EntityRelationship Name="business_unit_ccllc_processstep" />
@@ -40,7 +39,6 @@
   <EntityRelationship Name="ccllc_stephistory_nextrecord" />
   <EntityRelationship Name="ccllc_stephistory_previousrecord" />
   <EntityRelationship Name="ccllc_subsequentprocessstep_alternatebranch" />
-  <EntityRelationship Name="ccllc_systemuser_assignedagent" />
   <EntityRelationship Name="ccllc_transaction_currentprocess" />
   <EntityRelationship Name="ccllc_transaction_currentprocessstep" />
   <EntityRelationship Name="ccllc_transaction_initiatingprocess" />
@@ -62,8 +60,6 @@
   <EntityRelationship Name="ccllc_transactiontype_relatedtransaction" />
   <EntityRelationship Name="ccllc_transactiontype_requirements" />
   <EntityRelationship Name="ccllc_transactiontype_startupprocess" />
-  <EntityRelationship Name="lk_ccllc_agent_createdby" />
-  <EntityRelationship Name="lk_ccllc_agent_modifiedby" />
   <EntityRelationship Name="lk_ccllc_alternatebranch_createdby" />
   <EntityRelationship Name="lk_ccllc_alternatebranch_modifiedby" />
   <EntityRelationship Name="lk_ccllc_processauthorizedchannel_createdby" />
@@ -100,7 +96,6 @@
   <EntityRelationship Name="lk_ccllc_transactiontypeauthorizedrole_modifiedby" />
   <EntityRelationship Name="lk_ccllc_transactiontypecontext_createdby" />
   <EntityRelationship Name="lk_ccllc_transactiontypecontext_modifiedby" />
-  <EntityRelationship Name="owner_ccllc_agent" />
   <EntityRelationship Name="owner_ccllc_alternatebranch" />
   <EntityRelationship Name="owner_ccllc_processauthorizedchannel" />
   <EntityRelationship Name="owner_ccllc_processstep" />
@@ -119,7 +114,6 @@
   <EntityRelationship Name="owner_ccllc_transactiontypeauthorizedchannel" />
   <EntityRelationship Name="owner_ccllc_transactiontypeauthorizedrole" />
   <EntityRelationship Name="owner_ccllc_transactiontypecontext" />
-  <EntityRelationship Name="team_ccllc_agent" />
   <EntityRelationship Name="team_ccllc_alternatebranch" />
   <EntityRelationship Name="team_ccllc_processauthorizedchannel" />
   <EntityRelationship Name="team_ccllc_processstep" />
@@ -138,7 +132,6 @@
   <EntityRelationship Name="team_ccllc_transactiontypeauthorizedchannel" />
   <EntityRelationship Name="team_ccllc_transactiontypeauthorizedrole" />
   <EntityRelationship Name="team_ccllc_transactiontypecontext" />
-  <EntityRelationship Name="user_ccllc_agent" />
   <EntityRelationship Name="user_ccllc_alternatebranch" />
   <EntityRelationship Name="user_ccllc_processauthorizedchannel" />
   <EntityRelationship Name="user_ccllc_processstep" />

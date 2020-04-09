@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<forms>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
     <formid>{5e30f0f9-ef98-4494-b237-8553aebc936a}</formid>
     <IntroducedVersion>0.0.0.1</IntroducedVersion>
@@ -14,7 +14,7 @@
           <columns>
             <column width="100%">
               <sections>
-                <section id="{4e5849d9-744d-4f1f-bbe2-807f1c2b183d}" IsUserDefined="0" showlabel="false" showbar="false">
+                <section id="{4e5849d9-744d-4f1f-bbe2-807f1c2b183d}" IsUserDefined="0" showlabel="false" showbar="false" name="{4e5849d9-744d-4f1f-bbe2-807f1c2b183d}" columns="11" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left" height="auto">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
@@ -26,8 +26,20 @@
                         </labels>
                         <control id="ccllc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ccllc_name" />
                       </cell>
+                      <cell id="{6b192b92-5875-8bad-91e5-a0187994ee36}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Supports Conditional Branching" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="ccllc_supportsconditionalbranching" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="ccllc_supportsconditionalbranching" uniqueid="{8a4224a4-17ae-439c-5254-809973d48c83}" />
+                      </cell>
                     </row>
                     <row>
+                      <cell id="{0232ce1e-b205-8b59-c196-eb456c13ac4d}" showlabel="true" locklevel="0" auto="true" rowspan="6">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="ccllc_description" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_description" disabled="false" uniqueid="{2524d989-e204-ed44-54d5-6e7ba1e69d2c}" />
+                      </cell>
                       <cell id="{1ce60451-0cee-3890-a59c-652022980ec2}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Assembly Name" languagecode="1033" />
@@ -44,13 +56,37 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{6b192b92-5875-8bad-91e5-a0187994ee36}" showlabel="true" locklevel="0">
+                      <cell id="{8d66cc4e-5019-8867-daa9-d5dde59094b0}" showlabel="true" locklevel="0" rowspan="6" colspan="1">
                         <labels>
-                          <label description="Supports Conditional Branching" languagecode="1033" />
+                          <label description="Step Parameter Template" languagecode="1033" />
                         </labels>
-                        <control disabled="false" id="ccllc_supportsconditionalbranching" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="ccllc_supportsconditionalbranching" uniqueid="{8a4224a4-17ae-439c-5254-809973d48c83}" />
+                        <control id="ccllc_stepparametertemplate" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_stepparametertemplate" disabled="false" uniqueid="{1bec02bd-763e-995c-1d9a-9c8310b77938}" />
                       </cell>
                     </row>
+                    <row></row>
+                    <row />
+                    <row height="auto" />
+                    <row>
+                      <cell id="{24353eac-86c4-dcb8-8938-adea51c90817}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a8e92725-8d30-2a62-ed5c-99c044ae1c02}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{0710b2ed-f405-4f4c-8ad4-d18b95c944e3}_section_2" showlabel="false" showbar="false" locklevel="0" id="{079131ec-d77b-daa2-bec4-c232513c0a2e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="false">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
                     <row>
                       <cell id="{9eec9abf-68d9-4010-9908-3d83abcfab68}" showlabel="true" locklevel="1" visible="false">
                         <labels>
@@ -64,21 +100,6 @@
                         </control>
                       </cell>
                     </row>
-                    <row>
-                      <cell id="{8d66cc4e-5019-8867-daa9-d5dde59094b0}" showlabel="true" locklevel="0" rowspan="8">
-                        <labels>
-                          <label description="Step Parameter Template" languagecode="1033" />
-                        </labels>
-                        <control id="ccllc_stepparametertemplate" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ccllc_stepparametertemplate" disabled="false" uniqueid="{1bec02bd-763e-995c-1d9a-9c8310b77938}" />
-                      </cell>
-                    </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
                   </rows>
                 </section>
               </sections>
