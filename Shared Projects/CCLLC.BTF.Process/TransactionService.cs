@@ -193,9 +193,14 @@ namespace CCLLC.BTF.Process
                 if (dataRecordConfig is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepTypeInvalid);
 
                 var dataRecordType = dataRecordConfig["RecordType"];
-                var nameField = dataRecordConfig["NameField"];
-                var transactionField = dataRecordConfig["TransactionField"];
-                var customerField = dataRecordConfig["CustomerField"];
+
+                int underScoreIndex = dataRecordType.IndexOf("_");
+                string prefix = dataRecordType.Substring(0, underScoreIndex + 1);
+
+                // Get required field names form configuration data if provided, otherwise use conventional field names.
+                var nameField = dataRecordConfig.ContainsKey("NameField") ?  dataRecordConfig["NameField"] : prefix + "name";
+                var transactionField = dataRecordConfig.ContainsKey("TransactionField") ?  dataRecordConfig["TransactionField"] : prefix + "transactionid";
+                var customerField = dataRecordConfig.ContainsKey("CustomerField") ?  dataRecordConfig["CustomerField"] : prefix + "customerid";
 
                 var record = DataConnector.GetFirstMatchingTransactionDataRecord(
                     executionContext.DataService,
