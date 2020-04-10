@@ -48,6 +48,7 @@ Global
 		Shared Projects\CCLLC CDS.TestBase\CCLLC.CDS.TestBase.projitems*{04d65ab5-3aed-4e12-a6f5-9864389ed9ba}*SharedItemsImports = 4
 		Shared Projects\CCLLC.BTF.Revenue.CDS\CCLLC.BTF.Revenue.CDS.projitems*{08afc78a-4e80-4211-b9ec-01505a38e05b}*SharedItemsImports = 4
 		Shared Projects\CCLLC.BTF.Revenue\CCLLC.BTF.Revenue.projitems*{08afc78a-4e80-4211-b9ec-01505a38e05b}*SharedItemsImports = 4
+		Shared Projects\CCLLC.BTF.Platform\CCLLC.BTF.Platform.projitems*{29c88c19-2980-46d8-9172-aea759e9d1c1}*SharedItemsImports = 13
 		Shared Projects\CCLLC.BTF.Documents\CCLLC.BTF.Documents.projitems*{32cc3410-92e7-4585-a3e9-f1b87674a897}*SharedItemsImports = 4
 		Shared Projects\CCLLC.BTF.Process.CDS\CCLLC.BTF.Process.CDS.projitems*{32cc3410-92e7-4585-a3e9-f1b87674a897}*SharedItemsImports = 4
 		Shared Projects\CCLLC.BTF.Process\CCLLC.BTF.Process.projitems*{32cc3410-92e7-4585-a3e9-f1b87674a897}*SharedItemsImports = 4
