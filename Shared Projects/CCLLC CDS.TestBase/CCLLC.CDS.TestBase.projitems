@@ -76,7 +76,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypecontext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_worksession.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\SystemUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityMetaDataExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IdRecordPointerExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAttributeMetaData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeAgentFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fakes\FakeTransactionFee.cs" />

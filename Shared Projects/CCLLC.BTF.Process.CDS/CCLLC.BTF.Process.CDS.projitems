@@ -49,6 +49,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\OrgServiceExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\AccountState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\account_accountcategorycode.cs" />

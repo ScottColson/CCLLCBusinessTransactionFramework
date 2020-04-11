@@ -2,6 +2,8 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 using FakeItEasy;
 using DLaB.Xrm.Test;
 using CCLLC.Core;
@@ -9,7 +11,7 @@ using CCLLC.BTF.Platform;
 using CCLLC.CDS.Test.Builders;
 using CCLLC.CDS.Test.Fakes;
 using CCLLC.CDS.TestBase;
-
+using System.Collections.Generic;
 
 namespace CCLLC.BTF.Process.CDS.Test
 {
@@ -1761,6 +1763,40 @@ namespace CCLLC.BTF.Process.CDS.Test
                 public static readonly Id CreatedDataRecord = new Id<TestProxy.new_transactiondatarecord>("1AFD3820-DC26-4228-A9D0-F6D408354C84");
             }
 
+            private OrganizationResponse fakeRetrieveMetaData(IOrganizationService organizationService, OrganizationRequest request)
+            {
+                if (request is RetrieveEntityRequest)
+                {
+                    var typedRequest = (RetrieveEntityRequest)request;
+                    
+                    if (typedRequest.LogicalName == "new_transactiondatarecord")
+                    {
+
+                        var attributeMetadata = new List<AttributeMetadata>();
+                        attributeMetadata.Add(new FakeAttributeMetadata(AttributeTypeCode.String)
+                        {
+                            LogicalName = "new_datafield1"
+                        });
+
+                        var metaData = new EntityMetadata();
+                        metaData.SetAttributeCollection(attributeMetadata.ToArray());
+                       
+                        var parameters = new ParameterCollection();
+                        parameters.Add("EntityMetadata", metaData);
+
+                        var response = new RetrieveEntityResponse()
+                        {
+                            Results = parameters
+                        };
+
+                        return response;
+                    }
+                }
+
+                return null;
+            }
+
+
             protected override void InitializeTestData(IOrganizationService service)
             {
                 try
@@ -1782,6 +1818,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                             .InGroup(Ids.Group1)
                             .WithDisplayRank(2)
                             .WithDataRecordType("new_transactiondatarecord")
+                            .WithDataRecordDefault("new_datafield1","testvalue1")
                             .WithStartupProcess(Ids.Process1))
 
                         .WithBuilder<TransactionChannelBulder>(Ids.TransactionAuthorizedChannel1_1, b => b
@@ -1835,7 +1872,8 @@ namespace CCLLC.BTF.Process.CDS.Test
             {
                 service = new OrganizationServiceBuilder(service)
                    .WithIdsDefaultedForCreate(                    
-                        Ids.CreatedDataRecord)                      
+                        Ids.CreatedDataRecord)    
+                   .WithFakeExecute(fakeRetrieveMetaData)
                    .Build();
 
                 var executionContext = GetExecutionContext(service);
@@ -1847,8 +1885,11 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var dataRecord = transactionService.LoadTransactionDataRecord(executionContext, transaction);
 
                 Assert.AreEqual(Ids.CreatedDataRecord.EntityId, dataRecord.Id);
-                Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);
+                Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);    
                 Assert.AreEqual(Ids.Contact.EntityId, dataRecord.CustomerId.Id);
+
+                var entity = dataRecord as Entity;
+                Assert.AreEqual("testvalue1", entity["new_datafield1"]);
 
             }
         }
