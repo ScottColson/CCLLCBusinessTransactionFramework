@@ -1,4 +1,6 @@
 ﻿using DLaB.Xrm.Test;
+using System.Collections.Generic;
+using System.Text;
 using TestProxy;
 
 
@@ -7,10 +9,12 @@ namespace CCLLC.CDS.Test.Builders
     public class TransactionTypeBuilder : EntityBuilder<ccllc_transactiontype>
     {
         private ccllc_transactiontype Proxy {get; set;}
+        private IDictionary<string, string> DataRecordConfig { get; }
 
         public TransactionTypeBuilder()
         {
             Proxy = new ccllc_transactiontype();
+            DataRecordConfig = new Dictionary<string, string>();
         }
 
         public TransactionTypeBuilder(Id id) : this()
@@ -38,20 +42,46 @@ namespace CCLLC.CDS.Test.Builders
        
         public TransactionTypeBuilder WithDataRecordType(string entityLogicalName)
         {
+            DataRecordConfig["RecordType"] = entityLogicalName;
+            
             int underScoreIndex = entityLogicalName.IndexOf("_");
             string prefix = entityLogicalName.Substring(0, underScoreIndex+1);
-            string nameField = prefix + "name";
-            string customerField = prefix + "customerid";
-            string transactionField = prefix + "transactionid";
 
-            string json = "{\"RecordType\":\"" + entityLogicalName + "\",\"NameField\":\"" + nameField + "\",\"CustomerField\":\"" + customerField + "\",\"TransactionField\":\"" + transactionField + "\"}";
-            Proxy.ccllc_DataRecordConfiguration = json;
-
+            DataRecordConfig["NameField"] = prefix + "name";
+            DataRecordConfig["CustomerField"] = prefix + "customerid";
+            DataRecordConfig["TransactionField"] = prefix + "transactionid";          
+           
             return this;
         }
 
+        public TransactionTypeBuilder WithDataRecordDefault(string key, string value)
+        {
+            DataRecordConfig[key] = value;
+
+            return this;
+        }
         protected override ccllc_transactiontype BuildInternal()
         {
+
+            bool firstPair = true;
+
+            var builder = new StringBuilder("{");
+
+            foreach(var key in DataRecordConfig.Keys)
+            {
+                if (!firstPair)                
+                    builder.Append(",");               
+                else
+                    firstPair = false;               
+
+                builder.AppendFormat("\"{0}\":\"{1}\"", key, DataRecordConfig[key]);
+            }
+
+            builder.Append("}");
+
+            string json = builder.ToString();
+            Proxy.ccllc_DataRecordConfiguration = json;
+
             return Proxy;
         }
     }
