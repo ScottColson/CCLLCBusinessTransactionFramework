@@ -1,5 +1,3 @@
-[![Build Status](https://colsoncode.visualstudio.com/GitHub%20Pipelines/_apis/build/status/CCLLC.CDS.FieldEncryption?branchName=master)](https://colsoncode.visualstudio.com/GitHub%20Pipelines/_build/latest?definitionId=4&branchName=master)
-
 # Business Transaction Framework for CDS
 
 The Business Transaction Framework for CDS (BTF for short) is starting point to build 
