@@ -3,8 +3,8 @@ namespace TestProxy
 
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
-	public enum ccllc_samplerecordtypeState
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
+	public enum ccllc_RequirementState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

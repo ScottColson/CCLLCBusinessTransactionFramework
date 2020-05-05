@@ -5,15 +5,15 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    public partial class ccllc_transactionrequirement : IRequirementRecord
+    public partial class ccllc_Requirement : IRequirementRecord
     {
-        public string Name => this.ccllc_name;
+        public string Name => this.ccllc_Name;
 
         public eRequirementTypeFlags? TypeFlag
         {
             get
             {
-                IEnumerable<OptionSetValue> options = (IEnumerable<OptionSetValue>)this.ccllc_TransactionRequirementTypeCode;
+                IEnumerable<OptionSetValue> options = (IEnumerable<OptionSetValue>)this.ccllc_RequirementTypeCode;
 
                 eRequirementTypeFlags? flags = null;
                 if (options != null)

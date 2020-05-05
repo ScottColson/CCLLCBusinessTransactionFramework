@@ -4,13 +4,19 @@ namespace TestProxy
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public enum ccllc_transactionrequirementwaiverroleState
+	public enum ccllc_requirementtypecode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Active = 0,
+		Evidence = 142670000,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Inactive = 1,
+		Eligibility = 142670001,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Prerequisite = 142670002,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Validation = 142670003,
 	}
 }

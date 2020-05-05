@@ -185,7 +185,7 @@ namespace CCLLC.BTF.Process
             {
                 IList<IRequirement> registeredRequirements = new List<IRequirement>();
                
-                var requirements = DataConnector.GetAllTransactionRequirements(executionContext.DataService);
+                var requirements = DataConnector.GetAllRequirements(executionContext.DataService);
 
                 var waiverRoles = DataConnector.GetAllRequirementWaiverRoles(executionContext.DataService);
 

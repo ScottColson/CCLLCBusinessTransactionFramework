@@ -4,7 +4,7 @@ namespace TestProxy
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public enum ccllc_requirementwaiverroleState
+	public enum ccllc_RequirementWaiverRoleState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

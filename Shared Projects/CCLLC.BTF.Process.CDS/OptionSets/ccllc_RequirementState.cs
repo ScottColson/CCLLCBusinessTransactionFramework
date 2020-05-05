@@ -1,16 +1,16 @@
-namespace TestProxy
+namespace CCLLC.BTF.Process.CDS
 {
 
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9154")]
-	public enum ccllc_samplerecordtype_statuscode
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
+	public enum ccllc_RequirementState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Active = 1,
+		Active = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Inactive = 2,
+		Inactive = 1,
 	}
 }

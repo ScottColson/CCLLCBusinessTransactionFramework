@@ -1,19 +1,16 @@
-namespace TestProxy
+namespace CCLLC.BTF.Process.CDS
 {
 
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public enum ccllc_servicediscountcalculationtypecode
+	public enum ccllc_requirement_statuscode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Disccount = 142670000,
+		Active = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		CurrencySymbol_Discount = 142670001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		CurrencySymbol_Override = 142670002,
+		Inactive = 2,
 	}
 }

@@ -1717,19 +1717,37 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_ccllc_requirementwaiverrole
+		/// 1:N business_unit_ccllc_requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_requirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> business_unit_ccllc_requirementwaiverrole
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_requirement")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> business_unit_ccllc_requirement
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("business_unit_ccllc_requirementwaiverrole", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("business_unit_ccllc_requirement", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("business_unit_ccllc_requirement");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("business_unit_ccllc_requirement", null, value);
+				this.OnPropertyChanged("business_unit_ccllc_requirement");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N business_unit_ccllc_requirementwaiverrole
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_requirementwaiverrole")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> business_unit_ccllc_requirementwaiverrole
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("business_unit_ccllc_requirementwaiverrole", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("business_unit_ccllc_requirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("business_unit_ccllc_requirementwaiverrole", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("business_unit_ccllc_requirementwaiverrole", null, value);
 				this.OnPropertyChanged("business_unit_ccllc_requirementwaiverrole");
 			}
 		}
@@ -1857,42 +1875,6 @@ namespace TestProxy
 				this.OnPropertyChanging("business_unit_ccllc_transactionprocess");
 				this.SetRelatedEntities<TestProxy.ccllc_transactionprocess>("business_unit_ccllc_transactionprocess", null, value);
 				this.OnPropertyChanged("business_unit_ccllc_transactionprocess");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_ccllc_transactionrequirement
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_transactionrequirement")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> business_unit_ccllc_transactionrequirement
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("business_unit_ccllc_transactionrequirement", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("business_unit_ccllc_transactionrequirement");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("business_unit_ccllc_transactionrequirement", null, value);
-				this.OnPropertyChanged("business_unit_ccllc_transactionrequirement");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_ccllc_transactionrequirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_transactionrequirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> business_unit_ccllc_transactionrequirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("business_unit_ccllc_transactionrequirementwaiverrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("business_unit_ccllc_transactionrequirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("business_unit_ccllc_transactionrequirementwaiverrole", null, value);
-				this.OnPropertyChanged("business_unit_ccllc_transactionrequirementwaiverrole");
 			}
 		}
 		

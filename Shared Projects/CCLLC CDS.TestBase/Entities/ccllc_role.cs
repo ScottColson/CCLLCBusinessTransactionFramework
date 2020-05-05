@@ -373,6 +373,24 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// 1:N ccllc_RequirementWaiverRole_RoleId_ccllc_
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_RequirementWaiverRole_RoleId_ccllc_")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> ccllc_RequirementWaiverRole_RoleId_ccllc_
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("ccllc_RequirementWaiverRole_RoleId_ccllc_", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RequirementWaiverRole_RoleId_ccllc_");
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("ccllc_RequirementWaiverRole_RoleId_ccllc_", null, value);
+				this.OnPropertyChanged("ccllc_RequirementWaiverRole_RoleId_ccllc_");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N ccllc_role_agentrole
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_agentrole")]
@@ -387,42 +405,6 @@ namespace TestProxy
 				this.OnPropertyChanging("ccllc_role_agentrole");
 				this.SetRelatedEntities<TestProxy.ccllc_agentrole>("ccllc_role_agentrole", null, value);
 				this.OnPropertyChanged("ccllc_role_agentrole");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N ccllc_role_requirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_requirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> ccllc_role_requirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("ccllc_role_requirementwaiverrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_role_requirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("ccllc_role_requirementwaiverrole", null, value);
-				this.OnPropertyChanged("ccllc_role_requirementwaiverrole");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N ccllc_role_transactionrequirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_transactionrequirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> ccllc_role_transactionrequirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("ccllc_role_transactionrequirementwaiverrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_role_transactionrequirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("ccllc_role_transactionrequirementwaiverrole", null, value);
-				this.OnPropertyChanged("ccllc_role_transactionrequirementwaiverrole");
 			}
 		}
 		

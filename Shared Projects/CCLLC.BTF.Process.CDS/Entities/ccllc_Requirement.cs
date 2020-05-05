@@ -1,23 +1,23 @@
-namespace TestProxy
+namespace CCLLC.BTF.Process.CDS
 {
 
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_transactionrequirementwaiverrole")]
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_requirement")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public partial class ccllc_transactionrequirementwaiverrole : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	public partial class ccllc_Requirement : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		public ccllc_transactionrequirementwaiverrole() : 
+		public ccllc_Requirement() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string EntityLogicalName = "ccllc_transactionrequirementwaiverrole";
+		public const string EntityLogicalName = "ccllc_requirement";
 		
-		public const int EntityTypeCode = 10165;
+		public const int EntityTypeCode = 10178;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -40,10 +40,28 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// The name of the custom entity.
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_evaluatortypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_EvaluatorTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_evaluatortypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_EvaluatorTypeId");
+				this.SetAttributeValue("ccllc_evaluatortypeid", value);
+				this.OnPropertyChanged("ccllc_EvaluatorTypeId");
+			}
+		}
+		
+		/// <summary>
+		/// Required name field
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
+		public string ccllc_Name
 		{
 			get
 			{
@@ -51,62 +69,26 @@ namespace TestProxy
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_name");
+				this.OnPropertyChanging("ccllc_Name");
 				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Role associated with Transaction Requirement Waiver Role.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_RoleId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_roleid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_RoleId");
-				this.SetAttributeValue("ccllc_roleid", value);
-				this.OnPropertyChanged("ccllc_RoleId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Requirement associated with Transaction Requirement Waiver Role.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionRequirementId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionrequirementid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionRequirementId");
-				this.SetAttributeValue("ccllc_transactionrequirementid", value);
-				this.OnPropertyChanged("ccllc_TransactionRequirementId");
+				this.OnPropertyChanged("ccllc_Name");
 			}
 		}
 		
 		/// <summary>
 		/// Unique identifier for entity instances
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementwaiverroleid")]
-		public System.Nullable<System.Guid> ccllc_transactionrequirementwaiverroleId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		public System.Nullable<System.Guid> ccllc_RequirementId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_transactionrequirementwaiverroleid");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("ccllc_requirementid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_transactionrequirementwaiverroleId");
-				this.SetAttributeValue("ccllc_transactionrequirementwaiverroleid", value);
+				this.OnPropertyChanging("ccllc_RequirementId");
+				this.SetAttributeValue("ccllc_requirementid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
@@ -115,11 +97,11 @@ namespace TestProxy
 				{
 					base.Id = System.Guid.Empty;
 				}
-				this.OnPropertyChanged("ccllc_transactionrequirementwaiverroleId");
+				this.OnPropertyChanged("ccllc_RequirementId");
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementwaiverroleid")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
 		public override System.Guid Id
 		{
 			get
@@ -128,7 +110,61 @@ namespace TestProxy
 			}
 			set
 			{
-				this.ccllc_transactionrequirementwaiverroleId = value;
+				this.ccllc_RequirementId = value;
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementparameters")]
+		public string ccllc_RequirementParameters
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_requirementparameters");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RequirementParameters");
+				this.SetAttributeValue("ccllc_requirementparameters", value);
+				this.OnPropertyChanged("ccllc_RequirementParameters");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementtypecode")]
+		public object ccllc_RequirementTypeCode
+		{
+			get
+			{
+				return this.GetAttributeValue<object>("ccllc_requirementtypecode");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RequirementTypeCode");
+				this.SetAttributeValue("ccllc_requirementtypecode", value);
+				this.OnPropertyChanged("ccllc_RequirementTypeCode");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactiontypeid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_TransactionTypeId");
+				this.SetAttributeValue("ccllc_transactiontypeid", value);
+				this.OnPropertyChanged("ccllc_TransactionTypeId");
 			}
 		}
 		
@@ -295,17 +331,17 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Status of the Transaction Requirement Waiver Role
+		/// Status of the Requirement
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public System.Nullable<TestProxy.ccllc_transactionrequirementwaiverroleState> statecode
+		public System.Nullable<CCLLC.BTF.Process.CDS.ccllc_RequirementState> statecode
 		{
 			get
 			{
 				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statecode");
 				if ((optionSet != null))
 				{
-					return ((TestProxy.ccllc_transactionrequirementwaiverroleState)(System.Enum.ToObject(typeof(TestProxy.ccllc_transactionrequirementwaiverroleState), optionSet.Value)));
+					return ((CCLLC.BTF.Process.CDS.ccllc_RequirementState)(System.Enum.ToObject(typeof(CCLLC.BTF.Process.CDS.ccllc_RequirementState), optionSet.Value)));
 				}
 				else
 				{
@@ -328,17 +364,17 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Transaction Requirement Waiver Role
+		/// Reason for the status of the Requirement
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public System.Nullable<TestProxy.ccllc_transactionrequirementwaiverrole_statuscode> statuscode
+		public System.Nullable<CCLLC.BTF.Process.CDS.ccllc_requirement_statuscode> statuscode
 		{
 			get
 			{
 				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
 				if ((optionSet != null))
 				{
-					return ((TestProxy.ccllc_transactionrequirementwaiverrole_statuscode)(System.Enum.ToObject(typeof(TestProxy.ccllc_transactionrequirementwaiverrole_statuscode), optionSet.Value)));
+					return ((CCLLC.BTF.Process.CDS.ccllc_requirement_statuscode)(System.Enum.ToObject(typeof(CCLLC.BTF.Process.CDS.ccllc_requirement_statuscode), optionSet.Value)));
 				}
 				else
 				{
@@ -409,118 +445,75 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_ccllc_transactionrequirementwaiverrole
+		/// 1:N ccllc_processsteprequirement_requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_ccllc_transactionrequirementwaiverrole")]
-		public TestProxy.BusinessUnit business_unit_ccllc_transactionrequirementwaiverrole
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_processsteprequirement_requirement")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_processsteprequirement> ccllc_processsteprequirement_requirement
 		{
 			get
 			{
-				return this.GetRelatedEntity<TestProxy.BusinessUnit>("business_unit_ccllc_transactionrequirementwaiverrole", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ccllc_role_transactionrequirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_role_transactionrequirementwaiverrole")]
-		public TestProxy.ccllc_role ccllc_role_transactionrequirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_transactionrequirementwaiverrole", null);
+				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_processsteprequirement>("ccllc_processsteprequirement_requirement", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_role_transactionrequirementwaiverrole");
-				this.SetRelatedEntity<TestProxy.ccllc_role>("ccllc_role_transactionrequirementwaiverrole", null, value);
-				this.OnPropertyChanged("ccllc_role_transactionrequirementwaiverrole");
+				this.OnPropertyChanging("ccllc_processsteprequirement_requirement");
+				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_processsteprequirement>("ccllc_processsteprequirement_requirement", null, value);
+				this.OnPropertyChanged("ccllc_processsteprequirement_requirement");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 ccllc_transactionrequirement_waiverrole
+		/// 1:N ccllc_RequirementWaiverRole_Requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactionrequirement_waiverrole")]
-		public TestProxy.ccllc_transactionrequirement ccllc_transactionrequirement_waiverrole
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_RequirementWaiverRole_Requirement")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRole> ccllc_RequirementWaiverRole_Requirement
 		{
 			get
 			{
-				return this.GetRelatedEntity<TestProxy.ccllc_transactionrequirement>("ccllc_transactionrequirement_waiverrole", null);
+				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRole>("ccllc_RequirementWaiverRole_Requirement", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_transactionrequirement_waiverrole");
-				this.SetRelatedEntity<TestProxy.ccllc_transactionrequirement>("ccllc_transactionrequirement_waiverrole", null, value);
-				this.OnPropertyChanged("ccllc_transactionrequirement_waiverrole");
+				this.OnPropertyChanging("ccllc_RequirementWaiverRole_Requirement");
+				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRole>("ccllc_RequirementWaiverRole_Requirement", null, value);
+				this.OnPropertyChanged("ccllc_RequirementWaiverRole_Requirement");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_ccllc_transactionrequirementwaiverrole_createdby
+		/// 1:N ccllc_transactiondeficiency_RequirementId
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_createdby")]
-		public TestProxy.SystemUser lk_ccllc_transactionrequirementwaiverrole_createdby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiondeficiency_RequirementId")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency> ccllc_transactiondeficiency_RequirementId
 		{
 			get
 			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactionrequirementwaiverrole_createdby", null);
+				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency>("ccllc_transactiondeficiency_RequirementId", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_transactiondeficiency_RequirementId");
+				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactiondeficiency>("ccllc_transactiondeficiency_RequirementId", null, value);
+				this.OnPropertyChanged("ccllc_transactiondeficiency_RequirementId");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby
+		/// N:1 ccllc_Requirement_ccllc_TransactionTypeId
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby")]
-		public TestProxy.SystemUser lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiontypeid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_Requirement_ccllc_TransactionTypeId")]
+		public CCLLC.BTF.Process.CDS.ccllc_transactiontype ccllc_Requirement_ccllc_TransactionTypeId
 		{
 			get
 			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby", null);
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactiontype>("ccllc_Requirement_ccllc_TransactionTypeId", null);
 			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_ccllc_transactionrequirementwaiverrole_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_modifiedby")]
-		public TestProxy.SystemUser lk_ccllc_transactionrequirementwaiverrole_modifiedby
-		{
-			get
+			set
 			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactionrequirementwaiverrole_modifiedby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby")]
-		public TestProxy.SystemUser lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 user_ccllc_transactionrequirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_transactionrequirementwaiverrole")]
-		public TestProxy.SystemUser user_ccllc_transactionrequirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntity<TestProxy.SystemUser>("user_ccllc_transactionrequirementwaiverrole", null);
+				this.OnPropertyChanging("ccllc_Requirement_ccllc_TransactionTypeId");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactiontype>("ccllc_Requirement_ccllc_TransactionTypeId", null, value);
+				this.OnPropertyChanged("ccllc_Requirement_ccllc_TransactionTypeId");
 			}
 		}
 	}
