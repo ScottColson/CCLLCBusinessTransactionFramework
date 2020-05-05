@@ -2,20 +2,20 @@
 <AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SiteMapUniqueName>ccllc_TransactionConfigurationManager</SiteMapUniqueName>
   <SiteMap IntroducedVersion="7.0.0.0">
-    <Area IntroducedVersion="7.0.0.0" Icon="/WebResources/msdyn_/Images/Area_Default_Icon.png" Id="ccllc_transactionconfig" ResourceId="SitemapDesigner.NewArea" DescriptionResourceId="SitemapDesigner.NewArea" ShowGroups="false">
+    <Area Id="ccllc_transactionconfig" ResourceId="SitemapDesigner.NewArea" DescriptionResourceId="SitemapDesigner.NewArea" Icon="/WebResources/msdyn_/Images/Area_Default_Icon.png" ShowGroups="false" IntroducedVersion="7.0.0.0">
       <Titles>
         <Title LCID="1033" Title="Transaction Configuration" />
       </Titles>
-      <Group IntroducedVersion="7.0.0.0" Id="New_Group" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="New_Group" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
           <Title LCID="1033" Title="Transaction Configuration" />
         </Titles>
-        <SubArea Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" Id="ccllc_transactiontype" Entity="ccllc_transactiontype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+        <SubArea Id="ccllc_transactiontype" Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" Entity="ccllc_transactiontype" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Types" />
           </Titles>
         </SubArea>
-        <SubArea IntroducedVersion="7.0.0.0" Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" Id="ccllc_transactiongroup" Entity="ccllc_transactiongroup" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+        <SubArea Id="ccllc_transactiongroup" Icon="/WebResources/msdyn_/Images/Subarea_Default_Icon.png" IntroducedVersion="7.0.0.0" Entity="ccllc_transactiongroup" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Groups" />
           </Titles>
@@ -25,12 +25,12 @@
         <Titles>
           <Title LCID="1033" Title="Requirement Configuration" />
         </Titles>
-        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_9eb5068e" Entity="ccllc_transactionrequirement" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+        <SubArea Id="NewSubArea_9eb5068e" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="ccllc_requirement" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Requirements" />
           </Titles>
         </SubArea>
-        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_3b7efdad" Entity="ccllc_evaluatortype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+        <SubArea Id="NewSubArea_3b7efdad" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="ccllc_evaluatortype" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Evaluators" />
           </Titles>
@@ -40,7 +40,7 @@
         <Titles>
           <Title LCID="1033" Title="Step Types" />
         </Titles>
-        <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="NewSubArea_b62e1d0b" Entity="ccllc_processsteptype" AvailableOffline="true" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="NewSubArea_b62e1d0b" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="ccllc_processsteptype" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
     </Area>
   </SiteMap>
