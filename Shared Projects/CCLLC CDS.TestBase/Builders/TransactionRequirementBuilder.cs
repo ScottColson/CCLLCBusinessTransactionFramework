@@ -4,13 +4,13 @@ using TestProxy;
 
 namespace CCLLC.CDS.Test.Builders
 {
-    public class TransactionRequirementBuilder : EntityBuilder<ccllc_transactionrequirement>
+    public class TransactionRequirementBuilder : EntityBuilder<ccllc_Requirement>
     {
-        private ccllc_transactionrequirement Proxy { get; set; }
+        private ccllc_Requirement Proxy { get; set; }
 
         public TransactionRequirementBuilder()
         {
-            Proxy = new ccllc_transactionrequirement();
+            Proxy = new ccllc_Requirement();
         }
 
         public TransactionRequirementBuilder(Id id) : this()
@@ -40,7 +40,7 @@ namespace CCLLC.CDS.Test.Builders
 
         #endregion
 
-        protected override ccllc_transactionrequirement BuildInternal()
+        protected override ccllc_Requirement BuildInternal()
         {
             return Proxy;
         }

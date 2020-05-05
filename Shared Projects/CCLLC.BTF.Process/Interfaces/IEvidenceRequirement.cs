@@ -6,7 +6,7 @@ namespace CCLLC.BTF.Process
     /// Extends <see cref="ITransactionProcess" to include specific requirements related
     /// to evidence collection and evaluation./>
     /// </summary>
-    public interface IEvidenceRequirement : ITransactionRequirement
+    public interface IEvidenceRequirement : IRequirement
     {
         /// <summary>
         /// The evaluation mode of the evidence.

@@ -22,7 +22,7 @@ namespace CCLLC.BTF.Process
         IReadOnlyList<IRecordPointer<Guid>> AuthorizedRoles { get; }
         IReadOnlyList<IRecordPointer<Guid>> AuthorizedChannels { get; }
         IReadOnlyList<IRecordPointer<Guid>> InitialFeeSchedule { get; }
-        IReadOnlyList<ITransactionRequirement> Requirements { get; }
+        IReadOnlyList<IRequirement> Requirements { get; }
 
        
     }

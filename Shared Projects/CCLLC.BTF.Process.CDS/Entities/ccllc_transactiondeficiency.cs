@@ -58,6 +58,24 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_RequirementId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_requirementid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RequirementId");
+				this.SetAttributeValue("ccllc_requirementid", value);
+				this.OnPropertyChanged("ccllc_RequirementId");
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier for entity instances
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactiondeficiencyid")]
@@ -111,24 +129,6 @@ namespace CCLLC.BTF.Process.CDS
 				this.OnPropertyChanging("ccllc_TransactionId");
 				this.SetAttributeValue("ccllc_transactionid", value);
 				this.OnPropertyChanged("ccllc_TransactionId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Requirement associated with Transaction Deficiency.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionRequirementId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionrequirementid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionRequirementId");
-				this.SetAttributeValue("ccllc_transactionrequirementid", value);
-				this.OnPropertyChanged("ccllc_TransactionRequirementId");
 			}
 		}
 		
@@ -445,21 +445,21 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// N:1 ccllc_transactiondeficiency_requirement
+		/// N:1 ccllc_transactiondeficiency_RequirementId
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiondeficiency_requirement")]
-		public CCLLC.BTF.Process.CDS.ccllc_transactionrequirement ccllc_transactiondeficiency_requirement
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiondeficiency_RequirementId")]
+		public CCLLC.BTF.Process.CDS.ccllc_Requirement ccllc_transactiondeficiency_RequirementId
 		{
 			get
 			{
-				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactiondeficiency_requirement", null);
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_transactiondeficiency_RequirementId", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_transactiondeficiency_requirement");
-				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactiondeficiency_requirement", null, value);
-				this.OnPropertyChanged("ccllc_transactiondeficiency_requirement");
+				this.OnPropertyChanging("ccllc_transactiondeficiency_RequirementId");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_transactiondeficiency_RequirementId", null, value);
+				this.OnPropertyChanged("ccllc_transactiondeficiency_RequirementId");
 			}
 		}
 		

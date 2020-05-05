@@ -7,7 +7,7 @@ namespace CCLLC.BTF.Process.CDS
 
     public partial class ccllc_transactiondeficiency : IRequirementDeficiencyRecord
     {
-        public IRecordPointer<Guid> Requirement => this.ccllc_TransactionRequirementId?.ToRecordPointer();
+        public IRecordPointer<Guid> Requirement => this.ccllc_RequirementId?.ToRecordPointer();
 
         public IRecordPointer<Guid> WaivedBy => this.ccllc_WaivedById?.ToRecordPointer();
 

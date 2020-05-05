@@ -445,6 +445,24 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
+		/// 1:N ccllc_Requirement_ccllc_TransactionTypeId
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_Requirement_ccllc_TransactionTypeId")]
+		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_Requirement> ccllc_Requirement_ccllc_TransactionTypeId
+		{
+			get
+			{
+				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_Requirement_ccllc_TransactionTypeId", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_Requirement_ccllc_TransactionTypeId");
+				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_Requirement_ccllc_TransactionTypeId", null, value);
+				this.OnPropertyChanged("ccllc_Requirement_ccllc_TransactionTypeId");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N ccllc_transactiontype_authorizedchannel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_authorizedchannel")]
@@ -549,24 +567,6 @@ namespace CCLLC.BTF.Process.CDS
 				this.OnPropertyChanging("ccllc_transactiontype_relatedtransaction");
 				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transaction>("ccllc_transactiontype_relatedtransaction", null, value);
 				this.OnPropertyChanged("ccllc_transactiontype_relatedtransaction");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N ccllc_transactiontype_requirements
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactiontype_requirements")]
-		public System.Collections.Generic.IEnumerable<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement> ccllc_transactiontype_requirements
-		{
-			get
-			{
-				return this.GetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactiontype_requirements", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_transactiontype_requirements");
-				this.SetRelatedEntities<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactiontype_requirements", null, value);
-				this.OnPropertyChanged("ccllc_transactiontype_requirements");
 			}
 		}
 		

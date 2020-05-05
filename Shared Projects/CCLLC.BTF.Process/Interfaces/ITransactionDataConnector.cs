@@ -19,7 +19,7 @@ namespace CCLLC.BTF.Process
 
         IList<ITransactionGroup> GetAllTransactionGroups(IDataService dataService);
 
-        IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService);
+        IList<IRequirementRecord> GetAllRequirements(IDataService dataService);
 
         IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService);
 

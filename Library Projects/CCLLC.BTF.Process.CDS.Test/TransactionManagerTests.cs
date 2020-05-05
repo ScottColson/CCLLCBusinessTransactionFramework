@@ -504,7 +504,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("CF08C9D3-5115-4EA4-AE29-E79E5EBA1640");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("13CA95A6-E593-4A1A-B9DC-D1DBF2576741");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("13CA95A6-E593-4A1A-B9DC-D1DBF2576741");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("8E0B2A57-25F0-498A-93D6-4BD414B89F2A");
 
@@ -526,7 +526,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee2_1 = new Id<TestProxy.ccllc_transactioninitialfee>("583324D5-F846-4B37-A5E2-4FDD72662AEF");
 
-                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_transactionrequirement>("7D9C7C23-CAFF-4971-9E84-708C386576F7");
+                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_Requirement>("7D9C7C23-CAFF-4971-9E84-708C386576F7");
 
                 public static readonly Id TransactionContext2_1 = new Id<TestProxy.ccllc_transactiontypecontext>("44A651BA-597A-4209-A685-ECBFB8F65CC5");
 
@@ -546,7 +546,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee3_1 = new Id<TestProxy.ccllc_transactioninitialfee>("5374EAF6-B0BD-47D7-BC06-C2AD0163A551");
 
-                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_transactionrequirement>("97E49765-7539-43FA-B5D5-6FC148FE1DE8");
+                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_Requirement>("97E49765-7539-43FA-B5D5-6FC148FE1DE8");
 
                 public static readonly Id TransactionContext3_1 = new Id<TestProxy.ccllc_transactiontypecontext>("1F1F5C01-EC70-49D1-8787-CA62BEF62736");
 
@@ -809,7 +809,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("9E7E5650-6287-4372-A967-DD1B8065E444");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("FB0B1445-EB9C-45CB-8A79-F18ED84301E8");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("FB0B1445-EB9C-45CB-8A79-F18ED84301E8");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("CC19399D-D661-4EAE-8B49-B83277F9B1C6");
 
@@ -831,7 +831,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee2_1 = new Id<TestProxy.ccllc_transactioninitialfee>("C83DDA40-4C6C-4A1B-8A09-225C6FCAD154");
 
-                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_transactionrequirement>("381DB3EF-1207-4142-868C-0F2EE2C3339C");
+                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_Requirement>("381DB3EF-1207-4142-868C-0F2EE2C3339C");
 
                 public static readonly Id TransactionContext2_1 = new Id<TestProxy.ccllc_transactiontypecontext>("2DCF71B6-42D3-42F6-B3C6-F4EC6A07203A");
 
@@ -851,7 +851,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee3_1 = new Id<TestProxy.ccllc_transactioninitialfee>("02ABE222-6B4E-4567-811B-E63DAA577E8F");
 
-                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_transactionrequirement>("ACCBF376-D35B-4ECA-A634-C637A06BBC58");
+                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_Requirement>("ACCBF376-D35B-4ECA-A634-C637A06BBC58");
 
                 public static readonly Id TransactionContext3_1 = new Id<TestProxy.ccllc_transactiontypecontext>("9A61972F-AEEE-4EE0-8156-2538901E7DBF");
 
@@ -1266,7 +1266,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("19E94816-33D8-44DE-B814-4DF37FA442D4");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("ED00FA3C-16EB-4874-9FED-4D7B0EFA1B11");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("ED00FA3C-16EB-4874-9FED-4D7B0EFA1B11");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("8AE081C2-ED4D-482D-BF43-A27847016A1E");
 

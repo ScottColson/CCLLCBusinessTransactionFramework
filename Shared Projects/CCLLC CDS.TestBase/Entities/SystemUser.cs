@@ -3796,19 +3796,91 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N lk_ccllc_requirementwaiverrole_createdby
+		/// 1:N lk_ccllc_requirement_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirementwaiverrole_createdby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> lk_ccllc_requirementwaiverrole_createdby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirement_createdby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> lk_ccllc_requirement_createdby
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_createdby", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_createdby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_requirement_createdby");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_createdby", null, value);
+				this.OnPropertyChanged("lk_ccllc_requirement_createdby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_requirement_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirement_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> lk_ccllc_requirement_createdonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_createdonbehalfby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_requirement_createdonbehalfby");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ccllc_requirement_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_requirement_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirement_modifiedby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> lk_ccllc_requirement_modifiedby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_modifiedby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_requirement_modifiedby");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_modifiedby", null, value);
+				this.OnPropertyChanged("lk_ccllc_requirement_modifiedby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_requirement_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirement_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> lk_ccllc_requirement_modifiedonbehalfby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_modifiedonbehalfby", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("lk_ccllc_requirement_modifiedonbehalfby");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("lk_ccllc_requirement_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ccllc_requirement_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_ccllc_requirementwaiverrole_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirementwaiverrole_createdby")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> lk_ccllc_requirementwaiverrole_createdby
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_createdby", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("lk_ccllc_requirementwaiverrole_createdby");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_createdby", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_createdby", null, value);
 				this.OnPropertyChanged("lk_ccllc_requirementwaiverrole_createdby");
 			}
 		}
@@ -3817,16 +3889,16 @@ namespace TestProxy
 		/// 1:N lk_ccllc_requirementwaiverrole_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirementwaiverrole_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> lk_ccllc_requirementwaiverrole_createdonbehalfby
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> lk_ccllc_requirementwaiverrole_createdonbehalfby
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_createdonbehalfby", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_createdonbehalfby", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("lk_ccllc_requirementwaiverrole_createdonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_createdonbehalfby", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_createdonbehalfby", null, value);
 				this.OnPropertyChanged("lk_ccllc_requirementwaiverrole_createdonbehalfby");
 			}
 		}
@@ -3835,16 +3907,16 @@ namespace TestProxy
 		/// 1:N lk_ccllc_requirementwaiverrole_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirementwaiverrole_modifiedby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> lk_ccllc_requirementwaiverrole_modifiedby
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> lk_ccllc_requirementwaiverrole_modifiedby
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_modifiedby", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_modifiedby", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("lk_ccllc_requirementwaiverrole_modifiedby");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_modifiedby", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_modifiedby", null, value);
 				this.OnPropertyChanged("lk_ccllc_requirementwaiverrole_modifiedby");
 			}
 		}
@@ -3853,16 +3925,16 @@ namespace TestProxy
 		/// 1:N lk_ccllc_requirementwaiverrole_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_requirementwaiverrole_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> lk_ccllc_requirementwaiverrole_modifiedonbehalfby
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> lk_ccllc_requirementwaiverrole_modifiedonbehalfby
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_modifiedonbehalfby", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_modifiedonbehalfby", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("lk_ccllc_requirementwaiverrole_modifiedonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("lk_ccllc_requirementwaiverrole_modifiedonbehalfby", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("lk_ccllc_requirementwaiverrole_modifiedonbehalfby", null, value);
 				this.OnPropertyChanged("lk_ccllc_requirementwaiverrole_modifiedonbehalfby");
 			}
 		}
@@ -4368,150 +4440,6 @@ namespace TestProxy
 				this.OnPropertyChanging("lk_ccllc_transactionprocess_modifiedonbehalfby");
 				this.SetRelatedEntities<TestProxy.ccllc_transactionprocess>("lk_ccllc_transactionprocess_modifiedonbehalfby", null, value);
 				this.OnPropertyChanged("lk_ccllc_transactionprocess_modifiedonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirement_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirement_createdby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> lk_ccllc_transactionrequirement_createdby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_createdby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirement_createdby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_createdby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirement_createdby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirement_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirement_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> lk_ccllc_transactionrequirement_createdonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_createdonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirement_createdonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_createdonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirement_createdonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirement_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirement_modifiedby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> lk_ccllc_transactionrequirement_modifiedby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_modifiedby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirement_modifiedby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_modifiedby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirement_modifiedby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirement_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirement_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> lk_ccllc_transactionrequirement_modifiedonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_modifiedonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirement_modifiedonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("lk_ccllc_transactionrequirement_modifiedonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirement_modifiedonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirementwaiverrole_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_createdby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> lk_ccllc_transactionrequirementwaiverrole_createdby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_createdby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirementwaiverrole_createdby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_createdby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirementwaiverrole_createdby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirementwaiverrole_createdonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirementwaiverrole_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_modifiedby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> lk_ccllc_transactionrequirementwaiverrole_modifiedby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_modifiedby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirementwaiverrole_modifiedby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_modifiedby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirementwaiverrole_modifiedby");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby", null, value);
-				this.OnPropertyChanged("lk_ccllc_transactionrequirementwaiverrole_modifiedonbehalfby");
 			}
 		}
 		
@@ -5452,19 +5380,37 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N user_ccllc_requirementwaiverrole
+		/// 1:N user_ccllc_requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_requirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_requirementwaiverrole> user_ccllc_requirementwaiverrole
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_requirement")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> user_ccllc_requirement
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("user_ccllc_requirementwaiverrole", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("user_ccllc_requirement", null);
+			}
+			set
+			{
+				this.OnPropertyChanging("user_ccllc_requirement");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("user_ccllc_requirement", null, value);
+				this.OnPropertyChanged("user_ccllc_requirement");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N user_ccllc_requirementwaiverrole
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_requirementwaiverrole")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_RequirementWaiverRole> user_ccllc_requirementwaiverrole
+		{
+			get
+			{
+				return this.GetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("user_ccllc_requirementwaiverrole", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("user_ccllc_requirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_requirementwaiverrole>("user_ccllc_requirementwaiverrole", null, value);
+				this.SetRelatedEntities<TestProxy.ccllc_RequirementWaiverRole>("user_ccllc_requirementwaiverrole", null, value);
 				this.OnPropertyChanged("user_ccllc_requirementwaiverrole");
 			}
 		}
@@ -5592,42 +5538,6 @@ namespace TestProxy
 				this.OnPropertyChanging("user_ccllc_transactionprocess");
 				this.SetRelatedEntities<TestProxy.ccllc_transactionprocess>("user_ccllc_transactionprocess", null, value);
 				this.OnPropertyChanged("user_ccllc_transactionprocess");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N user_ccllc_transactionrequirement
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_transactionrequirement")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> user_ccllc_transactionrequirement
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("user_ccllc_transactionrequirement", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("user_ccllc_transactionrequirement");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("user_ccllc_transactionrequirement", null, value);
-				this.OnPropertyChanged("user_ccllc_transactionrequirement");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N user_ccllc_transactionrequirementwaiverrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_ccllc_transactionrequirementwaiverrole")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirementwaiverrole> user_ccllc_transactionrequirementwaiverrole
-		{
-			get
-			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("user_ccllc_transactionrequirementwaiverrole", null);
-			}
-			set
-			{
-				this.OnPropertyChanging("user_ccllc_transactionrequirementwaiverrole");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirementwaiverrole>("user_ccllc_transactionrequirementwaiverrole", null, value);
-				this.OnPropertyChanged("user_ccllc_transactionrequirementwaiverrole");
 			}
 		}
 		

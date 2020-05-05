@@ -194,36 +194,12 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{81b637b4-8023-1745-d248-c2320674d6bb}" showlabel="false" rowspan="6" auto="false" colspan="1">
+                      <cell id="{2465076b-d893-8e7d-61a9-1717448c2904}" showlabel="false">
                         <labels>
-                          <label description="Requirements " languagecode="1033" />
+                          <label description="" languagecode="1033" />
                         </labels>
-                        <control id="Requirements" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{2341bc43-8359-0bda-9994-ca08b03d535d}" indicationOfSubgrid="true">
-                          <parameters>
-                            <ViewId>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewId>
-                            <IsUserView>false</IsUserView>
-                            <RelationshipName>ccllc_transactiontype_requirements</RelationshipName>
-                            <TargetEntityType>ccllc_transactionrequirement</TargetEntityType>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <EnableQuickFind>false</EnableQuickFind>
-                            <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{21EA05E1-E1E9-474A-89D9-FE71844E1E0A}</ViewIds>
-                            <EnableJumpBar>false</EnableJumpBar>
-                            <ChartGridMode>All</ChartGridMode>
-                            <VisualizationId />
-                            <IsUserChart>false</IsUserChart>
-                            <EnableChartPicker>true</EnableChartPicker>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
-                          </parameters>
-                        </control>
                       </cell>
                     </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
                   </rows>
                 </section>
               </sections>

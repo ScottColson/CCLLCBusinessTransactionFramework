@@ -49,7 +49,7 @@ namespace CCLLC.BTF.Process.CDS.Test.Common
             c.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>();
             c.Implement<ITransactionServiceFactory>().Using<TransactionServiceFactory>();
             c.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>();
-            c.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>();            
+            c.Implement<IRequirementFactory>().Using<RequirementFactory>();            
         }
 
         protected override abstract void Test(IOrganizationService service);

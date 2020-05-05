@@ -76,6 +76,24 @@ namespace TestProxy
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_description")]
+		public string ccllc_Description
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_description");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_Description");
+				this.SetAttributeValue("ccllc_description", value);
+				this.OnPropertyChanged("ccllc_Description");
+			}
+		}
+		
+		/// <summary>
 		/// The name of the custom entity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
@@ -129,6 +147,24 @@ namespace TestProxy
 			set
 			{
 				this.ccllc_processsteptypeId = value;
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_stepparametertemplate")]
+		public string ccllc_StepParameterTemplate
+		{
+			get
+			{
+				return this.GetAttributeValue<string>("ccllc_stepparametertemplate");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_StepParameterTemplate");
+				this.SetAttributeValue("ccllc_stepparametertemplate", value);
+				this.OnPropertyChanged("ccllc_StepParameterTemplate");
 			}
 		}
 		

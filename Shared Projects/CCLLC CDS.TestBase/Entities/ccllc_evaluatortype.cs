@@ -427,20 +427,20 @@ namespace TestProxy
 		}
 		
 		/// <summary>
-		/// 1:N ccllc_evaluatortype_transactionrequirement
+		/// 1:N ccllc_Requirement_EvaluatorTypeId_ccllc_e
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_evaluatortype_transactionrequirement")]
-		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_transactionrequirement> ccllc_evaluatortype_transactionrequirement
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_Requirement_EvaluatorTypeId_ccllc_e")]
+		public System.Collections.Generic.IEnumerable<TestProxy.ccllc_Requirement> ccllc_Requirement_EvaluatorTypeId_ccllc_e
 		{
 			get
 			{
-				return this.GetRelatedEntities<TestProxy.ccllc_transactionrequirement>("ccllc_evaluatortype_transactionrequirement", null);
+				return this.GetRelatedEntities<TestProxy.ccllc_Requirement>("ccllc_Requirement_EvaluatorTypeId_ccllc_e", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_evaluatortype_transactionrequirement");
-				this.SetRelatedEntities<TestProxy.ccllc_transactionrequirement>("ccllc_evaluatortype_transactionrequirement", null, value);
-				this.OnPropertyChanged("ccllc_evaluatortype_transactionrequirement");
+				this.OnPropertyChanging("ccllc_Requirement_EvaluatorTypeId_ccllc_e");
+				this.SetRelatedEntities<TestProxy.ccllc_Requirement>("ccllc_Requirement_EvaluatorTypeId_ccllc_e", null, value);
+				this.OnPropertyChanged("ccllc_Requirement_EvaluatorTypeId_ccllc_e");
 			}
 		}
 		

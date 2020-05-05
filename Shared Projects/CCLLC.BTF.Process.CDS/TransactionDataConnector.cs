@@ -252,20 +252,20 @@ namespace CCLLC.BTF.Process.CDS
                     .RetrieveAll().ToList<ITransactionContextType>();
         }
 
-        public IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService)
+        public IList<IRequirementRecord> GetAllRequirements(IDataService dataService)
         {
-            return dataService.ToOrgService().Query<ccllc_transactionrequirement>()
+            return dataService.ToOrgService().Query<ccllc_Requirement>()
                     .SelectAll()
                     .WhereAll(e => e
                         .IsActive()
                         .Attribute("ccllc_evaluatortypeid").IsNotNull()
                         .Attribute("ccllc_transactiontypeid").IsNotNull())
-                    .RetrieveAll().ToList<ITransactionRequirementRecord>();
+                    .RetrieveAll().ToList<IRequirementRecord>();
         }
 
         public IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService)
         {
-            return dataService.ToOrgService().Query<ccllc_transactionrequirementwaiverrole>()
+            return dataService.ToOrgService().Query<ccllc_RequirementWaiverRole>()
                     .SelectAll()
                     .WhereAll(e => e.IsActive())
                     .RetrieveAll().ToList<IRequirementWaiverRole>();
@@ -343,7 +343,7 @@ namespace CCLLC.BTF.Process.CDS
             {
                 ccllc_name = name,
                 ccllc_TransactionId = transactionId?.ToEntityReference(),
-                ccllc_TransactionRequirementId = requirementId?.ToEntityReference(),
+                ccllc_RequirementId = requirementId?.ToEntityReference(),
                 statuscode = ccllc_transactiondeficiency_statuscode.Active
             };
 

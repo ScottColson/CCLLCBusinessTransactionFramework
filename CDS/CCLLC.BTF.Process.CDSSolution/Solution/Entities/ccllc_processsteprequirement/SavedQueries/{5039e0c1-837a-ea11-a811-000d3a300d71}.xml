@@ -10,7 +10,7 @@
     <layoutxml>
       <grid name="resultset" jump="ccllc_name" select="1" preview="1" icon="1">
         <row name="result" id="ccllc_processsteprequirementid">
-          <cell name="ccllc_transactionrequirementid" width="300" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ccllc_requirementid" width="300" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
         </row>
       </grid>
     </layoutxml>
@@ -18,8 +18,8 @@
     <fetchxml>
       <fetch version="1.0" output-format="xml-platform" mapping="logical">
         <entity name="ccllc_processsteprequirement">
-          <order attribute="ccllc_transactionrequirementid" descending="false" />
-          <attribute name="ccllc_transactionrequirementid" />
+          <order attribute="ccllc_requirementid" descending="false" />
+          <attribute name="ccllc_requirementid" />
           <attribute name="ccllc_processsteprequirementid" />
         </entity>
       </fetch>

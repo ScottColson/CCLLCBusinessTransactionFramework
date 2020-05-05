@@ -4,20 +4,20 @@ namespace CCLLC.BTF.Process.CDS
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ccllc_requirementwaiverrole")]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.28")]
-	public partial class ccllc_requirementwaiverrole : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	public partial class ccllc_RequirementWaiverRole : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		public ccllc_requirementwaiverrole() : 
+		public ccllc_RequirementWaiverRole() : 
 				base(EntityLogicalName)
 		{
 		}
 		
 		public const string EntityLogicalName = "ccllc_requirementwaiverrole";
 		
-		public const int EntityTypeCode = 10159;
+		public const int EntityTypeCode = 10180;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -40,10 +40,10 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// The name of the custom entity.
+		/// Required name field
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_name")]
-		public string ccllc_name
+		public string ccllc_Name
 		{
 			get
 			{
@@ -51,9 +51,27 @@ namespace CCLLC.BTF.Process.CDS
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_name");
+				this.OnPropertyChanging("ccllc_Name");
 				this.SetAttributeValue("ccllc_name", value);
-				this.OnPropertyChanged("ccllc_name");
+				this.OnPropertyChanged("ccllc_Name");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_RequirementId
+		{
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_requirementid");
+			}
+			set
+			{
+				this.OnPropertyChanging("ccllc_RequirementId");
+				this.SetAttributeValue("ccllc_requirementid", value);
+				this.OnPropertyChanged("ccllc_RequirementId");
 			}
 		}
 		
@@ -61,7 +79,7 @@ namespace CCLLC.BTF.Process.CDS
 		/// Unique identifier for entity instances
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementwaiverroleid")]
-		public System.Nullable<System.Guid> ccllc_requirementwaiverroleId
+		public System.Nullable<System.Guid> ccllc_RequirementWaiverRoleId
 		{
 			get
 			{
@@ -69,7 +87,7 @@ namespace CCLLC.BTF.Process.CDS
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_requirementwaiverroleId");
+				this.OnPropertyChanging("ccllc_RequirementWaiverRoleId");
 				this.SetAttributeValue("ccllc_requirementwaiverroleid", value);
 				if (value.HasValue)
 				{
@@ -79,7 +97,7 @@ namespace CCLLC.BTF.Process.CDS
 				{
 					base.Id = System.Guid.Empty;
 				}
-				this.OnPropertyChanged("ccllc_requirementwaiverroleId");
+				this.OnPropertyChanged("ccllc_RequirementWaiverRoleId");
 			}
 		}
 		
@@ -92,12 +110,12 @@ namespace CCLLC.BTF.Process.CDS
 			}
 			set
 			{
-				this.ccllc_requirementwaiverroleId = value;
+				this.ccllc_RequirementWaiverRoleId = value;
 			}
 		}
 		
 		/// <summary>
-		/// The Role that is authorized to waive the Transaction Requirement.
+		/// 
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_roleid")]
 		public Microsoft.Xrm.Sdk.EntityReference ccllc_RoleId
@@ -111,24 +129,6 @@ namespace CCLLC.BTF.Process.CDS
 				this.OnPropertyChanging("ccllc_RoleId");
 				this.SetAttributeValue("ccllc_roleid", value);
 				this.OnPropertyChanged("ccllc_RoleId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Transaction Requirement associated with Requirement Waiver Role.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionRequirementId
-		{
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionrequirementid");
-			}
-			set
-			{
-				this.OnPropertyChanging("ccllc_TransactionRequirementId");
-				this.SetAttributeValue("ccllc_transactionrequirementid", value);
-				this.OnPropertyChanged("ccllc_TransactionRequirementId");
 			}
 		}
 		
@@ -298,14 +298,14 @@ namespace CCLLC.BTF.Process.CDS
 		/// Status of the Requirement Waiver Role
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public System.Nullable<CCLLC.BTF.Process.CDS.ccllc_requirementwaiverroleState> statecode
+		public System.Nullable<CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRoleState> statecode
 		{
 			get
 			{
 				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statecode");
 				if ((optionSet != null))
 				{
-					return ((CCLLC.BTF.Process.CDS.ccllc_requirementwaiverroleState)(System.Enum.ToObject(typeof(CCLLC.BTF.Process.CDS.ccllc_requirementwaiverroleState), optionSet.Value)));
+					return ((CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRoleState)(System.Enum.ToObject(typeof(CCLLC.BTF.Process.CDS.ccllc_RequirementWaiverRoleState), optionSet.Value)));
 				}
 				else
 				{
@@ -409,21 +409,21 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// N:1 ccllc_requirement_requirementwaiverrole
+		/// N:1 ccllc_RequirementWaiverRole_Requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_requirement_requirementwaiverrole")]
-		public CCLLC.BTF.Process.CDS.ccllc_transactionrequirement ccllc_requirement_requirementwaiverrole
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_RequirementWaiverRole_Requirement")]
+		public CCLLC.BTF.Process.CDS.ccllc_Requirement ccllc_RequirementWaiverRole_Requirement
 		{
 			get
 			{
-				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_requirement_requirementwaiverrole", null);
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_RequirementWaiverRole_Requirement", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_requirement_requirementwaiverrole");
-				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_requirement_requirementwaiverrole", null, value);
-				this.OnPropertyChanged("ccllc_requirement_requirementwaiverrole");
+				this.OnPropertyChanging("ccllc_RequirementWaiverRole_Requirement");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_RequirementWaiverRole_Requirement", null, value);
+				this.OnPropertyChanged("ccllc_RequirementWaiverRole_Requirement");
 			}
 		}
 	}

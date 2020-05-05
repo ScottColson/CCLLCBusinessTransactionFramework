@@ -8,7 +8,7 @@ namespace CCLLC.BTF.Process
 {
     public class TransactionType : RecordPointer<Guid>, ITransactionType
     {
-        private List<ITransactionRequirement> _requirements;
+        private List<IRequirement> _requirements;
         private List<IRecordPointer<Guid>> _authorizedRoles;
         private List<ITransactionProcess> _availableProcesses;
         private List<ITransactionContextType> _eligibleContexts;
@@ -35,11 +35,11 @@ namespace CCLLC.BTF.Process
 
         public IReadOnlyList<IRecordPointer<Guid>> InitialFeeSchedule => _initialFeeSchedule;
 
-        public IReadOnlyList<ITransactionRequirement> Requirements => _requirements;
+        public IReadOnlyList<IRequirement> Requirements => _requirements;
 
         public IReadOnlyList<string> AffectedRecordTypes => throw new NotImplementedException();
 
-        protected internal TransactionType(IRecordPointer<Guid> transactionTypeId, string name, int displayRank, ITransactionGroup group, IRecordPointer<Guid> startupProcessId, ISerializedParameters dataRecordType, IEnumerable<IRecordPointer<Guid>> authorizedChannels, IEnumerable<IRecordPointer<Guid>> authorizedRoles, IEnumerable<ITransactionProcess> processes, IEnumerable<ITransactionRequirement> requirements, IEnumerable<IRecordPointer<Guid>> initialFees, IEnumerable<ITransactionContextType> contexts )
+        protected internal TransactionType(IRecordPointer<Guid> transactionTypeId, string name, int displayRank, ITransactionGroup group, IRecordPointer<Guid> startupProcessId, ISerializedParameters dataRecordType, IEnumerable<IRecordPointer<Guid>> authorizedChannels, IEnumerable<IRecordPointer<Guid>> authorizedRoles, IEnumerable<ITransactionProcess> processes, IEnumerable<IRequirement> requirements, IEnumerable<IRecordPointer<Guid>> initialFees, IEnumerable<ITransactionContextType> contexts )
         : base(transactionTypeId)
         {            
             this.Name = name;

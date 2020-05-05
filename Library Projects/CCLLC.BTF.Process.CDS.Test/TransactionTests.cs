@@ -270,7 +270,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("F0103518-855D-456E-B76A-A34A8EE8CDE6");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("2E827880-6C35-42F6-8B5A-F070FE5F41D2");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("2E827880-6C35-42F6-8B5A-F070FE5F41D2");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("48E7C987-9160-4F53-9129-51C62DD0564B");
 
