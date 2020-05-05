@@ -5,10 +5,10 @@ using CCLLC.BTF.Platform;
 
 namespace CCLLC.BTF.Process
 {
-    public interface ITransactionRequirement : IRecordPointer<Guid>
+    public interface IRequirement : IRecordPointer<Guid>
     {       
         string Name { get; }
-        eTransactionRequirementTypeFlags TypeFlag { get; }
+        eRequirementTypeFlags TypeFlag { get; }
         IRecordPointer<Guid> TransactionTypeId { get;  }
         ILogicEvaluator Evaluator { get; }
         IReadOnlyList<IRecordPointer<Guid>> AuthorizedWaiverRoles { get; }

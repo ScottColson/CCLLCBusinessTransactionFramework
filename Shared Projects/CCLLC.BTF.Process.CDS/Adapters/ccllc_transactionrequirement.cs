@@ -5,22 +5,22 @@ using CCLLC.Core;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    public partial class ccllc_transactionrequirement : ITransactionRequirementRecord
+    public partial class ccllc_transactionrequirement : IRequirementRecord
     {
         public string Name => this.ccllc_name;
 
-        public eTransactionRequirementTypeFlags? TypeFlag
+        public eRequirementTypeFlags? TypeFlag
         {
             get
             {
                 IEnumerable<OptionSetValue> options = (IEnumerable<OptionSetValue>)this.ccllc_TransactionRequirementTypeCode;
 
-                eTransactionRequirementTypeFlags? flags = null;
+                eRequirementTypeFlags? flags = null;
                 if (options != null)
                 {
                     foreach (var o in options)
                     {
-                        var val = Enum.IsDefined(typeof(eTransactionRequirementTypeFlags), o.Value) ? (eTransactionRequirementTypeFlags)o.Value : throw new Exception("Invalid transaction requirement type.");
+                        var val = Enum.IsDefined(typeof(eRequirementTypeFlags), o.Value) ? (eRequirementTypeFlags)o.Value : throw new Exception("Invalid transaction requirement type.");
                         if (flags == null)
                         {
                             flags = val;

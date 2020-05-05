@@ -6,11 +6,11 @@ using CCLLC.BTF.Platform;
 
 namespace CCLLC.BTF.Process
 {
-    public class TransactionRequirement : RecordPointer<Guid>, ITransactionRequirement
+    public class Requirement : RecordPointer<Guid>, IRequirement
     {       
         public string Name { get; }
 
-        public eTransactionRequirementTypeFlags TypeFlag { get; }
+        public eRequirementTypeFlags TypeFlag { get; }
 
         public IRecordPointer<Guid> TransactionTypeId { get; }
 
@@ -18,7 +18,7 @@ namespace CCLLC.BTF.Process
 
         public IReadOnlyList<IRecordPointer<Guid>> AuthorizedWaiverRoles { get; }
 
-        protected internal TransactionRequirement(string recordType, Guid id, string name, eTransactionRequirementTypeFlags? typeFlag, IRecordPointer<Guid> transactionTypeId, ILogicEvaluator evaluator, IEnumerable<IRecordPointer<Guid>> authorizedWaiverRoles)
+        protected internal Requirement(string recordType, Guid id, string name, eRequirementTypeFlags? typeFlag, IRecordPointer<Guid> transactionTypeId, ILogicEvaluator evaluator, IEnumerable<IRecordPointer<Guid>> authorizedWaiverRoles)
             : base(recordType,id)
         {
             this.Name = name;

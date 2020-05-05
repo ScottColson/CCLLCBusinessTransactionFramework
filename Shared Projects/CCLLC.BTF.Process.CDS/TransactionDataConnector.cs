@@ -252,7 +252,7 @@ namespace CCLLC.BTF.Process.CDS
                     .RetrieveAll().ToList<ITransactionContextType>();
         }
 
-        public IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService)
+        public IList<IRequirementRecord> GetAllTransactionRequirements(IDataService dataService)
         {
             return dataService.ToOrgService().Query<ccllc_transactionrequirement>()
                     .SelectAll()
@@ -260,7 +260,7 @@ namespace CCLLC.BTF.Process.CDS
                         .IsActive()
                         .Attribute("ccllc_evaluatortypeid").IsNotNull()
                         .Attribute("ccllc_transactiontypeid").IsNotNull())
-                    .RetrieveAll().ToList<ITransactionRequirementRecord>();
+                    .RetrieveAll().ToList<IRequirementRecord>();
         }
 
         public IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService)

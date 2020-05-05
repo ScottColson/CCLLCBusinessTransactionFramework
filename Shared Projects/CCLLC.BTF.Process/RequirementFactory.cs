@@ -6,20 +6,20 @@ namespace CCLLC.BTF.Process
     using CCLLC.Core;
     using CCLLC.BTF.Platform;
 
-    public class TransactionRequirementFactory : ITransactionRequirementFactory
+    public class RequirementFactory : IRequirementFactory
     {
         protected const string CACHE_KEY = "CCLLC.BTF.Process.TransactionRequirementFactory";
 
         protected ILogicEvaluatorFactory EvaluatorFactory { get; }
         protected IProcessSettingsFactory SettingsFactory { get; }
 
-        public TransactionRequirementFactory(IProcessSettingsFactory settingsFactory, ILogicEvaluatorFactory evaluatorFacotry)
+        public RequirementFactory(IProcessSettingsFactory settingsFactory, ILogicEvaluatorFactory evaluatorFacotry)
         {
             this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
             this.EvaluatorFactory = evaluatorFacotry ?? throw new ArgumentNullException("evaluatorFactory");
         }
 
-        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
+        public IRequirement CreateRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
         {
             try
             {
@@ -33,19 +33,19 @@ namespace CCLLC.BTF.Process
 
                     if (executionContext.Cache.Exists(cacheKey))
                     {
-                        return executionContext.Cache.Get<ITransactionRequirement>(cacheKey);
+                        return executionContext.Cache.Get<IRequirement>(cacheKey);
                     }
                 }
                 
                 var evaluator = EvaluatorFactory.CreateEvaluator(executionContext, requirementId, evaluatorType, parameters, useCache);
-                var requirement = new TransactionRequirement(requirementId.RecordType,requirementId.Id, name, requirementType, transactionTypeId, evaluator, waiverRoles);
+                var requirement = new Requirement(requirementId.RecordType,requirementId.Id, name, requirementType, transactionTypeId, evaluator, waiverRoles);
                 
                 if (useCache)
                 {
                     var settings = SettingsFactory.CreateSettings(executionContext.Settings);
                     var cacheTimeout = settings.TransactionRequirementCacheTimeout;
 
-                    executionContext.Cache.Add<ITransactionRequirement>(cacheKey, requirement, cacheTimeout.Value);
+                    executionContext.Cache.Add<IRequirement>(cacheKey, requirement, cacheTimeout.Value);
                 }
 
                 return requirement;
@@ -57,17 +57,17 @@ namespace CCLLC.BTF.Process
             }
         }
 
-        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eTransactionRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
+        public IRequirement CreateEvidenceRequirement(IProcessExecutionContext executionContext, IRecordPointer<Guid> requirementId, string name, eRequirementTypeFlags? requirementType, IRecordPointer<Guid> transactionTypeId, ILogicEvaluatorType evaluatorType, string parameters, IEnumerable<IRecordPointer<Guid>> waiverRoles, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public ITransactionRequirement CreateRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
+        public IRequirement CreateRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
         {
             throw new NotImplementedException();
         }
 
-        public ITransactionRequirement CreateEvidenceRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
+        public IRequirement CreateEvidenceRequirement(IProcessExecutionContext executionCOntext, IRecordPointer<Guid> requirementId, string parameters, bool useCache = true)
         {
             throw new NotImplementedException();
         }

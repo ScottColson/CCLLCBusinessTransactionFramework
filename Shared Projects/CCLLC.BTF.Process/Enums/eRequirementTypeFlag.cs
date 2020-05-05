@@ -3,7 +3,7 @@
 namespace CCLLC.BTF.Process
 {
     [Flags]
-    public enum eTransactionRequirementTypeFlags
+    public enum eRequirementTypeFlags
     {
         Evidence = 1,
         Eligibility = 2,

@@ -7,7 +7,7 @@ namespace CCLLC.BTF.Process
 
     public interface IRequirementDeficiency : IRequirementDeficiencyRecord
     {
-        new ITransactionRequirement Requirement { get; }
+        new IRequirement Requirement { get; }
         new IAgent WaivedBy { get; }        
         
         bool CanWaive(IWorkSession workSession);

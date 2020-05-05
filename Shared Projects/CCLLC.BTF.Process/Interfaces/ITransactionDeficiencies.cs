@@ -8,10 +8,10 @@ namespace CCLLC.BTF.Process
 
     public interface ITransactionDeficiencies : IReadOnlyList<IRequirementDeficiency>
     {
-        IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement);
+        IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, IRequirement requirement);
 
-        void ClearDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement);
+        void ClearDeficiency(IProcessExecutionContext executionContext, IRequirement requirement);
 
-        IRequirementDeficiency GetCurrentRequirementDeficiency(ITransactionRequirement requirement);
+        IRequirementDeficiency GetCurrentRequirementDeficiency(IRequirement requirement);
     }
 }
