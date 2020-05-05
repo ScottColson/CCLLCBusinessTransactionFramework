@@ -28,7 +28,7 @@ namespace CCLLC.BTF.Process
         protected IProcessStepFactory ProcessStepFactory { get; }
         protected IProcessStepTypeFactory ProcessStepTypeFactory { get; }
         protected IRequirementEvaluator RequirementEvaluator { get; }
-        protected ITransactionRequirementFactory RequirementFactory { get; }
+        protected IRequirementFactory RequirementFactory { get; }
         protected ITransactionHistoryFactory TransactionHistoryFactory { get; }
         protected ITransactionProcessFactory TransactionProcessFactory { get; }
         protected IParameterSerializer ParameterSerializer { get; }
@@ -40,7 +40,7 @@ namespace CCLLC.BTF.Process
             ITransactionFeeListFactory transactionFeeListFactory, ITransactionContextFactory transactionContextFactory, ICustomerFactory customerFactory, ITransactionDeficienciesFactory transactionDeficienciesFactory, 
             IDocumentService documentService, ILogicEvaluatorTypeFactory evaluatorTypeFactory, IEvidenceService evidenceService, ILocationFactory locationFactory, 
             IParameterSerializer parameterSerializer, IPlatformService platformService, IProcessStepFactory processStepFactory, IProcessStepTypeFactory processStepTypeFactory, 
-            IRequirementEvaluator requirementEvaluator, ITransactionRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
+            IRequirementEvaluator requirementEvaluator, IRequirementFactory requirementFactory, ITransactionHistoryFactory transactionHistoryFactory, 
             ITransactionProcessFactory transactionProcessFactory, IFeeList feeList)
         {
             this.SettingsFactory = settingsFactory ?? throw new ArgumentNullException("settingsFactory");
@@ -179,13 +179,13 @@ namespace CCLLC.BTF.Process
         }
 
 
-        private IList<ITransactionRequirement> getRequirements(IProcessExecutionContext executionContext, bool useCache)
+        private IList<IRequirement> getRequirements(IProcessExecutionContext executionContext, bool useCache)
         {
             try
             {
-                IList<ITransactionRequirement> registeredRequirements = new List<ITransactionRequirement>();
+                IList<IRequirement> registeredRequirements = new List<IRequirement>();
                
-                var requirements = DataConnector.GetAllTransactionRequirements(executionContext.DataService);
+                var requirements = DataConnector.GetAllRequirements(executionContext.DataService);
 
                 var waiverRoles = DataConnector.GetAllRequirementWaiverRoles(executionContext.DataService);
 
@@ -198,7 +198,7 @@ namespace CCLLC.BTF.Process
                             executionContext, 
                             requirement as IRecordPointer<Guid>, 
                             requirement.Name, 
-                            requirement.TypeFlag ?? eTransactionRequirementTypeFlags.Validation, 
+                            requirement.TypeFlag ?? eRequirementTypeFlags.Validation, 
                             requirement.TransactionTypeId, 
                             evaluatorType,
                             requirement.RequirementParameters, 

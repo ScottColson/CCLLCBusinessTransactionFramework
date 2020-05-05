@@ -7,7 +7,7 @@ namespace CCLLC.BTF.Process
 
     public class RequirementDeficiency : RecordPointer<Guid>, IRequirementDeficiency
     {
-        public ITransactionRequirement Requirement { get; }
+        public IRequirement Requirement { get; }
 
         public IAgent WaivedBy { get; }
 
@@ -19,7 +19,7 @@ namespace CCLLC.BTF.Process
 
         IRecordPointer<Guid> IRequirementDeficiencyRecord.Requirement => this.Requirement;
 
-        public RequirementDeficiency(ITransactionRequirement requirement, eDeficiencyStatusEnum status, IAgent waivedBy, DateTime? waivedOn)
+        public RequirementDeficiency(IRequirement requirement, eDeficiencyStatusEnum status, IAgent waivedBy, DateTime? waivedOn)
         {
             Requirement = requirement ?? throw new ArgumentNullException("requirement");
             Status = status;

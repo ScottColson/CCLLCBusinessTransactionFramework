@@ -2,6 +2,8 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 using FakeItEasy;
 using DLaB.Xrm.Test;
 using CCLLC.Core;
@@ -9,7 +11,7 @@ using CCLLC.BTF.Platform;
 using CCLLC.CDS.Test.Builders;
 using CCLLC.CDS.Test.Fakes;
 using CCLLC.CDS.TestBase;
-
+using System.Collections.Generic;
 
 namespace CCLLC.BTF.Process.CDS.Test
 {
@@ -502,7 +504,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("CF08C9D3-5115-4EA4-AE29-E79E5EBA1640");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("13CA95A6-E593-4A1A-B9DC-D1DBF2576741");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("13CA95A6-E593-4A1A-B9DC-D1DBF2576741");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("8E0B2A57-25F0-498A-93D6-4BD414B89F2A");
 
@@ -524,7 +526,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee2_1 = new Id<TestProxy.ccllc_transactioninitialfee>("583324D5-F846-4B37-A5E2-4FDD72662AEF");
 
-                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_transactionrequirement>("7D9C7C23-CAFF-4971-9E84-708C386576F7");
+                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_Requirement>("7D9C7C23-CAFF-4971-9E84-708C386576F7");
 
                 public static readonly Id TransactionContext2_1 = new Id<TestProxy.ccllc_transactiontypecontext>("44A651BA-597A-4209-A685-ECBFB8F65CC5");
 
@@ -544,7 +546,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee3_1 = new Id<TestProxy.ccllc_transactioninitialfee>("5374EAF6-B0BD-47D7-BC06-C2AD0163A551");
 
-                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_transactionrequirement>("97E49765-7539-43FA-B5D5-6FC148FE1DE8");
+                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_Requirement>("97E49765-7539-43FA-B5D5-6FC148FE1DE8");
 
                 public static readonly Id TransactionContext3_1 = new Id<TestProxy.ccllc_transactiontypecontext>("1F1F5C01-EC70-49D1-8787-CA62BEF62736");
 
@@ -807,7 +809,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("9E7E5650-6287-4372-A967-DD1B8065E444");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("FB0B1445-EB9C-45CB-8A79-F18ED84301E8");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("FB0B1445-EB9C-45CB-8A79-F18ED84301E8");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("CC19399D-D661-4EAE-8B49-B83277F9B1C6");
 
@@ -829,7 +831,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee2_1 = new Id<TestProxy.ccllc_transactioninitialfee>("C83DDA40-4C6C-4A1B-8A09-225C6FCAD154");
 
-                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_transactionrequirement>("381DB3EF-1207-4142-868C-0F2EE2C3339C");
+                public static readonly Id Requirement2_1 = new Id<TestProxy.ccllc_Requirement>("381DB3EF-1207-4142-868C-0F2EE2C3339C");
 
                 public static readonly Id TransactionContext2_1 = new Id<TestProxy.ccllc_transactiontypecontext>("2DCF71B6-42D3-42F6-B3C6-F4EC6A07203A");
 
@@ -849,7 +851,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee3_1 = new Id<TestProxy.ccllc_transactioninitialfee>("02ABE222-6B4E-4567-811B-E63DAA577E8F");
 
-                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_transactionrequirement>("ACCBF376-D35B-4ECA-A634-C637A06BBC58");
+                public static readonly Id Requirement3_1 = new Id<TestProxy.ccllc_Requirement>("ACCBF376-D35B-4ECA-A634-C637A06BBC58");
 
                 public static readonly Id TransactionContext3_1 = new Id<TestProxy.ccllc_transactiontypecontext>("9A61972F-AEEE-4EE0-8156-2538901E7DBF");
 
@@ -1264,7 +1266,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("19E94816-33D8-44DE-B814-4DF37FA442D4");
 
-                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("ED00FA3C-16EB-4874-9FED-4D7B0EFA1B11");
+                public static readonly Id Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("ED00FA3C-16EB-4874-9FED-4D7B0EFA1B11");
 
                 public static readonly Id TransactionContext1_1 = new Id<TestProxy.ccllc_transactiontypecontext>("8AE081C2-ED4D-482D-BF43-A27847016A1E");
 
@@ -1761,6 +1763,40 @@ namespace CCLLC.BTF.Process.CDS.Test
                 public static readonly Id CreatedDataRecord = new Id<TestProxy.new_transactiondatarecord>("1AFD3820-DC26-4228-A9D0-F6D408354C84");
             }
 
+            private OrganizationResponse fakeRetrieveMetaData(IOrganizationService organizationService, OrganizationRequest request)
+            {
+                if (request is RetrieveEntityRequest)
+                {
+                    var typedRequest = (RetrieveEntityRequest)request;
+                    
+                    if (typedRequest.LogicalName == "new_transactiondatarecord")
+                    {
+
+                        var attributeMetadata = new List<AttributeMetadata>();
+                        attributeMetadata.Add(new FakeAttributeMetadata(AttributeTypeCode.String)
+                        {
+                            LogicalName = "new_datafield1"
+                        });
+
+                        var metaData = new EntityMetadata();
+                        metaData.SetAttributeCollection(attributeMetadata.ToArray());
+                       
+                        var parameters = new ParameterCollection();
+                        parameters.Add("EntityMetadata", metaData);
+
+                        var response = new RetrieveEntityResponse()
+                        {
+                            Results = parameters
+                        };
+
+                        return response;
+                    }
+                }
+
+                return null;
+            }
+
+
             protected override void InitializeTestData(IOrganizationService service)
             {
                 try
@@ -1782,6 +1818,7 @@ namespace CCLLC.BTF.Process.CDS.Test
                             .InGroup(Ids.Group1)
                             .WithDisplayRank(2)
                             .WithDataRecordType("new_transactiondatarecord")
+                            .WithDataRecordDefault("new_datafield1","testvalue1")
                             .WithStartupProcess(Ids.Process1))
 
                         .WithBuilder<TransactionChannelBulder>(Ids.TransactionAuthorizedChannel1_1, b => b
@@ -1835,7 +1872,8 @@ namespace CCLLC.BTF.Process.CDS.Test
             {
                 service = new OrganizationServiceBuilder(service)
                    .WithIdsDefaultedForCreate(                    
-                        Ids.CreatedDataRecord)                      
+                        Ids.CreatedDataRecord)    
+                   .WithFakeExecute(fakeRetrieveMetaData)
                    .Build();
 
                 var executionContext = GetExecutionContext(service);
@@ -1847,8 +1885,11 @@ namespace CCLLC.BTF.Process.CDS.Test
                 var dataRecord = transactionService.LoadTransactionDataRecord(executionContext, transaction);
 
                 Assert.AreEqual(Ids.CreatedDataRecord.EntityId, dataRecord.Id);
-                Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);
+                Assert.AreEqual(Ids.ExistingTransaction.EntityId, dataRecord.TransactionId.Id);    
                 Assert.AreEqual(Ids.Contact.EntityId, dataRecord.CustomerId.Id);
+
+                var entity = dataRecord as Entity;
+                Assert.AreEqual("testvalue1", entity["new_datafield1"]);
 
             }
         }

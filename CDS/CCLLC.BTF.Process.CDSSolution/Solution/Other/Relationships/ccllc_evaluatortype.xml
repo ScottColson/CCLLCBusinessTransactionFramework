@@ -37,15 +37,15 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="ccllc_evaluatortype_transactionrequirement">
+  <EntityRelationship Name="ccllc_Requirement_EvaluatorTypeId_ccllc_e">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>0.0.0.2</IntroducedVersion>
+    <IntroducedVersion>0.0.0.5</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ccllc_transactionrequirement</ReferencingEntityName>
+    <ReferencingEntityName>ccllc_Requirement</ReferencingEntityName>
     <ReferencedEntityName>ccllc_evaluatortype</ReferencedEntityName>
     <CascadeAssign>NoCascade</CascadeAssign>
-    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeDelete>RemoveLink</CascadeDelete>
     <CascadeReparent>NoCascade</CascadeReparent>
     <CascadeShare>NoCascade</CascadeShare>
     <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -54,7 +54,7 @@
     <ReferencingAttributeName>ccllc_EvaluatorTypeId</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="Defines the type of evaluator used to verify the requirement." languagecode="1033" />
+        <Description description="" languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
@@ -63,13 +63,10 @@
         <NavPaneArea>Details</NavPaneArea>
         <NavPaneOrder>10000</NavPaneOrder>
         <NavigationPropertyName>ccllc_EvaluatorTypeId</NavigationPropertyName>
-        <CustomLabels>
-          <CustomLabel description="" languagecode="1033" />
-        </CustomLabels>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>
-        <NavigationPropertyName>ccllc_evaluatortype_transactionrequirement</NavigationPropertyName>
+        <NavigationPropertyName>ccllc_Requirement_EvaluatorTypeId_ccllc_e</NavigationPropertyName>
         <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>

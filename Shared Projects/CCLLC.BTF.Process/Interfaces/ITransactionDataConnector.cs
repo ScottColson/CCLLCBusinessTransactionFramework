@@ -19,7 +19,7 @@ namespace CCLLC.BTF.Process
 
         IList<ITransactionGroup> GetAllTransactionGroups(IDataService dataService);
 
-        IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService);
+        IList<IRequirementRecord> GetAllRequirements(IDataService dataService);
 
         IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService);
 
@@ -40,7 +40,7 @@ namespace CCLLC.BTF.Process
 
         ITransactionContextRecord GetTransactionContextRecord(IDataService dataService, IRecordPointer<Guid> contextRecordId);
 
-        ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId);
+        ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId, IDictionary<string,string> defaultValues = null);
 
         IList<IProcessStepTypeRecord> GetAllStepTypes(IDataService dataService);
 

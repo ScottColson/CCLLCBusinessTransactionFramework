@@ -89,8 +89,8 @@ namespace CCLLC.BTF.Process.CDS.Test
                 public static readonly Id<TestProxy.ccllc_transactioninitialfee> InitialFee1_1 = new Id<TestProxy.ccllc_transactioninitialfee>("6604E443-1D87-4889-903C-CA2C7670D078");
                 public static readonly Id<TestProxy.ccllc_transactioninitialfee> InitialFee1_2 = new Id<TestProxy.ccllc_transactioninitialfee>("16F94594-E1E0-429A-9598-97EBEF463F2C");
                
-                public static readonly Id<TestProxy.ccllc_transactionrequirement> Requirement1_1 = new Id<TestProxy.ccllc_transactionrequirement>("67AF501C-1CB2-4A2C-8EAE-FA08661FADE7");
-                public static readonly Id<TestProxy.ccllc_transactionrequirement> Requirement1_2 = new Id<TestProxy.ccllc_transactionrequirement>("7BEEEA55-80AF-445F-904D-43C6FFD19E35");
+                public static readonly Id<TestProxy.ccllc_Requirement> Requirement1_1 = new Id<TestProxy.ccllc_Requirement>("67AF501C-1CB2-4A2C-8EAE-FA08661FADE7");
+                public static readonly Id<TestProxy.ccllc_Requirement> Requirement1_2 = new Id<TestProxy.ccllc_Requirement>("7BEEEA55-80AF-445F-904D-43C6FFD19E35");
                             
                 public static readonly Id<TestProxy.ccllc_transactionprocess> Process1 = new Id<TestProxy.ccllc_transactionprocess>("F70608B4-EC6F-4FDD-9C27-3992F4DFC4D7");
 
@@ -110,7 +110,7 @@ namespace CCLLC.BTF.Process.CDS.Test
 
                 public static readonly Id<TestProxy.ccllc_transactioninitialfee> InitialFee2_1 = new Id<TestProxy.ccllc_transactioninitialfee>("6D146AE5-6A35-4630-B50D-45E3AEED20E0");
 
-                public static readonly Id<TestProxy.ccllc_transactionrequirement> Requirement2_1 = new Id<TestProxy.ccllc_transactionrequirement>("9B50EF32-49E8-45EF-B882-1F06F483CD01");
+                public static readonly Id<TestProxy.ccllc_Requirement> Requirement2_1 = new Id<TestProxy.ccllc_Requirement>("9B50EF32-49E8-45EF-B882-1F06F483CD01");
                 
                 public static readonly Id<TestProxy.ccllc_transactionprocess> Process2 = new Id<TestProxy.ccllc_transactionprocess>("13232104-69D0-4483-950F-2D20F52692C0");
 

@@ -31,7 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeRecord.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirementRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProcessSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProcessSettingsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StepType\AddFee.cs" />
@@ -41,7 +41,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\eEvidenceCategoryEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\eEvidenceEvaluationMethodEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\eProcessStepHistoryStatusEnum.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Enums\eTransactionRequirementTypeFlag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\eRequirementTypeFlag.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\eUIStepTypeEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvidenceRequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAlternateBranch.cs" />
@@ -72,8 +72,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionProcessFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionRequirementFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRequirementFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransactionTypeFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IUIPointer.cs" />
@@ -96,8 +96,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)TransactionServiceFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionProcessFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionRequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionRequirementFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Requirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequirementFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TransactionType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UIPointer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WeightedEvidenceEvaluator.cs" />

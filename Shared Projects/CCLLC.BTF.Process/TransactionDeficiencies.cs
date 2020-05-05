@@ -17,7 +17,7 @@ namespace CCLLC.BTF.Process
             this.Transaction = transaction ?? throw new ArgumentNullException("transaction");
         }
 
-        public IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement)
+        public IRequirementDeficiency CreateDeficiency(IProcessExecutionContext executionContext, IRequirement requirement)
         {
             var record = DataConnector.CreateDeficiencyRecord(executionContext.DataService, requirement.Name, this.Transaction, requirement);
             var deficiency = new RequirementDeficiency(requirement, record.Status, null, null);
@@ -25,12 +25,12 @@ namespace CCLLC.BTF.Process
             return deficiency;
         }
 
-        public IRequirementDeficiency GetCurrentRequirementDeficiency(ITransactionRequirement requirement)
+        public IRequirementDeficiency GetCurrentRequirementDeficiency(IRequirement requirement)
         {
             return this.Where(r => r.Requirement.Id == requirement.Id && r.Status != eDeficiencyStatusEnum.Cleared).FirstOrDefault();
         }
 
-        public void ClearDeficiency(IProcessExecutionContext executionContext, ITransactionRequirement requirement)
+        public void ClearDeficiency(IProcessExecutionContext executionContext, IRequirement requirement)
         {
             var deficiency = GetCurrentRequirementDeficiency(requirement);
             if (deficiency.Status != eDeficiencyStatusEnum.Waived)

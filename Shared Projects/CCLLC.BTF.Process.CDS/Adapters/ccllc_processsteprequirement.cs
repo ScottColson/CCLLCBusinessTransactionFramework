@@ -7,7 +7,7 @@ namespace CCLLC.BTF.Process.CDS
     {
         public bool BlockProcessProgress => throw new NotImplementedException();
 
-        public IRecordPointer<Guid> RequirementId => this.ccllc_TransactionRequirementId?.ToRecordPointer();
+        public IRecordPointer<Guid> RequirementId => this.ccllc_RequirementId?.ToRecordPointer();
 
         public IRecordPointer<Guid> ProcessStepId => this.ccllc_ProcessStepId?.ToRecordPointer();
     }

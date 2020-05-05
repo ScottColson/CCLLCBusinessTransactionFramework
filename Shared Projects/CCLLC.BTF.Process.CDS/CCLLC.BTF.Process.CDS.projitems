@@ -20,8 +20,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiongroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactioninitialfee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionprocess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionrequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactionrequirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_Requirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_RequirementWaiverRole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontype.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapters\ccllc_transactiontypeauthorizedrole.cs" />
@@ -32,15 +32,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processstepauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processsteprequirement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_processsteptype.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_requirementwaiverrole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_Requirement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_RequirementWaiverRole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_stephistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiondeficiency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiongroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactioninitialfee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionprocess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionrequirement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactionrequirementwaiverrole.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontype.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedchannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ccllc_transactiontypeauthorizedrole.cs" />
@@ -49,6 +48,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataReccordQueryMatchEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EvaluatorType\DataRecordActionEvaluator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EntityExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\OrgServiceExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ProcessModelExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\AccountState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\account_accountcategorycode.cs" />
@@ -84,8 +84,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_processsteptypeState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_processsteptype_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_processstep_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_RequirementState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_requirementwaiverroleState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_requirementwaiverrole_statuscode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_requirement_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_stephistoryState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_stephistory_statuscode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionSets\ccllc_transactiondeficiencyState.cs" />

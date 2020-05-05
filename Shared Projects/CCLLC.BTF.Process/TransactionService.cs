@@ -193,9 +193,14 @@ namespace CCLLC.BTF.Process
                 if (dataRecordConfig is null) throw TransactionException.BuildException(TransactionException.ErrorCode.ProcessStepTypeInvalid);
 
                 var dataRecordType = dataRecordConfig["RecordType"];
-                var nameField = dataRecordConfig["NameField"];
-                var transactionField = dataRecordConfig["TransactionField"];
-                var customerField = dataRecordConfig["CustomerField"];
+
+                int underScoreIndex = dataRecordType.IndexOf("_");
+                string prefix = dataRecordType.Substring(0, underScoreIndex + 1);
+
+                // Get required field names form configuration data if provided, otherwise use conventional field names.
+                var nameField = dataRecordConfig.ContainsKey("NameField") ?  dataRecordConfig["NameField"] : prefix + "name";
+                var transactionField = dataRecordConfig.ContainsKey("TransactionField") ?  dataRecordConfig["TransactionField"] : prefix + "transactionid";
+                var customerField = dataRecordConfig.ContainsKey("CustomerField") ?  dataRecordConfig["CustomerField"] : prefix + "customerid";
 
                 var record = DataConnector.GetFirstMatchingTransactionDataRecord(
                     executionContext.DataService,
@@ -207,6 +212,16 @@ namespace CCLLC.BTF.Process
 
                 if (record is null)
                 {
+                    // All configuration values that do not represent the record type, name field, transaction field,
+                    // and customer field names are assumed to be attribute field names and associated default values.
+                    var defaultValues = (dataRecordConfig as IReadOnlyDictionary<string, string>)
+                        .Where(r => r
+                            .Key != "RecordType"
+                            && r.Key != "NameField"
+                            && r.Key != "TransactionField"
+                            && r.Key != "CustomerField"
+                            && r.Value != null).ToDictionary(r => r.Key, r => r.Value);
+                    
                     record = DataConnector.NewTransactionDataRecord(
                         executionContext.DataService,
                         transaction, 
@@ -215,7 +230,8 @@ namespace CCLLC.BTF.Process
                         transactionField, 
                         customerField, 
                         transaction.Name, 
-                        transaction.Customer);
+                        transaction.Customer,
+                        defaultValues);
 
                     executionContext.Trace("Created new data record of type {0} for transaction {1}", dataRecordType, transaction.Id);
                 }

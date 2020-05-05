@@ -128,20 +128,19 @@
             <Description description="Unique identifier for entity instances" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="ccllc_TransactionRequirementId">
+        <attribute PhysicalName="ccllc_RequirementId">
           <Type>lookup</Type>
-          <Name>ccllc_transactionrequirementid</Name>
-          <LogicalName>ccllc_transactionrequirementid</LogicalName>
-          <RequiredLevel>required</RequiredLevel>
+          <Name>ccllc_requirementid</Name>
+          <LogicalName>ccllc_requirementid</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>0.0.0.1</IntroducedVersion>
+          <IntroducedVersion>0.0.0.5</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -161,10 +160,10 @@
           <LookupStyle>single</LookupStyle>
           <LookupTypes />
           <displaynames>
-            <displayname description="Transaction Requirement" languagecode="1033" />
+            <displayname description="Requirement" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Unique identifier for Transaction Requirement associated with Process Step Requirement." languagecode="1033" />
+            <Description description="" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedBy">

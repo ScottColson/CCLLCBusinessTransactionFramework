@@ -11,17 +11,17 @@
     <AppModuleComponent type="62" schemaName="ccllc_TransactionConfigurationManager" />
     <AppModuleComponent type="1" schemaName="ccllc_alternatebranch" />
     <AppModuleComponent type="1" schemaName="ccllc_evaluatortype" />
+    <AppModuleComponent type="1" schemaName="ccllc_transactioninitialfee" />
     <AppModuleComponent type="1" schemaName="ccllc_processauthorizedchannel" />
     <AppModuleComponent type="1" schemaName="processsession" />
     <AppModuleComponent type="1" schemaName="ccllc_processstep" />
     <AppModuleComponent type="1" schemaName="ccllc_processstepauthorizedchannel" />
     <AppModuleComponent type="1" schemaName="ccllc_processsteprequirement" />
     <AppModuleComponent type="1" schemaName="ccllc_processsteptype" />
+    <AppModuleComponent type="1" schemaName="ccllc_requirement" />
     <AppModuleComponent type="1" schemaName="ccllc_transactiontypeauthorizedchannel" />
-    <AppModuleComponent type="1" schemaName="ccllc_transactioninitialfee" />
     <AppModuleComponent type="1" schemaName="ccllc_transactiongroup" />
     <AppModuleComponent type="1" schemaName="ccllc_transactionprocess" />
-    <AppModuleComponent type="1" schemaName="ccllc_transactionrequirement" />
     <AppModuleComponent type="1" schemaName="ccllc_transactiontypeauthorizedrole" />
     <AppModuleComponent type="1" schemaName="ccllc_transactiontype" />
     <AppModuleComponent type="1" schemaName="ccllc_transactiontypecontext" />

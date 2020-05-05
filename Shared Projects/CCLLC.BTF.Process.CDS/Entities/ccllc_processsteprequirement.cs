@@ -115,20 +115,20 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// Unique identifier for Transaction Requirement associated with Process Step Requirement.
+		/// 
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		public Microsoft.Xrm.Sdk.EntityReference ccllc_TransactionRequirementId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		public Microsoft.Xrm.Sdk.EntityReference ccllc_RequirementId
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_transactionrequirementid");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ccllc_requirementid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_TransactionRequirementId");
-				this.SetAttributeValue("ccllc_transactionrequirementid", value);
-				this.OnPropertyChanged("ccllc_TransactionRequirementId");
+				this.OnPropertyChanging("ccllc_RequirementId");
+				this.SetAttributeValue("ccllc_requirementid", value);
+				this.OnPropertyChanged("ccllc_RequirementId");
 			}
 		}
 		
@@ -428,21 +428,21 @@ namespace CCLLC.BTF.Process.CDS
 		}
 		
 		/// <summary>
-		/// N:1 ccllc_transactionrequirement__processstep
+		/// N:1 ccllc_processsteprequirement_requirement
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_transactionrequirementid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_transactionrequirement__processstep")]
-		public CCLLC.BTF.Process.CDS.ccllc_transactionrequirement ccllc_transactionrequirement__processstep
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ccllc_requirementid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ccllc_processsteprequirement_requirement")]
+		public CCLLC.BTF.Process.CDS.ccllc_Requirement ccllc_processsteprequirement_requirement
 		{
 			get
 			{
-				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactionrequirement__processstep", null);
+				return this.GetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_processsteprequirement_requirement", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("ccllc_transactionrequirement__processstep");
-				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_transactionrequirement>("ccllc_transactionrequirement__processstep", null, value);
-				this.OnPropertyChanged("ccllc_transactionrequirement__processstep");
+				this.OnPropertyChanging("ccllc_processsteprequirement_requirement");
+				this.SetRelatedEntity<CCLLC.BTF.Process.CDS.ccllc_Requirement>("ccllc_processsteprequirement_requirement", null, value);
+				this.OnPropertyChanged("ccllc_processsteprequirement_requirement");
 			}
 		}
 	}

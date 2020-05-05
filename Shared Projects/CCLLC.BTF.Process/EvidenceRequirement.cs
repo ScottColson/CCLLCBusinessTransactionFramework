@@ -5,9 +5,9 @@ using CCLLC.BTF.Platform;
 
 namespace CCLLC.BTF.Process
 {
-    public class EvidenceRequirement : TransactionRequirement, IEvidenceRequirement
+    public class EvidenceRequirement : Requirement, IEvidenceRequirement
     {
-        protected internal EvidenceRequirement(string recordType, Guid id, string name, eTransactionRequirementTypeFlags typeFlag, IRecordPointer<Guid> transactionTypeId, ILogicEvaluator evaluator, IEnumerable<IRecordPointer<Guid>> authorizedWaiverRoles) 
+        protected internal EvidenceRequirement(string recordType, Guid id, string name, eRequirementTypeFlags typeFlag, IRecordPointer<Guid> transactionTypeId, ILogicEvaluator evaluator, IEnumerable<IRecordPointer<Guid>> authorizedWaiverRoles) 
             : base(recordType, id, name, typeFlag, transactionTypeId, evaluator, authorizedWaiverRoles)
         {
         }

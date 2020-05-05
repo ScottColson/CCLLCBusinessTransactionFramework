@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using CCLLC.CDS.Sdk;
 
 namespace CCLLC.BTF.Process.CDS
 {
-    using System.Collections.Generic;
     using CCLLC.Core;
+    using CCLLC.CDS.Sdk;
 
     public class TransactionDataConnector : ITransactionDataConnector
     {
@@ -143,32 +143,48 @@ namespace CCLLC.BTF.Process.CDS
                     .RetrieveAll().ToList<IAuthroizedRoleRecord>();
         }
 
-        public ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId)
+        public ITransactionDataRecord NewTransactionDataRecord(IDataService dataService, IRecordPointer<Guid> transactionId, string recordType, string nameField, string transactionField, string customerField, string name, IRecordPointer<Guid> customerId, IDictionary<string,string> defaultValues = null)
         {
             try
             {
-                if (dataService is null) throw new ArgumentNullException("dataService");
-                if (transactionId is null) throw new ArgumentNullException("transactionId");
-                if (recordType is null) throw new ArgumentNullException("recordType");
-                if (nameField is null) throw new ArgumentNullException("nameField");
-                if (transactionField is null) throw new ArgumentNullException("transactionField");
-                if (customerField is null) throw new ArgumentNullException("customerField");
+                _ = dataService ?? throw new ArgumentNullException("dataService");
+                _ = transactionId ?? throw new ArgumentNullException("transactionId");
+                _ = recordType ?? throw new ArgumentNullException("recordType");
+                _ = nameField ?? throw new ArgumentNullException("nameField");
+                _ = transactionField ?? throw new ArgumentNullException("transactionField");
+                _ = customerField ?? throw new ArgumentNullException("customerField");
 
+                var orgService = dataService.ToOrgService();
 
                 var record = new Entity(recordType);
                 record[nameField] = name;
                 record[transactionField] = transactionId.ToEntityReference();
                 record[customerField] = customerId.ToEntityReference();
 
-                Guid id = dataService.ToOrgService().Create(record);
-                record = dataService.ToOrgService().Retrieve(recordType, id, new ColumnSet(true));
+                if (defaultValues != null && defaultValues.Count > 0)
+                {
+                    var attributes = orgService.GetAttributeMetadataForEntity(recordType);
+                    
+                    foreach(var key in defaultValues.Keys)
+                    {
+                        var attributeMetadata = attributes.Where(a => a.LogicalName == key).FirstOrDefault() 
+                            ?? throw new Exception(string.Format("{0} is not a valid attribute name for entity {1}",key,recordType));
+
+                        var value = defaultValues[key];
+
+                        record.ParseAndAddAttributeValue(key, value, attributeMetadata);
+                    }
+                }
+
+                Guid id = orgService.Create(record);
+                record = orgService.Retrieve(recordType, id, new ColumnSet(true));
 
                 return new TransactionDataRecord(record, transactionField, customerField);
 
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Unexpected error while creating a new Transaction Data Record.", ex);
             }
         }
 
@@ -236,20 +252,20 @@ namespace CCLLC.BTF.Process.CDS
                     .RetrieveAll().ToList<ITransactionContextType>();
         }
 
-        public IList<ITransactionRequirementRecord> GetAllTransactionRequirements(IDataService dataService)
+        public IList<IRequirementRecord> GetAllRequirements(IDataService dataService)
         {
-            return dataService.ToOrgService().Query<ccllc_transactionrequirement>()
+            return dataService.ToOrgService().Query<ccllc_Requirement>()
                     .SelectAll()
                     .WhereAll(e => e
                         .IsActive()
                         .Attribute("ccllc_evaluatortypeid").IsNotNull()
                         .Attribute("ccllc_transactiontypeid").IsNotNull())
-                    .RetrieveAll().ToList<ITransactionRequirementRecord>();
+                    .RetrieveAll().ToList<IRequirementRecord>();
         }
 
         public IList<IRequirementWaiverRole> GetAllRequirementWaiverRoles(IDataService dataService)
         {
-            return dataService.ToOrgService().Query<ccllc_transactionrequirementwaiverrole>()
+            return dataService.ToOrgService().Query<ccllc_RequirementWaiverRole>()
                     .SelectAll()
                     .WhereAll(e => e.IsActive())
                     .RetrieveAll().ToList<IRequirementWaiverRole>();
@@ -327,7 +343,7 @@ namespace CCLLC.BTF.Process.CDS
             {
                 ccllc_name = name,
                 ccllc_TransactionId = transactionId?.ToEntityReference(),
-                ccllc_TransactionRequirementId = requirementId?.ToEntityReference(),
+                ccllc_RequirementId = requirementId?.ToEntityReference(),
                 statuscode = ccllc_transactiondeficiency_statuscode.Active
             };
 
@@ -363,5 +379,6 @@ namespace CCLLC.BTF.Process.CDS
             dataService.ToOrgService().Update(record);
 
         }
+
     }
 }
