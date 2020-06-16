@@ -71,7 +71,7 @@ namespace CCLLC.BTF.Process.CDS.Plugins
             this.Container.Implement<ITransactionHistoryFactory>().Using<TransactionHistoryFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionServiceFactory>().Using<TransactionServiceFactory>().AsSingleInstance();
             this.Container.Implement<ITransactionProcessFactory>().Using<TransactionProcessFactory>().AsSingleInstance();
-            this.Container.Implement<ITransactionRequirementFactory>().Using<TransactionRequirementFactory>().AsSingleInstance();
+            this.Container.Implement<IRequirementFactory>().Using<RequirementFactory>().AsSingleInstance();
         }       
 
        
