@@ -143,8 +143,8 @@ namespace CCLLC.Transactions.CommandBar {
         /* 
          * Builds the required XML for the dynamically generated command bar buttons for transactions.
          *   recordType: The entity logical name of the record where the button menu is being populated.
-         *   recordId: The id of the record where the menu is being poplulated
-         *   ribbonCommand: The ribbon command that will be attached to eacy dynamically created button.
+         *   recordId: The id of the record where the menu is being populated
+         *   ribbonCommand: The ribbon command that will be attached to each dynamically created button.
          */
         private static async getTransactionOptionsXml(recordType: string, recordId: string, ribbonCommand: string) {
 
@@ -172,7 +172,7 @@ namespace CCLLC.Transactions.CommandBar {
                 buttonCount++;
 
                 // add button setting the id of the button to the GUID of the 
-                // correspodning Transaction Type. This GUID will get passed in 
+                // corresponding Transaction Type. This GUID will get passed in 
                 // when the button is clicked.
                 actionSection.addButton(new RibbonButton(
                     item.TypeId,
@@ -192,7 +192,7 @@ namespace CCLLC.Transactions.CommandBar {
         }
 
         /*
-         * Process navigation or display instructions encoded in a UI poiter object.
+         * Process navigation or display instructions encoded in a UI pointer object.
          */
         private static async processUIPointer(uiPointer: IUIPointer) {
 

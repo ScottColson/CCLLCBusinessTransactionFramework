@@ -34,14 +34,14 @@ namespace CCLLC.Transactions.CommandBar {
     }
 
     /*
-     * Repsonse from the ccllc_BTF_CanNavigateForward action.
+     * Response from the ccllc_BTF_CanNavigateForward action.
      */
     export interface IBTF_CanNavigateForwardResponse {
         IsAllowed: boolean;
     }
 
     /*
-     * Repsonse from the ccllc_BTF_CanNavigateBackward action.
+     * Response from the ccllc_BTF_CanNavigateBackward action.
      */
     export interface IBTF_CanNavigateBackwardResponse {
         IsAllowed: boolean;

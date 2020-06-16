@@ -5,7 +5,7 @@ namespace CCLLC.Common {
      * 
      * Implements executeAction and executeGlobal action using the direct XMLHttpRequests. This
      * class is required because the Xrm.WebApi.online.execute method current does not work with 
-     * the Unified Client interface when working with actions that return output paramters.
+     * the Unified Client interface when working with actions that return output parameters.
      */
     export class LegacyWebApi {
 

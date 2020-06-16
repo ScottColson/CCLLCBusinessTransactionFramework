@@ -55,7 +55,7 @@ var CCLLC;
          *
          * Implements executeAction and executeGlobal action using the direct XMLHttpRequests. This
          * class is required because the Xrm.WebApi.online.execute method current does not work with
-         * the Unified Client interface when working with actions that return output paramters.
+         * the Unified Client interface when working with actions that return output parameters.
          */
         var LegacyWebApi = /** @class */ (function () {
             function LegacyWebApi() {
@@ -612,8 +612,8 @@ var CCLLC;
                 /*
                  * Builds the required XML for the dynamically generated command bar buttons for transactions.
                  *   recordType: The entity logical name of the record where the button menu is being populated.
-                 *   recordId: The id of the record where the menu is being poplulated
-                 *   ribbonCommand: The ribbon command that will be attached to eacy dynamically created button.
+                 *   recordId: The id of the record where the menu is being populated
+                 *   ribbonCommand: The ribbon command that will be attached to each dynamically created button.
                  */
                 Commands.getTransactionOptionsXml = function (recordType, recordId, ribbonCommand) {
                     return __awaiter(this, void 0, void 0, function () {
@@ -640,7 +640,7 @@ var CCLLC;
                                         }
                                         buttonCount++;
                                         // add button setting the id of the button to the GUID of the 
-                                        // correspodning Transaction Type. This GUID will get passed in 
+                                        // corresponding Transaction Type. This GUID will get passed in 
                                         // when the button is clicked.
                                         actionSection.addButton(new CommandBar.RibbonButton(item.TypeId, buttonCount, item.TypeName, ribbonCommand, null, null));
                                     });
@@ -654,7 +654,7 @@ var CCLLC;
                     });
                 };
                 /*
-                 * Process navigation or display instructions encoded in a UI poiter object.
+                 * Process navigation or display instructions encoded in a UI pointer object.
                  */
                 Commands.processUIPointer = function (uiPointer) {
                     return __awaiter(this, void 0, void 0, function () {
